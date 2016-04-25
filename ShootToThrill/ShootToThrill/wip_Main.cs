@@ -16,7 +16,7 @@ namespace AtelierXNA
 {
    class wip_Main : Microsoft.Xna.Framework.Game
    {
-       Options options { get; set; }
+      Options options { get; set; }
 
       const float INTERVAL_MAJ_STANDARD = 1 / 60f;
       GraphicsDeviceManager graphics;

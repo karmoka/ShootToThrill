@@ -15,8 +15,10 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
+       public List<ObjetPhysique> ListeCollision { get; private set; }
        protected Options OptionJeu { get; set; }
 
+       public bool EstTangible { get; protected set; }
        private Vector3 _position;
        public Vector3 Position
        {
@@ -66,6 +68,8 @@ namespace AtelierXNA
 
       public override void Initialize()
       {
+          ListeCollision = new List<ObjetPhysique>();
+          EstTangible = true;
           OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
           ForceGravitationnelle = OptionJeu.Gravité;
@@ -90,10 +94,6 @@ namespace AtelierXNA
 
             Position += Vitesse * deltaT;
          }
-          //if (this is Avatar)
-          //{
-          //    (this as Avatar).ChangerPositionFusil(Position);
-          //}
       }
 
        void CalculerForceRésultantes()
@@ -121,6 +121,18 @@ namespace AtelierXNA
 
       public virtual void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
       {
+         ListeCollision.Add(autre);
+         if(this.EstTangible && autre.EstTangible)
+         {
+            Vector3 norm = autre.GetCollider().Normale(this.Position);
+            //La norme est corrigé pour gérer la collision des deux bords de l'objet
+            if (Vector3.Dot((autre.Position - this.Position), norm) > 0)
+               norm = -norm;
+            this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
+            autre.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
+
+            CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+         }
 
       }
 
@@ -131,6 +143,11 @@ namespace AtelierXNA
       public virtual void SetPosition(Vector3 nouvellePosition)
       {
          Position = nouvellePosition;
+      }
+
+      void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)
+      {
+         A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
       }
    }
 }

@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using System.Xml;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 using ProjetPrincipal.Data;
-using ProjetPrincipal;
 
 namespace AtelierXNA
 {

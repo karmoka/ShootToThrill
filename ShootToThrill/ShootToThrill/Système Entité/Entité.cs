@@ -12,16 +12,18 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
+   public enum TypeEntité { Entité, Avatar, Joueur, Ennemi, Boss, Fusil, Munition}
 
    public class Entité : Microsoft.Xna.Framework.DrawableGameComponent
    {
       EntitySystem système { get; set; }
       public int UniqueId { get; private set; }
-      public int ObjectId { get; private set; }
+      public TypeEntité TypeEnt { get; protected set; }
 
       public Entité(Game game)
          : base(game)
       {
+         TypeEnt = TypeEntité.Entité;
       }
 
       public override void Initialize()

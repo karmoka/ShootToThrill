@@ -58,6 +58,7 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
+           TypeEnt = TypeEntité.Avatar;
            ComposanteGraphique.Initialize();
            ComposantePhysique.Initialize();
             ListeArme = new List<IArme>();
@@ -125,7 +126,11 @@ namespace AtelierXNA
         }
         protected virtual void GérerCollisions()
         {
+           for (int i = 0; i < ComposantePhysique.ListeCollision.Count; ++i)
+           {
 
+           }
+        
         }
 
         public void AjouterArme(IArme arme)

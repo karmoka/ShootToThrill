@@ -60,13 +60,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShootToThrill\ShootToThrill\ShootToThrill.csproj">
-      <Project>{177426c3-1ea3-4909-b892-1b7422e4faba}</Project>
-      <Name>ShootToThrill</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ProjetPrincipal.Data\ProjetPrincipal.Data.csproj">
       <Project>{53072d0c-1d6d-4846-8869-f4d83a2cf189}</Project>
       <Name>ProjetPrincipal.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShootToThrill\ShootToThrill\ShootToThrill.csproj">
+      <Project>{177426c3-1ea3-4909-b892-1b7422e4faba}</Project>
+      <Name>ShootToThrill</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -36,6 +36,7 @@ namespace AtelierXNA
         {
             VitesseJoueur = 0.1f; //Arbitraire
             base.Initialize();
+            TypeEnt = TypeEntité.Joueur;
         }
 
         protected override void LoadContent()

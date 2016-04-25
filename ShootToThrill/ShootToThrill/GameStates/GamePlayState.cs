@@ -41,6 +41,8 @@ namespace AtelierXNA
         Jeu jeu { get; set; }
         Lumière LumièreJeu { get; set; }
 
+        CubeDeForce test { get; set; }
+
         public GamePlayState(Game game, InformationGame informationJeu)
             : base(game)
         {
@@ -54,10 +56,16 @@ namespace AtelierXNA
             EstActivé = true;
             EstDétruit = false;
 
+            test = new CubeGravité(Game, new MObjetDeBase(Game, "Cube", 1f, Vector3.Zero, Vector3.Up*3), Vector3.Up*3, Vector3.One, new Vector3(0,10,0));
+            test.Initialize();
+
             InitialiserManagers();
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
+
+            ManagerPhysique.AjouterObjet(test);
+            ManagerModèle.AjouterModele(test);
 
             LoaderMap();
         }
