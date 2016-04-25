@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>SketchUp</Name>
     <Identity>
-      <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1.34033966 0 0 0 0 -0.0177543145 -1.34022212 0 0 1.34022212 -0.0177543145 0 1.63714623 0.8397864 0.830743849 1</Transform>
@@ -288,7 +288,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Color_M02</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -304,7 +304,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -320,7 +320,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -336,7 +336,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>Color_M02</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -352,7 +352,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -368,7 +368,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -384,7 +384,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>Color_A08</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -400,7 +400,7 @@
     <Resource ID="#Resource8" Type="Graphics:BasicMaterialContent">
       <Name>Color_M09</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -416,7 +416,7 @@
     <Resource ID="#Resource9" Type="Graphics:BasicMaterialContent">
       <Name>Color_M02</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -432,7 +432,7 @@
     <Resource ID="#Resource10" Type="Graphics:BasicMaterialContent">
       <Name>Color_M09</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -448,7 +448,7 @@
     <Resource ID="#Resource11" Type="Graphics:BasicMaterialContent">
       <Name>Color_A08</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -464,7 +464,7 @@
     <Resource ID="#Resource12" Type="Graphics:BasicMaterialContent">
       <Name>Color_A08</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -480,7 +480,7 @@
     <Resource ID="#Resource13" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -496,7 +496,7 @@
     <Resource ID="#Resource14" Type="Graphics:BasicMaterialContent">
       <Name>material</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -512,7 +512,7 @@
     <Resource ID="#Resource15" Type="Graphics:BasicMaterialContent">
       <Name>Color_M02</Name>
       <Identity>
-        <SourceFilename>c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\PortailMonstre.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
