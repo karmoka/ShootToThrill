@@ -1,0 +1,35 @@
+C:\Users\201457989\Desktop\TestSeparatingAxis - Copy\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\201457989\Desktop\TestSeparatingAxis - Copy\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\201457989\Desktop\TestSeparatingAxis - Copy\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\201457989\Desktop\TestSeparatingAxis - Copy\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\201457989\Desktop\TestSeparatingAxis - Copy\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Mikael\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\alexL_000\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Karmoka\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\Karmoka\Documents\Visual Studio 2013\Projects\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb

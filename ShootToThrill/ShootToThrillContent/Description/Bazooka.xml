@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionFusil">
+    <AMunitionInfini>false</AMunitionInfini>
+    <MunitionTotalRestant>0</MunitionTotalRestant>
+    <MunitionTotalMax>12</MunitionTotalMax>
+    <MunitionMaxDansChargeur>4</MunitionMaxDansChargeur>
+    <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
+    <MunitionDansCaisseMunitions>4</MunitionDansCaisseMunitions>
+    <MunitionInitial>6</MunitionInitial>
+    <IntervalRechargement>3</IntervalRechargement>
+    <NomArme>Bazooka</NomArme>
+    <NomModèle>Bazooka</NomModèle>
+    <Cadence>1</Cadence>
+    <Dommage>50</Dommage>
+    <Portée>5</Portée>
+    <AngleDeTir>10</AngleDeTir>
+    <Area>true</Area>
+    <NbBallesParTir>1</NbBallesParTir>
+  </Asset>
+</XnaContent>

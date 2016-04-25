@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionFusil">
+    <AMunitionInfini>false</AMunitionInfini>
+    <MunitionTotalRestant>0</MunitionTotalRestant>
+    <MunitionTotalMax>200</MunitionTotalMax>
+    <MunitionMaxDansChargeur>32</MunitionMaxDansChargeur>
+    <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
+    <MunitionDansCaisseMunitions>60</MunitionDansCaisseMunitions>
+    <MunitionInitial>80</MunitionInitial>
+    <IntervalRechargement>0.02</IntervalRechargement>
+    <NomArme>Machinegun</NomArme>
+    <NomModèle>Machinegun</NomModèle>
+    <Cadence>0.05</Cadence>
+    <Dommage>10</Dommage>
+    <Portée>5</Portée>
+    <AngleDeTir>10</AngleDeTir>
+    <Area>false</Area>
+    <NbBallesParTir>1</NbBallesParTir>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionModelPhysique">
+    <MasseInverse>10</MasseInverse>
+    <Position>0 0 0</Position>
+    <Vitesse>-10 0 0</Vitesse>
+    <EstImmuable>false</EstImmuable>
+    <NomModèle>Sphere</NomModèle>
+    <Rayon>2</Rayon>
+  </Asset>
+</XnaContent>

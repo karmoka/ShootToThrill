@@ -1,0 +1,5 @@
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Release\ProjetPrincipal.Data.dll
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\bin\x86\Release\ProjetPrincipal.Data.pdb
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Release\ProjetPrincipal.Data.dll
+C:\Users\201457989\Documents\GitHub\ProjetPrincipal\ProjetPrincipal.Data\obj\x86\Release\ProjetPrincipal.Data.pdb

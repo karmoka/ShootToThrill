@@ -1,0 +1,136 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
+using ProjetPrincipal.Data;
+
+namespace AtelierXNA
+{
+   public class ObjetPhysique : DrawableGameComponent
+   {
+       protected Options OptionJeu { get; set; }
+
+       private Vector3 _position;
+       public Vector3 Position
+       {
+           get { return _position; }
+           protected set
+           {
+               _position = value;
+               if (float.IsNaN(value.X))
+                   throw new NotFiniteNumberException();
+           }
+       }
+      public bool EstImmuable { get; protected set; }
+      public Vector3 Vitesse { get; protected set; }
+      private Vector3 Accélération { get; set; }
+      private Vector3 ForceRésultante { get; set; }
+      private List<Vector3> Forces { get; set; }
+      private Vector3 ForceGravitationnelle { get; set; }
+      public float MasseInverse { get; private set; }
+      
+      public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse)
+         :base(game)
+      {
+         Position = position;
+         Vitesse = vitesse;
+         MasseInverse = masseInverse;
+
+         EstImmuable = false;
+      }
+      public ObjetPhysique(Game game, DescriptionObjetPhysique description)
+          : base(game)
+      {
+          Position = description.Position;
+          Vitesse = description.Vitesse;
+          MasseInverse = description.MasseInverse;
+
+          EstImmuable = description.EstImmuable;
+      }
+
+      public ObjetPhysique(Game game, Vector3 position)
+          : base(game)
+      {
+          Position = position;
+          Vitesse = Vector3.Zero;
+          MasseInverse = 1f;
+          EstImmuable = false;
+      }
+
+      public override void Initialize()
+      {
+          OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
+
+          ForceGravitationnelle = OptionJeu.Gravité;
+          Forces = new List<Vector3>();
+          ForceRésultante = Vector3.Zero;
+
+         base.Initialize();
+      }
+
+      protected override void LoadContent()
+      {
+          base.LoadContent();
+      }
+
+      public void Intégrer(float deltaT)
+      {
+         if(!EstImmuable)
+         {
+            CalculerForceRésultantes();
+            Accélération = ForceRésultante * MasseInverse;
+            Vitesse += Accélération * deltaT;
+
+            Position += Vitesse * deltaT;
+         }
+          //if (this is Avatar)
+          //{
+          //    (this as Avatar).ChangerPositionFusil(Position);
+          //}
+      }
+
+       void CalculerForceRésultantes()
+      {
+          ForceRésultante = Vector3.Zero;
+           foreach(Vector3 v in Forces)
+           {
+               ForceRésultante += v;
+           }
+
+           ForceRésultante += ForceGravitationnelle;
+
+           Forces.Clear();
+      }
+
+       public void AjouterForce(Vector3 force)
+       {
+           Forces.Add(force);
+       }
+
+      public virtual Collider GetCollider()
+       {
+          return new SphereCollision(this.Position, 2);
+       }
+
+      public virtual void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
+      {
+
+      }
+
+      public void SetVitesse(Vector3 vitesse)
+      {
+          Vitesse = vitesse;
+      }
+      public virtual void SetPosition(Vector3 nouvellePosition)
+      {
+         Position = nouvellePosition;
+      }
+   }
+}

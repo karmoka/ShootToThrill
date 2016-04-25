@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionFusil">
+    <AMunitionInfini>false</AMunitionInfini>
+    <MunitionTotalRestant>0</MunitionTotalRestant>
+    <MunitionTotalMax>1</MunitionTotalMax>
+    <MunitionMaxDansChargeur>1</MunitionMaxDansChargeur>
+    <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
+    <MunitionDansCaisseMunitions>1</MunitionDansCaisseMunitions>
+    <MunitionInitial>1</MunitionInitial>
+    <IntervalRechargement>5</IntervalRechargement>
+    <NomArme>Railgun</NomArme>
+    <NomModèle>Railgun</NomModèle>
+    <Cadence>3</Cadence>
+    <Dommage>100</Dommage>
+    <Portée>5</Portée>
+    <AngleDeTir>35</AngleDeTir>
+    <Area>false</Area>
+    <NbBallesParTir>1</NbBallesParTir>
+  </Asset>
+</XnaContent>
