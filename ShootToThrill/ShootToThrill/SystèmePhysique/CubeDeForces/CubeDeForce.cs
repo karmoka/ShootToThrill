@@ -32,6 +32,7 @@ namespace AtelierXNA
          base.Initialize();
 
          EstTangible = false;
+         EstImmuable = true;
       }
 
       public virtual Vector3 GetForce(Vector3 position)

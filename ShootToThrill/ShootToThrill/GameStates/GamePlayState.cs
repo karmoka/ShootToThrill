@@ -56,7 +56,7 @@ namespace AtelierXNA
             EstActivé = true;
             EstDétruit = false;
 
-            test = new CubeGravité(Game, new MObjetDeBase(Game, "Cube", 1f, Vector3.Zero, Vector3.Up*3), Vector3.Up*3, Vector3.One, new Vector3(0,10,0));
+            test = new CubeGravité(Game, new MObjetDeBase(Game, "Cube", 1f, Vector3.Zero, new Vector3(3, 2, 3)), new Vector3(3, 2, 3), Vector3.One, new Vector3(0, 10, 0));
             test.Initialize();
 
             InitialiserManagers();

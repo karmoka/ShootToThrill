@@ -122,6 +122,7 @@ namespace AtelierXNA
       public virtual void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
       {
          ListeCollision.Add(autre);
+
          if(this.EstTangible && autre.EstTangible)
          {
             Vector3 norm = autre.GetCollider().Normale(this.Position);
@@ -129,9 +130,13 @@ namespace AtelierXNA
             if (Vector3.Dot((autre.Position - this.Position), norm) > 0)
                norm = -norm;
             this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
-            autre.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
+            //autre.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
 
             CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+         }
+         if(autre is CubeDeForce)
+         {
+            AjouterForce((autre as CubeDeForce).GetForce(this.Position));
          }
 
       }
@@ -147,7 +152,7 @@ namespace AtelierXNA
 
       void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)
       {
-         A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
+         this.SetPosition(this.Position + normale * 0.01f * this.MasseInverse);
       }
    }
 }
