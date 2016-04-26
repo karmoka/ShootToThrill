@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionOptions">
+    <IntervalMAJStandard>0.0166666675</IntervalMAJStandard>
+    <WindowWidth>1000</WindowWidth>
+    <WindowHeight>700</WindowHeight>
+    <CameraHeightOffset>5</CameraHeightOffset>
+    <CameraDistanceOffset>5</CameraDistanceOffset>
+    <ViePersonnageMax>100</ViePersonnageMax>
+    <SensibilitéFriction>0.01</SensibilitéFriction>
+    <RatioDistance3dMetre>3</RatioDistance3dMetre>
+    <Gravité>0 -9.8 0</Gravité>
+    <NomFontMenu>ArialDebug</NomFontMenu>
+  </Asset>
+</XnaContent>

@@ -54,7 +54,7 @@ namespace AtelierXNA
          IsFixedTimeStep = false;
          graphics.SynchronizeWithVerticalRetrace = false;
 
-         options = new Options(this);// new Options(this, Content.Load<DescriptionOptions>("Options"));
+         options = new Options(this, Content.Load<DescriptionOptions>("Options"));
 
          graphics.PreferredBackBufferWidth = options.WindowWidth;
          graphics.PreferredBackBufferHeight = options.WindowHeight;

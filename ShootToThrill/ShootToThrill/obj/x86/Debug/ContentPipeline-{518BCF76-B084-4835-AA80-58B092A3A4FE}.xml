@@ -874,6 +874,15 @@
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\untitled_0.xml</Output>
       <Time>2016-04-25T10:58:51.1160267-04:00</Time>
     </Item>
+    <Item>
+      <Source>Options.xml</Source>
+      <Name>Options</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Options.xnb</Output>
+      <Time>2016-04-25T21:02:22.2459151-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{518BCF76-B084-4835-AA80-58B092A3A4FE}</ContentProjectGUID>

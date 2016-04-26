@@ -28,7 +28,7 @@ namespace AtelierXNA
             LireFichier(description);
         }
 
-        void LireFichier( DescriptionOptions description)
+        void LireFichier(DescriptionOptions description)
         {
             IntervalMAJStandard = description.IntervalMAJStandard;
             WindowWidth = description.WindowWidth;
