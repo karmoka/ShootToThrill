@@ -131,11 +131,7 @@ namespace AtelierXNA
 
            //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
            //ObjetDeBase o = new ObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
-           AnimatedModel modeleBase = new AnimatedModel(Game, "butterfly", Vector3.Up * 3);
-           modeleBase.Initialize();
-           AnimatedModel modeleAnimé = new AnimatedModel(Game, "butterfly", Vector3.Up * 3);
-           modeleAnimé.Initialize();
-           ListeJoueur.Add(new MJoueur(Game, modeleBase, modeleAnimé, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
+           ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
            //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
         }
         /// <summary>

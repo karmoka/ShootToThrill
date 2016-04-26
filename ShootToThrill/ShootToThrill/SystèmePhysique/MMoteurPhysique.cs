@@ -18,7 +18,6 @@ namespace AtelierXNA
    class MMoteurPhysique : GameComponent, IPausable
    {
       public List<IPhysique> ListePhysique { get; private set; }
-      List<InformationIntersection> InformationSurCollision { get; set; }
 
       float IntervalMAJ { get; set; }
       float TempsDepuisMAJ { get; set; }
@@ -36,12 +35,7 @@ namespace AtelierXNA
       {
          EnPause = false;
 
-         InformationSurCollision = new List<InformationIntersection>();
          TempsDepuisMAJ = 0;
-         foreach (ObjetPhysique i in ListePhysique)
-         {
-            i.Initialize();
-         }
 
          base.Initialize();
       }
@@ -79,8 +73,8 @@ namespace AtelierXNA
          if (!EnPause && TempsDepuisMAJ >= IntervalMAJ)
          {
             Simuler();
-            DétecterCollision();
-            GérerCollision();
+            DétecterGérerCollision();
+            //GérerCollision();
 
             TempsDepuisMAJ = 0;
          }
@@ -96,7 +90,7 @@ namespace AtelierXNA
          }
       }
 
-      private void DétecterCollision()
+      private void DétecterGérerCollision()
       {
          for (int i = 0; i < GrosseurListe; ++i)
          {
@@ -106,62 +100,16 @@ namespace AtelierXNA
 
                if (intersection)
                {
-                  InformationSurCollision.Add(new InformationIntersection(ListePhysique[i].GetObjetPhysique(), ListePhysique[j].GetObjetPhysique()));
+                  InformationIntersection infoColli = new InformationIntersection(ListePhysique[i].GetObjetPhysique(), ListePhysique[j].GetObjetPhysique());
+                  ListePhysique[i].GetObjetPhysique().EnCollision(ListePhysique[j].GetObjetPhysique(), infoColli);
                }
             }
          }
       }
 
-      private void GérerCollision()
-      {
-         foreach(InformationIntersection infoColli in InformationSurCollision)
-         {
-            ObjetPhysique A = infoColli.ObjetA;
-            ObjetPhysique B = infoColli.ObjetB;
-
-            A.EnCollision(B, infoColli);
-            B.EnCollision(A, infoColli);
-
-            //Vector3 norm = B.GetCollider().Normale(A.Position);
-            ////La norme est corrigé pour gérer la collision des deux bords de l'objet
-            //if (Vector3.Dot((B.Position - A.Position), norm) > 0)
-            //   norm = -norm;
-            //A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) *0.95f);
-            //B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) *0.95f);
-
-            //CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
-         }
-
-         InformationSurCollision.Clear();
-      }
-
-      void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)
-      {
-          A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
-          B.SetPosition(B.Position - normale * 0.01f * B.MasseInverse);
-      }
-
       public int GrosseurListe
       {
          get { return ListePhysique.Count; }
-      }
-
-      public Vector3 GetPositionJoueurPlusProche(Vector3 positionEnnemi)
-      {
-          Vector3 positionAvatarPlusProche = Vector3.Zero;
-          List<float> distance = new List<float>();
-          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
-          {
-              distance.Add(Vector3.Distance(j.Position, positionEnnemi));
-          }
-          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
-          {
-              if (Vector3.Distance(j.Position, positionEnnemi) == distance.OrderBy(d => d).ElementAt(0))// && e is Avatar_)
-              {
-                  positionAvatarPlusProche = j.Position;
-              }
-          }
-          return positionAvatarPlusProche;
       }
    }
 }

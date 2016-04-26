@@ -16,27 +16,27 @@ namespace AtelierXNA
    public class ObjetPhysique : DrawableGameComponent
    {
        public List<ObjetPhysique> ListeCollision { get; private set; }
-       protected Options OptionJeu { get; set; }
+       protected Options OptionJeu { get; private set; }
 
        public bool EstTangible { get; protected set; }
        private Vector3 _position;
        public Vector3 Position
        {
            get { return _position; }
-           protected set
+           private set
            {
                _position = value;
                if (float.IsNaN(value.X))
                    throw new NotFiniteNumberException();
            }
        }
-      public bool EstImmuable { get; protected set; }
+      protected bool EstImmuable { get; set; }
       public Vector3 Vitesse { get; protected set; }
       private Vector3 Accélération { get; set; }
       private Vector3 ForceRésultante { get; set; }
       private List<Vector3> Forces { get; set; }
       private Vector3 ForceGravitationnelle { get; set; }
-      public float MasseInverse { get; private set; }
+      protected float MasseInverse { get; private set; }
       
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse)
          :base(game)
@@ -130,7 +130,6 @@ namespace AtelierXNA
             if (Vector3.Dot((autre.Position - this.Position), norm) > 0)
                norm = -norm;
             this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
-            //autre.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
 
             CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
          }

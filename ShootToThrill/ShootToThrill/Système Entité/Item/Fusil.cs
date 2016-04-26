@@ -207,7 +207,7 @@ namespace AtelierXNA
         {
             if (!float.IsNaN(Direction.X) && !float.IsNaN(Direction.Y))
             {
-                Position = position + new Vector3(Direction.X, 0, -Direction.Y) * 2;
+               SetPosition(position + new Vector3(Direction.X, 0, -Direction.Y) * 2);
             }
         }
 
@@ -282,7 +282,7 @@ namespace AtelierXNA
 
         public void Animer()
         {
-            Position = new Vector3(Position.X, (float)Math.Sin(MathHelper.ToRadians(++AngleRotation)) - 5, Position.Z);
+           this.SetPosition(new Vector3(Position.X, (float)Math.Sin(MathHelper.ToRadians(++AngleRotation)) - 5, Position.Z));
         }
 
         public void ChangerVitesse(Vector3 vitesse)

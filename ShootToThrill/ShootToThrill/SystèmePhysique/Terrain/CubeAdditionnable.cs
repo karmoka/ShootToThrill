@@ -21,7 +21,7 @@ namespace AtelierXNA
       public CubeAdditionnable(Game game, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, Color couleur, Vector3 dimension, float intervalleMAJ)
           : base(game, positionInitiale, Vector3.Zero, 0)
       {
-          Position = positionInitiale;
+          //Position = positionInitiale;
           CubeCollision = new MCubeCollision(positionInitiale, dimension, Vector3.Zero);
           CubeColoré = new CubeColoré(game, homothétieInitiale, Vector3.Zero, positionInitiale, couleur, dimension, intervalleMAJ);
       }
@@ -64,7 +64,7 @@ namespace AtelierXNA
               //cube1.CubeColoré.Ori += (cube2.CubeColoré.Ori - cube1.CubeColoré.Ori) / 2;
           }
 
-          cube1.Position = cube1.CubeColoré.Ori + cube1.CubeColoré.Dimension / 2;
+          cube1.SetPosition(cube1.CubeColoré.Ori + cube1.CubeColoré.Dimension / 2);
           cube1.CubeCollision = new MCubeCollision(cube1.CubeColoré.Position, cube1.CubeColoré.Dimension, Vector3.Zero);
 
           return cube1;

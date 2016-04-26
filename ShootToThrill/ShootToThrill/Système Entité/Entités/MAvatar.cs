@@ -14,8 +14,11 @@ namespace AtelierXNA
 {
     public class MAvatar : Entité, IPositionable, IModele3d, IPhysique
     {
-        float IntervalMAJ { get; set; }
-        float TempsDepuisMAJ { get; set; }
+       string NomModeleBase { get; set; }
+       string NomModeleAnimé { get; set; }
+
+        private float IntervalMAJ { get; set; }
+        private float TempsDepuisMAJ { get; set; }
         protected float Rotation { get; set; }
         protected int indexArme;
         protected int Vie { get; set; }
@@ -47,17 +50,24 @@ namespace AtelierXNA
        /// <param name="ModèleADeBase"></param>
        /// <param name="ModèleAnimé"></param>
        /// <param name="composantePhysique"></param>
-        public MAvatar(Game game, AnimatedModel ModèleADeBase, AnimatedModel ModèleAnimé, ObjetPhysique composantePhysique)
+        public MAvatar(Game game, string modeleBase, string modeleAnimé, ObjetPhysique composantePhysique)
            : base(game)
         {
            ComposantePhysique = composantePhysique;
-           ComposanteGraphique = ModèleADeBase as IModele3d;
-           AnimationModèle = ModèleAnimé;
+           NomModeleBase = modeleBase;
+           NomModeleAnimé = modeleAnimé;
            EstAnimé = true;
         }
 
         public override void Initialize()
         {
+           if(EstAnimé)
+           {
+              ComposanteGraphique = new AnimatedModel(Game, NomModeleBase, Vector3.Up * 3);
+              AnimationModèle = new AnimatedModel(Game, NomModeleAnimé, Vector3.Up * 3);
+              AnimationModèle.Initialize();
+           }
+
            TypeEnt = TypeEntité.Avatar;
            ComposanteGraphique.Initialize();
            ComposantePhysique.Initialize();

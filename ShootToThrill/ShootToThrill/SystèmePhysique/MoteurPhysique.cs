@@ -124,14 +124,14 @@ namespace AtelierXNA
 
             if (A.EstTangible && B.EstTangible)
             {
-               Vector3 norm = B.GetCollider().Normale(A.Position);
-               //La norme est corrigé pour gérer la collision des deux bords de l'objet
-               if (Vector3.Dot((B.Position - A.Position), norm) > 0)
-                  norm = -norm;
-               A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
-               B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+               //Vector3 norm = B.GetCollider().Normale(A.Position);
+               ////La norme est corrigé pour gérer la collision des deux bords de l'objet
+               //if (Vector3.Dot((B.Position - A.Position), norm) > 0)
+               //   norm = -norm;
+               //A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+               //B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
 
-               CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+               //CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
             }
          }
 
@@ -140,8 +140,8 @@ namespace AtelierXNA
 
       void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)
       {
-          A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
-          B.SetPosition(B.Position - normale * 0.01f * B.MasseInverse);
+      //    A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
+      //    B.SetPosition(B.Position - normale * 0.01f * B.MasseInverse);
       }
 
       public int GrosseurListe

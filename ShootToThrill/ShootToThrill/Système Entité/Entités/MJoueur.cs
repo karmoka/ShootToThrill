@@ -15,7 +15,7 @@ namespace AtelierXNA
 
     public class MJoueur : MAvatar
     {
-        float VitesseJoueur { get; set; }
+       float VitesseJoueur { get; set; }
 
        PlayerIndex IndexJoueur { get; set; }
        IOManager ManagerDeControle { get; set; }
@@ -25,8 +25,8 @@ namespace AtelierXNA
         {
             IndexJoueur = indexJoueur;
         }
-        public MJoueur(Game game, AnimatedModel ModèleADeBase, AnimatedModel ModèleAnimé, ObjetPhysique composantePhysique, PlayerIndex indexJoueur)
-           : base(game, ModèleADeBase, ModèleAnimé, composantePhysique)
+        public MJoueur(Game game, string ModèleDeBase, string ModèleAnimé, ObjetPhysique composantePhysique, PlayerIndex indexJoueur)
+           : base(game, ModèleDeBase, ModèleAnimé, composantePhysique)
         {
            IndexJoueur = indexJoueur;
         }
