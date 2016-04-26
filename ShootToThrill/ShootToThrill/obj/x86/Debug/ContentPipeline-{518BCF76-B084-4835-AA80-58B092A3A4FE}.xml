@@ -883,6 +883,15 @@
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Options.xnb</Output>
       <Time>2016-04-25T21:02:22.2459151-04:00</Time>
     </Item>
+    <Item>
+      <Source>Sounds\Menu.wav</Source>
+      <Name>Sounds\Menu</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\Menu.xnb</Output>
+      <Time>2016-04-26T18:44:38.1455311-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{518BCF76-B084-4835-AA80-58B092A3A4FE}</ContentProjectGUID>

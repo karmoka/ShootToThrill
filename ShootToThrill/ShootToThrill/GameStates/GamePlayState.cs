@@ -31,6 +31,7 @@ namespace AtelierXNA
         Viewport[] TableauViewports { get; set; }
 
         MMoteurPhysique ManagerPhysique { get; set; }
+        ManagerAudio ManagerDeSons { get; set; }
         ModelManager ManagerModèle { get; set; }
         ScreenManager ManagerScreen { get; set; }
         IOManager GestionnaireInput { get; set; }
@@ -60,6 +61,7 @@ namespace AtelierXNA
             test.Initialize();
 
             InitialiserManagers();
+            LoaderSons();
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
@@ -68,6 +70,8 @@ namespace AtelierXNA
             ManagerModèle.AjouterModele(test);
 
             LoaderMap();
+
+            ManagerDeSons.JouerSons("Menu");
         }
 
         public void GénérerViewports()
@@ -94,6 +98,10 @@ namespace AtelierXNA
                     TableauViewports[3] = new Viewport(OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2, OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2);
                     break;
             }
+        }
+       void LoaderSons()
+        {
+           ManagerDeSons.AjouterSons("Menu");
         }
 
         /// <summary>
@@ -162,6 +170,7 @@ namespace AtelierXNA
             ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
+            ManagerDeSons = new ManagerAudio(Game);
 
             ManagerScreen.Initialize();
 
@@ -170,6 +179,7 @@ namespace AtelierXNA
             Game.Components.Add(ManagerPhysique);
             Game.Components.Add(ManagerModèle);
             Game.Components.Add(ManagerScreen);
+            Game.Components.Add(ManagerDeSons);
 
             Game.Services.AddService(typeof(ModelManager), ManagerModèle);
             Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
