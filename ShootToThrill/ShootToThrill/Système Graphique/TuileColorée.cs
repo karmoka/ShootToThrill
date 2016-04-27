@@ -5,18 +5,20 @@ using Microsoft.Xna.Framework;
 
 namespace AtelierXNA
 {
-   class TuileColorée : Billboard
+   class BillboardColoréTracing : Billboard
    {
+       IPositionable Tracing { get; set; }
       const int NB_TRIANGLES = 2;
       VertexPositionColor[] Sommets { get; set; }
       Color Couleur { get; set; }
       Matrix matriceSuplémentaire;
 
-      public TuileColorée(Game jeu, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, 
-                          Vector2 étendue, Color couleur, float intervalleMAJ)
+      public BillboardColoréTracing(Game jeu, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, 
+                          Vector2 étendue, Color couleur, float intervalleMAJ, IPositionable tracing)
          : base(jeu, homothétieInitiale, rotationInitiale, positionInitiale, étendue, intervalleMAJ)
       {
          Couleur = couleur;
+         Tracing = tracing;
       }
 
       protected override void CréerTableauSommets()
@@ -40,6 +42,12 @@ namespace AtelierXNA
                Sommets[++NoSommet] = new VertexPositionColor(PtsSommets[i, j + 1], Couleur);
             }
          }
+      }
+
+      public override void Update(GameTime gameTime)
+      {
+          base.Position = Tracing.Position;
+          base.Update(gameTime);
       }
 
       protected override void DessinerTriangleStrip()

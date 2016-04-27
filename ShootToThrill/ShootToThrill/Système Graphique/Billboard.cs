@@ -7,13 +7,14 @@ namespace AtelierXNA
 {
    public abstract class Billboard : PrimitiveDeBaseAnimée, IModele3d
    {
-       Caméra cam { get; set; }
+      Caméra CaméraActuelle { get; set; }
 
       const int NB_TRIANGLES = 2;
       protected Vector3[,] PtsSommets { get; private set; }
       Vector3 Origine { get; set; }
       Vector2 Delta { get; set; }
       protected BasicEffect EffetDeBase { get; private set; }
+      protected Vector3 Position { get; set; }
 
 
       public Billboard(Game jeu, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, 
@@ -32,7 +33,7 @@ namespace AtelierXNA
          CréerTableauSommets();
          base.Initialize();
 
-         cam = CaméraJeu;
+         CaméraActuelle = CaméraJeu;
       }
 
       private void CréerTableauPoints()
@@ -61,9 +62,9 @@ namespace AtelierXNA
          nouveau.CullMode = CullMode.None;
          GraphicsDevice.RasterizerState = nouveau;
 
-         EffetDeBase.World = GetMonde() * Matrix.CreateBillboard(Vector3.Zero, cam.Position, Vector3.Up, null);
-         EffetDeBase.View = cam.Vue;
-         EffetDeBase.Projection = cam.Projection;
+         EffetDeBase.World = GetMonde() * Matrix.CreateBillboard(Vector3.Zero, CaméraActuelle.Position, Vector3.Up, null);
+         EffetDeBase.View = CaméraActuelle.Vue;
+         EffetDeBase.Projection = CaméraActuelle.Projection;
          foreach (EffectPass passeEffet in EffetDeBase.CurrentTechnique.Passes)
          {
             passeEffet.Apply();
@@ -80,7 +81,7 @@ namespace AtelierXNA
 
        public void SetCaméra(Caméra nouvelleCaméra)
       {
-          cam = nouvelleCaméra;
+          CaméraActuelle = nouvelleCaméra;
       }
        public void SetPosition(Vector3 position)
        {

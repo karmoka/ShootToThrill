@@ -41,7 +41,7 @@ namespace AtelierXNA
 
         Jeu jeu { get; set; }
         Lumière LumièreJeu { get; set; }
-        TuileColorée t { get; set; }
+        BillboardColoréTracing t { get; set; }
 
         CubeDeForce test { get; set; }
 
@@ -70,13 +70,13 @@ namespace AtelierXNA
             ManagerPhysique.AjouterObjet(test);
             ManagerModèle.AjouterModele(test);
 
-            t = new TuileColorée(Game, 1f, Vector3.Zero, Vector3.One * 3, new Vector2(5, 5), Color.Red, 1 / 60f);
+            t = new BillboardColoréTracing(Game, 1f, Vector3.Zero, Vector3.One * 3, new Vector2(5, 5), Color.Red, 1 / 60f, ListeJoueur[0]);
             t.Initialize();
             ManagerModèle.AjouterModele(t);
 
             LoaderMap();
 
-            ManagerDeSons.JouerSons("Menu");
+            //ManagerDeSons.JouerSons("Menu");
         }
 
         public void GénérerViewports()
@@ -135,17 +135,19 @@ namespace AtelierXNA
         /// </summary>
         void CréerJoueurs()
         {
-            //for (int i = 0; i < InformationJeu.NBJoueur; ++i)
-            //{
-            //    DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
-            //    ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
-            //}
+            for (int i = 0; i < InformationJeu.NBJoueur; ++i)
+            {
+                MObjetDeBase o = new MObjetDeBase(Game, "Avatar1", 1, Vector3.Zero, Vector3.One );
+                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
+                //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
+                //ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
+            }
            //LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
 
            //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
-           MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
+           //MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
            //ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
-           ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
+           //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
         }
         /// <summary>
         /// Initilise les joueurs et les services qui leurs sont liés.
