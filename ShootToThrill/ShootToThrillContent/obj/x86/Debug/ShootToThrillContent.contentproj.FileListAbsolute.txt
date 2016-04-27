@@ -1,2 +1,3 @@
 c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill-master\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache

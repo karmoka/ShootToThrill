@@ -86,7 +86,7 @@ namespace AtelierXNA
         public float Cadence { get; private set; }
         public int Dommage { get; private set; }
         public float Portée { get; private set; }
-        float AngleDeTir { get; set; }
+        int AngleDeTir { get; set; }
         bool Area { get; set; }
         public int NombreRechargeRestante
         {
@@ -188,10 +188,15 @@ namespace AtelierXNA
             {
                 if (MunitionRestantDansChargeur > MUNITION_MIN)
                 {
-                    DroiteColorée trajectoire = new DroiteColorée(Game, this);
-                    trajectoire.Initialize();
-                    trajectoire.DroiteCollision.coupDeFeu();
-                    ListeTrajectoires.Add(trajectoire);
+                    for (int i = 0; i < NbBallesParTir; ++i)
+                    {
+                        Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
+                        direction = DirectionAléatoire(direction);
+                        DroiteColorée trajectoire = new DroiteColorée(Game, this, direction);
+                        trajectoire.DroiteCollision.coupDeFeu();
+                        trajectoire.Initialize();
+                        ListeTrajectoires.Add(trajectoire);
+                    }
                     GérerMunitions();
                     TrajectoireExiste = true;
                 }
@@ -201,6 +206,24 @@ namespace AtelierXNA
                 }
                 TempsDepuisDernierTir = 0;
             }
+        }
+        public Vector3 DirectionAléatoire(Vector3 axe)
+        {
+            Random générateurAléatoire = new Random();
+            double nouvelAngleX = générateurAléatoire.Next(-AngleDeTir, AngleDeTir);
+            double nouvelAngleY = générateurAléatoire.Next(-AngleDeTir, AngleDeTir);
+
+            nouvelAngleX *= Math.PI / 180;
+            nouvelAngleY *= Math.PI / 180;
+
+            double angleX = Math.Atan2(axe.Z, axe.X);
+            double angleY = Math.Atan2(axe.Y, Math.Sqrt(Math.Pow(axe.X, 2) + Math.Pow(axe.Z, 2)));
+
+            double x = Math.Cos(nouvelAngleX + angleX);
+            double y = Math.Sin(nouvelAngleY + angleY);
+            double z = Math.Sin(nouvelAngleX + angleX);
+
+            return new Vector3((float)x, 0, (float)z);
         }
 
         public void ChangerPositionFusil(Vector3 position)

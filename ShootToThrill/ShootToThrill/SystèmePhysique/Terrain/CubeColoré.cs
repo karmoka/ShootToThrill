@@ -82,32 +82,23 @@ namespace AtelierXNA
 
          Color couleur = Couleur;
 
-         for (int i = 0; i < NB_SOMMETS; ++i)
-         {
-             couleur.B += (byte)(couleur.B / 5);
-             couleur.G += (byte)(couleur.G / 5);
-             couleur.R += (byte)(couleur.R / 5);
-            Sommets1[i] = new VertexPositionColor(PositionsSommets[i], couleur);
-         }
+         Sommets1[0] = new VertexPositionColor(PositionsSommets[0], Color.Gray);
+         Sommets1[1] = new VertexPositionColor(PositionsSommets[1], Color.Gray);
+         Sommets1[2] = new VertexPositionColor(PositionsSommets[2], Color.White);
+         Sommets1[3] = new VertexPositionColor(PositionsSommets[3], Color.White);
+         Sommets1[4] = new VertexPositionColor(PositionsSommets[4], Color.White);
+         Sommets1[5] = new VertexPositionColor(PositionsSommets[5], Color.White);
+         Sommets1[6] = new VertexPositionColor(PositionsSommets[6], Color.Gray);
+         Sommets1[7] = new VertexPositionColor(PositionsSommets[7], Color.Gray);
 
-         int[] tableauImpair = new int[] { 0, 1, 3, 5 };
-         int[] tableauPair = new int[] { 2, 4, 6, 7 };
-
-         for (int i = 0; i < tableauImpair.Length; ++i)
-         {
-             couleur.B += (byte)(couleur.B / 5);
-             couleur.G += (byte)(couleur.G / 5);
-             couleur.R += (byte)(couleur.R / 5);
-            Sommets2[tableauImpair[i]] = new VertexPositionColor(PositionsSommets[tableauImpair[tableauImpair.Length - i - 1]], couleur);
-         }
-
-         for (int i = 0; i < tableauPair.Length; ++i)
-         {
-             couleur.B += (byte)(couleur.B / 5);
-             couleur.G += (byte)(couleur.G / 5);
-             couleur.R += (byte)(couleur.R / 5);
-            Sommets2[tableauPair[i]] = new VertexPositionColor(PositionsSommets[tableauPair[tableauPair.Length - i - 1]], couleur);
-         }
+         Sommets2[0] = new VertexPositionColor(PositionsSommets[3], Color.White);
+         Sommets2[1] = new VertexPositionColor(PositionsSommets[5], Color.White);
+         Sommets2[2] = new VertexPositionColor(PositionsSommets[1], Color.Gray);
+         Sommets2[3] = new VertexPositionColor(PositionsSommets[7], Color.Gray);
+         Sommets2[4] = new VertexPositionColor(PositionsSommets[0], Color.Gray);
+         Sommets2[5] = new VertexPositionColor(PositionsSommets[6], Color.Gray);
+         Sommets2[6] = new VertexPositionColor(PositionsSommets[2], Color.White);
+         Sommets2[7] = new VertexPositionColor(PositionsSommets[4], Color.White);
       }
 
       public void InitialiserSommets(Color couleur)

@@ -161,3 +161,5 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\AudioEngine.xgs
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\Wave Bank.xwb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\Sound Bank.xsb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill-master\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\ShootToThrill.exe
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill-master\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\ShootToThrill.pdb
