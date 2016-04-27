@@ -168,8 +168,9 @@
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\SphereCollision.cs" />
+    <Compile Include="SystèmePhysique\CubeDeForces\SphereDeForce.cs" />
+    <Compile Include="SystèmePhysique\CubeDeForces\VolumeDeForce.cs" />
     <Compile Include="SystèmePhysique\CubeDeForces\CubeDeForce.cs" />
-    <Compile Include="SystèmePhysique\CubeDeForces\CubeGravité.cs" />
     <Compile Include="SystèmePhysique\InformationIntersection.cs" />
     <Compile Include="SystèmePhysique\MMoteurPhysique.cs" />
     <Compile Include="SystèmePhysique\MoteurPhysique.cs" />

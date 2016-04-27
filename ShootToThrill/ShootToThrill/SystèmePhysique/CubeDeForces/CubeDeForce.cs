@@ -12,57 +12,36 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
-   public class CubeDeForce : ObjetPhysique, IPhysique, IModele3d
-   {
-      IModele3d ComposanteGraphique { get; set; }
-      MCubeCollision Collision { get; set; }
-      Vector3 Dimension { get; set; }
+    public class CubeDeForce : VolumeDeForce
+    {
+        Vector3 NouvelleGravité { get; set; }
+        Vector3 Dimension { get; set; }
 
-      public CubeDeForce(Game game, IModele3d composanteGraphique, Vector3 position, Vector3 dimension)
-         : base(game, position)
-      {
-         Dimension = dimension;
-         ComposanteGraphique = composanteGraphique;
-      }
+        public CubeDeForce(Game game, Vector3 position, Vector3 dimension, Vector3 nouvelleGravité)
+            : base(game , position)
+        {
+            Dimension = dimension;
+            NouvelleGravité = nouvelleGravité;
+        }
 
-      public override void Initialize()
-      {
-         ComposanteGraphique.Initialize();
-         Collision = new MCubeCollision(this.Position, Dimension, Vector3.Zero);
-         base.Initialize();
+        public override void Initialize()
+        {
+            ComposanteGraphique = new CubeColoré(Game, 1f, Vector3.Zero, this.Position, Color.White, Dimension, 1/60f);
+            Collision = new MCubeCollision(this.Position, Dimension, Vector3.Zero);
 
-         EstTangible = false;
-         EstImmuable = true;
-      }
+            base.Initialize();
+        }
 
-      public virtual Vector3 GetForce(Vector3 position)
-      {
-         return Vector3.Zero;
-      }
+        public override Vector3 GetForce(Vector3 position)
+        {
+            return NouvelleGravité;
+        }
 
-      public override Collider GetCollider()
-      {
-         return Collision;
-      }
 
-      public override void Update(GameTime gameTime)
-      {
+        public override void Update(GameTime gameTime)
+        {
 
-         base.Update(gameTime);
-      }
-      public ObjetPhysique GetObjetPhysique()
-      {
-         return this as ObjetPhysique;
-      }
-      public void SetCaméra(Caméra cam)
-      {
-         ComposanteGraphique.SetCaméra(cam);
-      }
-      public override void Draw(GameTime gameTime)
-      {
-         ComposanteGraphique.Draw(gameTime);
-         base.Draw(gameTime);
-      }
-
-   }
+            base.Update(gameTime);
+        }
+    }
 }

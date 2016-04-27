@@ -151,9 +151,9 @@ namespace AtelierXNA
 
             CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
          }
-         if(autre is CubeDeForce)
+         if(autre is VolumeDeForce)
          {
-            AjouterForce((autre as CubeDeForce).GetForce(this.Position));
+            AjouterForce((autre as VolumeDeForce).GetForce(this.Position));
          }
       }
 

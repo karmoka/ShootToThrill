@@ -43,7 +43,7 @@ namespace AtelierXNA
         Lumière LumièreJeu { get; set; }
         BillboardColoréTracing t { get; set; }
 
-        CubeDeForce test { get; set; }
+        VolumeDeForce test { get; set; }
 
         public GamePlayState(Game game, InformationGame informationJeu)
             : base(game)
@@ -58,7 +58,8 @@ namespace AtelierXNA
             EstActivé = true;
             EstDétruit = false;
 
-            test = new CubeGravité(Game, new MObjetDeBase(Game, "Cube", 1f, Vector3.Zero, new Vector3(3, 2, 3)), new Vector3(3, 2, 3), Vector3.One, new Vector3(0, 10, 0));
+            //test = new CubeDeForce(Game, new Vector3(3, 2, 3), Vector3.One, new Vector3(0, 10, 0));
+            test = new SphereDeForce(Game, new Vector3(3,2,3), 1f, new Vector3(0, 20, 0));
             test.Initialize();
 
             InitialiserManagers();
