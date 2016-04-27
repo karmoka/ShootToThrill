@@ -137,7 +137,7 @@ namespace AtelierXNA
         {
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-                MObjetDeBase o = new MObjetDeBase(Game, "Avatar1", 1, Vector3.Zero, Vector3.One );
+                MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.One );
                 ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
                 //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
                 //ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));

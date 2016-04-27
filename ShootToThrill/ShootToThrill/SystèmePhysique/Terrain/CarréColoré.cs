@@ -115,5 +115,9 @@ namespace AtelierXNA
       {
           return Monde;
       }
+      public void SetRotation(Vector3 rotation)
+      {
+
+      }
    }
 }

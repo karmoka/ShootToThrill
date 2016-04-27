@@ -85,6 +85,11 @@ namespace AtelierXNA
       {
           Modèle.ChangerCouleur(couleur);
       }
+      public override void SetRotation(Vector3 rotation)
+      {
+          Modèle.SetRotation(rotation);
+          base.SetRotation(rotation);
+      }
       public override void SetPosition(Vector3 position)
       {
           Modèle.SetPosition(position);

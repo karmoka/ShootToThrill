@@ -87,6 +87,10 @@ namespace AtelierXNA
        {
            //this.Position = position;
        }
+       public void SetRotation(Vector3 rotation)
+       {
+
+       }
    }
 }
 

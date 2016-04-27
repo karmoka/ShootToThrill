@@ -17,6 +17,7 @@ namespace AtelierXNA
     /// </summary>
    public interface IModele3d
    {
+       void SetRotation(Vector3 nouvelleRotation);
       void SetPosition(Vector3 position);
       void SetCaméra(Caméra caméra);
       void Draw(GameTime gameTime);

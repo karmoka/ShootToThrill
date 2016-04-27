@@ -63,6 +63,11 @@ namespace AtelierXNA
          ComposanteGraphique.SetPosition(position);
          ComposantePhysique.SetPosition(position);
       }
+      public void SetRotation(Vector3 rotation)
+      {
+          ComposanteGraphique.SetRotation(rotation);
+          ComposantePhysique.SetRotation(rotation);
+      }
       public override void Draw(GameTime gameTime)
       {
          ComposanteGraphique.Draw(gameTime);

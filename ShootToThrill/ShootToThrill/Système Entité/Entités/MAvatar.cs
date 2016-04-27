@@ -208,6 +208,12 @@ namespace AtelierXNA
             ComposanteGraphique.SetCaméra(cam);
         }
 
+        public void SetRotation(Vector3 rotation)
+        {
+            ComposanteGraphique.SetRotation(rotation);
+            ComposantePhysique.SetRotation(rotation);
+        }
+
        public Collider GetCollider()
         {
            return new SphereCollision(this.Position, 2f);

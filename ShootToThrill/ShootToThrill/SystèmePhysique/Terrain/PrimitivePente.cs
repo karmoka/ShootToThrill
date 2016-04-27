@@ -26,6 +26,11 @@ namespace AtelierXNA
         {
 
         }
+        public void SetRotation(Vector3 rotation)
+        {
+            //RotationInitiale = rotation;
+        }
+
         Color Couleur { get; set; }
         VertexPositionColor[] SommetsPremièreStrip { get; set; }
         VertexPositionColor[] SommetsDeuxièmeStrip { get; set; }
@@ -37,6 +42,7 @@ namespace AtelierXNA
         public Vector3 OriginePosition { get; set; }
         BasicEffect EffetDeBase { get; set; }
         Vector3[] PositionsSommets { get; set; }
+
 
         public PrimitivePente(Game game, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, Color couleur, Vector3 dimension, float intervalleMAJ)
             : base(game, homothétieInitiale, rotationInitiale, positionInitiale, intervalleMAJ)

@@ -47,6 +47,10 @@ namespace AtelierXNA
         {
 
         }
+        public void SetRotation(Vector3 rotation)
+        {
+
+        }
 
         public override void Initialize()
         {

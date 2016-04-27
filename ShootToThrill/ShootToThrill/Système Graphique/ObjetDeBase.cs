@@ -97,5 +97,10 @@ namespace AtelierXNA
          CalculerMonde();
          this.Position = position;
       }
+
+       public void SetRotation(Vector3 rotation)
+      {
+          Rotation = rotation;
+      }
    }
 }

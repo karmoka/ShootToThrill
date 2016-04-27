@@ -47,6 +47,10 @@ namespace AtelierXNA
         {
 
         }
+        public void SetRotation(Vector3 rotation)
+        {
+
+        }
         public CarréColoré CarréColoré { get; private set; }
 
         public Node(Game game, bool walkable, Vector3 positionMonde, int grilleX, int grilleZ)

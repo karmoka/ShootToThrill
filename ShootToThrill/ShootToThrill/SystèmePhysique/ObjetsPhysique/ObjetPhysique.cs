@@ -32,6 +32,7 @@ namespace AtelierXNA
                    throw new NotFiniteNumberException();
            }
        }
+       private Vector3 Rotation { get; set; }
       protected bool EstImmuable { get; set; }
       public Vector3 Vitesse { get; protected set; }
       private Vector3 Accélération { get; set; }
@@ -163,6 +164,11 @@ namespace AtelierXNA
       public virtual void SetPosition(Vector3 nouvellePosition)
       {
          Position = nouvellePosition;
+      }
+
+       public virtual void SetRotation(Vector3 rotation)
+      {
+          Rotation = rotation;
       }
 
       void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)

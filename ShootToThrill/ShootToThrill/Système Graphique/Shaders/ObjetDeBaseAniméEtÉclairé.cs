@@ -133,6 +133,10 @@ namespace AtelierXNA
          base.Update(gameTime);
          LumièreJeu.Position = CaméraJeu.Position;
       }
+      public void SetRotation(Vector3 rotation)
+      {
+          Rotation = rotation;
+      }
 
       public override void Draw(GameTime gameTime)
       {

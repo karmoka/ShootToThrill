@@ -25,6 +25,10 @@ namespace AtelierXNA
       {
          Position = position;
       }
+      public void SetRotation(Vector3 rotation)
+      {
+          Rotation = rotation;
+      }
 
       const int NB_SOMMETS = 8;
 
