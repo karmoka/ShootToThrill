@@ -12,21 +12,17 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
-   public enum Sons { Menu, Menu_Selectionné, GameState_Change, GamePlay, Tir_Pistol, Tir_Shotgun, Tir_Mitraillette, Tir_Railgun, PickUp}
-
    public struct ItemAudio
    {
       public Cue audioCue;
       public bool Joue;
       public bool EnPause;
       public string Nom;
-   };
+   };
 
    public class ManagerAudio : Microsoft.Xna.Framework.DrawableGameComponent
    {
-      //string[] NomSons = { "MusiqueMenu", "SonsSelectionné","ChangementState","MusiqueGameplay","TirPistol","TirShotgun","TirMitraillette","TirRailgun","PickUpObjet"};
       const string RÉPERTOIRE_SONS = "Sounds";
-      RessourcesManager<SoundEffect> GestionnaireAudio;
       List<ItemAudio> ListeSons { get; set; }
 
       private AudioEngine engine { get; set; }

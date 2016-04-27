@@ -26,6 +26,10 @@ namespace AtelierXNA
       public Type_Collider Type { get; set; }
 
       public abstract Vector3 Normale(Vector3 positionAutreObjet);
+      public virtual void Initialize()
+      {
+
+      }
 
       public abstract float DistanceBord(Vector3 position);
       public float DistanceImpact { get; set; }

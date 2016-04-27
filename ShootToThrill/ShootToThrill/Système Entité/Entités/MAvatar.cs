@@ -87,8 +87,6 @@ namespace AtelierXNA
            if(EstAnimé)
            {
               AnimationClip clip = AnimationModèle.Clips[0];
-
-              // And play the clip
               AnimationPlayer player = (ComposanteGraphique as AnimatedModel).PlayClip(clip);
               player.Looping = true;
            }
@@ -105,7 +103,7 @@ namespace AtelierXNA
                 BougerAvatar();
                 BougerArme();
 
-               ComposanteGraphique.SetPosition(ComposantePhysique.Position);
+                ComposanteGraphique.SetPosition(ComposantePhysique.Position);
 
                 TempsDepuisMAJ = 0;
             }

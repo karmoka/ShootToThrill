@@ -143,10 +143,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Cube.xnb</Output>
-      <Time>2016-04-25T10:58:51.0240225-04:00</Time>
+      <Time>2016-04-26T20:44:16.8650744-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Cube_0.xml</Key>
-        <Value>2016-04-25T12:22:12.9523709-04:00</Value>
+        <Value>2016-04-26T20:44:28.5437424-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -753,7 +753,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Cube_0.xml</Output>
-      <Time>2016-04-25T10:58:51.0240225-04:00</Time>
+      <Time>2016-04-26T20:44:16.8650744-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Ennemi1.fbx</Source>

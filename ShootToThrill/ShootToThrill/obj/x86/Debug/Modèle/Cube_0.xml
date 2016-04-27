@@ -6,7 +6,7 @@
       <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Cube.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
-    <Transform>10 0 0 0 0 10 0 0 0 0 10 0 0 0 0 1</Transform>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
     <Positions>-1 1 -1 1 1 -1 1 1 1 -1 1 1 -1 -1 -1 1 -1 -1 1 -1 1 -1 -1 1</Positions>
     <Geometry>
       <Batch>

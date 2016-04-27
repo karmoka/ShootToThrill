@@ -71,7 +71,7 @@ namespace AtelierXNA
 
             LoaderMap();
 
-            ManagerDeSons.JouerSons("Menu");
+            //ManagerDeSons.JouerSons("Menu");
         }
 
         public void GénérerViewports()
@@ -135,7 +135,7 @@ namespace AtelierXNA
             //    DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
             //    ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
             //}
-           LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
+           //LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
 
            //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
            //ObjetDeBase o = new ObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
@@ -227,6 +227,7 @@ namespace AtelierXNA
             EstActivé = true;
         }
 
+        bool bidon = true;
         public void Update(GameTime gametime)
         {
            float time = (float)gametime.ElapsedGameTime.TotalSeconds;
@@ -243,6 +244,15 @@ namespace AtelierXNA
                     OptionActivé = true;
                 }
             }
+
+           if(bidon && GestionnaireInput.EstNouvelleTouche(Keys.G, PlayerIndex.One))
+           {
+              Grenade g = new Grenade(Game, new Vector3(0,4,0), Vector3.Up * 3, "Scene2");
+              g.Initialize();
+              ManagerModèle.AjouterModele(g);
+              ManagerPhysique.AjouterObjet(g);
+              bidon = false;
+           }
         }
 
         public void Draw(GameTime gametime, float ordre)

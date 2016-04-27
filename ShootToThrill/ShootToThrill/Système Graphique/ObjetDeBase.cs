@@ -64,16 +64,16 @@ namespace AtelierXNA
 
             foreach (ModelMeshPart portionDeMaillage in maille.MeshParts)
             {
-               portionDeMaillage.Effect = MyEffect;
-               MyEffect.Parameters["WorldMatrix"].SetValue(mondeLocal * maille.ParentBone.Transform);
-               MyEffect.Parameters["ViewMatrix"].SetValue(CaméraJeu.Vue);
-               MyEffect.Parameters["ProjectionMatrix"].SetValue(CaméraJeu.Projection);
-               MyEffect.Parameters["WorldInverseTransposeMatrix"].SetValue(worldInverseTransposeMatrix);
-               //BasicEffect effet = (BasicEffect)portionDeMaillage.Effect;
-               //effet.EnableDefaultLighting();
-               //effet.Projection = CaméraJeu.Projection;
-               //effet.View = CaméraJeu.Vue;
-               //effet.World = mondeLocal;
+               //portionDeMaillage.Effect = MyEffect;
+               //MyEffect.Parameters["WorldMatrix"].SetValue(mondeLocal * maille.ParentBone.Transform);
+               //MyEffect.Parameters["ViewMatrix"].SetValue(CaméraJeu.Vue);
+               //MyEffect.Parameters["ProjectionMatrix"].SetValue(CaméraJeu.Projection);
+               //MyEffect.Parameters["WorldInverseTransposeMatrix"].SetValue(worldInverseTransposeMatrix);
+               BasicEffect effet = (BasicEffect)portionDeMaillage.Effect;
+               effet.EnableDefaultLighting();
+               effet.Projection = CaméraJeu.Projection;
+               effet.View = CaméraJeu.Vue;
+               effet.World = mondeLocal;
             }
             maille.Draw();
          }

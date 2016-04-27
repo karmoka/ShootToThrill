@@ -15,6 +15,8 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
+      const float RAYON_DÉFAUT = 1.25f;
+
        public List<ObjetPhysique> ListeCollision { get; private set; }
        protected Options OptionJeu { get; private set; }
 
@@ -37,13 +39,25 @@ namespace AtelierXNA
       private List<Vector3> Forces { get; set; }
       private Vector3 ForceGravitationnelle { get; set; }
       protected float MasseInverse { get; private set; }
-      
+      private Collider VolumeDeCollision { get; set; }
+
+      public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse, Collider volumeCollision)
+         : base(game)
+      {
+         Position = position;
+         Vitesse = vitesse;
+         MasseInverse = masseInverse;
+         VolumeDeCollision = volumeCollision;
+
+         EstImmuable = false;
+      }
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse)
          :base(game)
       {
          Position = position;
          Vitesse = vitesse;
          MasseInverse = masseInverse;
+         VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
 
          EstImmuable = false;
       }
@@ -53,6 +67,7 @@ namespace AtelierXNA
           Position = description.Position;
           Vitesse = description.Vitesse;
           MasseInverse = description.MasseInverse;
+          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
 
           EstImmuable = description.EstImmuable;
       }
@@ -64,6 +79,7 @@ namespace AtelierXNA
           Vitesse = Vector3.Zero;
           MasseInverse = 1f;
           EstImmuable = false;
+          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
       }
 
       public override void Initialize()
@@ -72,6 +88,7 @@ namespace AtelierXNA
           EstTangible = true;
           OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
+          VolumeDeCollision.Initialize();
           ForceGravitationnelle = OptionJeu.Gravité;
           Forces = new List<Vector3>();
           ForceRésultante = Vector3.Zero;
@@ -127,7 +144,7 @@ namespace AtelierXNA
          {
             Vector3 norm = autre.GetCollider().Normale(this.Position);
             //La norme est corrigé pour gérer la collision des deux bords de l'objet
-            if (Vector3.Dot((autre.Position - this.Position), norm) > 0)
+            if (Vector3.Dot((autre.Position - this.Position), norm) >= 0)
                norm = -norm;
             this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
 
@@ -137,7 +154,6 @@ namespace AtelierXNA
          {
             AjouterForce((autre as CubeDeForce).GetForce(this.Position));
          }
-
       }
 
       public void SetVitesse(Vector3 vitesse)

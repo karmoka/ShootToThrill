@@ -171,6 +171,7 @@
     <Compile Include="SystèmePhysique\InformationIntersection.cs" />
     <Compile Include="SystèmePhysique\MMoteurPhysique.cs" />
     <Compile Include="SystèmePhysique\MoteurPhysique.cs" />
+    <Compile Include="Système Entité\Grenade.cs" />
     <Compile Include="SystèmePhysique\ObjetsPhysique\MCubePhysique.cs" />
     <Compile Include="SystèmePhysique\ObjetsPhysique\MCubePhysiqueMobile.cs" />
     <Compile Include="SystèmePhysique\ObjetsPhysique\ModelPhysique.cs" />
