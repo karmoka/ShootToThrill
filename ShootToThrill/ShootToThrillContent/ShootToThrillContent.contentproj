@@ -23,7 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnimationPipeline">
-      <HintPath>..\..\..\..\..\Desktop\New folder\AnimationPipeline\bin\x86\Debug\AnimationPipeline.dll</HintPath>
+      <HintPath>..\ShootToThrill\AnimationPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
@@ -82,11 +82,6 @@
       <Name>Boss2</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Modèle\butterfly.fbx">
-      <Name>butterfly</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>AnimationProcessor</Processor>
     </Compile>
     <Compile Include="Modèle\Cube.fbx">
       <Name>Cube</Name>

@@ -8,7 +8,6 @@ Content\Modèle\Bazooka.xnb
 Content\Modèle\Boss.xnb
 Content\Modèle\Boss1.xnb
 Content\Modèle\Boss2.xnb
-Content\Modèle\butterfly.xnb
 Content\Modèle\Cube.xnb
 Content\Modèle\Ennemi1.xnb
 Content\Modèle\Ennemi2.xnb
@@ -35,6 +34,7 @@ Content\Description\Joueur3.xnb
 Content\Description\Machinegun.xnb
 Content\Description\Railgun.xnb
 Content\Description\Shotgun.xnb
+Content\Options.xnb
 Content\Effets\Lumière.xnb
 Content\Effets\Phong.xnb
 Content\Modèle\Portail\material_2.xnb
@@ -62,8 +62,8 @@ Content\Textures\ThumbnailP3.xnb
 Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
-Content\Options.xnb
 Content\Sounds\Menu.xnb
+Content\Modèle\butterfly.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

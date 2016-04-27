@@ -138,9 +138,9 @@ namespace AtelierXNA
            //LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
 
            //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
-           //ObjetDeBase o = new ObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
-           ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
-           //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
+           MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
+           //ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
+           ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
         }
         /// <summary>
         /// Initilise les joueurs et les services qui leurs sont liés.
