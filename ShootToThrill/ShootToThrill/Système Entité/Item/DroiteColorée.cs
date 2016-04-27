@@ -39,10 +39,10 @@ namespace AtelierXNA
         float TempsÉcouléDepuisMAJ { get; set; }
         bool EstDessinée { get; set; }
 
-        public DroiteColorée(Game game, Fusil arme)
-            : base(game, 1f, Vector3.Zero, arme.Position, 0.05f)
+        public DroiteColorée(Game game, Fusil arme, Vector3 direction)
+            : base(game, 1f, Vector3.Zero, arme.Position, 0.05f + 20)
         {
-            Direction = new Vector3(arme.Direction.X, 0, -arme.Direction.Y);
+            Direction = direction;
             Arme = arme;
             Point = arme.Position;
             Longueur = arme.Portée;

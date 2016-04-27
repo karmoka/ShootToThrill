@@ -53,16 +53,23 @@ namespace AtelierXNA
                 }
             }
 
-            DansTrajectoire.OrderBy(x => x.GetCollider().DistanceImpact);
+            List<float> distances = new List<float>();
 
-            if (DansTrajectoire.Count > 1)
+            foreach (ObjetPhysique objet in DansTrajectoire)
             {
-                Longueur = DansTrajectoire[1].GetCollider().DistanceImpact;
+                distances.Add(objet.GetCollider().DistanceImpact);
+            }
+
+            distances.OrderBy(x => x);
+
+            if (DansTrajectoire.Count > 0)
+            {
+                Longueur = distances[0];
                 PointIntersection = Point + VecteurUnitaire * Longueur;
 
-                if (DansTrajectoire[1] is Avatar)
+                if (DansTrajectoire[0] is Avatar)
                 {
-                    (DansTrajectoire[1] as Avatar).RetirerVie(Arme.Dommage);
+                    (DansTrajectoire[0] as Avatar).RetirerVie(Arme.Dommage);
                 }
             }
         }

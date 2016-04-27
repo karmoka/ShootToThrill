@@ -33,7 +33,7 @@ namespace ProjetPrincipal.Data
         public float Cadence { get;  set; }
         public int Dommage { get;  set; }
         public float Portée { get;  set; }
-        public float AngleDeTir { get;  set; }
+        public int AngleDeTir { get;  set; }
         public bool Area { get;  set; }
         public int NbBallesParTir { get; set; }
     }
