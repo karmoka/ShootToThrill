@@ -41,6 +41,7 @@ namespace AtelierXNA
 
         Jeu jeu { get; set; }
         Lumière LumièreJeu { get; set; }
+        TuileColorée t { get; set; }
 
         CubeDeForce test { get; set; }
 
@@ -69,9 +70,13 @@ namespace AtelierXNA
             ManagerPhysique.AjouterObjet(test);
             ManagerModèle.AjouterModele(test);
 
+            t = new TuileColorée(Game, 1f, Vector3.Zero, Vector3.One * 3, new Vector2(5, 5), Color.Red, 1 / 60f);
+            t.Initialize();
+            ManagerModèle.AjouterModele(t);
+
             LoaderMap();
 
-            //ManagerDeSons.JouerSons("Menu");
+            ManagerDeSons.JouerSons("Menu");
         }
 
         public void GénérerViewports()

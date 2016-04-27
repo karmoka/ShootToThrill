@@ -194,7 +194,7 @@ namespace AtelierXNA
 
       protected override void Draw(GameTime gameTime)
       {
-         GraphicsDevice.Clear(Color.White);
+         GraphicsDevice.Clear(Color.Black);
 
          GestionnaireDeSprites.Begin();
          base.Draw(gameTime);

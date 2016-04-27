@@ -162,6 +162,8 @@
     <Compile Include="Système Graphique\Shaders\ParamètresShaders.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreDeBase.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreÉclairée.cs" />
+    <Compile Include="Système Graphique\Billboard.cs" />
+    <Compile Include="Système Graphique\TuileColorée.cs" />
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />

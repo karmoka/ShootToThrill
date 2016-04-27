@@ -29,7 +29,7 @@
       <Time>2016-04-27T07:52:31.9885866-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Avatar0_0.xml</Key>
-        <Value>2016-04-27T08:01:46.693576-04:00</Value>
+        <Value>2016-04-27T08:13:13.9666055-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -42,7 +42,7 @@
       <Time>2016-04-27T07:52:31.9915812-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Avatar1_0.xml</Key>
-        <Value>2016-04-27T08:01:46.8145518-04:00</Value>
+        <Value>2016-04-27T08:13:14.0896178-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -55,7 +55,7 @@
       <Time>2016-04-27T07:52:31.9945758-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Avatar2_0.xml</Key>
-        <Value>2016-04-27T08:01:46.903534-04:00</Value>
+        <Value>2016-04-27T08:13:14.2096298-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -68,7 +68,7 @@
       <Time>2016-04-27T07:52:31.9975704-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Avatar3_0.xml</Key>
-        <Value>2016-04-27T08:01:46.9775192-04:00</Value>
+        <Value>2016-04-27T08:13:14.291638-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -81,7 +81,7 @@
       <Time>2016-04-27T07:52:32.000565-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Bazooka_0.xml</Key>
-        <Value>2016-04-27T08:01:47.0545038-04:00</Value>
+        <Value>2016-04-27T08:13:14.3606449-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -94,7 +94,7 @@
       <Time>2016-04-27T07:52:32.0045578-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Boss_0.xml</Key>
-        <Value>2016-04-27T08:01:47.143486-04:00</Value>
+        <Value>2016-04-27T08:13:14.4536542-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -107,7 +107,7 @@
       <Time>2016-04-27T07:52:32.0075524-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Boss1_0.xml</Key>
-        <Value>2016-04-27T08:01:47.2204706-04:00</Value>
+        <Value>2016-04-27T08:13:14.4996588-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -120,7 +120,7 @@
       <Time>2016-04-27T07:52:32.010547-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Boss2_0.xml</Key>
-        <Value>2016-04-27T08:01:47.3954356-04:00</Value>
+        <Value>2016-04-27T08:13:14.6926781-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Time>2016-04-27T07:52:32.0145398-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Cube_0.xml</Key>
-        <Value>2016-04-27T08:03:06.7345646-04:00</Value>
+        <Value>2016-04-27T08:13:14.7456834-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -146,7 +146,7 @@
       <Time>2016-04-27T07:52:32.0175344-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Ennemi1_0.xml</Key>
-        <Value>2016-04-27T08:03:06.9085298-04:00</Value>
+        <Value>2016-04-27T08:13:14.8146903-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -159,7 +159,7 @@
       <Time>2016-04-27T07:52:32.0195308-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Ennemi2_0.xml</Key>
-        <Value>2016-04-27T08:03:06.977516-04:00</Value>
+        <Value>2016-04-27T08:13:14.8666955-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -172,7 +172,7 @@
       <Time>2016-04-27T07:52:32.0225254-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Ennemi3_0.xml</Key>
-        <Value>2016-04-27T08:03:07.0315052-04:00</Value>
+        <Value>2016-04-27T08:13:14.921701-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -185,7 +185,7 @@
       <Time>2016-04-27T07:52:32.02552-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\ObjetDrop_0.xml</Key>
-        <Value>2016-04-27T08:03:07.0794956-04:00</Value>
+        <Value>2016-04-27T08:13:14.9937082-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -198,7 +198,7 @@
       <Time>2016-04-27T07:52:32.0285146-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Pistol_0.xml</Key>
-        <Value>2016-04-27T08:03:07.1234868-04:00</Value>
+        <Value>2016-04-27T08:13:15.0537142-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -211,7 +211,7 @@
       <Time>2016-04-27T07:52:32.030511-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Portail_0.xml</Key>
-        <Value>2016-04-27T08:03:07.1954724-04:00</Value>
+        <Value>2016-04-27T08:13:15.1637252-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -224,7 +224,7 @@
       <Time>2016-04-27T07:52:32.0564642-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\PortailJoueur_0.xml</Key>
-        <Value>2016-04-27T08:03:08.0353044-04:00</Value>
+        <Value>2016-04-27T08:13:16.0898178-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -237,7 +237,7 @@
       <Time>2016-04-27T07:52:32.0594588-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\PortailMonstre_0.xml</Key>
-        <Value>2016-04-27T08:03:08.3282458-04:00</Value>
+        <Value>2016-04-27T08:13:16.3838472-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -250,7 +250,7 @@
       <Time>2016-04-27T07:52:32.0624534-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Railgun_0.xml</Key>
-        <Value>2016-04-27T08:03:08.3782358-04:00</Value>
+        <Value>2016-04-27T08:13:16.4628551-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -263,7 +263,7 @@
       <Time>2016-04-27T07:52:32.065448-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Scene1_0.xml</Key>
-        <Value>2016-04-27T08:03:08.422227-04:00</Value>
+        <Value>2016-04-27T08:13:16.531862-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -276,7 +276,7 @@
       <Time>2016-04-27T07:52:32.070439-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Scene2_0.xml</Key>
-        <Value>2016-04-27T08:03:08.477216-04:00</Value>
+        <Value>2016-04-27T08:13:16.5848673-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -289,7 +289,7 @@
       <Time>2016-04-27T07:52:32.0724354-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Shotgun_0.xml</Key>
-        <Value>2016-04-27T08:03:08.5262062-04:00</Value>
+        <Value>2016-04-27T08:13:16.631872-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -302,7 +302,7 @@
       <Time>2016-04-27T07:52:32.0744318-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\Sphere_0.xml</Key>
-        <Value>2016-04-27T08:03:08.5911932-04:00</Value>
+        <Value>2016-04-27T08:13:16.6808769-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -315,7 +315,7 @@
       <Time>2016-04-27T07:52:32.0774264-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\SupportFusil_0.xml</Key>
-        <Value>2016-04-27T08:03:08.6491816-04:00</Value>
+        <Value>2016-04-27T08:13:16.7548843-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -328,7 +328,7 @@
       <Time>2016-04-27T07:52:32.080421-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\SupportFusil2_0.xml</Key>
-        <Value>2016-04-27T08:03:08.6911732-04:00</Value>
+        <Value>2016-04-27T08:13:16.8088897-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -341,7 +341,7 @@
       <Time>2016-04-27T07:52:32.0894048-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\unicorn_0.xml</Key>
-        <Value>2016-04-27T08:03:08.8591396-04:00</Value>
+        <Value>2016-04-27T08:13:17.0109099-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -354,7 +354,7 @@
       <Time>2016-04-27T07:52:32.0923994-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Modèle\untitled_0.xml</Key>
-        <Value>2016-04-27T08:03:08.9791156-04:00</Value>
+        <Value>2016-04-27T08:13:17.11192-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -887,7 +887,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\201457989\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll</Key>
-        <Value>2016-04-27T07:52:30.5591642-04:00</Value>
+        <Value>2016-04-27T08:12:35.4707563-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
