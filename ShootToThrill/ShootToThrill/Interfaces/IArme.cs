@@ -10,8 +10,8 @@ namespace AtelierXNA
         void Attaquer();
         void Recharger();
 
-        void ChangerPosition(IPositionable i);
-        void ChangerRotation(IPositionable i);
+        void SetPosition(IPositionable i);
+        void SetRotation(IPositionable i);
 
     }
 }

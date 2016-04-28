@@ -15,7 +15,7 @@ namespace AtelierXNA
     public class Portail : Item
     {
         public Portail(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ)
-            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ)
+            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ, false)
         {
         }
 

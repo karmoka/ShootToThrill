@@ -16,7 +16,7 @@ namespace AtelierXNA
     {
         public string NomFusil { get; private set; }
         public Munition(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ, string nomFusil)
-            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ)
+            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ, true)
         {
             NomFusil = nomFusil;
         }

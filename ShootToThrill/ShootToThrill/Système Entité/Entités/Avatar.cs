@@ -23,7 +23,8 @@ namespace AtelierXNA
                   INDEX_PREMIER_FUSIL = 0,
                   NOMBRE_FUSIL_MAX = 5,
                   AUCUNE_MUNITION = 0,
-                  VARIATION_INDEX = 1;
+                  VARIATION_INDEX = 1,
+                  HAUTEUR_Y_NÉGATIF_MAX = -100;
 
         protected ModelManager ManagerModèle { get; set; }
         protected MoteurPhysique MoteurPhysique { get; set; }
@@ -127,7 +128,10 @@ namespace AtelierXNA
 
         protected virtual void BougerAvatar()
         {
-
+            if (Position.Y < HAUTEUR_Y_NÉGATIF_MAX)
+            {
+                Mourir();
+            }
         }
 
         void CorrigerVitesse()
@@ -138,6 +142,11 @@ namespace AtelierXNA
                 float ratio = LongueurComposanteXZ / VITESSE_MAX;
                 Vitesse = new Vector3(Vitesse.X / ratio, Vitesse.Y, Vitesse.Z / ratio);
             }
+        }
+
+        protected virtual void ModifierDirection(Vector2 direction)
+        {
+            RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
         }
 
         public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
@@ -151,28 +160,14 @@ namespace AtelierXNA
             return vie >= MORT ? vie <= VieMax ? vie : VieMax : MORT;
         }
 
-        //void GérerVie()
-        //{
-        //    if (!EstMort)
-        //    {
-        //        GérerDomage();
-        //    }
-        //}
-
-        //void GérerDomage()
-        //{
-        //    //S'il y a eu collision entre un bonhomme et une balle
-        //    //Trouver le type d'arme
-        //    int domage = 0; //Donner le dommage
-        //    RetirerVie(domage);
-        //}
-
         protected void AjouterVie(Soin soin)
         {
             if (!EstMort)
             {
                 Vie += soin.NombreSoin;
             }
+            MoteurPhysique.EnleverObjet(soin);
+            ManagerModèle.EnleverModèle(soin);
         }
 
         public void RetirerVie(int domageReçu)
@@ -201,12 +196,12 @@ namespace AtelierXNA
         protected void RetirerArme(Fusil fusil)
         {
             ListeArmes.Remove(fusil);
-            Index = ListeArmes.FindIndex(x => x == ArmeSélectionnée);
+            Index = ListeArmes.FindIndex(x => x.NomArme == ArmeSélectionnée.NomArme);
         }
 
         protected void Tirer()
         {
-            ArmeSélectionnée.Tirer();
+            ArmeSélectionnée.Attaquer();
         }
 
         protected void Recharger()
@@ -229,12 +224,13 @@ namespace AtelierXNA
         {
             if (fusil.Enabled)
             {
-                if (ListeArmes == null || !ListeArmes.Exists(x => x == fusil))
+                if (ListeArmes == null || !ListeArmes.Exists(x => x.NomArme == fusil.NomArme))
                 {
                     ListeArmes.Add(fusil);
                     Index = ListeArmes.FindIndex(x => x == fusil);
-                    ManagerModèle.AjouterModele(fusil);
                 }
+                MoteurPhysique.EnleverObjet(fusil);
+                ManagerModèle.EnleverModèle(fusil);
             }
         }
 
@@ -254,12 +250,14 @@ namespace AtelierXNA
                 {
                     ListeArmes.Find(x => x.NomArme == munition.NomFusil).RécupérerMunitions();
                 }
+                MoteurPhysique.EnleverObjet(munition);
+                ManagerModèle.EnleverModèle(munition);
             }
         }
 
         public void ChangerPositionFusil(Vector3 position)
         {
-            ArmeSélectionnée.ChangerPositionFusil(position);
+            ArmeSélectionnée.SetPosition(position);
         }
 
         #endregion

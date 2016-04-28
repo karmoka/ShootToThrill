@@ -114,17 +114,23 @@ namespace AtelierXNA
                 if (ManagerDeControle.EstJoystickDroitActif(IndexJoueur) || ManagerDeControle.EstOrientationActif(IndexJoueur))
                 {
                     Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
-                    RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
-                    ArmeSélectionnée.RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
-                    ArmeSélectionnée.ChangerDirection(direction);
+                    ModifierDirection(direction);
                 }
             }
+            base.BougerAvatar();
+        }
+
+        protected override void ModifierDirection(Vector2 direction)
+        {
+            ArmeSélectionnée.RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
+            ArmeSélectionnée.ChangerDirection(direction);
+            base.ModifierDirection(direction);
         }
 
         public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
         {
             Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
-            if (autre is Fusil && autre != ArmeSélectionnée)
+            if (autre is Fusil)
             {
                 AjouterArme(autre as Fusil);
             }

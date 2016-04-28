@@ -15,7 +15,7 @@ namespace AtelierXNA
     {
         public int NombreSoin { get; private set; }
         public Soin(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ)
-            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ)
+            : base(game, positionInitiale, rayon, nomModèle, intervalMAJ, true)
         {
             NombreSoin = 15;
         }

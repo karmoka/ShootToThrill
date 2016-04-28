@@ -31,7 +31,7 @@ namespace AtelierXNA
         //public SupportFusil(Game jeu, string nomModèle, float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, float intervalMAJ, Fusil fusil)
         //    : base(jeu, nomModèle, échelleInitiale, rotationInitiale, positionInitiale, intervalMAJ)
         public SupportFusil(Game jeu, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ, Fusil fusil)
-            : base(jeu, positionInitiale, rayon, nomModèle, intervalMAJ)
+            : base(jeu, positionInitiale, rayon, nomModèle, intervalMAJ, false)
         {
             Fusil = fusil;
         }

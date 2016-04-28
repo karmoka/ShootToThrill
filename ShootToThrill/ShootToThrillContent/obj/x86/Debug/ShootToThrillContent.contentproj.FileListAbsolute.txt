@@ -2,3 +2,4 @@ c:\users\karmoka\documents\visual studio 2013\Projects\ShootToThrill\ShootToThri
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache
 C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache
 C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\Sounds\AudioEngine.xml
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\obj\x86\Debug\ShootToThrillContent.contentprojResolveAssemblyReference.cache

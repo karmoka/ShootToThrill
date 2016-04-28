@@ -23,11 +23,7 @@ namespace AtelierXNA
         public Item GetRandomItem(int nombre, Vector3 position)
         {
             Item item = null;
-            if (nombre == 0)
-            {
-                item = new Munition(Game, position, 1, "ObjetDrop", 0.05f, "Bazooka");
-            }
-            else if (nombre == 1)
+            if (nombre == 1)
             {
                 item = new Munition(Game, position, 1, "ObjetDrop", 0.05f, "Railgun");
             }
@@ -43,19 +39,15 @@ namespace AtelierXNA
             {
                 item = new Soin(Game, position, 1, "ObjetDrop", 0.05f);
             }
-            else if (nombre == 30)
-            {
-                item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Bazooka"), position, 1, 0.02f);
-            }
-            else if (nombre == 31)
+            else if (nombre == 20)
             {
                 item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Railgun"), position, 1, 0.02f);
             }
-            else if (nombre == 32)
+            else if (nombre == 30)
             {
                 item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), position, 1, 0.02f);
             }
-            else if (nombre == 33)
+            else if (nombre == 40)
             {
                 item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), position, 1, 0.02f);
             }

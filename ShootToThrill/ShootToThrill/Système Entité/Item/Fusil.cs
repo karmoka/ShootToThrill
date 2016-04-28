@@ -16,7 +16,7 @@ namespace AtelierXNA
     /// <summary>
     /// This is a game component that implements IUpdateable.
     /// </summary>
-    public class Fusil : Item, IModele3d
+    public class Fusil : Item, IModele3d, IArme
     {
         const int ZERO = 0,
                   MAX_DEGRÉS = 360;
@@ -114,7 +114,7 @@ namespace AtelierXNA
         //public Fusil(Game jeu, DescriptionFusil description, float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, float intervalMAJ)
         //    : base(jeu, description.NomModèle, échelleInitiale, rotationInitiale, positionInitiale, intervalMAJ)
         public Fusil(Game jeu, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
-            : base(jeu, positionInitiale, rayon, description.NomModèle, intervalMAJ)
+            : base(jeu, positionInitiale, rayon, description.NomModèle, intervalMAJ, true)
         {
             AMunitionInfini = description.AMunitionInfini;
             NomArme = description.NomArme;
@@ -182,7 +182,7 @@ namespace AtelierXNA
             return nombre < MUNITION_MIN ? MUNITION_MIN : nombre > MunitionMaxDansChargeur ? MunitionMaxDansChargeur : nombre;
         }
 
-        public void Tirer()
+        public void Attaquer()
         {
             if (TempsDepuisDernierTir >= Cadence)
             {
@@ -226,12 +226,25 @@ namespace AtelierXNA
             return new Vector3((float)x, 0, (float)z);
         }
 
-        public void ChangerPositionFusil(Vector3 position)
+        public void SetPosition(Vector3 position)
         {
             if (!float.IsNaN(Direction.X) && !float.IsNaN(Direction.Y))
             {
-               SetPosition(position + new Vector3(Direction.X, 0, -Direction.Y) * 2);
+               base.SetPosition(position + new Vector3(Direction.X, 0, -Direction.Y) * 2);
             }
+        }
+
+        public void SetPosition(IPositionable i)
+        {
+            if (!float.IsNaN(Direction.X) && !float.IsNaN(Direction.Y))
+            {
+                base.SetPosition(i.Position + new Vector3(Direction.X, 0, -Direction.Y) * 2);
+            }
+        }
+
+        public void SetRotation(IPositionable i)
+        {
+            //base.SetRotation(i.Rotation);
         }
 
         public void ChangerDirection(Vector2 direction)

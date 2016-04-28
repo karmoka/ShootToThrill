@@ -16,6 +16,7 @@ namespace AtelierXNA
     {
         ModelManager ManagerModèle { get; set; }
         MMoteurPhysique MoteurPhysique { get; set; }
+        Options Options { get; set; }
         int NombreJoueur
         {
             get
@@ -73,6 +74,7 @@ namespace AtelierXNA
         {
             ManagerModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
             MoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
+            Options = Game.Services.GetService(typeof(Options)) as Options;
             Difficulté = 0.1f * NombreJoueur;
             base.LoadContent();
         }
@@ -134,16 +136,31 @@ namespace AtelierXNA
         void NouvelEnnemi()
         {
             Random GénérateurObjetDrop = new Random();
-            int itemDrop = GénérateurObjetDrop.Next(0, 20);
-            int fusilDrop = GénérateurObjetDrop.Next(30, 40);
             Ennemi unEnnemi = null;
-            if (NombreRound % 5 == 0 && CptEnnemi % 5 == 0)
+            if (NombreRound % 10 == 0 && CptEnnemi == NombreEnnemi - 1)
             {
+                unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
+            }
+            else if (NombreRound % 5 == 0 && CptEnnemi % 5 == 0)
+            {
+                int fusilDrop = GénérateurObjetDrop.Next(0, Math.Min(NombreRound / 5 * 10, 41));
                 unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 10f, 4 / 5f, "Boss", 300, 30, fusilDrop);
             }
             else
             {
-                unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 2f, 4 / 5f, "Scene2", 100, 5, itemDrop);
+                int itemDrop = GénérateurObjetDrop.Next(0, 20);
+                switch (GénérateurObjetDrop.Next(0, 3))
+                {
+                    case 0:
+                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 3f, 4 / 5f, "Ennemi1", 120, 8, itemDrop);
+                        break;
+                    case 1:
+                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 6f, 4 / 5f, "Ennemi2", 100, 10, itemDrop);
+                        break;
+                    case 2:
+                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 2f, 4 / 5f, "Ennemi3", 80, 5, itemDrop);
+                        break;
+                }
             }
             unEnnemi.Initialize();
             //MoteurPhysique.AjouterObjet(unEnnemi);

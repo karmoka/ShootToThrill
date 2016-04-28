@@ -18,8 +18,11 @@ namespace AtelierXNA
     /// </summary>
     public class Item : ModelPhysique
     {
+        const float INTERVAL_DISPATITION = 10f;
         float TempsDepuisMAJ { get; set; }
         float IntervalMAJ { get; set; }
+        float TempsDepuisApparition { get; set; }
+        bool EstTemporaire { get; set; }
         
         //public Item(Game game, string nomModèle, float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, float intervalMAJ)
         //    : base(game, nomModèle, échelleInitiale, rotationInitiale, positionInitiale)
@@ -27,24 +30,32 @@ namespace AtelierXNA
         //    IntervalMAJ = intervalMAJ;
         //}
 
-        public Item(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ)
+        public Item(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ, bool estTemporaire)
             : base(game, positionInitiale, rayon, nomModèle)
         {
             IntervalMAJ = intervalMAJ;
+            EstTemporaire = estTemporaire;
         }
 
         public override void Initialize()
         {
             TempsDepuisMAJ = 0;
+            TempsDepuisApparition = 0;
             base.Initialize();
         }
         
         public override void Update(GameTime gameTime)
         {
-            TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float tempsDepuisMAJ = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            TempsDepuisMAJ += tempsDepuisMAJ;
+            TempsDepuisApparition += tempsDepuisMAJ;
             if (TempsDepuisMAJ >= IntervalMAJ)
             {
                 GérerAnimation();
+                if (EstTemporaire && TempsDepuisApparition >= INTERVAL_DISPATITION)
+                {
+                    DésactiverItem();
+                }
                 TempsDepuisMAJ = 0;
             }
 
@@ -62,7 +73,8 @@ namespace AtelierXNA
 
         public virtual void DésactiverItem()
         {
-
+            (Game.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique).EnleverObjet(this);
+            (Game.Services.GetService(typeof(ModelManager)) as ModelManager).EnleverModèle(this);
         }
     }
 }

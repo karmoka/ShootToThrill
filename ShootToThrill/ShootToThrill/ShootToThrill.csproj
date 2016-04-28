@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera\CaméraTracing.cs" />
+    <Compile Include="Composantes2D\RectangleVieColoré.cs" />
     <Compile Include="Composantes2D\Sprite.cs" />
     <Compile Include="Composantes2D\SpriteColorable.cs" />
     <Compile Include="Composantes2D\Texbox.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Interfaces\IPositionable.cs" />
     <Compile Include="LogiqueJeu\Jeu.cs" />
     <Compile Include="LogiqueJeu\Round.cs" />
+    <Compile Include="Managers\EnnemiScreenManager.cs" />
     <Compile Include="Managers\IOManager.cs" />
     <Compile Include="Managers\MessageManager.cs" />
     <Compile Include="Managers\Messages.cs" />
