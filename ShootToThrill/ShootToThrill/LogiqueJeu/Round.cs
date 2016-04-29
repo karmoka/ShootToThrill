@@ -130,11 +130,9 @@ namespace AtelierXNA
         void NouvelEnnemi()
         {
             Random GénérateurObjetDrop = new Random();
-            Ennemi unEnnemi = null;
             if (NombreRound % 10 == 0 && CptEnnemi == NombreEnnemi - 1)
             {
-                CréerEnnemi(1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
-                unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
+                CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Boss1"), 0);
             }
             else if (NombreRound % 5 == 0 && CptEnnemi % 5 == 0)
             {
@@ -147,19 +145,16 @@ namespace AtelierXNA
                 switch (GénérateurObjetDrop.Next(0, 3))
                 {
                     case 0:
-                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 3f, 4 / 5f, "Ennemi1", 120, 8, itemDrop);
+                        CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Ennemi1"), itemDrop);
                         break;
                     case 1:
-                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 6f, 4 / 5f, "Ennemi2", 100, 10, itemDrop);
+                        CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Ennemi2"), itemDrop);
                         break;
-                    case 2:
-                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 2f, 4 / 5f, "Ennemi3", 80, 5, itemDrop);
+                    case 2: 
+                        CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Ennemi3"), itemDrop);
                         break;
                 }
             }
-            unEnnemi.Initialize();
-            //MoteurPhysique.AjouterObjet(unEnnemi);
-            //ManagerModèle.AjouterModele(unEnnemi);
         }
 
         void CréerEnnemi(DescriptionEnnemi description, int itemDrop)
