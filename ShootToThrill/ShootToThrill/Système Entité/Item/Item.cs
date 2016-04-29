@@ -73,7 +73,7 @@ namespace AtelierXNA
 
         public virtual void DésactiverItem()
         {
-            MoteurPhysique m = Game.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique; //.EnleverObjet(this);
+            (Game.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique).EnleverObjet(this);
             (Game.Services.GetService(typeof(ModelManager)) as ModelManager).EnleverModèle(this);
         }
     }
