@@ -17,7 +17,7 @@ namespace AtelierXNA
         const int SOL = 0;
         Color PLANCHER = Color.White,
             MUR = Color.Black,
-            PORTAIL_JOUEUR = Color.Green,
+            PORTAIL_JOUEUR = Color.Lime,
             PORTAIL_ENNEMI = Color.Red;
 
         RessourcesManager<Texture2D> GestionnaireDeTexture { get; set; }

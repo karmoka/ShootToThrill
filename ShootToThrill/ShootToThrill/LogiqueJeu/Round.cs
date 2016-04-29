@@ -44,11 +44,13 @@ namespace AtelierXNA
                 return CptEnnemi == NombreEnnemi;
             }
         }
+        int NbJoueur { get; set; }
         Vector3 PositionPortailEnnemi { get; set; }
 
-        public Round(Game game)
+        public Round(Game game, int nbJoueur)
             : base(game)
         {
+            NbJoueur = nbJoueur;
         }
 
         public override void Initialize()
@@ -64,7 +66,7 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            Difficulté = 0.1f * (Game.Services.GetService(typeof(InformationGame)) as InformationGame).NBJoueur;
+            Difficulté = 0.1f * NbJoueur;
             base.LoadContent();
         }
 

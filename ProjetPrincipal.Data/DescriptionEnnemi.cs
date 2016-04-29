@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetPrincipal.Data
 {
-   public class DescriptionEnnemi : DescriptionModelPhysique
+   public class DescriptionEnnemi
    {
        public float MasseInverse { get; set; }
        public float Rayon { get; set; }

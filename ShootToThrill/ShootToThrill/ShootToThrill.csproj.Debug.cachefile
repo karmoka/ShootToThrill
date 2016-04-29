@@ -5,7 +5,7 @@ Content\Modèle\Avatar1.xnb
 Content\Modèle\Avatar2.xnb
 Content\Modèle\Avatar3.xnb
 Content\Modèle\Bazooka.xnb
-Content\Modèle\Boss.xnb
+Content\Modèle\Boss0.xnb
 Content\Modèle\Boss1.xnb
 Content\Modèle\Boss2.xnb
 Content\Modèle\Cube.xnb
@@ -35,6 +35,11 @@ Content\Description\Machinegun.xnb
 Content\Description\Railgun.xnb
 Content\Description\Shotgun.xnb
 Content\Options.xnb
+Content\Description\Boss0.xnb
+Content\Description\Boss1.xnb
+Content\Description\Ennemi3.xnb
+Content\Description\Ennemi2.xnb
+Content\Description\Ennemi1.xnb
 Content\Effets\Lumière.xnb
 Content\Effets\Phong.xnb
 Content\Modèle\Portail\material_2.xnb

@@ -254,7 +254,6 @@ C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Avatar2.xnb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Avatar3.xnb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Bazooka.xnb
-C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Boss.xnb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Boss1.xnb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Boss2.xnb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Cube.xnb
@@ -325,3 +324,9 @@ C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\ShootToThrill.pdb
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\ProjetPrincipal.Data.dll
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Boss0.xnb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Boss0.xnb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Boss1.xnb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi3.xnb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi2.xnb
+C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi1.xnb

@@ -23,9 +23,11 @@ namespace AtelierXNA
         MoteurPhysique MoteurPhysique { get; set; }
         Interrupteur Interrupteur { get; set; }
         public List<Item> ListeItem { get; private set; }
-        public Jeu(Game game)
+        int NbJoueur { get; set; }
+        public Jeu(Game game, int nbJoueur)
             : base(game)
         {
+            NbJoueur = nbJoueur;
         }
 
         public void SetPosition(Vector3 position)
@@ -41,7 +43,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             ListeItem = new List<Item>();
-            Round = new Round(Game);
+            Round = new Round(Game, NbJoueur);
             Round.Initialize();
             TempsDepuisDernierRound = 0;
             IntervalEntreRound = 10;
@@ -100,7 +102,7 @@ namespace AtelierXNA
                         Round.ResetVariable();
                         Round.Enabled = true;
                     }
-                    else
+                    else if (PortailEnnemi.EstPortailActif)
                     {
                         PortailEnnemi.DésactiverItem();
                     }
@@ -115,7 +117,7 @@ namespace AtelierXNA
             {
                 PortailJoueur.ActiverItem();
             }
-            else
+            else if (PortailJoueur.EstPortailActif)
             {
                 PortailJoueur.DésactiverItem();
             }

@@ -116,14 +116,14 @@ namespace AtelierXNA
         /// </summary>
         void LoaderMap()
         {
+            Jeu = new Jeu(Game, InformationJeu.NBJoueur);
             GrilleUniverselle = new GrilleUniverselle(Game, new List<string>() { "Test" + InformationJeu.IDMap + "_1" });
-            Jeu = new Jeu(Game);
 
-            Game.Services.AddService(typeof(GrilleUniverselle), GrilleUniverselle);
             Game.Services.AddService(typeof(Jeu), Jeu);
+            Game.Services.AddService(typeof(GrilleUniverselle), GrilleUniverselle);
 
-            Game.Components.Add(GrilleUniverselle);
             Game.Components.Add(Jeu);
+            Game.Components.Add(GrilleUniverselle);
 
             ManagerModèle.AjouterModele(GrilleUniverselle);
             foreach (CubeAdditionnable c in GrilleUniverselle.ListeCube)
@@ -209,16 +209,16 @@ namespace AtelierXNA
             Game.Components.Remove(ManagerPhysique);
             Game.Components.Remove(ManagerModèle);
             Game.Components.Remove(ManagerScreen);
-            Game.Components.Remove(GrilleUniverselle);
             Game.Components.Remove(Jeu);
+            Game.Components.Remove(GrilleUniverselle);
 
             Game.Services.RemoveService(typeof(ModelManager));
             Game.Services.RemoveService(typeof(MoteurPhysique));
             Game.Services.RemoveService(typeof(MMoteurPhysique));
             Game.Services.RemoveService(typeof(Pathfinding));
             Game.Services.RemoveService(typeof(RequêtePathManager));
-            Game.Services.RemoveService(typeof(GrilleUniverselle));
             Game.Services.RemoveService(typeof(Jeu));
+            Game.Services.RemoveService(typeof(GrilleUniverselle));
 
             ManagerPhysique.Dispose();
             ManagerModèle.Dispose();
