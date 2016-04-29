@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Media;
 namespace AtelierXNA
 {
 
-    public class MJoueur : MAvatar
+    class MJoueur : MAvatar
     {
        float VitesseJoueur { get; set; }
 
@@ -48,74 +48,82 @@ namespace AtelierXNA
 
         protected override void BougerAvatar()
         {
-             EstEnMouvement = false;
-            if(ManagerDeControle.EstJoystickGaucheActif(IndexJoueur) || true)
+            EstEnMouvement = false;
+            if(ManagerDeControle.EstJoystickGaucheActif(IndexJoueur) || ManagerDeControle.EstDéplscementActif(IndexJoueur))
+            {
+                if (ManagerDeControle.VersGauche(IndexJoueur))
                 {
-                    if (ManagerDeControle.VersGauche(IndexJoueur))
-                    {
-                        EstEnMouvement = true;
-                        Vitesse += new Vector3(-VitesseJoueur, 0, 0);
-                    }
-                    if (ManagerDeControle.VersDroite(IndexJoueur))
-                    {
-                        EstEnMouvement = true;
-                        Vitesse += new Vector3(VitesseJoueur, 0, 0);
-                    }
-                    if (ManagerDeControle.VersHaut(IndexJoueur))
-                    {
-                        EstEnMouvement = true;
-                        Vitesse += new Vector3(0, 0, -VitesseJoueur);
-                    }
-                    if (ManagerDeControle.VersBas(IndexJoueur))
-                    {
-                        EstEnMouvement = true;
-                        Vitesse += new Vector3(0, 0, VitesseJoueur);
-                    }
+                    Vitesse += new Vector3(-VitesseJoueur, 0, 0);
                 }
+                if (ManagerDeControle.VersDroite(IndexJoueur))
+                {
+                    Vitesse += new Vector3(VitesseJoueur, 0, 0);
+                }
+                if (ManagerDeControle.VersHaut(IndexJoueur))
+                {
+                    Vitesse += new Vector3(0, 0, -VitesseJoueur);
+                }
+                if (ManagerDeControle.VersBas(IndexJoueur))
+                {
+                    Vitesse += new Vector3(0, 0, VitesseJoueur);
+                }
+                EstEnMouvement = true;
+            }
 
-                if (ManagerDeControle.ATiré(IndexJoueur))
+            if (ManagerDeControle.ATiré(IndexJoueur))
+            {
+                this.Attaquer();
+            }
+            if (ManagerDeControle.ARechargé(IndexJoueur))
+            {
+                this.Recharger();
+            }
+            if (ManagerDeControle.AChangéArmeHaut(IndexJoueur))
+            {
+                IndexArme = IndexArme + 1;
+            }
+            if (ManagerDeControle.AChangéArmeBas(IndexJoueur))
+            {
+                IndexArme = IndexArme - 1;
+            }
+            if (ManagerDeControle.ASauté(IndexJoueur) && Math.Round(Position.Y * 100) / 100 == 1)
+            {
+                Vitesse += new Vector3(0, 4, 0);
+            }
+            if (ManagerDeControle.EstJoystickDroitActif(IndexJoueur) || ManagerDeControle.EstOrientationActif(IndexJoueur))
                 {
-                    this.Attaquer();
-                }
-                if (ManagerDeControle.ARechargé(IndexJoueur))
-                {
-                    this.Recharger();
-                }
-                if (ManagerDeControle.AChangéArmeHaut(IndexJoueur))
-                {
-                    IndexArme = IndexArme + 1;
-                }
-                if (ManagerDeControle.AChangéArmeBas(IndexJoueur))
-                {
-                    IndexArme = IndexArme - 1;
-                }
-                if (ManagerDeControle.ASauté(IndexJoueur) && Math.Round(Position.Y * 100) / 100 == 1)
-                {
-                    Vitesse += new Vector3(0, 4, 0);
-                }
-                if (ManagerDeControle.EstJoystickDroitActif(IndexJoueur))
-                {
-                    Vector2 direction = ManagerDeControle.GetRightThumbStick(IndexJoueur);
-                    //ComposanteGraphique.SetRotationY(CustomMathHelper.AngleDeVecteur2D(direction));
-                }
+                    Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
+                    Vector3 direction3 = new Vector3(direction.X, 0, direction.Y);
+                //ComposanteGraphique.SetRotation(CustomMathHelper.AngleDeVecteur2D(direction));
+            }
+            base.BougerAvatar();
         }
 
         protected override void GérerCollisions()
         {
             //foreach (ObjetPhysique o in ComposantePhysique.ListeObjetCollision)
             //{
-            //    if (o is IArme)
+            //    Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
+            //    if (o is Fusil)
             //    {
-            //        AjouterArme(o as IArme);
+            //        AjouterArme(o as Fusil);
             //    }
-            //    //if (o is Munition)
-            //    //{
-            //    //    AjouterMunition(autre as Munition);
-            //    //}
-            //    //if (o is Soin)
-            //    //{
-            //    //    AjouterVie(autre as Soin);
-            //    //}
+            //    else if (o is Munition)
+            //    {
+            //        AjouterMunition(o as Munition);
+            //    }
+            //    else if (o is Soin)
+            //    {
+            //        AjouterVie(o as Soin);
+            //    }
+            //    else if (o is Ennemi)
+            //    {
+            //        RetirerVie((o as Ennemi).Domage);
+            //    }
+            //    else if (o is Interrupteur)
+            //    {
+            //        (o as Interrupteur).ChangerGravité();
+            //    }
             //}
 
             base.GérerCollisions();

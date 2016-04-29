@@ -24,6 +24,7 @@ namespace AtelierXNA
         Vector3[] Path { get; set; }
         int ObjetDrop { get; set; }
         public int Domage { get; private set; }
+        EnnemiScreenManager EnnemiScreenManager { get; set; }
         public Ennemi(Game game, Vector3 position, Vector3 vitesse, float masseInverse, float rayon, string nomModèle, int vie, int domage, int objetDrop)
             : base(game, position, vitesse, masseInverse, rayon, nomModèle, vie)
         {
@@ -32,17 +33,13 @@ namespace AtelierXNA
             Domage = domage;
         }
 
-        public Ennemi(Game game, DescriptionJoueur description)
-            : base(game, description)
-        {
-
-        }
-
         public override void Initialize()
         {
             VitesseJoueur = 0.1f;
             TempsDepuisRechercheAvatar = 0;
             base.Initialize();
+            EnnemiScreenManager = new EnnemiScreenManager(Game, this);
+            EnnemiScreenManager.Initialize();
         }
         protected override void LoadContent()
         {
@@ -59,6 +56,8 @@ namespace AtelierXNA
             {
                 PositionAvatarPlusProche = MoteurPhysique.GetPositionJoueurPlusProche(Position);
                 RequêtePathManager.PathRequête(Position, PositionAvatarPlusProche, OnPathFound);
+                ModifierDirection(new Vector2(PositionAvatarPlusProche.X - Position.X, PositionAvatarPlusProche.Z - Position.Z));
+                EnnemiScreenManager.Update(gameTime);
                 TempsDepuisRechercheAvatar = 0;
             }
             base.Update(gameTime);
@@ -66,7 +65,19 @@ namespace AtelierXNA
 
         protected override void BougerAvatar()
         {
-            FollowPath();
+            if (Path != null)
+            {
+                if (Path.Length > 0)
+                {
+                    FollowPath();
+                }
+            }
+            base.BougerAvatar();
+        }
+
+        protected override void ModifierDirection(Vector2 direction)
+        {
+            base.ModifierDirection(direction);
         }
 
         protected override void Mourir()
@@ -84,10 +95,14 @@ namespace AtelierXNA
 
         public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
         {
-            if (autre is Fusil)
-            {
-                AjouterArme(autre as Fusil);
-            }
+            //if (autre is Joueur)
+            //{
+            //    RetirerVie(1);
+            //}
+            //if (autre is DroiteCollision)
+            //{
+            //    RetirerVie((autre as DroiteCollision).Domage);
+            //}
         }
 
         #region Pathfinding
@@ -95,44 +110,44 @@ namespace AtelierXNA
         {
             if (pathSuccessfull)
             {
-                if (Path == nouveauPath)
+                if (nouveauPath != null)
                 {
-                    FollowPath();
-                }
-                else
-                {
-                    Path = nouveauPath;
-                    FollowNouveauPath();
+                    if (nouveauPath.Length > 0)
+                    {
+                        if (Path == nouveauPath)
+                        {
+                            FollowPath();
+                        }
+                        else
+                        {
+                            Path = nouveauPath;
+                            FollowNouveauPath();
+                        }
+                    }
                 }
             }
         }
 
         void FollowNouveauPath()
         {
-            if (Path != null)
+            Vector3 wayPointsActuels = Path[0];
+            Index = 0;
+            while (true)
             {
-                if (Path.Length > 0)
+                Vector3 positionMonde = Pathfinding.GetPositionActuelleMonde(Position).PositionMonde;
+                if (positionMonde == wayPointsActuels)
                 {
-                    Vector3 wayPointsActuels = Path[0];
-                    Index = 0;
-                    while (true)
+                    ++Index;
+                    if (Index >= Path.Length)
                     {
-                        Vector3 positionMonde = Pathfinding.GetPositionActuelleMonde(Position).PositionMonde;
-                        if (positionMonde == wayPointsActuels)
-                        {
-                            ++Index;
-                            if (Index >= Path.Length)
-                            {
-                                Index = 0;
-                                MoveTowards(PositionAvatarPlusProche, Position);
-                                break;
-                            }
-                            wayPointsActuels = Path[Index];
-                        }
-                        MoveTowards(wayPointsActuels, positionMonde);
-                        return;
+                        Index = 0;
+                        MoveTowards(PositionAvatarPlusProche, Position);
+                        break;
                     }
+                    wayPointsActuels = Path[Index];
                 }
+                MoveTowards(wayPointsActuels, positionMonde);
+                return;
             }
         }
 
@@ -166,5 +181,17 @@ namespace AtelierXNA
             Vitesse += z < 0 ? new Vector3(0, 0, -VitesseJoueur) : z > 0 ? new Vector3(0, 0, VitesseJoueur) : Vector3.Zero;
         }
         #endregion
+
+        protected void SetCaméra(Caméra cam)
+        {
+            EnnemiScreenManager.ChangerCaméra(cam);
+            base.SetCaméra(cam);
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            EnnemiScreenManager.Draw(gameTime);
+            base.Draw(gameTime);
+        }
     }
 }

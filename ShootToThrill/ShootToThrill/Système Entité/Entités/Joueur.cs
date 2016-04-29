@@ -55,7 +55,7 @@ namespace AtelierXNA
         {
             if (ManagerDeControle.EstActif(IndexJoueur))
             {
-                if (ManagerDeControle.EstJoystickGaucheActif(IndexJoueur) || true)
+                if (ManagerDeControle.EstJoystickGaucheActif(IndexJoueur)|| ManagerDeControle.EstDéplscementActif(IndexJoueur))
                 {
                     if (ManagerDeControle.VersGauche(IndexJoueur))
                     {

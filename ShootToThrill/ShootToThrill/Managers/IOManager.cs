@@ -121,6 +121,10 @@ namespace AtelierXNA
       {
           return NouveauStatePad[(int)playerIndex].Triggers.Left != 0;
       }
+      public bool EstDéplscementActif(PlayerIndex playerIndex)
+      {
+          return GetDéplacement(playerIndex) != Vector2.Zero;
+      }
       public bool EstOrientationActif(PlayerIndex playerIndex)
       {
           return GetOrientation(playerIndex) != Vector2.Zero;
@@ -236,9 +240,15 @@ namespace AtelierXNA
       {
          return NouveauStatePad[(int)playerIndex].ThumbSticks.Right;
       }
+      public Vector2 GetDéplacement(PlayerIndex playerIndex)
+      {
+          float x = VersDroite(playerIndex) ? 1 : VersGauche(playerIndex) ? -1 : 0;
+          float y = VersHaut(playerIndex) ? 1 : VersBas(playerIndex) ? -1 : 0;
+          return new Vector2(x, y);
+      }
       public Vector2 GetOrientation(PlayerIndex playerIndex)
       {
-          float x = EstToucheEnfoncée(Keys.L, playerIndex) ? 1 : EstToucheEnfoncée(Keys.I, playerIndex) ? -1 : 0;
+          float x = EstToucheEnfoncée(Keys.L, playerIndex) ? 1 : EstToucheEnfoncée(Keys.J, playerIndex) ? -1 : 0;
           float y = EstToucheEnfoncée(Keys.I, playerIndex) ? 1 : EstToucheEnfoncée(Keys.K, playerIndex) ? -1 : 0;
           return new Vector2(x, y);
       }
