@@ -18,7 +18,8 @@ namespace AtelierXNA
         Color PLANCHER = Color.White,
             MUR = Color.Black,
             PORTAIL_JOUEUR = Color.Lime,
-            PORTAIL_ENNEMI = Color.Red;
+            PORTAIL_ENNEMI = Color.Red,
+            INTERRUPTEUR = Color.Blue;
 
         RessourcesManager<Texture2D> GestionnaireDeTexture { get; set; }
         Texture2D Image…tage { get; set; }
@@ -144,6 +145,11 @@ namespace AtelierXNA
                     {
                         TableauNode[x, …tage, z] = new Node(Game, TableauCube[x, …tage - 1, z] != null, position, x, z);
                         Jeu.SetPositionPortailEnnemi(position);
+                    }
+                    else if (Couleurs[x, z] == INTERRUPTEUR)
+                    {
+                        TableauNode[x, …tage, z] = new Node(Game, TableauNode[x, …tage - 1, z] != null, position, x, z);
+                        Jeu.SetPositionInterrupteur(position);
                     }
                 }
             }

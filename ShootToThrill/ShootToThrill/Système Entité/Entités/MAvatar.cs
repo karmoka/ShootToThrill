@@ -21,7 +21,7 @@ namespace AtelierXNA
                   NOMBRE_FUSIL_MAX = 5,
                   AUCUNE_MUNITION = 0,
                   VARIATION_INDEX = 1,
-                  HAUTEUR_Y_NÉGATIF_MAX = -100;
+                  DISTANCE_MAX = 1000;
 
         string NomModèleBase { get; set; }
         string NomModèleAnimé { get; set; }
@@ -140,7 +140,9 @@ namespace AtelierXNA
 
         protected virtual void BougerAvatar()
         {
-            if (Position.Y < HAUTEUR_Y_NÉGATIF_MAX)
+            if (Position.X > DISTANCE_MAX || Position.X < -DISTANCE_MAX ||
+                Position.Y > DISTANCE_MAX || Position.Y < -DISTANCE_MAX ||
+                Position.Z > DISTANCE_MAX || Position.Z < -DISTANCE_MAX)
             {
                 Mourir();
             }
@@ -246,6 +248,7 @@ namespace AtelierXNA
         {
             ComposanteGraphique = null;
             ComposantePhysique = null;
+            Vie = 0;
         }
 
         public override void Draw(GameTime gameTime)
@@ -268,7 +271,8 @@ namespace AtelierXNA
 
         public Vector3 Position
         {
-            get { return ComposantePhysique.Position; }
+            get { return ComposantePhysique.Position; 
+            }
         }
 
         public void SetPosition(Vector3 nouvellePosition)

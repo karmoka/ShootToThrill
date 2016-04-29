@@ -68,6 +68,7 @@ Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
 Content\Sounds\Menu.xnb
+Content\Modèle\Interrupteur.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

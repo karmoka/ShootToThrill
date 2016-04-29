@@ -652,7 +652,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Test3_1.xnb</Output>
-      <Time>2016-04-29T15:54:42.9694926-04:00</Time>
+      <Time>2016-04-29T17:14:51.189258-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\Test4_1.bmp</Source>
@@ -916,6 +916,26 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\untitled_0.xml</Output>
       <Time>2016-04-28T17:17:21.0267995-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Modèle\Interrupteur.fbx</Source>
+      <Name>Modèle\Interrupteur</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Interrupteur.xnb</Output>
+      <Time>2016-04-29T17:36:21.7157945-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Interrupteur_0.xml</Key>
+        <Value>2016-04-29T17:36:29.838838-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Modèle\Interrupteur.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Interrupteur_0.xml</Output>
+      <Time>2016-04-29T17:36:21.7157945-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

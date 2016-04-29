@@ -67,7 +67,6 @@ namespace AtelierXNA
         {
             PortailJoueur = new Portail(Game, position, 0, "PortailJoueur", 0.05f);
             PortailJoueur.Initialize();
-            PortailJoueur.SetPosition(position);
             ListeItem.Add(PortailJoueur);
         }
 
@@ -75,7 +74,6 @@ namespace AtelierXNA
         {
             PortailEnnemi = new Portail(Game, position, 0, "PortailMonstre", 0.05f);
             PortailEnnemi.Initialize();
-            PortailEnnemi.SetPosition(position);
             ListeItem.Add(PortailEnnemi);
             Round.SetPositionPortailEnnemi(position);
         }
@@ -129,7 +127,7 @@ namespace AtelierXNA
             {
                 Interrupteur.ActiverItem();
             }
-            else
+            else if (Interrupteur.EstInterrupteurActif)
             {
                 Interrupteur.DésactiverItem();
             }

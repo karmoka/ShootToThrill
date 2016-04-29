@@ -251,6 +251,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Modèle\Interrupteur.fbx">
+      <Name>Interrupteur</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Personnage\0Description.txt">
       <Name>0Description</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
