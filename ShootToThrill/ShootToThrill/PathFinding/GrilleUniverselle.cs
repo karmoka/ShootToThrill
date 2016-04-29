@@ -18,12 +18,8 @@ namespace AtelierXNA
         Color PLANCHER = Color.White,
             MUR = Color.Black,
             PORTAIL_JOUEUR = Color.Green,
-            PORTAIL_ENNEMI = Color.Red,
-            SUPPORT_BAZOOKA = Color.Blue,
-            SUPPORT_RAILGUN = Color.Purple,
-            SUPPORT_MACHINEGUN = Color.Yellow,
-            SUPPORT_SHOTGUN = Color.Pink,
-            SUPPORT_PISTOL = Color.Orange;
+            PORTAIL_ENNEMI = Color.Red;
+
         RessourcesManager<Texture2D> GestionnaireDeTexture { get; set; }
         Texture2D ImageÉtage { get; set; }
         Jeu Jeu { get; set; }
@@ -43,10 +39,12 @@ namespace AtelierXNA
         {
             ListeÉtage = listeÉtage;
         }
+
         public void SetPosition(Vector3 position)
         {
 
         }
+
         public void SetRotation(Vector3 rotation)
         {
 
@@ -71,12 +69,6 @@ namespace AtelierXNA
 
             base.Initialize();
         }
-
-        //protected override void LoadContent()
-        //{
-
-        //    base.LoadContent();
-        //}
 
         #region Image
         void CréerSol()
@@ -152,42 +144,6 @@ namespace AtelierXNA
                     {
                         TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
                         Jeu.SetPositionPortailEnnemi(position);
-                    }
-                    else if (Couleurs[x, z] == SUPPORT_BAZOOKA)
-                    {
-                        TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
-                        Jeu.SetPositionSupportFusilBazooka(position);
-                        //MoteurPhysique.AjouterObjet(supportFusil);
-                        //ManagerModèle.AjouterModele(supportFusil);
-                    }
-                    else if (Couleurs[x, z] == SUPPORT_RAILGUN)
-                    {
-                        TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
-                        Jeu.SetPositionSupportFusilRailgun(position);
-                        //MoteurPhysique.AjouterObjet(supportFusil);
-                        //ManagerModèle.AjouterModele(supportFusil);
-                    }
-                    else if (Couleurs[x, z] == SUPPORT_MACHINEGUN)
-                    {
-                        TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
-                        continue;
-                        //Jeu.SetPositionSupportFusilMachinegun(position);
-                        //MoteurPhysique.AjouterObjet(supportFusil);
-                        //ManagerModèle.AjouterModele(supportFusil);
-                    }
-                    else if (Couleurs[x, z] == SUPPORT_SHOTGUN)
-                    {
-                        TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
-                        Jeu.SetPositionSupportFusilShotgun(position);
-                        //MoteurPhysique.AjouterObjet(supportFusil);
-                        //ManagerModèle.AjouterModele(supportFusil);
-                    }
-                    else if (Couleurs[x, z] == SUPPORT_PISTOL)
-                    {
-                        TableauNode[x, Étage, z] = new Node(Game, TableauCube[x, Étage - 1, z] != null, position, x, z);
-                        Jeu.SetPositionSupportFusilPistol(position);
-                        //MoteurPhysique.AjouterObjet(supportFusil);
-                        //ManagerModèle.AjouterModele(supportFusil);
                     }
                 }
             }

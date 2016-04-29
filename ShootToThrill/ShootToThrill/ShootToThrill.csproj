@@ -142,6 +142,10 @@
     <Compile Include="Système Entité\Entités\MJoueur.cs" />
     <Compile Include="Système Entité\Item\DroiteColorée.cs" />
     <Compile Include="Système Entité\Item\Fusil.cs" />
+    <Compile Include="Système Entité\Item\Shotgun.cs" />
+    <Compile Include="Système Entité\Item\Railgun.cs" />
+    <Compile Include="Système Entité\Item\Machinegun.cs" />
+    <Compile Include="Système Entité\Item\Pistol.cs" />
     <Compile Include="Système Entité\Item\Interrupteur.cs" />
     <Compile Include="Système Entité\Item\Item.cs" />
     <Compile Include="Système Entité\Item\Munition.cs" />

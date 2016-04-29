@@ -14,20 +14,14 @@ namespace AtelierXNA
 {
     public class DroiteCollision : Collider
     {
-        public float Longueur { get; set; }
-
+        public float Longueur { get; private set; }
         Vector3 VecteurUnitaire { get; set; }
         Vector3 Point { get; set; }
         Ray Droite { get; set; }
-
         List<ObjetPhysique> DansTrajectoire { get; set; }
         Vector3 PointIntersection { get; set; }
-
         Game Jeu { get; set; }
-
         Fusil Arme { get; set; }
-
-
         public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, Fusil arme)
         {
             VecteurUnitaire = vecteur;
@@ -43,7 +37,7 @@ namespace AtelierXNA
             Droite = new Ray(Point, VecteurUnitaire);
         }
 
-        public void coupDeFeu()
+        public void CoupDeFeu()
         {
             int nbObjetEnCollision;
             MoteurPhysique moteurPhysique = Jeu.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique;

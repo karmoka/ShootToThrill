@@ -52,6 +52,7 @@ namespace AtelierXNA
 
          EstImmuable = false;
       }
+
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse)
          :base(game)
       {
@@ -62,6 +63,7 @@ namespace AtelierXNA
 
          EstImmuable = false;
       }
+
       public ObjetPhysique(Game game, DescriptionObjetPhysique description)
           : base(game)
       {
@@ -115,7 +117,7 @@ namespace AtelierXNA
       }
 
        void CalculerForceRésultantes()
-      {
+       {
           ForceRésultante = Vector3.Zero;
            foreach(Vector3 v in Forces)
            {
@@ -125,14 +127,14 @@ namespace AtelierXNA
            ForceRésultante += ForceGravitationnelle;
 
            Forces.Clear();
-      }
+       }
 
        public void AjouterForce(Vector3 force)
        {
            Forces.Add(force);
        }
 
-      public virtual Collider GetCollider()
+       public virtual Collider GetCollider()
        {
           return new SphereCollision(this.Position, 2);
        }
@@ -161,12 +163,13 @@ namespace AtelierXNA
       {
           Vitesse = vitesse;
       }
+
       public virtual void SetPosition(Vector3 nouvellePosition)
       {
          Position = nouvellePosition;
       }
 
-       public virtual void SetRotation(Vector3 rotation)
+      public virtual void SetRotation(Vector3 rotation)
       {
           Rotation = rotation;
       }

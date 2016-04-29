@@ -41,15 +41,15 @@ namespace AtelierXNA
             }
             else if (nombre == 20)
             {
-                item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Railgun"), position, 1, 0.02f);
+                item = new Railgun(Game, Game.Content.Load<DescriptionFusil>("Description/Railgun"), position, 1, 0.02f);
             }
             else if (nombre == 30)
             {
-                item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), position, 1, 0.02f);
+                item = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), position, 1, 0.02f);
             }
             else if (nombre == 40)
             {
-                item = new Fusil(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), position, 1, 0.02f);
+                item = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), position, 1, 0.02f);
             }
             return item;
         }

@@ -23,15 +23,11 @@ namespace AtelierXNA
         const float DISTANCE_JOUEUR_FUSIL = 0.5f;
         int _angle;
         public Vector2 Direction { get; private set; }
-
         GameTime GameTime { get; set; }
         MessageManager ManagerDeMessage { get; set; }
-
-        public ModelManager ManagerDeModèle { get; set; }
-
-        List<DroiteColorée> ListeTrajectoires { get; set; }
-        public bool TrajectoireExiste { get; set; }
-
+        ModelManager ManagerDeModèle { get; set; }
+        protected List<DroiteColorée> ListeTrajectoires { get; set; }
+        bool TrajectoireExiste { get; set; }
         int AngleRotation
         {
             get
@@ -43,10 +39,8 @@ namespace AtelierXNA
                 _angle = SetAngleRotation(value);
             }
         }
-        public float TempsDepuisDernierTir { get; set; }
+        float TempsDepuisDernierTir { get; set; }
         float TempsDepuisDebutJeu { get; set; }
-        int NbBallesParTir { get; set; }
-
 
         #region Munition
         int _munitionTotalRestant,
@@ -54,6 +48,7 @@ namespace AtelierXNA
 
         const int MUNITION_MIN = 0,
                   UNE_MUNITION = 1;
+        int NbBallesParTir { get; set; }
         public bool AMunitionInfini { get; private set; }
         int MunitionTotalRestant
         {
@@ -111,8 +106,6 @@ namespace AtelierXNA
         }
         #endregion
 
-        //public Fusil(Game jeu, DescriptionFusil description, float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, float intervalMAJ)
-        //    : base(jeu, description.NomModèle, échelleInitiale, rotationInitiale, positionInitiale, intervalMAJ)
         public Fusil(Game jeu, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(jeu, positionInitiale, rayon, description.NomModèle, intervalMAJ, true)
         {
@@ -133,6 +126,8 @@ namespace AtelierXNA
             Area = description.Area;
             NbBallesParTir = description.NbBallesParTir;
             IntervalRechargement = description.IntervalRechargement;
+
+            EstImmuable = true;
         }
 
         public override void Initialize()
@@ -190,12 +185,7 @@ namespace AtelierXNA
                 {
                     for (int i = 0; i < NbBallesParTir; ++i)
                     {
-                        Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
-                        direction = DirectionAléatoire(direction);
-                        DroiteColorée trajectoire = new DroiteColorée(Game, this, direction);
-                        trajectoire.DroiteCollision.coupDeFeu();
-                        trajectoire.Initialize();
-                        ListeTrajectoires.Add(trajectoire);
+                        Tirer();
                     }
                     GérerMunitions();
                     TrajectoireExiste = true;
@@ -207,7 +197,13 @@ namespace AtelierXNA
                 TempsDepuisDernierTir = 0;
             }
         }
-        public Vector3 DirectionAléatoire(Vector3 axe)
+
+        protected virtual void Tirer()
+        {
+
+        }
+
+        protected Vector3 DirectionAléatoire(Vector3 axe)
         {
             Random générateurAléatoire = new Random();
             double nouvelAngleX = générateurAléatoire.Next(-AngleDeTir, AngleDeTir);
@@ -353,7 +349,6 @@ namespace AtelierXNA
             {
                 ligneDeTir.Draw(gameTime);
             }
-
             base.Draw(gameTime);
         }
 
@@ -363,7 +358,6 @@ namespace AtelierXNA
             {
                 ListeTrajectoires.RemoveAt(i);
             }
-
             TrajectoireExiste = false;
         }
 

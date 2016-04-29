@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionEnnemi">
+    <MasseInverse>0.1</MasseInverse>
+    <Rayon>1.25</Rayon>
+    <NomEnnemi>Boss0</NomEnnemi>
+    <VieMax>300</VieMax>
+    <Domage>30</Domage>
+  </Asset>
+</XnaContent>

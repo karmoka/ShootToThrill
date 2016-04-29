@@ -8,22 +8,14 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using ProjetPrincipal.Data;
 
 
 namespace AtelierXNA
 {
     public class Round : DrawableGameComponent
     {
-        ModelManager ManagerModèle { get; set; }
         MMoteurPhysique MoteurPhysique { get; set; }
-        Options Options { get; set; }
-        int NombreJoueur
-        {
-            get
-            {
-                return MoteurPhysique.ListePhysique.Count(x => x is Joueur);
-            }
-        }
         float NombreEnnemi { get; set; }
         float Difficulté { get; set; }
         int Thresh { get; set; }
@@ -52,11 +44,11 @@ namespace AtelierXNA
                 return CptEnnemi == NombreEnnemi;
             }
         }
+        Vector3 PositionPortailEnnemi { get; set; }
 
         public Round(Game game)
             : base(game)
         {
-
         }
 
         public override void Initialize()
@@ -72,11 +64,13 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            ManagerModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
-            MoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
-            Options = Game.Services.GetService(typeof(Options)) as Options;
-            Difficulté = 0.1f * NombreJoueur;
+            Difficulté = 0.1f * (Game.Services.GetService(typeof(InformationGame)) as InformationGame).NBJoueur;
             base.LoadContent();
+        }
+
+        public void SetPositionPortailEnnemi(Vector3 position)
+        {
+            PositionPortailEnnemi = position;
         }
 
         public override void Update(GameTime gameTime)
@@ -139,12 +133,13 @@ namespace AtelierXNA
             Ennemi unEnnemi = null;
             if (NombreRound % 10 == 0 && CptEnnemi == NombreEnnemi - 1)
             {
-                unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
+                CréerEnnemi(1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
+                unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 10f, 4 / 5f, "Boss2", 1000, 15, 0);
             }
             else if (NombreRound % 5 == 0 && CptEnnemi % 5 == 0)
             {
                 int fusilDrop = GénérateurObjetDrop.Next(0, Math.Min(NombreRound / 5 * 10, 41));
-                unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 10f, 4 / 5f, "Boss", 300, 30, fusilDrop);
+                CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Boss0"), fusilDrop);
             }
             else
             {
@@ -152,19 +147,25 @@ namespace AtelierXNA
                 switch (GénérateurObjetDrop.Next(0, 3))
                 {
                     case 0:
-                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 3f, 4 / 5f, "Ennemi1", 120, 8, itemDrop);
+                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 3f, 4 / 5f, "Ennemi1", 120, 8, itemDrop);
                         break;
                     case 1:
-                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 6f, 4 / 5f, "Ennemi2", 100, 10, itemDrop);
+                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 6f, 4 / 5f, "Ennemi2", 100, 10, itemDrop);
                         break;
                     case 2:
-                        unEnnemi = new Ennemi(Game, new Vector3(38, 1, 28), Vector3.Zero, 1 / 2f, 4 / 5f, "Ennemi3", 80, 5, itemDrop);
+                        unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, 1 / 2f, 4 / 5f, "Ennemi3", 80, 5, itemDrop);
                         break;
                 }
             }
             unEnnemi.Initialize();
             //MoteurPhysique.AjouterObjet(unEnnemi);
             //ManagerModèle.AjouterModele(unEnnemi);
+        }
+
+        void CréerEnnemi(DescriptionEnnemi description, int itemDrop)
+        {
+            Ennemi unEnnemi = new Ennemi(Game, PositionPortailEnnemi, Vector3.Zero, description, itemDrop);
+            unEnnemi.Initialize();
         }
     }
 }

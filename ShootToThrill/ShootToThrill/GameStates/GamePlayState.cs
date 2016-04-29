@@ -39,7 +39,7 @@ namespace AtelierXNA
         Pathfinding TrouveurDeChemin { get; set; }
         RequêtePathManager RequeteDeChemin { get; set; }
 
-        Jeu jeu { get; set; }
+        Jeu Jeu { get; set; }
         Lumière LumièreJeu { get; set; }
         BillboardColoréTracing t { get; set; }
 
@@ -64,6 +64,7 @@ namespace AtelierXNA
 
             InitialiserManagers();
             LoaderSons();
+            LoaderMap(); // Doit être exécuter avant les joueurs pour donner la position du portail
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
@@ -75,7 +76,7 @@ namespace AtelierXNA
             t.Initialize();
             ManagerModèle.AjouterModele(t);
 
-            LoaderMap();
+            
 
             //ManagerDeSons.JouerSons("Menu");
         }
@@ -116,13 +117,13 @@ namespace AtelierXNA
         void LoaderMap()
         {
             GrilleUniverselle = new GrilleUniverselle(Game, new List<string>() { "Test" + InformationJeu.IDMap + "_1" });
-            Jeu jeu = new Jeu(Game);
+            Jeu = new Jeu(Game);
 
             Game.Services.AddService(typeof(GrilleUniverselle), GrilleUniverselle);
-            Game.Services.AddService(typeof(Jeu), jeu);
+            Game.Services.AddService(typeof(Jeu), Jeu);
 
             Game.Components.Add(GrilleUniverselle);
-            Game.Components.Add(jeu);
+            Game.Components.Add(Jeu);
 
             ManagerModèle.AjouterModele(GrilleUniverselle);
             foreach (CubeAdditionnable c in GrilleUniverselle.ListeCube)
@@ -139,7 +140,10 @@ namespace AtelierXNA
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
                 MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.One );
-                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
+
+                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position), (PlayerIndex)i));
+                
+                //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
                 //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
                 //ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
             }
@@ -206,7 +210,7 @@ namespace AtelierXNA
             Game.Components.Remove(ManagerModèle);
             Game.Components.Remove(ManagerScreen);
             Game.Components.Remove(GrilleUniverselle);
-            Game.Components.Remove(jeu);
+            Game.Components.Remove(Jeu);
 
             Game.Services.RemoveService(typeof(ModelManager));
             Game.Services.RemoveService(typeof(MoteurPhysique));

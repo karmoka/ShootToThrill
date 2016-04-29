@@ -59,6 +59,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DescriptionEnnemi.cs" />
     <Compile Include="DescriptionAvatar.cs" />
     <Compile Include="DescriptionFusil.cs" />
     <Compile Include="DescriptionJoueur.cs" />

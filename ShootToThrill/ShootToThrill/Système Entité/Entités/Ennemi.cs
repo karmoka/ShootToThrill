@@ -25,12 +25,12 @@ namespace AtelierXNA
         int ObjetDrop { get; set; }
         public int Domage { get; private set; }
         EnnemiScreenManager EnnemiScreenManager { get; set; }
-        public Ennemi(Game game, Vector3 position, Vector3 vitesse, float masseInverse, float rayon, string nomModèle, int vie, int domage, int objetDrop)
-            : base(game, position, vitesse, masseInverse, rayon, nomModèle, vie)
+        public Ennemi(Game game, Vector3 position, Vector3 vitesse, DescriptionEnnemi description, int objetDrop)
+            : base(game, position, vitesse, description.MasseInverse, description.Rayon, description.NomEnnemi, description.VieMax)
         {
             IntervalRechercheAvatar = 0.05f;
             ObjetDrop = objetDrop;
-            Domage = domage;
+            Domage = description.Domage;
         }
 
         public override void Initialize()
