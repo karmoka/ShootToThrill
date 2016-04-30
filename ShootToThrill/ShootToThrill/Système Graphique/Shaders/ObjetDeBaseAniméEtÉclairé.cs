@@ -6,26 +6,26 @@ using System.Collections.Generic;
 
 namespace AtelierXNA
 {
-   public class ObjetDeBaseAniméEtÉclairé : ObjetDeBaseAnimé, IModele3d
+   public class MObjetDeBaseAniméEtÉclairé : MObjetDeBaseAnimé
    {
       public const float PUISSANCE_SPÉCULAIRE = 8f;
       string NomTextureModèle { get; set; }
       string NomTextureBumpMap { get; set; }
-      string NomEffetAffichage { get; set; }
+      protected string NomEffetAffichage { get; set; }
       Effect EffetAffichage { get; set; }
       Texture2D TextureModèle { get; set; }
       Texture2D TextureBumpMap { get; set; }
       Lumière LumièreJeu { get; set; }
-      MatériauÉclairé MatériauAffichage { get; set; }
+      protected MatériauÉclairé MatériauAffichage { get; set; }
       Vector3 CouleurLumièreAmbiante { get; set; }
       Vector4 CouleurLumièreDiffuse { get; set; }
       Vector3 CouleurLumièreSpéculaire { get; set; }
       Vector3 CouleurLumièreEmissive { get; set; }
       RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
       RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
-      BoundingSphere SphèreDeCollision { get; set; }
+      protected BoundingSphere SphèreDeCollision { get; set; }
 
-      public ObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle,
+      public MObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle,
                                        float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale,
                                        string nomEffetAffichage, Lumière lumièreJeu, float intervalleMAJ)
          : base(jeu, nomModèle, échelleInitiale, rotationInitiale, positionInitiale, intervalleMAJ)
@@ -35,7 +35,7 @@ namespace AtelierXNA
          NomTextureBumpMap = null;
          NomEffetAffichage = nomEffetAffichage.ToUpper();
       }
-      public ObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle, String nomTextureBumpMap,
+      public MObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle, String nomTextureBumpMap,
                                        float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale,
                                        string nomEffetAffichage, Lumière lumièreJeu, float intervalleMAJ)
          : base(jeu, nomModèle, échelleInitiale, rotationInitiale, positionInitiale, intervalleMAJ)
@@ -53,14 +53,6 @@ namespace AtelierXNA
          CouleurLumièreEmissive = new Vector3(0.1f, 0.1f, 0.1f);
          CouleurLumièreSpéculaire = new Vector3(0.6f, 0.6f, 0.6f);
          base.Initialize();
-      }
-      public void SetCaméra(Caméra cam)
-      {
-
-      }
-      public void SetPosition(Vector3 position)
-      {
-         this.Position = position;
       }
 
       protected override void LoadContent()
@@ -87,12 +79,6 @@ namespace AtelierXNA
             //BoundingSphere.CreateMerged(ref sphèreTotaleTemporaire, ref sphèreCollisionDuMaillage, out sphèreTotaleTemporaire);
          }
          SphèreDeCollision = sphèreTotaleTemporaire.Transform(Monde);
-      }
-
-      public override void EffectuerMiseÀJour()
-      {
-         //Position += Vector3.Up * 0.01f;
-         base.EffectuerMiseÀJour();
       }
 
       private void AnalyserModèle()
@@ -133,17 +119,13 @@ namespace AtelierXNA
          base.Update(gameTime);
          LumièreJeu.Position = CaméraJeu.Position;
       }
-      public void SetRotation(Vector3 rotation)
-      {
-          Rotation = rotation;
-      }
 
       public override void Draw(GameTime gameTime)
       {
          if (CaméraJeu.Frustum.Intersects(SphèreDeCollision))
          {
-            Matrix[] Transformations = new Matrix[Modèle.Bones.Count];
-            Modèle.CopyAbsoluteBoneTransformsTo(Transformations);
+            AppliquerTransformation();
+
             MatériauAffichage.UpdateMatériau(Position, Monde);
             foreach (ModelMesh maillage in Modèle.Meshes)
             {
@@ -157,6 +139,12 @@ namespace AtelierXNA
                maillage.Draw();
             }
          }
+      }
+
+      public virtual void AppliquerTransformation()
+      {
+         Matrix[] Transformations = new Matrix[Modèle.Bones.Count];
+         Modèle.CopyAbsoluteBoneTransformsTo(Transformations);
       }
    }
 }

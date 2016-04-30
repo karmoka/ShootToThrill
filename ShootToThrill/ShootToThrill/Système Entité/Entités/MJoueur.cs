@@ -25,11 +25,6 @@ namespace AtelierXNA
         {
             IndexJoueur = indexJoueur;
         }
-        public MJoueur(Game game, string ModèleDeBase, string ModèleAnimé, ObjetPhysique composantePhysique, PlayerIndex indexJoueur)
-           : base(game, ModèleDeBase, ModèleAnimé, composantePhysique)
-        {
-           IndexJoueur = indexJoueur;
-        }
 
 
         public override void Initialize()

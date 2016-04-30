@@ -63,7 +63,6 @@ namespace AtelierXNA
             test.Initialize();
 
             InitialiserManagers();
-            LoaderSons();
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
@@ -77,7 +76,7 @@ namespace AtelierXNA
 
             LoaderMap();
 
-            //ManagerDeSons.JouerSons("Menu");
+            ManagerDeSons.JouerSons("Pistol");
         }
 
         public void GénérerViewports()
@@ -104,10 +103,6 @@ namespace AtelierXNA
                     TableauViewports[3] = new Viewport(OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2, OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2);
                     break;
             }
-        }
-       void LoaderSons()
-        {
-           ManagerDeSons.AjouterSons("Menu");
         }
 
         /// <summary>
@@ -143,13 +138,8 @@ namespace AtelierXNA
                 //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
                 //ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
             }
-           //LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
-
-           //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
-           //MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
-           //ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
-           //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
         }
+
         /// <summary>
         /// Initilise les joueurs et les services qui leurs sont liés.
         /// </summary>
@@ -168,6 +158,7 @@ namespace AtelierXNA
         }
         void InitialiserManagers()
         {
+           ManagerDeSons = Game.Services.GetService(typeof(ManagerAudio)) as ManagerAudio;
             OptionsJeu = Game.Services.GetService(typeof(Options)) as Options;
             GestionnaireInput = Game.Services.GetService(typeof(IOManager)) as IOManager;
             ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
@@ -178,7 +169,6 @@ namespace AtelierXNA
             ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
-            ManagerDeSons = new ManagerAudio(Game);
 
             ManagerScreen.Initialize();
 
@@ -187,7 +177,6 @@ namespace AtelierXNA
             Game.Components.Add(ManagerPhysique);
             Game.Components.Add(ManagerModèle);
             Game.Components.Add(ManagerScreen);
-            Game.Components.Add(ManagerDeSons);
 
             Game.Services.AddService(typeof(ModelManager), ManagerModèle);
             Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
@@ -260,6 +249,10 @@ namespace AtelierXNA
               ManagerModèle.AjouterModele(g);
               ManagerPhysique.AjouterObjet(g);
               bidon = false;
+           }
+           if(GestionnaireInput.EstNouvelleTouche(Keys.H, PlayerIndex.One))
+           {
+              ManagerDeSons.JouerSons("Pistol");
            }
         }
 

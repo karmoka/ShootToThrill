@@ -35,6 +35,7 @@ namespace AtelierXNA
       SpriteBatch GestionnaireDeSprites { get; set; }
       MessageManager ManagerDeMessage { get; set; }
       GameStateManager ManagerGameState { get; set; }
+      ManagerAudio ManagerDeSons { get; set; }
       InputManager GestionnaireInput;
       IOManager GestionInput { get; set; }
 
@@ -75,6 +76,7 @@ namespace AtelierXNA
       protected override void LoadContent()
       {
          InitializerGameStates();
+         LoaderSons();
          base.LoadContent();
       }
 
@@ -97,8 +99,10 @@ namespace AtelierXNA
          ManagerGameState = new GameStateManager(this);
          ManagerDeMessage = new MessageManager(this);
          GestionnaireInput = new InputManager(this);
+         ManagerDeSons = new ManagerAudio(this);
          GestionInput = new IOManager(this, options.IntervalMAJStandard);
 
+         Services.AddService(typeof(ManagerAudio), ManagerDeSons);
          Services.AddService(typeof(Options), options);
          Services.AddService(typeof(EntitySystem), new EntitySystem(this));
          Services.AddService(typeof(InputManager), GestionnaireInput);
@@ -118,6 +122,7 @@ namespace AtelierXNA
          Components.Add(ManagerDeMessage);
          Components.Add(caméra);
          Components.Add(GestionInput);
+         Components.Add(ManagerDeSons);
       }
 
       public void InitializerNotifications()
@@ -137,6 +142,15 @@ namespace AtelierXNA
          nGameStateChanged.AjouterAuSystem(Message.GameState_TransitionMenu, ManagerDeMessage);
          nGameStateChanged.AjouterAuSystem(Message.GameState_Pop, ManagerDeMessage);
          nGameStateChanged.AjouterAuSystem(Message.GameState_Option, ManagerDeMessage);
+      }
+
+      void LoaderSons()
+      {
+         ManagerDeSons.AjouterSons("Boss");
+         ManagerDeSons.AjouterSons("Pistol");
+         ManagerDeSons.AjouterSons("Shotgun");
+         ManagerDeSons.AjouterSons("MachineGun");
+         ManagerDeSons.AjouterSons("GrenadeLauncher");
       }
 
       protected override void Update(GameTime gameTime)

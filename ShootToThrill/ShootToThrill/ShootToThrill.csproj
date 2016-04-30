@@ -81,9 +81,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
-    <Reference Include="XnaAux">
-      <HintPath>..\..\..\..\..\..\Desktop\XnaAux.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera\CaméraTracing.cs" />
@@ -147,18 +144,15 @@
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
     <Compile Include="Système Entité\Item\SupportFusil.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\AnimatedModel.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\AnimationPlayer.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\Bone.cs" />
-    <Compile Include="Système Graphique\MObjetDeBaseAnimé.cs" />
+    <Compile Include="Système Graphique\Shaders\MObjetDeBaseAnimé.cs" />
     <Compile Include="Système Graphique\ModelManager.cs" />
     <Compile Include="Système Graphique\ObjetDeBase.cs" />
+    <Compile Include="Système Graphique\Shaders\ObjetDeBaseAniméEtÉclairé.cs" />
     <Compile Include="Système Graphique\PrimitiveDeBase2.cs" />
     <Compile Include="Système Graphique\Shaders\InfoModèle.cs" />
     <Compile Include="Système Graphique\Shaders\Lumière.cs" />
     <Compile Include="Système Graphique\Shaders\Matériau.cs" />
     <Compile Include="Système Graphique\Shaders\MatériauÉclairé.cs" />
-    <Compile Include="Système Graphique\Shaders\ObjetDeBaseAniméEtÉclairé.cs" />
     <Compile Include="Système Graphique\Shaders\ParamètresShaders.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreDeBase.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreÉclairée.cs" />

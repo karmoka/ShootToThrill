@@ -22,9 +22,6 @@
     <RootNamespace>ShootToThrillContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnimationPipeline">
-      <HintPath>..\ShootToThrill\AnimationPipeline.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
@@ -393,13 +390,6 @@
       <Name>AudioEngine</Name>
       <Importer>XactImporter</Importer>
       <Processor>XactProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sounds\Menu.wav">
-      <Name>Menu</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -8,15 +8,11 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using AnimationAux;
 
 namespace AtelierXNA
 {
     public class MAvatar : Entité, IPositionable, IModele3d, IPhysique
     {
-       string NomModeleBase { get; set; }
-       string NomModeleAnimé { get; set; }
-
         private float IntervalMAJ { get; set; }
         private float TempsDepuisMAJ { get; set; }
         protected float Rotation { get; set; }
@@ -24,12 +20,10 @@ namespace AtelierXNA
         protected int Vie { get; set; }
         protected int VieMax { get; set; }
         protected bool EstEnMouvement { get; set; }
-        protected bool EstAnimé { get; set; }
 
         public IModele3d ComposanteGraphique { get; private set; }
         public ObjetPhysique ComposantePhysique { get; private set; }
         protected List<IArme> ListeArme { get; set; }
-        private AnimatedModel AnimationModèle { get; set; }
 
        /// <summary>
        /// Avatar dont le graphique ne bouge pas
@@ -43,31 +37,9 @@ namespace AtelierXNA
             ComposantePhysique = composantePhysique;
             ComposanteGraphique = composanteGraphique;
         }
-       /// <summary>
-       /// Avatar avec une seule animation qui est jouer lorsqu'il marche
-       /// </summary>
-       /// <param name="game"></param>
-       /// <param name="ModèleADeBase"></param>
-       /// <param name="ModèleAnimé"></param>
-       /// <param name="composantePhysique"></param>
-        public MAvatar(Game game, string modeleBase, string modeleAnimé, ObjetPhysique composantePhysique)
-           : base(game)
-        {
-           ComposantePhysique = composantePhysique;
-           NomModeleBase = modeleBase;
-           NomModeleAnimé = modeleAnimé;
-           EstAnimé = true;
-        }
 
         public override void Initialize()
         {
-           if(EstAnimé)
-           {
-              ComposanteGraphique = new AnimatedModel(Game, NomModeleBase, Vector3.Up * 3);
-              AnimationModèle = new AnimatedModel(Game, NomModeleAnimé, Vector3.Up * 3);
-              AnimationModèle.Initialize();
-           }
-
            TypeEnt = TypeEntité.Avatar;
            ComposanteGraphique.Initialize();
            ComposantePhysique.Initialize();
@@ -84,12 +56,6 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-           if(EstAnimé)
-           {
-              AnimationClip clip = AnimationModèle.Clips[0];
-              AnimationPlayer player = (ComposanteGraphique as AnimatedModel).PlayClip(clip);
-              player.Looping = true;
-           }
 
            base.LoadContent();
         }
