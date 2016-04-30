@@ -116,9 +116,6 @@ namespace AtelierXNA
                 {
                     BougerAvatar();
                     BougerArme();
-
-                    ComposanteGraphique.SetPosition(ComposantePhysique.Position);
-
                     TempsDepuisMAJ = 0;
                 }
                 if (EstEnMouvement)
@@ -140,6 +137,7 @@ namespace AtelierXNA
 
         protected virtual void BougerAvatar()
         {
+            ComposanteGraphique.SetPosition(ComposantePhysique.Position);
             if (Position.X > DISTANCE_MAX || Position.X < -DISTANCE_MAX ||
                 Position.Y > DISTANCE_MAX || Position.Y < -DISTANCE_MAX ||
                 Position.Z > DISTANCE_MAX || Position.Z < -DISTANCE_MAX)

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-
+using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
@@ -37,6 +37,9 @@ namespace AtelierXNA
             VitesseJoueur = 0.1f; //Arbitraire
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
+            Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            fusil.Initialize();
+            AjouterArme(fusil);
         }
 
         protected override void LoadContent()

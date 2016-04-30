@@ -61,13 +61,8 @@ namespace AtelierXNA
             DéterminerVitesseApparition();
             TempsDepuisDernierEnnemi = 0;
             CptEnnemi = 0;
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
             Difficulté = 0.1f * NbJoueur;
-            base.LoadContent();
+            base.Initialize();
         }
 
         public void SetPositionPortailEnnemi(Vector3 position)

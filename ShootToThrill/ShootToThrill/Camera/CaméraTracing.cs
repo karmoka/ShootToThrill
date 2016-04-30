@@ -31,7 +31,7 @@ namespace AtelierXNA
 
       public void SuivreCible(Vector3 cible)
       {
-          Vector3 positionCaméra = cible + new Vector3(OptionJeu.CameraDistanceOffset , OptionJeu.CameraHeightOffset, OptionJeu.CameraDistanceOffset);
+          Vector3 positionCaméra = cible + new Vector3(OptionJeu.CameraDistanceOffset + 10, OptionJeu.CameraHeightOffset, OptionJeu.CameraDistanceOffset + 10);
 
          CréerPointDeVue(positionCaméra, cible, OrientationVerticale);
       }

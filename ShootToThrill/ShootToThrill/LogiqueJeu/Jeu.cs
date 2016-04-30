@@ -65,7 +65,7 @@ namespace AtelierXNA
 
         public void SetPositionPortailJoueur(Vector3 position)
         {
-            PortailJoueur = new Portail(Game, position, 0, "PortailJoueur", 0.05f);
+            PortailJoueur = new Portail(Game, position, 0, "PortailMonstre", 0.05f);
             PortailJoueur.Initialize();
             ListeItem.Add(PortailJoueur);
         }
