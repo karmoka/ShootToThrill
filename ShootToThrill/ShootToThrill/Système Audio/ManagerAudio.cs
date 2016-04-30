@@ -29,6 +29,8 @@ namespace AtelierXNA
       private WaveBank waveBank { get; set; }
       private SoundBank soundBank { get; set; }
 
+      List<Cue> AudioEnCours { get; set; }
+
       public ManagerAudio(Game game)
          : base(game)
       {
@@ -37,6 +39,7 @@ namespace AtelierXNA
          waveBank = new WaveBank(engine, "Content\\Sounds\\Wave Bank.xwb");
 
          ListeSons = new List<ItemAudio>();
+         AudioEnCours = new List<Cue>();
       }
 
       public void AjouterSons(string nom)
@@ -51,10 +54,10 @@ namespace AtelierXNA
 
          if(position >= 0)
          {
-            ItemAudio i = ListeSons[position];
-            i.Joue = true;
-            i.EnPause = false;
-            ListeSons[position] = i;
+            //ItemAudio i = ListeSons[position];
+            //i.Joue = true;
+            //i.EnPause = false;
+            ListeSons[position] = new ItemAudio { audioCue = soundBank.GetCue(nom), EnPause = false, Joue = false, Nom = nom };
             ListeSons[position].audioCue.Play();
          }
       }
@@ -130,6 +133,7 @@ namespace AtelierXNA
       public override void Update(GameTime gameTime)
       {
          engine.Update();
+
          base.Update(gameTime);
       }
    }
