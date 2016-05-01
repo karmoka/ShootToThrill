@@ -43,5 +43,20 @@ namespace AtelierXNA
        {
            return (float)(-Math.Atan2(vecteur.X, vecteur.Y));// + Math.PI);
        }
+
+      public static Vector3 PlancherZero(Vector3 vecteur)
+       {
+          return new Vector3(PlancherZero(vecteur.X), PlancherZero(vecteur.Y), PlancherZero(vecteur.Z));
+       }
+
+      public static float PlancherZero(float f)
+      {
+         return f > 0 ? f : 0;
+      }
+
+      public static Vector3 ValeurAbsolue(Vector3 vecteur)
+      {
+         return new Vector3(ValeurAbsolue(vecteur.X), ValeurAbsolue(vecteur.Y), ValeurAbsolue(vecteur.Z));
+      }
    }
 }

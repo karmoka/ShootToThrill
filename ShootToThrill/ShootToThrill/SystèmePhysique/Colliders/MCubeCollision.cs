@@ -1,13 +1,14 @@
+// Auteur :       Raphael Croteau
+// Fichier :      CubeCollision.cs
+// Date :         le 16 mars 2015
+// Description :  Cette classe permet de Lire un fichier texte et d'en manipuler 
+//                les données.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+
 
 
 namespace AtelierXNA
@@ -15,7 +16,7 @@ namespace AtelierXNA
     /// <summary>
     /// Cube de collision ''tournable''. Utilise le théorème des axes séparateurs
     /// </summary>
-   public class MCubeCollision : Collider
+   public class CubeCollision : Collider
    {
       public Vector3 DemiDimention { get; set; }
       Vector3 rotation_;
@@ -37,7 +38,7 @@ namespace AtelierXNA
       }
 
 
-      public MCubeCollision(Vector3 centre, Vector3 dimension, Vector3 rotation)
+      public CubeCollision(Vector3 centre, Vector3 dimension, Vector3 rotation)
          : base()
       {
          Rotation = rotation;
@@ -68,19 +69,19 @@ namespace AtelierXNA
       {
          bool intersects = false;
 
-         if(autre is MCubeCollision)
+         if (autre is CubeCollision)
          {
-            intersects = EnCollisionAvecCube(autre as MCubeCollision);
+            intersects = CollisionCubeCube(this, autre as CubeCollision);
          }
          if (autre is SphereCollision)
          {
-            intersects = EnCollisionAvecSphere(autre as SphereCollision);
+            intersects = CollisionSphereCube(autre as SphereCollision, this);
          }
 
          return intersects;
       }
 
-      public bool EnCollisionAvecCube(MCubeCollision cube)
+      public bool EnCollisionAvecCube(CubeCollision cube)
       {
          bool enCollision = true;
          Vector3 Distance = this.Center - cube.Center;
@@ -149,24 +150,10 @@ namespace AtelierXNA
          return enCollision;
       }
 
-      static float LongueurCubeProjeté(MCubeCollision A, MCubeCollision B, Vector3 AxeComparé)
+      static float LongueurCubeProjeté(CubeCollision A, CubeCollision B, Vector3 AxeComparé)
       {
          return ValeurAbsolue(Vector3.Dot(A.DemiDimention.X * A.AxeX, AxeComparé)) + ValeurAbsolue(Vector3.Dot(A.DemiDimention.Y * A.AxeY, AxeComparé)) + ValeurAbsolue(Vector3.Dot(A.DemiDimention.Z * A.AxeZ, AxeComparé)) +
                 ValeurAbsolue(Vector3.Dot(B.DemiDimention.X * B.AxeX, AxeComparé)) + ValeurAbsolue(Vector3.Dot(B.DemiDimention.Y * B.AxeY, AxeComparé)) + ValeurAbsolue(Vector3.Dot(B.DemiDimention.Z * B.AxeZ, AxeComparé));
-      }
-
-      public bool EnCollisionAvecSphere(SphereCollision sphere)
-      {
-         bool enCollision = false;
-         Vector3 distance = this.Center - sphere.Center;
-         if (this.DemiDimention.X <= sphere.Rayon)
-            enCollision = true;
-         if (this.DemiDimention.Y <= sphere.Rayon)
-            enCollision = true;
-         if (this.DemiDimention.Z <= sphere.Rayon)
-            enCollision = true;
-
-         return enCollision;
       }
 
       public override Vector3 Normale(Vector3 positionAutreObjet)
@@ -174,7 +161,7 @@ namespace AtelierXNA
          Vector3 diff = this.Center - positionAutreObjet;
          diff = ValeurAbsolueVecteur(diff);
          diff -= DemiDimention;
-         diff = MinimumZero(diff);
+         diff = CustomMathHelper.PlancherZero(diff);
 
          float x = Vector3.Dot(diff, AxeX);
          float y = Vector3.Dot(diff, AxeY);
@@ -190,28 +177,18 @@ namespace AtelierXNA
          return DemiDimention.Y;
       }
 
+      /// <summary>
+      /// Fonction pour alléger la lecture du code. Réfère simplement a customMathHelper pour que les fonctions soient uniforment dans le code
+      /// </summary>
+      /// <param name="f"></param>
+      /// <returns></returns>
       static float ValeurAbsolue(float f)
       {
-         if (f < 0)
-            f *= -1;
-         return f;
+         return CustomMathHelper.ValeurAbsolue(f);
       }
       static Vector3 ValeurAbsolueVecteur(Vector3 v)
       {
-         return new Vector3(ValeurAbsolue(v.X),ValeurAbsolue(v.Y),ValeurAbsolue(v.Z));
-      }
-      Vector3 MinimumZero(Vector3 t)
-      {
-         float x= t.X;
-         float y = t.Y;
-         float z=t.Z;
-         if (t.X < 0)
-            x = 0;
-         if (t.Y < 0)
-            y = 0;
-         if (t.Z < 0)
-            z = 0;
-         return new Vector3(x, y, z);
+         return CustomMathHelper.ValeurAbsolue(v);
       }
    }
 }

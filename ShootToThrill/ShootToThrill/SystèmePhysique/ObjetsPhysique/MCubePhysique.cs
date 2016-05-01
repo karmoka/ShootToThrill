@@ -18,13 +18,13 @@ namespace AtelierXNA
    public class MCubePhysique : ObjetPhysique, IModele3d, IPositionable
    {
 
-      MCubeCollision cubeCollision { get; set; }
+      CubeCollision cubeCollision { get; set; }
       CubeColoré cubeGraphique { get; set; }
 
       public MCubePhysique(Game game, Vector3 position, Vector3 dimension, Vector3 vitesse, float masse)
          : base(game,position,vitesse,masse)
       {
-         cubeCollision = new MCubeCollision(position,dimension,new Vector3(0f,0f,0f));
+         cubeCollision = new CubeCollision(position,dimension,new Vector3(0f,0f,0f));
          cubeGraphique = new CubeColoré(game, 1, new Vector3(0f, 0f, 0f), position, Color.White, dimension, 1 / 60f);
       }
 

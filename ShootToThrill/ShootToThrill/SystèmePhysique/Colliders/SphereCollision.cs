@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Auteur :       Raphael Croteau
+// Fichier :      SphereCollision.cs
+// Description :  Représente un volume de collision sphérique dans l'espace.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,33 +30,17 @@ namespace AtelierXNA
       public override bool Intersects(Collider autre)
       {
          bool intersection = false;
+
          if(autre.Type == Type_Collider.Sphere)
          {
-            float Distance = (this.Center - autre.Center).Length();
-            if (Distance <= this.Rayon || Distance <= (autre as SphereCollision).Rayon)
-               intersection = true;
+            intersection = CollisionSphereSphere(this, autre as SphereCollision);
          }
          if (autre.Type == Type_Collider.Cube)
          {
-            intersection = EnCollisionAvecCube(autre as MCubeCollision);
+            intersection = CollisionSphereCube(this, autre as CubeCollision);
          }
 
          return intersection;
-      }
-      public bool EnCollisionAvecCube(MCubeCollision cube)
-      {
-         bool enCollision = false;
-         Vector3 normale = cube.Normale(this.Center);
-         Vector3 distance = this.Center - cube.Center;
-
-         if (CustomMathHelper.ValeurAbsolue(Vector3.Dot(distance, normale))<= this.Rayon)
-            enCollision = true;
-
-         if (distance.Length() > (cube.DemiDimention.X+cube.DemiDimention.Y+cube.DemiDimention.Z))
-            enCollision = false ;
-
-
-         return enCollision;
       }
 
       public override Vector3 Normale(Vector3 positionAutreObjet)

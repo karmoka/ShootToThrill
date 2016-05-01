@@ -71,6 +71,9 @@ Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
 Content\Sounds\Menu.xnb
+Content\Modèle\ship2.xnb
+Content\Modèle\ship_tex.xnb
+Content\Modèle\ship_tex_0.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

@@ -24,7 +24,7 @@ namespace AtelierXNA
       InfoModèle InfoSphère { get; set; }
       BoundingSphere SphèreDeCollision { get; set; }
 
-      public SphèreÉclairée(Game jeu, Vector3 origine, float rayon, Vector2 composition, string nomTexture, 
+      public SphèreÉclairée(Game jeu, Vector3 origine, float rayon, Vector2 composition, string nomTexture,
                             string nomEffetAffichage, Lumière lumièreJeu, float intervalleMAJ)
          : base(jeu, origine, rayon, composition, nomTexture, intervalleMAJ)
       {

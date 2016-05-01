@@ -106,7 +106,7 @@ namespace AtelierXNA
 
       public void Intégrer(float deltaT)
       {
-         if(!EstImmuable)
+         if(MasseInverse != 0)
          {
             CalculerForceRésultantes();
             Accélération = ForceRésultante * MasseInverse;
@@ -114,6 +114,8 @@ namespace AtelierXNA
 
             Position += Vitesse * deltaT;
          }
+
+         ListeCollision.Clear();
       }
 
        void CalculerForceRésultantes()
@@ -131,7 +133,8 @@ namespace AtelierXNA
 
        public void AjouterForce(Vector3 force)
        {
-           Forces.Add(force);
+          if(MasseInverse != 0)
+            Forces.Add(force);
        }
 
        public virtual Collider GetCollider()
