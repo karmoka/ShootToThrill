@@ -1,12 +1,14 @@
-﻿// Auteur :       Raphael Croteau
-// Fichier :      MoteurPhysique.cs
-// Description :  Gère une liste d'objetphysique et s'occuper des collisions
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
-
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
@@ -15,7 +17,8 @@ namespace AtelierXNA
     /// </summary>
    class MoteurPhysique : GameComponent, IPausable
    {
-      public List<IPhysique> ListePhysique { get; private set; }
+      public List<ObjetPhysique> ListePhysique { get; private set; }
+      List<InformationIntersection> InformationSurCollision { get; set; }
 
       float IntervalMAJ { get; set; }
       float TempsDepuisMAJ { get; set; }
@@ -26,14 +29,19 @@ namespace AtelierXNA
          : base(game)
       {
          IntervalMAJ = intervalMAJ;
-         ListePhysique = new List<IPhysique>();
+         ListePhysique = new List<ObjetPhysique>();
       }
 
       public override void Initialize()
       {
          EnPause = false;
 
+         InformationSurCollision = new List<InformationIntersection>();
          TempsDepuisMAJ = 0;
+         foreach (ObjetPhysique i in ListePhysique)
+         {
+            i.Initialize();
+         }
 
          base.Initialize();
       }
@@ -47,7 +55,7 @@ namespace AtelierXNA
          EnPause = false;
       }
 
-      public void AjouterObjet(IPhysique objet)
+      public void AjouterObjet(ObjetPhysique objet)
       {
          if (objet is Ennemi && ListePhysique.Exists(x => x is Joueur))
          {
@@ -59,7 +67,7 @@ namespace AtelierXNA
          }
       }
 
-      public void EnleverObjet(IPhysique objet)
+       public void EnleverObjet(ObjetPhysique objet)
       {
           ListePhysique.Remove(objet);
       }
@@ -71,8 +79,8 @@ namespace AtelierXNA
          if (!EnPause && TempsDepuisMAJ >= IntervalMAJ)
          {
             Simuler();
-            DétecterGérerCollision();
-            //GérerCollision();
+            DétecterCollision();
+            GérerCollision();
 
             TempsDepuisMAJ = 0;
          }
@@ -84,11 +92,11 @@ namespace AtelierXNA
       {
          for (int i = 0; i < GrosseurListe; ++i)
          {
-            ListePhysique[i].GetObjetPhysique().Intégrer(IntervalMAJ);
+            ListePhysique[i].Intégrer(IntervalMAJ);
          }
       }
 
-      private void DétecterGérerCollision()
+      private void DétecterCollision()
       {
          for (int i = 0; i < GrosseurListe; ++i)
          {
@@ -98,17 +106,65 @@ namespace AtelierXNA
 
                if (intersection)
                {
-                  InformationIntersection infoColli = new InformationIntersection(ListePhysique[i].GetObjetPhysique(), ListePhysique[j].GetObjetPhysique());
-                  ListePhysique[i].GetObjetPhysique().EnCollision(ListePhysique[j].GetObjetPhysique(), infoColli);
-                  ListePhysique[j].GetObjetPhysique().EnCollision(ListePhysique[i].GetObjetPhysique(), infoColli);
+                  InformationSurCollision.Add(new InformationIntersection(ListePhysique[i], ListePhysique[j]));
                }
             }
          }
       }
 
+      private void GérerCollision()
+      {
+         foreach(InformationIntersection infoColli in InformationSurCollision)
+         {
+            ObjetPhysique A = infoColli.ObjetA;
+            ObjetPhysique B = infoColli.ObjetB;
+
+            A.EnCollision(B, infoColli);
+            B.EnCollision(A, infoColli);
+
+            if (A.EstTangible && B.EstTangible)
+            {
+               //Vector3 norm = B.GetCollider().Normale(A.Position);
+               ////La norme est corrigé pour gérer la collision des deux bords de l'objet
+               //if (Vector3.Dot((B.Position - A.Position), norm) > 0)
+               //   norm = -norm;
+               //A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+               //B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+
+               //CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+            }
+         }
+
+         InformationSurCollision.Clear();
+      }
+
+      void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, InformationIntersection infoColli, Vector3 normale)
+      {
+      //    A.SetPosition(A.Position + normale * 0.01f * A.MasseInverse);
+      //    B.SetPosition(B.Position - normale * 0.01f * B.MasseInverse);
+      }
+
       public int GrosseurListe
       {
          get { return ListePhysique.Count; }
+      }
+
+      public Vector3 GetPositionJoueurPlusProche(Vector3 positionEnnemi)
+      {
+          Vector3 positionAvatarPlusProche = Vector3.Zero;
+          List<float> distance = new List<float>();
+          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
+          {
+              distance.Add(Vector3.Distance(j.Position, positionEnnemi));
+          }
+          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
+          {
+              if (Vector3.Distance(j.Position, positionEnnemi) == distance.OrderBy(d => d).ElementAt(0))// && e is Avatar_)
+              {
+                  positionAvatarPlusProche = j.Position;
+              }
+          }
+          return positionAvatarPlusProche;
       }
    }
 }

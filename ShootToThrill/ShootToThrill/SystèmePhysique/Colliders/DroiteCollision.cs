@@ -40,7 +40,7 @@ namespace AtelierXNA
         public void CoupDeFeu()
         {
             int nbObjetEnCollision;
-            MoteurPhysique moteurPhysique = Jeu.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique;
+            MMoteurPhysique moteurPhysique = Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
             foreach (ObjetPhysique objet in moteurPhysique.ListePhysique)
             {
                 if ((objet is Ennemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() < Longueur)
