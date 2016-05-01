@@ -30,7 +30,7 @@ namespace AtelierXNA
         List<MJoueur> ListeJoueur { get; set; }
         Viewport[] TableauViewports { get; set; }
 
-        MMoteurPhysique ManagerPhysique { get; set; }
+        MoteurPhysique ManagerPhysique { get; set; }
         ManagerAudio ManagerDeSons { get; set; }
         ModelManager ManagerModèle { get; set; }
         ScreenManager ManagerScreen { get; set; }
@@ -180,7 +180,7 @@ namespace AtelierXNA
 
             TrouveurDeChemin = new Pathfinding(Game);
             RequeteDeChemin = new RequêtePathManager(Game);
-            ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
+            ManagerPhysique = new MoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
             ManagerDeSons = new ManagerAudio(Game);
@@ -195,7 +195,7 @@ namespace AtelierXNA
             Game.Components.Add(ManagerDeSons);
 
             Game.Services.AddService(typeof(ModelManager), ManagerModèle);
-            Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
+            Game.Services.AddService(typeof(MoteurPhysique), ManagerPhysique);
             Game.Services.AddService(typeof(Pathfinding), TrouveurDeChemin);
             Game.Services.AddService(typeof(RequêtePathManager), RequeteDeChemin);
         }
@@ -215,7 +215,7 @@ namespace AtelierXNA
 
             Game.Services.RemoveService(typeof(ModelManager));
             Game.Services.RemoveService(typeof(MoteurPhysique));
-            Game.Services.RemoveService(typeof(MMoteurPhysique));
+            Game.Services.RemoveService(typeof(MoteurPhysique));
             Game.Services.RemoveService(typeof(Pathfinding));
             Game.Services.RemoveService(typeof(RequêtePathManager));
             Game.Services.RemoveService(typeof(Jeu));

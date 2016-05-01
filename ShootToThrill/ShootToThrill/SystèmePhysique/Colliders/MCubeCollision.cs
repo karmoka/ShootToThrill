@@ -86,7 +86,7 @@ namespace AtelierXNA
          bool enCollision = true;
          Vector3 Distance = this.Center - cube.Center;
 
-         //case 1
+
          Vector3 AxeComparé = this.AxeX;
          if (ValeurAbsolue(Vector3.Dot(Distance, AxeComparé)) > this.DemiDimention.X + ValeurAbsolue(Vector3.Dot(cube.DemiDimention.X * cube.AxeX, AxeComparé)) + ValeurAbsolue(Vector3.Dot(cube.DemiDimention.Y * cube.AxeY, AxeComparé)) + ValeurAbsolue(Vector3.Dot(cube.DemiDimention.Z * cube.AxeZ, AxeComparé)))
             enCollision = false;
