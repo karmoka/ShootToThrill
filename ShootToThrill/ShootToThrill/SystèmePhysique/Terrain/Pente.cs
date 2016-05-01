@@ -14,7 +14,7 @@ namespace AtelierXNA
 {
     public class Pente : ObjetPhysique, IModele3d
     {
-        MCubeCollision cubeCollision { get; set; }
+        CubeCollision cubeCollision { get; set; }
         public PrimitivePente pente { get; set; } 
 
         public Pente(Game game, Vector3 position, Vector3 dimension)

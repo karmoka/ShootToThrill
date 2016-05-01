@@ -1,14 +1,11 @@
-﻿using System;
+﻿// Auteur :       Raphael Croteau
+// Fichier :      ObjetPhysique.cs
+// Description :  Représente un objet physique répondant à F= ma. Une masse inverse de 0 indique une masse infini, donc aucun déplacement.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Media;
 using ProjetPrincipal.Data;
 
 namespace AtelierXNA
@@ -106,7 +103,7 @@ namespace AtelierXNA
 
       public void Intégrer(float deltaT)
       {
-         if(!EstImmuable)
+         if(MasseInverse != 0)
          {
             CalculerForceRésultantes();
             Accélération = ForceRésultante * MasseInverse;
@@ -114,6 +111,8 @@ namespace AtelierXNA
 
             Position += Vitesse * deltaT;
          }
+
+         ListeCollision.Clear();
       }
 
        void CalculerForceRésultantes()
@@ -131,7 +130,8 @@ namespace AtelierXNA
 
        public void AjouterForce(Vector3 force)
        {
-           Forces.Add(force);
+          if(MasseInverse != 0)
+            Forces.Add(force);
        }
 
        public virtual Collider GetCollider()

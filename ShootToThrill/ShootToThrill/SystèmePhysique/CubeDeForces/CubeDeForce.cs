@@ -1,13 +1,11 @@
+// Auteur :       Raphael Croteau
+// Fichier :      CubeDeForce.cs
+// Description :  Volude de collision appliquant une force aux objets qui le touchent
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+
 
 
 namespace AtelierXNA
@@ -27,7 +25,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             ComposanteGraphique = new CubeColoré(Game, 1f, Vector3.Zero, this.Position, Color.White, Dimension, 1/60f);
-            Collision = new MCubeCollision(this.Position, Dimension, Vector3.Zero);
+            Collision = new CubeCollision(this.Position, Dimension, Vector3.Zero);
 
             base.Initialize();
         }

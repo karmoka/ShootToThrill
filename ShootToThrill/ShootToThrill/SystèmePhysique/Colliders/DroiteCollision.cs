@@ -98,8 +98,8 @@ namespace AtelierXNA
             }
             else if (autre.Type == Type_Collider.Cube)
             {
-                Vector3 min = (autre as MCubeCollision).Center - (autre as MCubeCollision).DemiDimention;
-                Vector3 max = (autre as MCubeCollision).Center + (autre as MCubeCollision).DemiDimention;
+                Vector3 min = (autre as CubeCollision).Center - (autre as CubeCollision).DemiDimention;
+                Vector3 max = (autre as CubeCollision).Center + (autre as CubeCollision).DemiDimention;
                 BoundingBox boîte = new BoundingBox(min, max);
                 intersection = Droite.Intersects(boîte) != null;
                 if (intersection)

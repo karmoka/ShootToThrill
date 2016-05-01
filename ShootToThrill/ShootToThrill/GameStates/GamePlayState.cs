@@ -30,7 +30,7 @@ namespace AtelierXNA
         List<MJoueur> ListeJoueur { get; set; }
         Viewport[] TableauViewports { get; set; }
 
-        MMoteurPhysique ManagerPhysique { get; set; }
+        MoteurPhysique ManagerPhysique { get; set; }
         ManagerAudio ManagerDeSons { get; set; }
         ModelManager ManagerModèle { get; set; }
         ScreenManager ManagerScreen { get; set; }
@@ -140,9 +140,9 @@ namespace AtelierXNA
            LumièreJeu = new Lumière(Game, Vector3.Zero,Color.Red.ToVector3(),1,1,Vector3.One, Vector4.One);
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-               //MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "Scene2", "Shutter", 1f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
-               MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1f, Vector3.Zero, Vector3.Zero);
-                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position,Vector3.Zero,1/2f), (PlayerIndex)i));
+                MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "ship2", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
+                //MObjetDeBase o = new MObjetDeBase(Game, "ship2", 0.001f, Vector3.Zero, Vector3.Zero);
+                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position,Vector3.Zero,1/10f), (PlayerIndex)i));
                 
                 //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
                 //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
@@ -180,7 +180,7 @@ namespace AtelierXNA
 
             TrouveurDeChemin = new Pathfinding(Game);
             RequeteDeChemin = new RequêtePathManager(Game);
-            ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
+            ManagerPhysique = new MoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
             ManagerDeSons = new ManagerAudio(Game);
@@ -195,7 +195,7 @@ namespace AtelierXNA
             Game.Components.Add(ManagerDeSons);
 
             Game.Services.AddService(typeof(ModelManager), ManagerModèle);
-            Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
+            Game.Services.AddService(typeof(MoteurPhysique), ManagerPhysique);
             Game.Services.AddService(typeof(Pathfinding), TrouveurDeChemin);
             Game.Services.AddService(typeof(RequêtePathManager), RequeteDeChemin);
         }
@@ -215,7 +215,7 @@ namespace AtelierXNA
 
             Game.Services.RemoveService(typeof(ModelManager));
             Game.Services.RemoveService(typeof(MoteurPhysique));
-            Game.Services.RemoveService(typeof(MMoteurPhysique));
+            Game.Services.RemoveService(typeof(MoteurPhysique));
             Game.Services.RemoveService(typeof(Pathfinding));
             Game.Services.RemoveService(typeof(RequêtePathManager));
             Game.Services.RemoveService(typeof(Jeu));

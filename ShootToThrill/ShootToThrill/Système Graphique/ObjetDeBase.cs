@@ -39,7 +39,7 @@ namespace AtelierXNA
       private void CalculerMonde()
       {
          Monde = Matrix.Identity;
-         Monde *= Matrix.CreateScale(1f);
+         Monde *= Matrix.CreateScale(Échelle);
          Monde *= Matrix.CreateFromYawPitchRoll(Rotation.Y, Rotation.X, Rotation.Z);
          Monde *= Matrix.CreateTranslation(Position);
       }
@@ -51,8 +51,6 @@ namespace AtelierXNA
          Modèle = GestionnaireDeModèles.Find(NomModèle);
          TransformationsModèle = new Matrix[Modèle.Bones.Count];
          Modèle.CopyAbsoluteBoneTransformsTo(TransformationsModèle);
-
-         MyEffect = Game.Content.Load<Effect>("Effets/Lumière");
       }
 
       public override void Draw(GameTime gameTime)

@@ -34,5 +34,30 @@ namespace AtelierXNA
       public abstract float DistanceBord(Vector3 position);
       public float DistanceImpact { get; set; }
 
+      protected static bool CollisionSphereSphere(SphereCollision sphere1, SphereCollision sphere2)
+      {
+         float Distance = (sphere1.Center - sphere2.Center).Length();
+         return (Distance <= sphere1.Rayon || Distance <= sphere2.Rayon);
+      }
+
+      protected static bool CollisionSphereCube(SphereCollision sphere, CubeCollision cube)
+      {
+         bool enCollision = false;
+         Vector3 normale = cube.Normale(sphere.Center);
+         Vector3 distance = sphere.Center - cube.Center;
+
+         if (CustomMathHelper.ValeurAbsolue(Vector3.Dot(distance, normale)) <= sphere.Rayon)
+            enCollision = true;
+
+         if (distance.Length() > (cube.DemiDimention.X + cube.DemiDimention.Y + cube.DemiDimention.Z))
+            enCollision = false;
+
+         return enCollision;
+      }
+
+      protected static bool CollisionCubeCube(CubeCollision cube1, CubeCollision cube2)
+      {
+         return cube1.EnCollisionAvecCube(cube2);
+      }
    }
 }
