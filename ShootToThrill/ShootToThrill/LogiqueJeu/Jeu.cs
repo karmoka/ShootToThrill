@@ -20,7 +20,7 @@ namespace AtelierXNA
         public Portail PortailEnnemi { get; private set; }
         float TempsDepuisDernierRound { get; set; }
         float IntervalEntreRound { get; set; }
-        MoteurPhysique MoteurPhysique { get; set; }
+        MMoteurPhysique MoteurPhysique { get; set; }
         Interrupteur Interrupteur { get; set; }
         public List<Item> ListeItem { get; private set; }
         int NbJoueur { get; set; }
@@ -52,7 +52,7 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            MoteurPhysique = Game.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique;
+            MoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
             base.LoadContent();
         }
 

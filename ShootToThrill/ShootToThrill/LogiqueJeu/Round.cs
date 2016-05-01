@@ -15,7 +15,7 @@ namespace AtelierXNA
 {
     public class Round : DrawableGameComponent
     {
-        MoteurPhysique MoteurPhysique { get; set; }
+        MMoteurPhysique MoteurPhysique { get; set; }
         float NombreEnnemi { get; set; }
         float Difficulté { get; set; }
         int Thresh { get; set; }
