@@ -6,7 +6,7 @@ namespace AtelierXNA
    public class Matériau
    {
       
-      public Caméra CaméraJeu { get; private set; }
+      public Caméra CaméraJeu { get; set; }
       public Matrix Monde { get; private set; }
       public Matrix VueProjection { get; private set; }
       public Matrix MondeVueProjection { get; private set; }

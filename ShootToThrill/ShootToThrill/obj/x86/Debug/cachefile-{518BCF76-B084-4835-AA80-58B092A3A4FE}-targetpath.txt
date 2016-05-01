@@ -26,6 +26,7 @@ Content\Modèle\SupportFusil.xnb
 Content\Modèle\SupportFusil2.xnb
 Content\Modèle\unicorn.xnb
 Content\Modèle\untitled.xnb
+Content\Modèle\Interrupteur.xnb
 Content\Description\Bazooka.xnb
 Content\Description\Joueur0.xnb
 Content\Description\Joueur1.xnb
@@ -40,8 +41,10 @@ Content\Description\Boss1.xnb
 Content\Description\Ennemi3.xnb
 Content\Description\Ennemi2.xnb
 Content\Description\Ennemi1.xnb
+Content\Description\Pistol.xnb
 Content\Effets\Lumière.xnb
 Content\Effets\Phong.xnb
+Content\Effets\SpotLight.xnb
 Content\Modèle\Portail\material_2.xnb
 Content\Modèle\Portail\material_3.xnb
 Content\Textures\button.xnb
@@ -68,8 +71,6 @@ Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
 Content\Sounds\Menu.xnb
-Content\Modèle\Interrupteur.xnb
-Content\Description\Pistol.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

@@ -118,13 +118,15 @@ namespace AtelierXNA
       {
          base.Update(gameTime);
          LumièreJeu.Position = CaméraJeu.Position;
+         MatériauAffichage.CaméraJeu = this.CaméraJeu;
       }
 
       public override void Draw(GameTime gameTime)
       {
          if (CaméraJeu.Frustum.Intersects(SphèreDeCollision))
          {
-            AppliquerTransformation();
+            Matrix[] Transformations = new Matrix[Modèle.Bones.Count];
+            Modèle.CopyAbsoluteBoneTransformsTo(Transformations);
 
             MatériauAffichage.UpdateMatériau(Position, Monde);
             foreach (ModelMesh maillage in Modèle.Meshes)
@@ -139,12 +141,6 @@ namespace AtelierXNA
                maillage.Draw();
             }
          }
-      }
-
-      public virtual void AppliquerTransformation()
-      {
-         Matrix[] Transformations = new Matrix[Modèle.Bones.Count];
-         Modèle.CopyAbsoluteBoneTransformsTo(Transformations);
       }
    }
 }

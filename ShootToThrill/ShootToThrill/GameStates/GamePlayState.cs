@@ -137,11 +137,12 @@ namespace AtelierXNA
         /// </summary>
         void CréerJoueurs()
         {
+           LumièreJeu = new Lumière(Game, Vector3.Zero,Color.Red.ToVector3(),1,1,Vector3.One, Vector4.One);
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-                MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.One );
-
-                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position), (PlayerIndex)i));
+               //MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "Scene2", "Shutter", 1f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
+               MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1f, Vector3.Zero, Vector3.Zero);
+                ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position,Vector3.Zero,1/2f), (PlayerIndex)i));
                 
                 //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
                 //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);

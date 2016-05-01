@@ -109,10 +109,8 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèl
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar3.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Bazooka.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Boss.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Boss1.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Boss2.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\butterfly.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Cube.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Ennemi1.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Ennemi2.xnb
@@ -182,7 +180,6 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\ProjetPrincipa
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\ShootToThrill.exe
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Outils.dll
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\XnaAux.dll
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\ShootToThrill.pdb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\ProjetPrincipal.Data.pdb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Microsoft.Xna.Framework.xml
@@ -288,3 +285,19 @@ C:\Users\201457989\Documents\GitHub\ShootToThrill\Console\bin\Debug\Microsoft.Xn
 C:\Users\201457989\Documents\GitHub\ShootToThrill\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
 C:\Users\201457989\Documents\GitHub\ShootToThrill\Console\obj\Debug\Console.exe
 C:\Users\201457989\Documents\GitHub\ShootToThrill\Console\obj\Debug\Console.pdb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Boss0.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Interrupteur.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Options.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Boss0.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Boss1.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Ennemi3.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Ennemi2.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Ennemi1.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Pistol.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Effets\SpotLight.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Menu.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\AudioEngine.xgs
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Wave Bank.xwb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Sound Bank.xsb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Microsoft.Xna.Framework.Xact.xml

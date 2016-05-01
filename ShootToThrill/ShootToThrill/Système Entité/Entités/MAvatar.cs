@@ -43,7 +43,6 @@ namespace AtelierXNA
         public IModele3d ComposanteGraphique { get; private set; }
         public ObjetPhysique ComposantePhysique { get; private set; }
         protected List<Fusil> ListeArme { get; set; }
-        AnimatedModel AnimationModèle { get; set; }
 
         /// <summary>
         /// Avatar dont le graphique ne bouge pas
@@ -58,30 +57,8 @@ namespace AtelierXNA
             ComposanteGraphique = composanteGraphique;
         }
 
-        /// <summary>
-        /// Avatar avec une seule animation qui est jouer lorsqu'il marche
-        /// </summary>
-        /// <param name="game"></param>
-        /// <param name="ModèleADeBase"></param>
-        /// <param name="ModèleAnimé"></param>
-        /// <param name="composantePhysique"></param>
-        public MAvatar(Game game, string modèleBase, string modèleAnimé, ObjetPhysique composantePhysique)
-            : base(game)
-        {
-            ComposantePhysique = composantePhysique;
-            NomModèleBase = modèleBase;
-            NomModèleAnimé = modèleAnimé;
-            EstAnimé = true;
-        }
-
         public override void Initialize()
         {
-            if (EstAnimé)
-            {
-                ComposanteGraphique = new AnimatedModel(Game, NomModèleBase, Vector3.Up * 3);
-                AnimationModèle = new AnimatedModel(Game, NomModèleAnimé, Vector3.Up * 3);
-                AnimationModèle.Initialize();
-            }
             TypeEnt = TypeEntité.Avatar;
             ComposanteGraphique.Initialize();
             ComposantePhysique.Initialize();
@@ -98,12 +75,6 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            if (EstAnimé)
-            {
-                AnimationClip clip = AnimationModèle.Clips[0];
-                AnimationPlayer player = (ComposanteGraphique as AnimatedModel).PlayClip(clip);
-                player.Looping = true;
-            }
             base.LoadContent();
         }
 
@@ -116,7 +87,7 @@ namespace AtelierXNA
                 {
                     BougerAvatar();
                     BougerArme();
-            ComposanteGraphique.SetPosition(ComposantePhysique.Position);
+                    ComposanteGraphique.SetPosition(ComposantePhysique.Position);
                     TempsDepuisMAJ = 0;
                 }
                 if (EstEnMouvement)

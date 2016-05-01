@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>Reach</XnaProfile>
+    <XnaProfile>HiDef</XnaProfile>
     <XnaCrossPlatformGroupID>55c22bbc-2a58-492f-989e-3ef1e00bc8c2</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
@@ -152,10 +152,6 @@
     <Compile Include="Système Entité\Item\Portail.cs" />
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\AnimatedModel.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\AnimationPlayer.cs" />
-    <Compile Include="Système Graphique\BetterSkinned\Bone.cs" />
-    <Compile Include="Système Graphique\MObjetDeBaseAnimé.cs" />
     <Compile Include="Système Graphique\ModelManager.cs" />
     <Compile Include="Système Graphique\ObjetDeBase.cs" />
     <Compile Include="Système Graphique\PrimitiveDeBase2.cs" />
@@ -163,11 +159,12 @@
     <Compile Include="Système Graphique\Shaders\Lumière.cs" />
     <Compile Include="Système Graphique\Shaders\Matériau.cs" />
     <Compile Include="Système Graphique\Shaders\MatériauÉclairé.cs" />
+    <Compile Include="Système Graphique\Shaders\MObjetDeBaseAnimé.cs" />
     <Compile Include="Système Graphique\Shaders\ObjetDeBaseAniméEtÉclairé.cs" />
     <Compile Include="Système Graphique\Shaders\ParamètresShaders.cs" />
+    <Compile Include="Système Graphique\Billboard.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreDeBase.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreÉclairée.cs" />
-    <Compile Include="Système Graphique\Billboard.cs" />
     <Compile Include="Système Graphique\TuileColorée.cs" />
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
