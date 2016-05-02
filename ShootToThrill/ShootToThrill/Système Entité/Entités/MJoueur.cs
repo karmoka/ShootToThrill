@@ -25,7 +25,11 @@ namespace AtelierXNA
         {
             IndexJoueur = indexJoueur;
         }
-
+        public MJoueur(Game game, DescriptionAvatar description, Vector3 position, PlayerIndex indexJoueur)
+            : base(game, description, position)
+        {
+            IndexJoueur = indexJoueur;
+        }
 
         public override void Initialize()
         {

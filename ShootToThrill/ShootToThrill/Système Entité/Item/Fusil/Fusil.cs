@@ -27,6 +27,7 @@ namespace AtelierXNA
         MessageManager ManagerDeMessage { get; set; }
         ModelManager ManagerDeModèle { get; set; }
         protected List<DroiteColorée> ListeTrajectoires { get; set; }
+        List<Projectiles> ListeProjectile { get; set; }
         bool TrajectoireExiste { get; set; }
         int AngleRotation
         {
@@ -138,6 +139,7 @@ namespace AtelierXNA
             TempsDepuisDebutJeu = 0;
             RechargeInitiale();
             ListeTrajectoires = new List<DroiteColorée>();
+            ListeProjectile = new List<Projectiles>();
             TrajectoireExiste = false;
             base.Initialize();
         }
@@ -163,6 +165,11 @@ namespace AtelierXNA
                 }
             }
 
+            foreach(Projectiles projectile in ListeProjectile)
+            {
+                projectile.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 
@@ -185,7 +192,13 @@ namespace AtelierXNA
                 {
                     for (int i = 0; i < NbBallesParTir; ++i)
                     {
-                        Tirer();
+                        Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
+                        direction = DirectionAléatoire(direction);
+
+                        DroiteColorée trajectoire = new DroiteColorée(Game, Position, direction, Dommage, Portée, NomArme);
+                        trajectoire.DroiteCollision.CoupDeFeu();
+                        trajectoire.Initialize();
+                        ListeTrajectoires.Add(trajectoire);
                     }
                     GérerMunitions();
                     TrajectoireExiste = true;

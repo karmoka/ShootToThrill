@@ -25,7 +25,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             ComposanteGraphique = new CubeColoré(Game, 1f, Vector3.Zero, this.Position, Color.White, Dimension, 1/60f);
-            Collision = new CubeCollision(this.Position, Dimension, Vector3.Zero);
+            Collision = new MCubeCollision(this.Position, Dimension, Vector3.Zero);
 
             base.Initialize();
         }

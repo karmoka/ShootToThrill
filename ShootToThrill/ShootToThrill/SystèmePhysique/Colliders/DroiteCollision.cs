@@ -14,22 +14,28 @@ namespace AtelierXNA
 {
     public class DroiteCollision : Collider
     {
-        public float Longueur { get; private set; }
+        public float Longueur { get; set; }
+
         Vector3 VecteurUnitaire { get; set; }
         Vector3 Point { get; set; }
         Ray Droite { get; set; }
+
         List<ObjetPhysique> DansTrajectoire { get; set; }
         Vector3 PointIntersection { get; set; }
+
         Game Jeu { get; set; }
-        Fusil Arme { get; set; }
-        public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, Fusil arme)
+
+        int Dommage { get; set; }
+
+
+        public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, float portée, int dommage)
         {
             VecteurUnitaire = vecteur;
             VecteurUnitaire.Normalize();
             Point = point;
             Jeu = game;
-            Arme = arme;
-            Longueur = Arme.Portée;
+            Longueur = portée;
+            Dommage = dommage;
 
             DansTrajectoire = new List<ObjetPhysique>();
             PointIntersection = new Vector3();
@@ -40,45 +46,47 @@ namespace AtelierXNA
         public void CoupDeFeu()
         {
             int nbObjetEnCollision;
-            MMoteurPhysique moteurPhysique = Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
-            foreach (ObjetPhysique objet in moteurPhysique.ListePhysique)
+            List<float> distances = new List<float>();
+
+            foreach (IPhysique objet in (Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique).ListePhysique)
             {
-                if ((objet is Ennemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() < Longueur)
+                if (this.Intersects(objet.GetCollider()) && !(objet is MJoueur) && (PointIntersection - Point).Length() < Longueur)
                 {
-                    DansTrajectoire.Add(objet);
+                    if (objet is Ennemi)
+                    {
+                        DansTrajectoire.Add((objet as MAvatar).ComposantePhysique);
+                    }
+                    else
+                    {
+                        DansTrajectoire.Add(objet as ObjetPhysique);
+                    }
+                    distances.Add((PointIntersection - Point).Length());
                 }
             }
 
             nbObjetEnCollision = DansTrajectoire.Count();
-            List<float> distances = new List<float>();
-
-            foreach (ObjetPhysique objet in DansTrajectoire)
-            {
-                Collider collider = objet.GetCollider();
-                if (this.Intersects(collider))
-                {
-                    distances.Add(collider.DistanceImpact);
-                }
-            }
 
             distances.OrderBy(x => x);
+
             if (DansTrajectoire.Count > 0)
             {
                 Longueur = distances[0];
                 ObjetPhysique objetPhysique = null;
-                foreach (ObjetPhysique objet in DansTrajectoire)
+
+                foreach(ObjetPhysique objet in DansTrajectoire)
                 {
-                    if ((objet is Ennemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() != 0 && (PointIntersection - Point).Length() < Longueur)
+                    if(this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() <= Longueur)
                     {
                         objetPhysique = objet;
                     }
                 }
 
-                //PointIntersection = Point + VecteurUnitaire * Longueur;
+                PointIntersection = Point + VecteurUnitaire * Longueur;
+
 
                 if (objetPhysique is Ennemi)
                 {
-                    (objetPhysique as Ennemi).RetirerVie(Arme.Dommage);
+                    (objetPhysique as Ennemi).RetirerVie(Dommage);
                 }
             }
         }
@@ -86,28 +94,33 @@ namespace AtelierXNA
         public override bool Intersects(Collider autre)
         {
             bool intersection = false;
+
             if (autre.Type == Type_Collider.Sphere)
             {
                 BoundingSphere sphère = new BoundingSphere(autre.Center, (autre as SphereCollision).Rayon);
                 intersection = Droite.Intersects(sphère) != null;
+
                 if (intersection)
                 {
                     autre.DistanceImpact = Droite.Intersects(sphère).Value;
                     PointIntersection = Point + VecteurUnitaire * autre.DistanceImpact;
                 }
             }
-            else if (autre.Type == Type_Collider.Cube)
+
+            if (autre.Type == Type_Collider.Cube)
             {
-                Vector3 min = (autre as CubeCollision).Center - (autre as CubeCollision).DemiDimention;
-                Vector3 max = (autre as CubeCollision).Center + (autre as CubeCollision).DemiDimention;
+                Vector3 min = (autre as MCubeCollision).Center - (autre as MCubeCollision).DemiDimention;
+                Vector3 max = (autre as MCubeCollision).Center + (autre as MCubeCollision).DemiDimention;
                 BoundingBox boîte = new BoundingBox(min, max);
                 intersection = Droite.Intersects(boîte) != null;
+
                 if (intersection)
                 {
                     autre.DistanceImpact = Droite.Intersects(boîte).Value;
                     PointIntersection = Point + VecteurUnitaire * autre.DistanceImpact;
                 }
             }
+
             return intersection;
         }
 
