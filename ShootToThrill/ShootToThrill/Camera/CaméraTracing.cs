@@ -12,7 +12,7 @@ namespace AtelierXNA
       public CaméraTracing(Game jeu, Vector3 cible, Vector3 orientation,IPositionable objetATracer, Viewport viewPort)
          : base(jeu)
       {
-          OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
+         OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
          CameraViewPort = viewPort;
          ObjetTracé = objetATracer;

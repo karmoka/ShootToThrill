@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShootToThrill", "ShootToThrill\ShootToThrill\ShootToThrill.csproj", "{177426C3-1EA3-4909-B892-1B7422E4FABA}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ShootToThrillContent", "ShootToThrill\ShootToThrillContent\ShootToThrillContent.contentproj", "{518BCF76-B084-4835-AA80-58B092A3A4FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShootToThrillContent", "ShootToThrill\ShootToThrillContent\ShootToThrillContent.contentproj", "{518BCF76-B084-4835-AA80-58B092A3A4FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{071703D8-2BD5-42FD-9A29-7B65ADE913A5}"
 EndProject
@@ -60,5 +60,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

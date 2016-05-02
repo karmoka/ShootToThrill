@@ -3,9 +3,10 @@
   <Asset Type="Data:DescriptionAvatar">
     <DescriptionComposanteGraphique>
       <NomModèle>Avatar0</NomModèle>
+      <NomTextureModèle>Image1</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
-      <Échelle>0.75</Échelle>
       <Rotation>1.57079637 0 0</Rotation>
+      <Échelle>0.75</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>
       <MasseInverse>0.5</MasseInverse>
