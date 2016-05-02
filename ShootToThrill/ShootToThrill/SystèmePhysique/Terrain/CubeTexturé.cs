@@ -24,8 +24,9 @@ namespace AtelierXNA
 
         const int NB_SOMMETS = 8;
 
-        VertexPositionTexture[] Sommets1 { get; set; }
-        VertexPositionTexture[] Sommets2 { get; set; }
+        VertexPositionNormalTexture[] Sommets1 { get; set; }
+        VertexPositionNormalTexture[] Sommets2 { get; set; }
+        Vector3[] Normales { get; set; }
         public Vector3 Dimension { get; private set; }
         Vector3 Charpente { get; set; }
         public Vector3 Position { get; private set; }
@@ -56,8 +57,9 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
-            Sommets1 = new VertexPositionTexture[NB_SOMMETS];
-            Sommets2 = new VertexPositionTexture[NB_SOMMETS];
+            Sommets1 = new VertexPositionNormalTexture[NB_SOMMETS];
+            Sommets2 = new VertexPositionNormalTexture[NB_SOMMETS];
+            Normales = new Vector3[NB_SOMMETS];
             PositionsSommets = new Vector3[NB_SOMMETS];
             CalculerMonde();
             base.Initialize();
@@ -86,23 +88,31 @@ namespace AtelierXNA
             PositionsSommets[6] = new Vector3(Origine.X + Dimension.X, Origine.Y, Origine.Z);
             PositionsSommets[7] = new Vector3(Origine.X + Dimension.X, Origine.Y, Origine.Z + Dimension.Z);
 
-            Sommets1[0] = new VertexPositionTexture(PositionsSommets[0], new Vector2(1, 1));
-            Sommets1[1] = new VertexPositionTexture(PositionsSommets[1], new Vector2(1, 0));
-            Sommets1[2] = new VertexPositionTexture(PositionsSommets[2], new Vector2(2 / 3.0f, 1));
-            Sommets1[3] = new VertexPositionTexture(PositionsSommets[3], new Vector2(2 / 3.0f, 0));
-            Sommets1[4] = new VertexPositionTexture(PositionsSommets[4], new Vector2(1 / 3.0f, 1));
-            Sommets1[5] = new VertexPositionTexture(PositionsSommets[5], new Vector2(1 / 3.0f, 0));
-            Sommets1[6] = new VertexPositionTexture(PositionsSommets[6], new Vector2(0, 1));
-            Sommets1[7] = new VertexPositionTexture(PositionsSommets[7], new Vector2(0, 0));
+            Vector3 centre = PositionsSommets[5] / 2;
 
-            Sommets2[0] = new VertexPositionTexture(PositionsSommets[3], new Vector2(1, 1));
-            Sommets2[1] = new VertexPositionTexture(PositionsSommets[5], new Vector2(1, 0));
-            Sommets2[2] = new VertexPositionTexture(PositionsSommets[1], new Vector2(2 / 3.0f, 1));
-            Sommets2[3] = new VertexPositionTexture(PositionsSommets[7], new Vector2(2 / 3.0f, 0));
-            Sommets2[4] = new VertexPositionTexture(PositionsSommets[0], new Vector2(1 / 3.0f, 1));
-            Sommets2[5] = new VertexPositionTexture(PositionsSommets[6], new Vector2(1 / 3.0f, 0));
-            Sommets2[6] = new VertexPositionTexture(PositionsSommets[2], new Vector2(0, 1));
-            Sommets2[7] = new VertexPositionTexture(PositionsSommets[4], new Vector2(0, 0));
+            for (int i = 0; i < NB_SOMMETS; ++i )
+            {
+                Normales[i] = PositionsSommets[i] - centre;
+                Normales[i].Normalize();
+            }
+
+            Sommets1[0] = new VertexPositionNormalTexture(PositionsSommets[1], Normales[1], new Vector2(0, 1));
+            Sommets1[1] = new VertexPositionNormalTexture(PositionsSommets[0], Normales[0], new Vector2(0, 0));
+            Sommets1[2] = new VertexPositionNormalTexture(PositionsSommets[3], Normales[3], new Vector2(1 / 3.0f, 1));
+            Sommets1[3] = new VertexPositionNormalTexture(PositionsSommets[2], Normales[2], new Vector2(1 / 3.0f, 0));
+            Sommets1[4] = new VertexPositionNormalTexture(PositionsSommets[5], Normales[5], new Vector2(2 / 3.0f, 1));
+            Sommets1[5] = new VertexPositionNormalTexture(PositionsSommets[4], Normales[4], new Vector2(2 / 3.0f, 0));
+            Sommets1[6] = new VertexPositionNormalTexture(PositionsSommets[7], Normales[7], new Vector2(1, 1));
+            Sommets1[7] = new VertexPositionNormalTexture(PositionsSommets[6], Normales[6], new Vector2(1, 0));
+
+            Sommets2[0] = new VertexPositionNormalTexture(PositionsSommets[3], Normales[3], new Vector2(0, 1));
+            Sommets2[1] = new VertexPositionNormalTexture(PositionsSommets[5], Normales[5], new Vector2(0, 0));
+            Sommets2[2] = new VertexPositionNormalTexture(PositionsSommets[1], Normales[1], new Vector2(1 / 3.0f, 1));
+            Sommets2[3] = new VertexPositionNormalTexture(PositionsSommets[7], Normales[7], new Vector2(1 / 3.0f, 0));
+            Sommets2[4] = new VertexPositionNormalTexture(PositionsSommets[0], Normales[0], new Vector2(2 / 3.0f, 1));
+            Sommets2[5] = new VertexPositionNormalTexture(PositionsSommets[6], Normales[6], new Vector2(2 / 3.0f, 0));
+            Sommets2[6] = new VertexPositionNormalTexture(PositionsSommets[2], Normales[2], new Vector2(1, 1));
+            Sommets2[7] = new VertexPositionNormalTexture(PositionsSommets[4], Normales[4], new Vector2(1, 0));
         }
 
         public void CalculerMonde()
@@ -146,8 +156,8 @@ namespace AtelierXNA
             {
                 passeEffet.Apply();
 
-                GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, Sommets1, 0, NB_SOMMETS - 2);
-                GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, Sommets2, 0, NB_SOMMETS - 2);
+                GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleStrip, Sommets1, 0, NB_SOMMETS - 2);
+                GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleStrip, Sommets2, 0, NB_SOMMETS - 2);
             }
             base.Draw(gameTime);
             GraphicsDevice.BlendState = oldBlendState;

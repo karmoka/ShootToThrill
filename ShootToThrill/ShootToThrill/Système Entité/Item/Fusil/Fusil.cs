@@ -27,6 +27,7 @@ namespace AtelierXNA
         MessageManager ManagerDeMessage { get; set; }
         ModelManager ManagerDeModèle { get; set; }
         protected List<DroiteColorée> ListeTrajectoires { get; set; }
+        List<Projectiles> ListeProjectile { get; set; }
         bool TrajectoireExiste { get; set; }
         int AngleRotation
         {
@@ -138,6 +139,7 @@ namespace AtelierXNA
             TempsDepuisDebutJeu = 0;
             RechargeInitiale();
             ListeTrajectoires = new List<DroiteColorée>();
+            ListeProjectile = new List<Projectiles>();
             TrajectoireExiste = false;
             base.Initialize();
         }
@@ -161,6 +163,11 @@ namespace AtelierXNA
                 {
                     ListeTrajectoires[i].Update(gameTime);
                 }
+            }
+
+            foreach(Projectiles projectile in ListeProjectile)
+            {
+                projectile.Update(gameTime);
             }
 
             base.Update(gameTime);

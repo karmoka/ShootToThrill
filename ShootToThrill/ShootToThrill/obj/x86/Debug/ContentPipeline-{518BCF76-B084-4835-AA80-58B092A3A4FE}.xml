@@ -1010,6 +1010,42 @@
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\ship_tex_0.xnb</Output>
       <Time>2016-05-01T20:17:28.5907798-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\strip1.jpg</Source>
+      <Name>Textures\strip1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\strip1.xnb</Output>
+      <Time>2016-05-02T08:26:16.9900958-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\strip2.jpg</Source>
+      <Name>Textures\strip2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\strip2.xnb</Output>
+      <Time>2016-05-02T08:26:23.3347001-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\strip3.jpg</Source>
+      <Name>Textures\strip3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\strip3.xnb</Output>
+      <Time>2016-05-02T08:26:28.0117536-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\strip4.jpg</Source>
+      <Name>Textures\strip4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\strip4.xnb</Output>
+      <Time>2016-05-02T08:26:31.9426402-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{518BCF76-B084-4835-AA80-58B092A3A4FE}</ContentProjectGUID>

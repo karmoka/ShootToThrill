@@ -48,11 +48,18 @@ namespace AtelierXNA
             int nbObjetEnCollision;
             List<float> distances = new List<float>();
 
-            foreach (ObjetPhysique objet in (Jeu.Services.GetService(typeof(MoteurPhysique)) as MoteurPhysique).ListePhysique)
+            foreach (IPhysique objet in (Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique).ListePhysique)
             {
-                if (this.Intersects(objet.GetCollider()) && !(objet is Joueur) && (PointIntersection - Point).Length() < Longueur)
+                if (this.Intersects(objet.GetCollider()) && !(objet is MJoueur) && (PointIntersection - Point).Length() < Longueur)
                 {
-                    DansTrajectoire.Add(objet);
+                    if (objet is Ennemi)
+                    {
+                        DansTrajectoire.Add((objet as MAvatar).ComposantePhysique);
+                    }
+                    else
+                    {
+                        DansTrajectoire.Add(objet as ObjetPhysique);
+                    }
                     distances.Add((PointIntersection - Point).Length());
                 }
             }

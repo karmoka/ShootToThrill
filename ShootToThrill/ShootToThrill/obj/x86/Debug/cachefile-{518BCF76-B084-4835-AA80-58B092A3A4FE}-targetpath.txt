@@ -75,6 +75,10 @@ Content\Textures\Untitled.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
+Content\Textures\strip1.xnb
+Content\Textures\strip2.xnb
+Content\Textures\strip3.xnb
+Content\Textures\strip4.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

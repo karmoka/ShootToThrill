@@ -150,6 +150,7 @@
     <Compile Include="Système Entité\Item\Item.cs" />
     <Compile Include="Système Entité\Item\Fusil\Munition.cs" />
     <Compile Include="Système Entité\Item\Portail.cs" />
+    <Compile Include="Système Entité\Item\Projectile\Éclair.cs" />
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
     <Compile Include="Système Graphique\ModelManager.cs" />
