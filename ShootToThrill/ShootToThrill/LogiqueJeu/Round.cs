@@ -15,14 +15,20 @@ namespace AtelierXNA
 {
     public class Round : DrawableGameComponent
     {
-        MMoteurPhysique MoteurPhysique { get; set; }
-        float NombreEnnemi { get; set; }
-        float Difficulté { get; set; }
-        int Thresh { get; set; }
+        MMoteurPhysique MMoteurPhysique { get; set; }
+        ModelManager ModèleManager { get; set; }
+        int NbJoueur { get; set; }
+        Vector3 PositionPortailEnnemi { get; set; }
         public int NombreRound { get; private set; }
         int CptEnnemi { get; set; }
         float TempsDepuisDernierEnnemi { get; set; }
-        float IntervalApparitionEnnemi { get; set; }
+        float IntervalApparitionEnnemi
+        {
+            get
+            {
+                return 0.5f * TimeToCompletRound / NombreEnnemi;
+            }
+        }
         float TimeToCompletRound
         {
             get
@@ -30,11 +36,18 @@ namespace AtelierXNA
                 return 30 * NombreRound;
             }
         }
+        int NombreEnnemi
+        { 
+            get
+            {
+                return (int)Math.Pow(NombreRound, 2) + 2 * NbJoueur * NombreRound;
+            }
+        }
         public bool AucunEnnemi
         {
             get
             {
-                return MoteurPhysique.ListePhysique.Count(x => x is MEnnemi) == 0;
+                return MMoteurPhysique.ListePhysique.Count(x => x is MEnnemi) == 0;
             }
         }
         public bool EnnemisTousCréés
@@ -44,8 +57,6 @@ namespace AtelierXNA
                 return CptEnnemi == NombreEnnemi;
             }
         }
-        int NbJoueur { get; set; }
-        Vector3 PositionPortailEnnemi { get; set; }
 
         public Round(Game game, int nbJoueur)
             : base(game)
@@ -55,14 +66,18 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
+            Enabled = true;
             NombreRound = 1;
-            NombreEnnemi = 10;
-            Thresh = 80;
-            DéterminerVitesseApparition();
             TempsDepuisDernierEnnemi = 0;
             CptEnnemi = 0;
-            Difficulté = 0.1f * NbJoueur;
             base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            MMoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
+            ModèleManager = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
+            base.LoadContent();
         }
 
         public void SetPositionPortailEnnemi(Vector3 position)
@@ -96,32 +111,6 @@ namespace AtelierXNA
         {
             ++NombreRound;
             CptEnnemi = 0;
-            AugmenterGrowRate();
-            AugmenterNombreEnnemi();
-            DéterminerVitesseApparition();
-        }
-
-        public void AugmenterGrowRate()
-        {
-            Difficulté *= NombreEnnemi;
-        }
-
-        void AugmenterNombreEnnemi()
-        {
-            if (NombreEnnemi < Thresh)
-            {
-                NombreEnnemi = (float)Math.Ceiling(NombreEnnemi + Difficulté);
-            }
-            else
-            {
-                NombreEnnemi += (float)(1 / Math.Sqrt(NombreEnnemi));
-            }
-            //return (int)((0.15 * Round) * (24 + 6 * (NombreJoueur - 1)));
-        }
-
-        void DéterminerVitesseApparition()
-        {
-            IntervalApparitionEnnemi = 0.5f * TimeToCompletRound / NombreEnnemi;
         }
 
         void NouvelEnnemi()
@@ -158,9 +147,11 @@ namespace AtelierXNA
         {
             Lumière lumièreJeu = new Lumière(Game, Vector3.Zero, Color.Red.ToVector3(), 1, 1, Vector3.One, Vector4.One);
             MObjetDeBaseAniméEtÉclairé m = new MObjetDeBaseAniméEtÉclairé(Game, description.NomEnnemi, "RectangleBleu", 1f, Vector3.Zero, Vector3.One, "Spotlight", lumièreJeu, 1 / 60f);
-            ObjetPhysique o = new ObjetPhysique(Game, PositionPortailEnnemi, Vector3.Zero, description.MasseInverse);
+            ObjetPhysique o = new ObjetPhysique(Game, PositionPortailEnnemi + Vector3.UnitY * 3, Vector3.Zero, description.MasseInverse);
             MEnnemi unEnnemi = new MEnnemi(Game, m, o, itemDrop, description.VieMax, description.Domage);
             unEnnemi.Initialize();
+            MMoteurPhysique.AjouterObjet(unEnnemi);
+            ModèleManager.AjouterModele(unEnnemi);
         }
     }
 }

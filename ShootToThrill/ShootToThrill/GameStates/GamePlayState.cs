@@ -116,12 +116,19 @@ namespace AtelierXNA
         /// </summary>
         void LoaderMap()
         {
+
+            TrouveurDeChemin = new Pathfinding(Game);
+            RequeteDeChemin = new RequêtePathManager(Game); 
             Jeu = new Jeu(Game, InformationJeu.NBJoueur);
             GrilleUniverselle = new GrilleUniverselle(Game, new List<string>() { "Test" + InformationJeu.IDMap + "_1" });
 
+            Game.Services.AddService(typeof(Pathfinding), TrouveurDeChemin);
+            Game.Services.AddService(typeof(RequêtePathManager), RequeteDeChemin);
             Game.Services.AddService(typeof(Jeu), Jeu);
             Game.Services.AddService(typeof(GrilleUniverselle), GrilleUniverselle);
 
+            Game.Components.Add(TrouveurDeChemin);
+            Game.Components.Add(RequeteDeChemin);
             Game.Components.Add(Jeu);
             Game.Components.Add(GrilleUniverselle);
 
@@ -180,8 +187,6 @@ namespace AtelierXNA
             ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
             GestionnaireSprites = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
 
-            TrouveurDeChemin = new Pathfinding(Game);
-            RequeteDeChemin = new RequêtePathManager(Game);
             ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
@@ -189,17 +194,14 @@ namespace AtelierXNA
 
             ManagerScreen.Initialize();
 
-            Game.Components.Add(TrouveurDeChemin);
-            Game.Components.Add(RequeteDeChemin);
+            Game.Services.AddService(typeof(ModelManager), ManagerModèle);
+            Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
+            
             Game.Components.Add(ManagerPhysique);
             Game.Components.Add(ManagerModèle);
             Game.Components.Add(ManagerScreen);
             Game.Components.Add(ManagerDeSons);
 
-            Game.Services.AddService(typeof(ModelManager), ManagerModèle);
-            Game.Services.AddService(typeof(MMoteurPhysique), ManagerPhysique);
-            Game.Services.AddService(typeof(Pathfinding), TrouveurDeChemin);
-            Game.Services.AddService(typeof(RequêtePathManager), RequeteDeChemin);
         }
 
         /// <summary>

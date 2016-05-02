@@ -52,9 +52,18 @@ namespace AtelierXNA
             nbObjetEnCollision = DansTrajectoire.Count();
             List<float> distances = new List<float>();
 
-            foreach (ObjetPhysique objet in DansTrajectoire)
+            foreach (IPhysique objet in DansTrajectoire)
             {
-                Collider collider = (objet as ObjetPhysique).GetCollider();
+                ObjetPhysique objetPhysique = objet as ObjetPhysique;
+                if (objet is MEnnemi)
+                {
+                    objetPhysique = (objet as MEnnemi).ComposantePhysique;
+                }
+                else
+                {
+                    objetPhysique = (objet as ObjetPhysique);
+                }
+                Collider collider = objetPhysique.GetCollider();
                 if (this.Intersects(collider))
                 {
                     distances.Add(collider.DistanceImpact);

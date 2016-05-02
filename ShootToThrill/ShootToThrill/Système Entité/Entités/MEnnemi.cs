@@ -229,8 +229,7 @@ namespace AtelierXNA
 
         protected override void SetCaméraAutreComposante(Caméra cam)
         {
-            EnnemiScreenManager.ChangerCaméra(cam);
-            base.SetCaméra(cam);
+            EnnemiScreenManager.SetCaméra(cam);
         }
 
         public override void Draw(GameTime gameTime)
