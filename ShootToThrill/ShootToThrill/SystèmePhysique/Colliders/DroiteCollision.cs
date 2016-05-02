@@ -21,15 +21,15 @@ namespace AtelierXNA
         List<IPhysique> DansTrajectoire { get; set; }
         Vector3 PointIntersection { get; set; }
         Game Jeu { get; set; }
-        Fusil Arme { get; set; }
-        public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, Fusil arme)
+        int Dommage { get; set; }
+        public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, float longueur, int dommage)
         {
             VecteurUnitaire = vecteur;
             VecteurUnitaire.Normalize();
             Point = point;
             Jeu = game;
-            Arme = arme;
-            Longueur = Arme.Portée;
+            Longueur = longueur;
+            Dommage = dommage;
 
             DansTrajectoire = new List<IPhysique>();
             PointIntersection = new Vector3();
@@ -78,7 +78,7 @@ namespace AtelierXNA
 
                 if (objetPhysique is MEnnemi)
                 {
-                    (objetPhysique as MEnnemi).RetirerVie(Arme.Dommage);
+                    (objetPhysique as MEnnemi).RetirerVie(Dommage);
                 }
             }
         }

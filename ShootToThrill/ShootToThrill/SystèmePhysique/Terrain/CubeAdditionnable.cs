@@ -15,7 +15,7 @@ namespace AtelierXNA
    public class CubeAdditionnable : ObjetPhysique, IModele3d, IPhysique
    {
        
-       MCubeCollision CubeCollision { get; set; }
+       CubeCollision CubeCollision { get; set; }
        public CubeColoré CubeColoré { get; private set; }
        public CubeTexturé CubeTexturé { get; private set; }
 
@@ -23,7 +23,7 @@ namespace AtelierXNA
           : base(game, positionInitiale, Vector3.Zero, 0)
       {
           //Position = positionInitiale;
-          CubeCollision = new MCubeCollision(positionInitiale, dimension, Vector3.Zero);
+          CubeCollision = new CubeCollision(positionInitiale, dimension, Vector3.Zero);
           CubeColoré = new CubeColoré(game, homothétieInitiale, Vector3.Zero, positionInitiale, couleur, dimension, intervalleMAJ);
           CubeTexturé = new CubeTexturé(game, homothétieInitiale, Vector3.Zero, positionInitiale, dimension, intervalleMAJ, "strip3");
       }
@@ -74,7 +74,7 @@ namespace AtelierXNA
           }
 
           cube1.SetPosition(cube1.CubeColoré.Ori + cube1.CubeColoré.Dimension / 2);
-          cube1.CubeCollision = new MCubeCollision(cube1.CubeColoré.Position, cube1.CubeColoré.Dimension, Vector3.Zero);
+          cube1.CubeCollision = new CubeCollision(cube1.CubeColoré.Position, cube1.CubeColoré.Dimension, Vector3.Zero);
 
           return cube1;
       }

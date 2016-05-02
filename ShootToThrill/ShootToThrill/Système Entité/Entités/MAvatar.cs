@@ -348,7 +348,7 @@ namespace AtelierXNA
 
         public Collider GetCollider()
         {
-            return new SphereCollision(this.Position, 2f);
+            return new SphereCollision(this.Position, 1f);
         }
     }
 }

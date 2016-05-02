@@ -40,7 +40,7 @@ namespace AtelierXNA
          return (Distance <= sphere1.Rayon || Distance <= sphere2.Rayon);
       }
 
-      protected static bool CollisionSphereCube(SphereCollision sphere, MCubeCollision cube)
+      protected static bool CollisionSphereCube(SphereCollision sphere, CubeCollision cube)
       {
          bool enCollision = false;
          Vector3 normale = cube.Normale(sphere.Center);
@@ -55,7 +55,7 @@ namespace AtelierXNA
          return enCollision;
       }
 
-      protected static bool CollisionCubeCube(MCubeCollision cube1, MCubeCollision cube2)
+      protected static bool CollisionCubeCube(CubeCollision cube1, CubeCollision cube2)
       {
          return cube1.EnCollisionAvecCube(cube2);
       }

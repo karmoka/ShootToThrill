@@ -141,10 +141,9 @@ namespace AtelierXNA
 
         protected override void GérerCollisions()
         {
-            for (int i = 0; i < ComposantePhysique.ListeCollision.Count; ++i)
+            foreach (IPhysique i in ComposantePhysique.ListeCollision)
             {
-                InformationIntersection info = ComposantePhysique.ListeCollision[i];
-                if (info.ObjetB is MJoueur)
+                if (i is MJoueur)
                 {
                     EstEnTrainAttaquer = false;
                 }

@@ -16,7 +16,7 @@ namespace AtelierXNA
     /// <summary>
     /// Cube de collision ''tournable''. Utilise le théorème des axes séparateurs
     /// </summary>
-   public class MCubeCollision : Collider
+   public class CubeCollision : Collider
    {
       public Vector3 DemiDimention { get; set; }
       Vector3 rotation_;
@@ -38,7 +38,7 @@ namespace AtelierXNA
       }
 
 
-      public MCubeCollision(Vector3 centre, Vector3 dimension, Vector3 rotation)
+      public CubeCollision(Vector3 centre, Vector3 dimension, Vector3 rotation)
          : base()
       {
          Rotation = rotation;
@@ -69,9 +69,9 @@ namespace AtelierXNA
       {
          bool intersects = false;
 
-         if (autre is MCubeCollision)
+         if (autre is CubeCollision)
          {
-            intersects = CollisionCubeCube(this, autre as MCubeCollision);
+            intersects = CollisionCubeCube(this, autre as CubeCollision);
          }
          if (autre is SphereCollision)
          {
@@ -81,7 +81,7 @@ namespace AtelierXNA
          return intersects;
       }
 
-      public bool EnCollisionAvecCube(MCubeCollision cube)
+      public bool EnCollisionAvecCube(CubeCollision cube)
       {
          bool enCollision = true;
          Vector3 Distance = this.Center - cube.Center;
@@ -150,7 +150,7 @@ namespace AtelierXNA
          return enCollision;
       }
 
-      static float LongueurCubeProjeté(MCubeCollision A, MCubeCollision B, Vector3 AxeComparé)
+      static float LongueurCubeProjeté(CubeCollision A, CubeCollision B, Vector3 AxeComparé)
       {
          return ValeurAbsolue(Vector3.Dot(A.DemiDimention.X * A.AxeX, AxeComparé)) + ValeurAbsolue(Vector3.Dot(A.DemiDimention.Y * A.AxeY, AxeComparé)) + ValeurAbsolue(Vector3.Dot(A.DemiDimention.Z * A.AxeZ, AxeComparé)) +
                 ValeurAbsolue(Vector3.Dot(B.DemiDimention.X * B.AxeX, AxeComparé)) + ValeurAbsolue(Vector3.Dot(B.DemiDimention.Y * B.AxeY, AxeComparé)) + ValeurAbsolue(Vector3.Dot(B.DemiDimention.Z * B.AxeZ, AxeComparé));
