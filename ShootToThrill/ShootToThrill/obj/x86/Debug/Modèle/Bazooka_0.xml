@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Model</Name>
     <Identity>
-      <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -111,7 +111,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>M_0137_Black</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -125,7 +125,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>M_0068_LightGreen</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -139,7 +139,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>_0075_ForestGreen_1</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -153,7 +153,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>M_0132_LightGray</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -167,7 +167,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>M_0135_DarkGray</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -181,7 +181,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>FrontColor</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -195,7 +195,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>M_0136_Charcoal</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Bazooka.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
