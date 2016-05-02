@@ -1010,26 +1010,6 @@
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\ship_tex_0.xnb</Output>
       <Time>2016-05-01T16:34:15.9751114-04:00</Time>
     </Item>
-    <Item>
-      <Source>Modèle\tAvatar0.fbx</Source>
-      <Name>Modèle\tAvatar0</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\tAvatar0.xnb</Output>
-      <Time>2016-05-01T21:34:51.1272464-04:00</Time>
-      <Dependency>
-        <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\tAvatar0_0.xml</Key>
-        <Value>2016-05-01T21:35:00.7807986-04:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Modèle\tAvatar0.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\tAvatar0_0.xml</Output>
-      <Time>2016-05-01T21:34:51.1272464-04:00</Time>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{518BCF76-B084-4835-AA80-58B092A3A4FE}</ContentProjectGUID>

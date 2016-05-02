@@ -11,31 +11,31 @@ namespace AtelierXNA
 {
    public class InformationIntersection
    {
-      public ObjetPhysique ObjetA { get; set; }
-      public ObjetPhysique ObjetB { get; set; }
+      public IPhysique ObjetA { get; set; }
+      public IPhysique ObjetB { get; set; }
 
-      public Collider colliderA { get; set; }
-      public Collider colliderB { get; set; }
-
+      public Vector3 PositionA { get; set; }
+      public Vector3 PositionB { get; set; }
+      public Vector3 Normale { get; private set; }
       public Vector3 DistanceIntersection { get; private set; }
-      public float DistanceMinimal { get; private set; }
-      public float DistancePénétration { get; private set; }
 
-      public InformationIntersection(ObjetPhysique objet1, ObjetPhysique objet2)
+      public InformationIntersection(IPhysique objet1, IPhysique objet2)
       {
          ObjetA = objet1;
          ObjetB = objet2;
 
-         colliderA = ObjetA.GetCollider();
-         colliderB = ObjetB.GetCollider();
+         PositionA = ObjetA.GetCollider().Center;
+         PositionB = ObjetB.GetCollider().Center;
 
          DistanceIntersection = objet1.GetCollider().Center - objet2.GetCollider().Center;
 
-         DistanceMinimal = colliderA.DistanceBord(colliderB.Center) + colliderB.DistanceBord(colliderA.Center);
+         Vector3 norm = objet2.GetCollider().Normale(PositionA);
+         //La norme est corrigé pour gérer la collision des deux bords de l'objet
+         if (Vector3.Dot((PositionB - PositionA), norm) >= 0)
+            norm = -norm;
+         Normale = norm;
 
-         Vector3 normale = colliderB.Normale(colliderA.Center);
-         float distance = Vector3.Dot(DistanceIntersection, normale);
-         DistancePénétration = CustomMathHelper.ValeurAbsolue(distance - DistanceMinimal);
+         float distance = Vector3.Dot(DistanceIntersection, Normale);
       }
 
    }

@@ -163,11 +163,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Modèle\tAvatar0.fbx">
-      <Name>tAvatar0</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Modèle\unicorn.FBX">
       <Name>unicorn</Name>
       <Importer>FbxImporter</Importer>
