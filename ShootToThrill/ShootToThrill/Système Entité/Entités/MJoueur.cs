@@ -14,21 +14,22 @@ namespace AtelierXNA
 {
 
     class MJoueur : MAvatar
-    {
-       
-
-       PlayerIndex IndexJoueur { get; set; }
+    {       
+       public PlayerIndex IndexJoueur { get; private set; }
        IOManager ManagerDeControle { get; set; }
+       Vector3 PositionInitiale { get; set; }
 
         public MJoueur(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique, PlayerIndex indexJoueur)
             : base(game, composanteGraphique, composantePhysique)
         {
             IndexJoueur = indexJoueur;
+            PositionInitiale = composantePhysique.Position;
         }
         public MJoueur(Game game, DescriptionAvatar description, Vector3 position, PlayerIndex indexJoueur)
             : base(game, description, position)
         {
             IndexJoueur = indexJoueur;
+            PositionInitiale = position;
         }
 
         public override void Initialize()
@@ -137,6 +138,12 @@ namespace AtelierXNA
             }
 
             base.GérerCollisions();
+        }
+
+        public void Respawn()
+        {
+            Vie = VieMax;
+            SetPosition(PositionInitiale);
         }
     }
 }

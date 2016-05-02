@@ -33,7 +33,7 @@ namespace AtelierXNA
         {
             get { return ListeArme.Count >= 1; }
         }
-        bool EstMort
+        public bool EstMort
         {
             get { return Vie <= MORT; }
         }
@@ -234,19 +234,22 @@ namespace AtelierXNA
 
         protected virtual void Mourir()
         {
-            ComposanteGraphique = null;
-            ComposantePhysique = null;
-            Vie = 0;
+            //ComposanteGraphique = null;
+            //ComposantePhysique = null;
+            Vie = MORT;
         }
 
         public override void Draw(GameTime gameTime)
         {
-            ComposanteGraphique.Draw(gameTime);
-            ComposantePhysique.Draw(gameTime);
+            if (!EstMort)
+            {
+                ComposanteGraphique.Draw(gameTime);
+                ComposantePhysique.Draw(gameTime);
 
-            DrawArme(gameTime);
+                DrawArme(gameTime);
 
-            base.Draw(gameTime);
+                base.Draw(gameTime);
+            }
         }
 
         void DrawArme(GameTime gameTime)
@@ -259,8 +262,7 @@ namespace AtelierXNA
 
         public Vector3 Position
         {
-            get { return ComposantePhysique.Position; 
-            }
+            get { return ComposantePhysique.Position; }
         }
 
         public void SetPosition(Vector3 nouvellePosition)
