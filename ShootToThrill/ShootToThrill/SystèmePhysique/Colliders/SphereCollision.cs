@@ -37,7 +37,7 @@ namespace AtelierXNA
          }
          if (autre.Type == Type_Collider.Cube)
          {
-            intersection = CollisionSphereCube(this, autre as CubeCollision);
+            intersection = CollisionSphereCube(this, autre as MCubeCollision);
          }
 
          return intersection;

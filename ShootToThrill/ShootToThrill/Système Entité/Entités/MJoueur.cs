@@ -25,7 +25,11 @@ namespace AtelierXNA
         {
             IndexJoueur = indexJoueur;
         }
-
+        public MJoueur(Game game, DescriptionAvatar description, Vector3 position, PlayerIndex indexJoueur)
+            : base(game, description, position)
+        {
+            IndexJoueur = indexJoueur;
+        }
 
         public override void Initialize()
         {
@@ -107,30 +111,30 @@ namespace AtelierXNA
 
         protected override void GérerCollisions()
         {
-            //foreach (ObjetPhysique o in ComposantePhysique.ListeObjetCollision)
-            //{
-            //    Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
-            //    if (o is Fusil)
-            //    {
-            //        AjouterArme(o as Fusil);
-            //    }
-            //    else if (o is Munition)
-            //    {
-            //        AjouterMunition(o as Munition);
-            //    }
-            //    else if (o is Soin)
-            //    {
-            //        AjouterVie(o as Soin);
-            //    }
-            //    else if (o is Ennemi)
-            //    {
-            //        RetirerVie((o as Ennemi).Domage);
-            //    }
-            //    else if (o is Interrupteur)
-            //    {
-            //        (o as Interrupteur).ChangerGravité();
-            //    }
-            //}
+            foreach (InformationIntersection i in ComposantePhysique.ListeCollision)
+            {
+                //Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
+                if (i.ObjetB is Fusil)
+                {
+                    AjouterArme(i.ObjetB as Fusil);
+                }
+                else if (i.ObjetB is Munition)
+                {
+                    AjouterMunition(i.ObjetB as Munition);
+                }
+                else if (i.ObjetB is Soin)
+                {
+                    AjouterVie(i.ObjetB as Soin);
+                }
+                else if (i.ObjetB is MEnnemi)
+                {
+                    RetirerVie((i.ObjetB as MEnnemi).Domage);
+                }
+                else if (i.ObjetB is Interrupteur)
+                {
+                    (i.ObjetB as Interrupteur).ChangerGravité();
+                }
+            }
 
             base.GérerCollisions();
         }

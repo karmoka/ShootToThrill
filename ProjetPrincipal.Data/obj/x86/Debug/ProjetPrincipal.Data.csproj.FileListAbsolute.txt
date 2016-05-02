@@ -51,3 +51,9 @@ C:\Users\Mikael\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debu
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
 C:\Users\Mikael\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\bin\x86\Debug\ProjetPrincipal.Data.pdb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.csprojResolveAssemblyReference.cache
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.dll
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ProjetPrincipal.Data\obj\x86\Debug\ProjetPrincipal.Data.pdb

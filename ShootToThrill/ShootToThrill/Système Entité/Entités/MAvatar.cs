@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using AnimationAux;
+using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
@@ -66,6 +67,12 @@ namespace AtelierXNA
             ComposantePhysique = composantePhysique;
             ComposanteGraphique = composanteGraphique;
             VieMax = vie;
+        }
+        public MAvatar(Game game, DescriptionAvatar description, Vector3 position )
+            : base(game)
+        {
+            ComposantePhysique = new ObjetPhysique(game, description.DescriptionComposantePhysique);
+            ComposanteGraphique = new MObjetDeBaseAniméEtÉclairé(game, description.DescriptionComposanteGraphique, position, 1 / 60f);
         }
 
         public override void Initialize()

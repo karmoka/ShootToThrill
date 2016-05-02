@@ -186,7 +186,6 @@
     <Compile Include="Système Graphique\PrimitiveDeBaseAnimée2.cs" />
     <Compile Include="SystèmePhysique\Terrain\CarréColoré.cs" />
     <Compile Include="SystèmePhysique\Terrain\CubeAdditionnable.cs" />
-    <Compile Include="SystèmePhysique\Terrain\CubeColoré.cs" />
     <Compile Include="SystèmePhysique\Terrain\Pente.cs" />
     <Compile Include="SystèmePhysique\Terrain\PrimitivePente.cs" />
     <Compile Include="wip_Main.cs" />

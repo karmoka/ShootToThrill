@@ -143,8 +143,8 @@ namespace AtelierXNA
         {
             for (int i = 0; i < ComposantePhysique.ListeCollision.Count; ++i)
             {
-                ObjetPhysique objet = ComposantePhysique.ListeCollision[i];
-                if (objet is MJoueur)
+                InformationIntersection info = ComposantePhysique.ListeCollision[i];
+                if (info.ObjetB is MJoueur)
                 {
                     EstEnTrainAttaquer = false;
                 }
