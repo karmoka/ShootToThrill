@@ -16,6 +16,7 @@ namespace AtelierXNA
     public class Round : DrawableGameComponent
     {
         MMoteurPhysique MMoteurPhysique { get; set; }
+        ModelManager ModèleManager { get; set; }
         int NbJoueur { get; set; }
         Vector3 PositionPortailEnnemi { get; set; }
         public int NombreRound { get; private set; }
@@ -75,6 +76,7 @@ namespace AtelierXNA
         protected override void LoadContent()
         {
             MMoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
+            ModèleManager = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
             base.LoadContent();
         }
 
@@ -149,8 +151,7 @@ namespace AtelierXNA
             MEnnemi unEnnemi = new MEnnemi(Game, m, o, itemDrop, description.VieMax, description.Domage);
             unEnnemi.Initialize();
             MMoteurPhysique.AjouterObjet(unEnnemi);
-            ModelManager modèleManager = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
-            modèleManager.AjouterModele(unEnnemi);
+            ModèleManager.AjouterModele(unEnnemi);
         }
     }
 }
