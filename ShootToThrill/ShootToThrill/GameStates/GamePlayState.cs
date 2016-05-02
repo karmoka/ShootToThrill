@@ -140,7 +140,7 @@ namespace AtelierXNA
            LumièreJeu = new Lumière(Game, Vector3.Zero,Color.Red.ToVector3(),1,1,Vector3.One, Vector4.One);
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-                MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "ship2", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
+                MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "tAvatar0", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
                 //MObjetDeBase o = new MObjetDeBase(Game, "ship2", 0.001f, Vector3.Zero, Vector3.Zero);
                 ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Jeu.PortailJoueur.Position,Vector3.Zero,1/10f), (PlayerIndex)i));
                 
