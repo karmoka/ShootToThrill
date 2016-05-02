@@ -12,9 +12,10 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
+
       const float RAYON_DÉFAUT = 1.25f;
 
-       public List<ObjetPhysique> ListeCollision { get; private set; }
+       public List<InformationIntersection> ListeCollision { get; private set; }
        protected Options OptionJeu { get; private set; }
 
        public bool EstTangible { get; protected set; }
@@ -84,7 +85,7 @@ namespace AtelierXNA
 
       public override void Initialize()
       {
-          ListeCollision = new List<ObjetPhysique>();
+          ListeCollision = new List<InformationIntersection>();
           EstTangible = true;
           OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
@@ -141,17 +142,17 @@ namespace AtelierXNA
 
       public virtual void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
       {
-         ListeCollision.Add(autre);
+         if(autre is Entité)
+         {
+
+         }
 
          if(this.EstTangible && autre.EstTangible)
          {
-            Vector3 norm = autre.GetCollider().Normale(this.Position);
-            //La norme est corrigé pour gérer la collision des deux bords de l'objet
-            if (Vector3.Dot((autre.Position - this.Position), norm) >= 0)
-               norm = -norm;
+
             this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
 
-            CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+            CorrigerPosition(this , autre, infoColli, norm);
          }
          if(autre is VolumeDeForce)
          {
