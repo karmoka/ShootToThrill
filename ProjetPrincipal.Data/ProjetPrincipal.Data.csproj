@@ -65,6 +65,7 @@
     <Compile Include="DescriptionJoueur.cs" />
     <Compile Include="DescriptionMenu.cs" />
     <Compile Include="DescriptionModelPhysique.cs" />
+    <Compile Include="DescriptionObjetDeBaseAniméÉclairé.cs" />
     <Compile Include="DescriptionObjetPhysique.cs" />
     <Compile Include="DescriptionOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

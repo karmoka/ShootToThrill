@@ -83,13 +83,13 @@ namespace AtelierXNA
             Vie = vie;
             IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
         }
-        public Avatar(Game game, DescriptionAvatar description)
-            : base(game, description)
-        {
-            VieMax = description.VieMax;
-            Vie = description.VieMax;
-            IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
-        }
+        //public Avatar(Game game, DescriptionAvatar description)
+        //    : base(game, description)
+        //{
+        //    VieMax = description.VieMax;
+        //    Vie = description.VieMax;
+        //    IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
+        //}
 
         public override void Initialize()
         {
@@ -149,9 +149,9 @@ namespace AtelierXNA
             RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
         }
 
-        public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
+        public override void EnCollision(IPhysique autre)
         {
-            base.EnCollision(autre, infoColli);
+            base.EnCollision(autre);
         }
 
         #region Vie

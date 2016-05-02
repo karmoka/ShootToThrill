@@ -29,10 +29,6 @@ Content\Modèle\untitled.xnb
 Content\Modèle\Interrupteur.xnb
 Content\Modèle\ship2.xnb
 Content\Description\Bazooka.xnb
-Content\Description\Joueur0.xnb
-Content\Description\Joueur1.xnb
-Content\Description\Joueur2.xnb
-Content\Description\Joueur3.xnb
 Content\Description\Machinegun.xnb
 Content\Description\Railgun.xnb
 Content\Description\Shotgun.xnb

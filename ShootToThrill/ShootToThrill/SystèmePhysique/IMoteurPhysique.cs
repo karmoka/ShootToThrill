@@ -98,9 +98,9 @@ namespace AtelierXNA
 
                if (intersection)
                {
-                  InformationIntersection infoColli = new InformationIntersection(ListePhysique[i], ListePhysique[j]);
-                  ListePhysique[i].GetObjetPhysique().EnCollision(ListePhysique[j].GetObjetPhysique(), infoColli);
-                  ListePhysique[j].GetObjetPhysique().EnCollision(ListePhysique[i].GetObjetPhysique(), infoColli);
+                  //InformationIntersection infoColli = new InformationIntersection(ListePhysique[i], ListePhysique[j]);
+                  ListePhysique[i].GetObjetPhysique().EnCollision(ListePhysique[j]);
+                  ListePhysique[j].GetObjetPhysique().EnCollision(ListePhysique[i]);
                }
             }
          }
