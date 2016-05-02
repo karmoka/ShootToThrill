@@ -46,12 +46,12 @@ namespace AtelierXNA
          {
             MObjetDeBase o = new MObjetDeBase(Game, NomModèle, 1f, Vector3.Zero, this.Position);
             Modèle3D = o as IModele3d;
-            Collision = new CubeCollision(this.Position, DimensionModele(GestionnaireModele.Find(NomModèle), Matrix.Identity), Vector3.Zero);
+            Collision = new MCubeCollision(this.Position, DimensionModele(GestionnaireModele.Find(NomModèle), Matrix.Identity), Vector3.Zero);
          }
          else
          {
             Modèle3D = new CubeColoré(Game, 1, Vector3.Zero, this.Position, Color.White, DimensionCube, OptionJeu.IntervalMAJStandard);
-            Collision = new CubeCollision(this.Position, this.DimensionCube, Vector3.Zero);
+            Collision = new MCubeCollision(this.Position, this.DimensionCube, Vector3.Zero);
          }
 
          Modèle3D.Initialize();

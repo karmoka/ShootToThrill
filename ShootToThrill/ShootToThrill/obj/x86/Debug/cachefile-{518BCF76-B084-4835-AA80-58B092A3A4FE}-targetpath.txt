@@ -27,6 +27,7 @@ Content\Modèle\SupportFusil2.xnb
 Content\Modèle\unicorn.xnb
 Content\Modèle\untitled.xnb
 Content\Modèle\Interrupteur.xnb
+Content\Modèle\ship2.xnb
 Content\Description\Bazooka.xnb
 Content\Description\Joueur0.xnb
 Content\Description\Joueur1.xnb
@@ -47,6 +48,7 @@ Content\Effets\Phong.xnb
 Content\Effets\SpotLight.xnb
 Content\Modèle\Portail\material_2.xnb
 Content\Modèle\Portail\material_3.xnb
+Content\Modèle\ship_tex.xnb
 Content\Textures\button.xnb
 Content\Textures\buttonBack.xnb
 Content\Textures\CielÉtoilé.xnb
@@ -71,10 +73,8 @@ Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
 Content\Sounds\Menu.xnb
-Content\Modèle\ship2.xnb
-Content\Modèle\ship_tex.xnb
-Content\Modèle\ship_tex_0.xnb
 Content\Sounds\Boss.xnb
+Content\Modèle\ship_tex_0.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

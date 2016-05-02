@@ -169,6 +169,7 @@
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />
+    <Compile Include="SystèmePhysique\Colliders\Projectiles.cs" />
     <Compile Include="SystèmePhysique\Colliders\SphereCollision.cs" />
     <Compile Include="SystèmePhysique\CubeDeForces\SphereDeForce.cs" />
     <Compile Include="SystèmePhysique\CubeDeForces\VolumeDeForce.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="SystèmePhysique\Terrain\CarréColoré.cs" />
     <Compile Include="SystèmePhysique\Terrain\CubeAdditionnable.cs" />
     <Compile Include="SystèmePhysique\Terrain\CubeColoré.cs" />
+    <Compile Include="SystèmePhysique\Terrain\CubeTexturé.cs" />
     <Compile Include="SystèmePhysique\Terrain\Pente.cs" />
     <Compile Include="SystèmePhysique\Terrain\PrimitivePente.cs" />
     <Compile Include="wip_Main.cs" />

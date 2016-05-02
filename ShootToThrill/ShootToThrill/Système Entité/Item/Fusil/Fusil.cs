@@ -185,7 +185,13 @@ namespace AtelierXNA
                 {
                     for (int i = 0; i < NbBallesParTir; ++i)
                     {
-                        Tirer();
+                        Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
+                        direction = DirectionAléatoire(direction);
+
+                        DroiteColorée trajectoire = new DroiteColorée(Game, Position, direction, Dommage, Portée, NomArme);
+                        trajectoire.DroiteCollision.CoupDeFeu();
+                        trajectoire.Initialize();
+                        ListeTrajectoires.Add(trajectoire);
                     }
                     GérerMunitions();
                     TrajectoireExiste = true;

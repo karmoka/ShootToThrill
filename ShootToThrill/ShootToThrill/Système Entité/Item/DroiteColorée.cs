@@ -14,6 +14,7 @@ namespace AtelierXNA
 {
     public class DroiteColorée : PrimitiveDeBaseAnimée2
     {
+        const int NB_CROISEMENT = 5;
         public Caméra CaméraActuelle { get; set; }
 
         public void ChangerCaméra(Caméra cam)
@@ -31,7 +32,6 @@ namespace AtelierXNA
 
         public DroiteCollision DroiteCollision { get; private set; }
 
-        Fusil Arme { get; set; }
 
         BasicEffect EffetDeBase { get; set; }
         private VertexBuffer vertexBuffer { get; set; }
@@ -39,20 +39,29 @@ namespace AtelierXNA
         float TempsÉcouléDepuisMAJ { get; set; }
         bool EstDessinée { get; set; }
 
-        public DroiteColorée(Game game, Fusil arme, Vector3 direction)
-            : base(game, 1f, Vector3.Zero, arme.Position, 0.05f + 20)
+        string TypeArme { get; set; }
+
+        public DroiteColorée(Game game, Vector3 point, Vector3 direction, int dommage, float portée, string nomArme)
+            : base(game, 1f, Vector3.Zero, point, 0.05f)
         {
             Direction = direction;
-            Arme = arme;
-            Point = arme.Position;
-            Longueur = arme.Portée;
-            DroiteCollision = new DroiteCollision(game, Direction, Point, arme);
+            Point = point;
+            Longueur = portée;
+            TypeArme = nomArme;
+            DroiteCollision = new DroiteCollision(game, Direction, Point, Longueur, dommage);
         }
 
         public override void Initialize()
         {
             PositionsPoints = new Vector3[2];
             Points = new VertexPositionColor[2];
+
+            if (TypeArme == "Teslagun")
+            {
+                PositionsPoints = new Vector3[NB_CROISEMENT + 1];
+                Points = new VertexPositionColor[NB_CROISEMENT + 1];
+            }
+
             Couleur = Color.Gray;
             TempsÉcouléDepuisMAJ = 0;
             EstDessinée = false;
@@ -64,20 +73,16 @@ namespace AtelierXNA
             EffetDeBase = new BasicEffect(GraphicsDevice);
             EffetDeBase.VertexColorEnabled = true;
 
-            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 2, BufferUsage.WriteOnly);
+            int nbVertex = 2;
+            if (TypeArme == "Teslagun")
+            {
+                nbVertex = NB_CROISEMENT + 1;
+            }
+
+            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), nbVertex, BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionColor>(Points);
 
             base.LoadContent();
-        }
-
-        protected override void UnloadContent()
-        {
-            if (this.vertexBuffer != null)
-            {
-                vertexBuffer.Dispose();
-                vertexBuffer = null;
-            }
-            EffetDeBase.Dispose();
         }
 
         protected override void InitialiserSommets()
@@ -87,8 +92,32 @@ namespace AtelierXNA
             PositionsPoints[0] = Vector3.Zero;
             PositionsPoints[1] = Direction * Longueur;
 
-            Points[0] = new VertexPositionColor(PositionsPoints[0], Couleur);
-            Points[1] = new VertexPositionColor(PositionsPoints[1], Couleur);
+            Points[0] = new VertexPositionColor(PositionsPoints[0], Color.White);
+            Points[1] = new VertexPositionColor(PositionsPoints[1], Color.Yellow);
+
+            Random générateurAléatoire = new Random();
+
+            if (TypeArme == "Teslagun")
+            {
+                Points[0] = new VertexPositionColor(PositionsPoints[0], Color.LightBlue);
+                for (int i = 1; i <= NB_CROISEMENT; ++i)
+                {
+                    PositionsPoints[i] = PointAléatoire(générateurAléatoire, 10, Point + Direction * i * Longueur / (NB_CROISEMENT)) - Point;
+                    Points[i] = new VertexPositionColor(PositionsPoints[i], Color.LightBlue);
+                }
+            }
+        }
+
+        Vector3 PointAléatoire(Random générateurAléatoire, int rayon, Vector3 point)
+        {
+            Vector3 vecteurAléatoire = new Vector3(générateurAléatoire.Next(0,20), générateurAléatoire.Next(0,20),générateurAléatoire.Next(0,20));
+            float rayonAléatoire = générateurAléatoire.Next(0, rayon) / 10.0f;
+
+            Vector3 directionRayon = Vector3.Cross(Direction, vecteurAléatoire);
+            directionRayon.Normalize();
+            directionRayon *= rayonAléatoire;
+
+            return directionRayon + point;
         }
 
 
@@ -114,7 +143,6 @@ namespace AtelierXNA
 
         public void Effacer()
         {
-            Arme.EffacerDroite();
             EstDessinée = false;
         }
 
@@ -132,7 +160,12 @@ namespace AtelierXNA
             foreach (EffectPass pass in EffetDeBase.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.LineStrip, Points, 0, 1);
+                int nbPrimitives = 1;
+                if (TypeArme == "Teslagun")
+                {
+                    nbPrimitives = NB_CROISEMENT;
+                }
+                GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.LineStrip, Points, 0, nbPrimitives);
             }
 
             EstDessinée = true;

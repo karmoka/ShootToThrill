@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Model</Name>
     <Identity>
-      <SourceFilename>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Sphere.fbx</SourceFilename>
+      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Sphere.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -33,7 +33,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>FrontColor</Name>
       <Identity>
-        <SourceFilename>C:\Users\Mikael\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Sphere.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\Sphere.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

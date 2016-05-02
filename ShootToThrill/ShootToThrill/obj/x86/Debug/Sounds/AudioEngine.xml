@@ -11,10 +11,10 @@
     Compression Preset Name = Compression Preset;
     Xbox Bank Last Modified Low = 0;
     Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 1732892270;
-    PC Bank Last Modified High = 30515612;
-    Bank Last Revised Low = 1608515156;
-    Bank Last Revised High = 30515612;
+    PC Bank Last Modified Low = 732321505;
+    PC Bank Last Modified High = 30516226;
+    Bank Last Revised Low = 677168350;
+    Bank Last Revised High = 30516226;
 
     Wave
     {
@@ -34,31 +34,8 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 915981263;
-            Last Modified High = 30515213;
-        }
-    }
-
-    Wave
-    {
-        Name = Boss;
-        File = ..\..\..\..\..\..\Desktop\Musique\Boss.wav;
-        Build Settings Last Modified Low = 2499937781;
-        Build Settings Last Modified High = 30515611;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 2;
-            Sampling Rate = 44100;
-            Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 22652700;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 3188850460;
-            Last Modified High = 30515609;
+            Last Modified Low = 2718351299;
+            Last Modified High = 30516040;
         }
     }
 
@@ -80,8 +57,8 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 3698289836;
-            Last Modified High = 30515223;
+            Last Modified Low = 2723191576;
+            Last Modified High = 30516040;
         }
     }
 
@@ -103,8 +80,8 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 3145138336;
-            Last Modified High = 30515223;
+            Last Modified Low = 2723221577;
+            Last Modified High = 30516040;
         }
     }
 
@@ -126,8 +103,8 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 2467037843;
-            Last Modified High = 30515223;
+            Last Modified Low = 2723321583;
+            Last Modified High = 30516040;
         }
     }
 
@@ -149,8 +126,31 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 4294760761;
-            Last Modified High = 30515223;
+            Last Modified Low = 2720331412;
+            Last Modified High = 30516040;
+        }
+    }
+
+    Wave
+    {
+        Name = Boss;
+        File = Boss.wav;
+        Build Settings Last Modified Low = 554141314;
+        Build Settings Last Modified High = 30516226;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 22652700;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2906554054;
+            Last Modified High = 30516221;
         }
     }
 }
