@@ -83,7 +83,7 @@ namespace AtelierXNA
             UpdaterEnnemi(gameTime);
             UpdaterJoueur(gameTime);
             UpdaterInterrupteur(gameTime);
-            //Round.Update(gameTime);
+            Round.Update(gameTime);
             base.Update(gameTime);
         }
 

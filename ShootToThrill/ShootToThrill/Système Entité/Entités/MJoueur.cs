@@ -96,7 +96,7 @@ namespace AtelierXNA
             if (ManagerDeControle.EstJoystickDroitActif(IndexJoueur) || ManagerDeControle.EstOrientationActif(IndexJoueur))
                 {
                     Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
-                    Vector3 direction3 = new Vector3(direction.X, 0, direction.Y);
+                    Vector3 direction3 = Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction);
                     ModifierDirection(direction);
                 //ComposanteGraphique.SetRotation(CustomMathHelper.AngleDeVecteur2D(direction));
             }
@@ -105,7 +105,7 @@ namespace AtelierXNA
 
         protected override void ModifierDirection(Vector2 direction)
         {
-            ArmeSélectionnée.RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
+            ArmeSélectionnée.SetRotation(Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction));
             ArmeSélectionnée.ChangerDirection(direction);
             base.ModifierDirection(direction);
         }

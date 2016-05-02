@@ -47,7 +47,7 @@ namespace AtelierXNA
             base.Draw(gameTime);
         }
 
-        public void ChangerCaméra(Caméra cam)
+        public void SetCaméra(Caméra cam)
         {
             RectangleVieColoré.SetCaméra(cam);
         }

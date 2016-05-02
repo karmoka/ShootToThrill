@@ -258,8 +258,8 @@ namespace AtelierXNA
 
         public void ChangerDirection(Vector2 direction)
         {
-            float distance = (float)Math.Sqrt(Math.Pow(direction.X, 2) + Math.Pow(direction.Y, 2));
-            if (distance < DISTANCE_JOUEUR_FUSIL)
+            float distance = direction.Length();// (float)Math.Sqrt(Math.Pow(direction.X, 2) + Math.Pow(direction.Y, 2));
+            if (distance > DISTANCE_JOUEUR_FUSIL)
             {
                 Direction = direction * DISTANCE_JOUEUR_FUSIL / distance;
             }

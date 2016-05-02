@@ -229,7 +229,7 @@ namespace AtelierXNA
 
         protected override void SetCaméraAutreComposante(Caméra cam)
         {
-            EnnemiScreenManager.ChangerCaméra(cam);
+            EnnemiScreenManager.SetCaméra(cam);
             base.SetCaméra(cam);
         }
 
