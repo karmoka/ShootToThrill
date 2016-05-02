@@ -22,7 +22,7 @@ namespace AtelierXNA
                   AUCUNE_MUNITION = 0,
                   VARIATION_INDEX = 1,
                   DISTANCE_MAX = 1000;
-
+        protected float VitesseJoueur { get; set; }
         string NomModèleBase { get; set; }
         string NomModèleAnimé { get; set; }
         float IntervalMAJ { get; set; }
@@ -43,6 +43,8 @@ namespace AtelierXNA
         public IModele3d ComposanteGraphique { get; private set; }
         public ObjetPhysique ComposantePhysique { get; private set; }
         protected List<Fusil> ListeArme { get; set; }
+        protected MMoteurPhysique MMoteurPhysique { get; set; }
+        protected ModelManager ManagerModèle { get; set; }
 
         /// <summary>
         /// Avatar dont le graphique ne bouge pas
@@ -55,6 +57,15 @@ namespace AtelierXNA
         {
             ComposantePhysique = composantePhysique;
             ComposanteGraphique = composanteGraphique;
+            VieMax = 100;
+        }
+
+        public MAvatar(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique, int vie)
+            : base(game)
+        {
+            ComposantePhysique = composantePhysique;
+            ComposanteGraphique = composanteGraphique;
+            VieMax = vie;
         }
 
         public override void Initialize()
@@ -67,7 +78,6 @@ namespace AtelierXNA
             TempsDepuisMAJ = 0;
             IndexArme = 0;
             Rotation = 0;
-            VieMax = 100;
             Vie = VieMax;
             EstEnMouvement = false;
             base.Initialize();
@@ -75,6 +85,8 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
+            ManagerModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
+            MMoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
             base.LoadContent();
         }
 
@@ -258,7 +270,7 @@ namespace AtelierXNA
 
         protected virtual void ModifierDirection(Vector2 direction)
         {
-            //RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
+            SetRotation(Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction));
         }
 
         public Vector3 Vitesse
@@ -316,10 +328,10 @@ namespace AtelierXNA
         public void SetCaméra(Caméra cam)
         {
             ComposanteGraphique.SetCaméra(cam);
-            SetCaméraArme(cam);
+            SetCaméraAutreComposante(cam);
         }
 
-        void SetCaméraArme(Caméra cam)
+        protected virtual void SetCaméraAutreComposante(Caméra cam)
         {
             if (AUnFusil)
             {

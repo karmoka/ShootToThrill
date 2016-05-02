@@ -15,7 +15,7 @@ namespace AtelierXNA
 
     class MJoueur : MAvatar
     {
-       float VitesseJoueur { get; set; }
+       
 
        PlayerIndex IndexJoueur { get; set; }
        IOManager ManagerDeControle { get; set; }
@@ -92,9 +92,17 @@ namespace AtelierXNA
                 {
                     Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
                     Vector3 direction3 = new Vector3(direction.X, 0, direction.Y);
+                    ModifierDirection(direction);
                 //ComposanteGraphique.SetRotation(CustomMathHelper.AngleDeVecteur2D(direction));
             }
             base.BougerAvatar();
+        }
+
+        protected override void ModifierDirection(Vector2 direction)
+        {
+            ArmeSélectionnée.RotationSurY(CustomMathHelper.AngleDeVecteur2D(direction));
+            ArmeSélectionnée.ChangerDirection(direction);
+            base.ModifierDirection(direction);
         }
 
         protected override void GérerCollisions()

@@ -18,7 +18,7 @@ namespace AtelierXNA
         Vector3 VecteurUnitaire { get; set; }
         Vector3 Point { get; set; }
         Ray Droite { get; set; }
-        List<ObjetPhysique> DansTrajectoire { get; set; }
+        List<IPhysique> DansTrajectoire { get; set; }
         Vector3 PointIntersection { get; set; }
         Game Jeu { get; set; }
         Fusil Arme { get; set; }
@@ -31,7 +31,7 @@ namespace AtelierXNA
             Arme = arme;
             Longueur = Arme.Portée;
 
-            DansTrajectoire = new List<ObjetPhysique>();
+            DansTrajectoire = new List<IPhysique>();
             PointIntersection = new Vector3();
 
             Droite = new Ray(Point, VecteurUnitaire);
@@ -40,10 +40,10 @@ namespace AtelierXNA
         public void CoupDeFeu()
         {
             int nbObjetEnCollision;
-            MMoteurPhysique moteurPhysique = Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
-            foreach (ObjetPhysique objet in moteurPhysique.ListePhysique)
+            MMoteurPhysique mMoteurPhysique = Jeu.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
+            foreach (IPhysique objet in mMoteurPhysique.ListePhysique)
             {
-                if ((objet is Ennemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() < Longueur)
+                if ((objet is MEnnemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() < Longueur)
                 {
                     DansTrajectoire.Add(objet);
                 }
@@ -54,7 +54,7 @@ namespace AtelierXNA
 
             foreach (ObjetPhysique objet in DansTrajectoire)
             {
-                Collider collider = objet.GetCollider();
+                Collider collider = (objet as ObjetPhysique).GetCollider();
                 if (this.Intersects(collider))
                 {
                     distances.Add(collider.DistanceImpact);
@@ -65,10 +65,10 @@ namespace AtelierXNA
             if (DansTrajectoire.Count > 0)
             {
                 Longueur = distances[0];
-                ObjetPhysique objetPhysique = null;
-                foreach (ObjetPhysique objet in DansTrajectoire)
+                IPhysique objetPhysique = null;
+                foreach (IPhysique objet in DansTrajectoire)
                 {
-                    if ((objet is Ennemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() != 0 && (PointIntersection - Point).Length() < Longueur)
+                    if ((objet is MEnnemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() != 0 && (PointIntersection - Point).Length() < Longueur)
                     {
                         objetPhysique = objet;
                     }
@@ -76,9 +76,9 @@ namespace AtelierXNA
 
                 //PointIntersection = Point + VecteurUnitaire * Longueur;
 
-                if (objetPhysique is Ennemi)
+                if (objetPhysique is MEnnemi)
                 {
-                    (objetPhysique as Ennemi).RetirerVie(Arme.Dommage);
+                    (objetPhysique as MEnnemi).RetirerVie(Arme.Dommage);
                 }
             }
         }
