@@ -23,11 +23,11 @@ namespace AtelierXNA
             IndexJoueur = playerIndex;
 
         }
-        public Joueur(Game game, DescriptionJoueur description, PlayerIndex playerIndex)
-            : base(game, description)
-        {
-            IndexJoueur = playerIndex;
-        }
+        //public Joueur(Game game, DescriptionJoueur description, PlayerIndex playerIndex)
+        //    : base(game, description)
+        //{
+        //    IndexJoueur = playerIndex;
+        //}
 
         public override void Initialize()
         {

@@ -180,26 +180,6 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Description\Joueur0.xml">
-      <Name>Joueur0</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Description\Joueur1.xml">
-      <Name>Joueur1</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Description\Joueur2.xml">
-      <Name>Joueur2</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Description\Joueur3.xml">
-      <Name>Joueur3</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
     <Compile Include="Description\Machinegun.xml">
       <Name>Machinegun</Name>
       <Importer>XmlImporter</Importer>

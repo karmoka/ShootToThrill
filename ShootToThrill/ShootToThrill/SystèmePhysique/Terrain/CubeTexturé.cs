@@ -22,16 +22,16 @@ namespace AtelierXNA
             CaméraActuelle = cam;
         }
 
-        const int NB_SOMMETS = 8;
+        protected const int NB_SOMMETS = 8;
 
-        VertexPositionNormalTexture[] Sommets1 { get; set; }
-        VertexPositionNormalTexture[] Sommets2 { get; set; }
+        protected VertexPositionNormalTexture[] Sommets1 { get; set; }
+        protected VertexPositionNormalTexture[] Sommets2 { get; set; }
         Vector3[] Normales { get; set; }
         public Vector3 Dimension { get; private set; }
         Vector3 Charpente { get; set; }
         public Vector3 Position { get; private set; }
         Vector3 Origine { get; set; }
-        Texture2D Image { get; set; }
+        protected Texture2D Image { get; set; }
         string NomImage { get; set; }
 
         public Vector3 Ori { get; private set; }
@@ -40,7 +40,7 @@ namespace AtelierXNA
         float Échelle { get; set; }
         Vector3 Rotation { get; set; }
 
-        RessourcesManager<Texture2D> gestionnaireDeTextures;
+        protected RessourcesManager<Texture2D> gestionnaireDeTextures;
         BlendState GestionAlpha { get; set; }
 
         public CubeTexturé(Game game, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, Vector3 dimension, float intervalleMAJ, string nomImage)
@@ -90,7 +90,7 @@ namespace AtelierXNA
 
             Vector3 centre = PositionsSommets[5] / 2;
 
-            for (int i = 0; i < NB_SOMMETS; ++i )
+            for (int i = 0; i < NB_SOMMETS; ++i)
             {
                 Normales[i] = PositionsSommets[i] - centre;
                 Normales[i].Normalize();

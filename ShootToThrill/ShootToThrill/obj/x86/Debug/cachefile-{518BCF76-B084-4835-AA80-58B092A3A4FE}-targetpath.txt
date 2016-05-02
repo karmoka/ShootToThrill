@@ -29,10 +29,6 @@ Content\Modèle\untitled.xnb
 Content\Modèle\Interrupteur.xnb
 Content\Modèle\ship2.xnb
 Content\Description\Bazooka.xnb
-Content\Description\Joueur0.xnb
-Content\Description\Joueur1.xnb
-Content\Description\Joueur2.xnb
-Content\Description\Joueur3.xnb
 Content\Description\Machinegun.xnb
 Content\Description\Railgun.xnb
 Content\Description\Shotgun.xnb
@@ -72,6 +68,10 @@ Content\Textures\ThumbnailP3.xnb
 Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
 Content\Textures\Untitled.xnb
+Content\Textures\strip1.xnb
+Content\Textures\strip2.xnb
+Content\Textures\strip3.xnb
+Content\Textures\strip4.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb

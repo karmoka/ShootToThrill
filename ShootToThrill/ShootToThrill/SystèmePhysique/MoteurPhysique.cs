@@ -106,7 +106,7 @@ namespace AtelierXNA
 
                if (intersection)
                {
-                  InformationSurCollision.Add(new InformationIntersection(ListePhysique[i], ListePhysique[j]));
+                  //InformationSurCollision.Add(new InformationIntersection(ListePhysique[i], ListePhysique[j]));
                }
             }
          }
@@ -114,26 +114,26 @@ namespace AtelierXNA
 
       private void GérerCollision()
       {
-         foreach(InformationIntersection infoColli in InformationSurCollision)
-         {
-            ObjetPhysique A = infoColli.ObjetA;
-            ObjetPhysique B = infoColli.ObjetB;
+         //foreach(InformationIntersection infoColli in InformationSurCollision)
+         //{
+         //   ObjetPhysique A = infoColli.ObjetA;
+         //   ObjetPhysique B = infoColli.ObjetB;
 
-            A.EnCollision(B, infoColli);
-            B.EnCollision(A, infoColli);
+         //   A.EnCollision(B, infoColli);
+         //   B.EnCollision(A, infoColli);
 
-            if (A.EstTangible && B.EstTangible)
-            {
-               //Vector3 norm = B.GetCollider().Normale(A.Position);
-               ////La norme est corrigé pour gérer la collision des deux bords de l'objet
-               //if (Vector3.Dot((B.Position - A.Position), norm) > 0)
-               //   norm = -norm;
-               //A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
-               //B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+         //   if (A.EstTangible && B.EstTangible)
+         //   {
+         //      //Vector3 norm = B.GetCollider().Normale(A.Position);
+         //      ////La norme est corrigé pour gérer la collision des deux bords de l'objet
+         //      //if (Vector3.Dot((B.Position - A.Position), norm) > 0)
+         //      //   norm = -norm;
+         //      //A.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
+         //      //B.SetVitesse(CustomMathHelper.Réfléchir(A.Vitesse, norm) * 0.95f);
 
-               //CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
-            }
-         }
+         //      //CorrigerPosition(infoColli.ObjetA, infoColli.ObjetB, infoColli, norm);
+         //   }
+         //}
 
          InformationSurCollision.Clear();
       }

@@ -83,13 +83,13 @@ namespace AtelierXNA
             Vie = vie;
             IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
         }
-        public Avatar(Game game, DescriptionAvatar description)
-            : base(game, description)
-        {
-            VieMax = description.VieMax;
-            Vie = description.VieMax;
-            IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
-        }
+        //public Avatar(Game game, DescriptionAvatar description)
+        //    : base(game, description)
+        //{
+        //    VieMax = description.VieMax;
+        //    Vie = description.VieMax;
+        //    IntervalMAJ = GameConstants.INTERVAL_MAJ_STANDARD;
+        //}
 
         public override void Initialize()
         {

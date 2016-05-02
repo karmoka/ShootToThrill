@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>MaxToFilmbox_Root</Name>
     <Identity>
-      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
+      <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>0.393700778 0 0 0 0 2.410722E-17 -0.393700778 0 0 0.393700778 2.410722E-17 0 0 0 0 1</Transform>
@@ -82,7 +82,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>unc_body  ( Standard )</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -96,7 +96,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>unc_eye  ( Standard )</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -110,7 +110,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>unc_horn  ( Standard )</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -124,7 +124,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>unc_iris  ( Standard )</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\unicorn.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
