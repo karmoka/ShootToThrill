@@ -12,7 +12,6 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
-
       const float RAYON_DÉFAUT = 1.25f;
 
        public List<IPhysique> ListeCollision { get; private set; }

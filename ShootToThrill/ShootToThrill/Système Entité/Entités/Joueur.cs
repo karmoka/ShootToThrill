@@ -127,7 +127,7 @@ namespace AtelierXNA
             base.ModifierDirection(direction);
         }
 
-        public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
+        public override void EnCollision(IPhysique autre)
         {
             Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
             if (autre is Fusil)

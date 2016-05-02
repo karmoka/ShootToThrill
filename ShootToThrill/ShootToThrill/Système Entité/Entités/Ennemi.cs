@@ -138,7 +138,7 @@ namespace AtelierXNA
             base.Mourir();
         }
 
-        public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
+        public override void EnCollision(IPhysique autre)
         {
             if (autre is Joueur)
             {

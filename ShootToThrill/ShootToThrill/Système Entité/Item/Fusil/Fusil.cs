@@ -340,7 +340,7 @@ namespace AtelierXNA
             return angle < ZERO ? ZERO : angle % MAX_DEGRÉS;// (float)MathHelper.ToDegrees(MathHelper.TwoPi);// ? angle - (float)MathHelper.TwoPi : angle;
         }
 
-        public override void EnCollision(ObjetPhysique autre, InformationIntersection infoColli)
+        public override void EnCollision(IPhysique autre)
         {
             if (autre is Joueur)
             {
