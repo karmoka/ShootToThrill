@@ -15,7 +15,7 @@ namespace AtelierXNA
 
       const float RAYON_DÉFAUT = 1.25f;
 
-       public List<InformationIntersection> ListeCollision { get; private set; }
+       public List<IPhysique> ListeCollision { get; private set; }
        protected Options OptionJeu { get; private set; }
 
        public bool EstTangible { get; protected set; }
@@ -85,7 +85,7 @@ namespace AtelierXNA
 
       public override void Initialize()
       {
-          ListeCollision = new List<InformationIntersection>();
+         ListeCollision = new List<IPhysique>();
           EstTangible = true;
           OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
@@ -142,10 +142,7 @@ namespace AtelierXNA
 
       public virtual void EnCollision(IPhysique autre)
       {
-         if(autre is Entité)
-         {
-
-         }
+         ListeCollision.Add(autre);
 
          if(this.EstTangible && autre.GetObjetPhysique().EstTangible)
          {
