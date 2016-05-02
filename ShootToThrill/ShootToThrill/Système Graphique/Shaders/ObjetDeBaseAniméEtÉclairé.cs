@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using ProjetPrincipal.Data;
 
 
 namespace AtelierXNA
@@ -44,6 +45,15 @@ namespace AtelierXNA
          NomTextureModèle = nomTextureModèle;
          NomTextureBumpMap = nomTextureBumpMap;
          NomEffetAffichage = nomEffetAffichage.ToUpper();
+      }
+      //game, description, position, 1/60f
+      public MObjetDeBaseAniméEtÉclairé(Game jeu, DescriptionObjetDeBaseAniméÉclairé description, Vector3 positionInitiale, float intervalleMAJ)
+          : base(jeu, description.NomModèle, description.Échelle, description.Rotation, positionInitiale, intervalleMAJ)
+      {
+          LumièreJeu = new Lumière(jeu,positionInitiale,Color.White.ToVector3(),1,1,Vector3.One,Vector4.One);
+          NomTextureModèle = description.NomTextureModèle;
+          NomTextureBumpMap = null;
+          NomEffetAffichage = description.NomEffetAffichage.ToUpper();
       }
 
       public override void Initialize()
