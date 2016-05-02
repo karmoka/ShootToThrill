@@ -142,10 +142,10 @@ namespace AtelierXNA
             {
                 AjouterVie(autre as Soin);
             }
-            else if (autre is Ennemi)
-            {
-                RetirerVie((autre as Ennemi).Domage);
-            }
+            //else if (autre is MEnnemi)
+            //{
+            //    RetirerVie((autre as MEnnemi).Domage);
+            //}
             else if (autre is Interrupteur)
             {
                 (autre as Interrupteur).ChangerGravité();

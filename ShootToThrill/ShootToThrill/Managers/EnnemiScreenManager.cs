@@ -20,8 +20,8 @@ namespace AtelierXNA
                     LARGEUR = 0;
         const int NB_COULEUR = 2;
         RectangleVieColoré RectangleVieColoré { get; set; }
-        Ennemi Ennemi { get; set; }
-        public EnnemiScreenManager(Game game, Ennemi ennemi)
+        MEnnemi Ennemi { get; set; }
+        public EnnemiScreenManager(Game game, MEnnemi ennemi)
             : base(game)
         {
             Ennemi = ennemi;

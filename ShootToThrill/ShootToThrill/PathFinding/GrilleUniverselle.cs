@@ -35,6 +35,7 @@ namespace AtelierXNA
         Node[, ,] TableauNode { get; set; }
         public Vector3 PositionCible { get; private set; }
         public Vector3 PositionActuelle { get; private set; }
+        float …chelle { get; set; }
         public GrilleUniverselle(Game game, List<string> liste…tage)
             : base(game)
         {
@@ -59,7 +60,7 @@ namespace AtelierXNA
             PositionActuelle = new Vector3(38, 2, 28);
             …tage = SOL;
             ListeCube = new List<CubeAdditionnable>();
-
+            …chelle = 1f;
             Jeu = Game.Services.GetService(typeof(Jeu)) as Jeu;
             GestionnaireDeTexture = Game.Services.GetService(typeof(RessourcesManager<Texture2D>)) as RessourcesManager<Texture2D>;
             foreach (string s in Liste…tage)
@@ -82,7 +83,7 @@ namespace AtelierXNA
                 for (int z = 0; z < Image…tage.Height; ++z)
                 {
                     Vector3 position = new Vector3(x, …tage, z);
-                    CubeAdditionnable cube = new CubeAdditionnable(Game, 1, Vector3.Zero, position, Color.BlueViolet, Vector3.One, 0);
+                    CubeAdditionnable cube = new CubeAdditionnable(Game, …chelle, Vector3.Zero, position, Color.BlueViolet, Vector3.One, 0);
                     cube.Initialize();
                     TableauCube[x, …tage, z] = cube;
                     TableauNode[x, …tage, z] = new Node(Game, false, position, x, z);
@@ -131,7 +132,7 @@ namespace AtelierXNA
                     }
                     else if (Couleurs[x, z] == MUR)
                     {
-                        CubeAdditionnable cube = new CubeAdditionnable(Game, 1, Vector3.Zero, position, Color.BlueViolet, Vector3.One, 0);
+                        CubeAdditionnable cube = new CubeAdditionnable(Game, …chelle, Vector3.Zero, position, Color.BlueViolet, Vector3.One, 0);
                         cube.Initialize();
                         TableauCube[x, …tage, z] = cube;
                         TableauNode[x, …tage, z] = new Node(Game, false, position, x, z);

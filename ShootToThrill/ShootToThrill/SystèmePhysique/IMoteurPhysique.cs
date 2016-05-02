@@ -110,5 +110,23 @@ namespace AtelierXNA
       {
          get { return ListePhysique.Count; }
       }
+
+      public Vector3 GetPositionJoueurPlusProche(Vector3 positionEnnemi)
+      {
+          Vector3 positionAvatarPlusProche = Vector3.Zero;
+          List<float> distance = new List<float>();
+          foreach (MJoueur j in ListePhysique.Where(x => x is MJoueur))
+          {
+              distance.Add(Vector3.Distance(j.Position, positionEnnemi));
+          }
+          foreach (MJoueur j in ListePhysique.Where(x => x is MJoueur))
+          {
+              if (Vector3.Distance(j.Position, positionEnnemi) == distance.OrderBy(d => d).ElementAt(0))// && e is Avatar_)
+              {
+                  positionAvatarPlusProche = j.Position;
+              }
+          }
+          return positionAvatarPlusProche;
+      }
    }
 }

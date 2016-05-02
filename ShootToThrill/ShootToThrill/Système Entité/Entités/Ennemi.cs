@@ -54,8 +54,8 @@ namespace AtelierXNA
             TempsDepuisAttaque = 0;
             EstEnTrainAttaquer = false;
             base.Initialize();
-            EnnemiScreenManager = new EnnemiScreenManager(Game, this);
-            EnnemiScreenManager.Initialize();
+            //EnnemiScreenManager = new EnnemiScreenManager(Game, this);
+            //EnnemiScreenManager.Initialize();
         }
         protected override void LoadContent()
         {
@@ -73,7 +73,7 @@ namespace AtelierXNA
             {
                 PositionAvatarPlusProche = MoteurPhysique.GetPositionJoueurPlusProche(Position);
                 UpdaterComportement(tempsDepuisMAJ);
-                EnnemiScreenManager.Update(gameTime);
+                //EnnemiScreenManager.Update(gameTime);
                 TempsDepuisRechercheAvatar = 0;
             }
             base.Update(gameTime);
@@ -229,13 +229,13 @@ namespace AtelierXNA
 
         protected void SetCaméra(Caméra cam)
         {
-            EnnemiScreenManager.ChangerCaméra(cam);
+            //EnnemiScreenManager.ChangerCaméra(cam);
             base.SetCaméra(cam);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            EnnemiScreenManager.Draw(gameTime);
+            //EnnemiScreenManager.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

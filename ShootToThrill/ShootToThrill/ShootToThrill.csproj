@@ -136,6 +136,7 @@
     <Compile Include="Système Entité\EntitySystem.cs" />
     <Compile Include="Système Entité\Entité.cs" />
     <Compile Include="Système Entité\Entités\Avatar.cs" />
+    <Compile Include="Système Entité\Entités\MEnnemi.cs" />
     <Compile Include="Système Entité\Entités\Ennemi.cs" />
     <Compile Include="Système Entité\Entités\Joueur.cs" />
     <Compile Include="Système Entité\Entités\MAvatar.cs" />
