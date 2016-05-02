@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionAvatar">
+    <DescriptionComposanteGraphique>
+      <NomModèle>Avatar0</NomModèle>
+      <NomEffetAffichage>Spotlight</NomEffetAffichage>
+      <Échelle>0.75</Échelle>
+      <Rotation>1.57079637 0 0</Rotation>
+    </DescriptionComposanteGraphique>
+    <DescriptionComposantePhysique>
+      <MasseInverse>0.5</MasseInverse>
+      <Position>0 0 0</Position>
+      <Vitesse>0 0 0</Vitesse>
+      <EstImmuable>false</EstImmuable>
+    </DescriptionComposantePhysique>
+  </Asset>
+</XnaContent>

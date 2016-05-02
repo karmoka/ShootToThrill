@@ -15,30 +15,35 @@ namespace AtelierXNA
    {
       static void Main(string[] args)
       {
-         DescriptionOptions description = new DescriptionOptions()
-         {
-            IntervalMAJStandard = 1 / 60f,
-            WindowWidth = 1000,
-            WindowHeight = 700,
+          DescriptionObjetDeBaseAniméÉclairé ComposanteGraphique = new DescriptionObjetDeBaseAniméÉclairé()
+          {
+              NomModèle = "Avatar0",
+              Échelle = 0.75f,
+              NomEffetAffichage = "Spotlight",
+              NomTextureModèle = "Image1",
+              Rotation = new Vector3(MathHelper.PiOver2, 0, 0)
+          };
+          DescriptionObjetPhysique ComposantePhysique = new DescriptionObjetPhysique()
+          {
+              EstImmuable = false,
+              MasseInverse = 1 / 2f,
+              Position = Vector3.Zero,
+              Vitesse = Vector3.Zero
+          };
 
-            CameraHeightOffset = 5,
-            CameraDistanceOffset = 5,
-
-            ViePersonnageMax = 100,
-            SensibilitéFriction = 0.01f,
-            RatioDistance3dMetre = 3f,
-
-            Gravité = new Vector3(0, -9.8f, 0),
-            NomFontMenu = "ArialDebug"
-         };
+          DescriptionAvatar description = new DescriptionAvatar()
+          {
+              DescriptionComposanteGraphique = ComposanteGraphique,
+              DescriptionComposantePhysique  = ComposantePhysique
+          };
 
 
          XmlWriterSettings settings = new XmlWriterSettings();
          settings.Indent = true;
 
-         using (XmlWriter writer = XmlWriter.Create("Options.xml", settings))
+         using (XmlWriter writer = XmlWriter.Create("Avatar0.xml", settings))
          {
-             IntermediateSerializer.Serialize<DescriptionOptions>(writer, description, null);
+             IntermediateSerializer.Serialize<DescriptionAvatar>(writer, description, null);
          }
       }
    }
