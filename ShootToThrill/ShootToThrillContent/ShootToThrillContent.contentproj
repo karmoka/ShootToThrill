@@ -426,13 +426,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Description\Ennemi1.xml">
-      <Name>Ennemi1</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Description\Pistol.xml">
       <Name>Pistol</Name>
       <Importer>XmlImporter</Importer>
@@ -493,6 +486,13 @@
       <Name>test5_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Ennemi1.xml">
+      <Name>Ennemi1</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

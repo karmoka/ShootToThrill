@@ -47,7 +47,7 @@ namespace AtelierXNA
             Domage = domage;
         }
         public MEnnemi(Game game, DescriptionEnnemi description, Vector3 position, int objetDrop)
-           : base(game, description,position)
+           : base(game, description, position)
         {
            ObjetDrop = objetDrop;
            Domage = description.Domage;
