@@ -40,7 +40,8 @@ namespace AtelierXNA
             VitesseJoueur = 0.1f; //Arbitraire
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
-            Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            //Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
             fusil.Initialize();
             AjouterArme(fusil);
             JoueurScreenManager = new JoueurScreenManager(Game, this);

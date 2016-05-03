@@ -23,11 +23,12 @@ namespace AtelierXNA
         protected override void Tirer()
         {
             Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
+
             direction = DirectionAléatoire(direction);
-            DroiteColorée trajectoire = new DroiteColorée(Game, Position, direction, Dommage, Portée, NomArme);
-            trajectoire.DroiteCollision.CoupDeFeu();
-            trajectoire.Initialize();
-            ListeTrajectoires.Add(trajectoire);
+            Balle balle = new Balle(Game, Position, direction, Portée, Dommage);
+            balle.Initialize();
+            ListeProjectile.Add(balle);
+
             base.Tirer();
         }
     }

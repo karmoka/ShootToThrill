@@ -145,7 +145,10 @@ namespace AtelierXNA
 
         void CréerEnnemi(DescriptionEnnemi description, int itemDrop)
         {
-            MEnnemi unEnnemi = new MEnnemi(Game, description, PositionPortailEnnemi, itemDrop);
+            Lumière lumièreJeu = new Lumière(Game, Vector3.Zero, Color.Red.ToVector3(), 1, 1, Vector3.One, Vector4.One);
+            MObjetDeBaseAniméEtÉclairé m = new MObjetDeBaseAniméEtÉclairé(Game, description.NomEnnemi, "RectangleBleu", 0.5f, Vector3.Zero, Vector3.One, "Spotlight", lumièreJeu, 1 / 60f);
+            ObjetPhysique o = new ObjetPhysique(Game, PositionPortailEnnemi, Vector3.Zero, description.DescriptionComposantePhysique.MasseInverse);
+            MEnnemi unEnnemi = new MEnnemi(Game, m, o, itemDrop, description.VieMax, description.Domage);
             unEnnemi.Initialize();
             ModèleManager.AjouterModele(unEnnemi);
             MMoteurPhysique.AjouterObjet(unEnnemi);

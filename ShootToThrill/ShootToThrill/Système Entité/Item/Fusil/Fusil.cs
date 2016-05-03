@@ -27,7 +27,7 @@ namespace AtelierXNA
         MessageManager ManagerDeMessage { get; set; }
         ModelManager ManagerDeModèle { get; set; }
         protected List<DroiteColorée> ListeTrajectoires { get; set; }
-        List<Projectiles> ListeProjectile { get; set; }
+        protected List<Projectile> ListeProjectile { get; set; }
         bool TrajectoireExiste { get; set; }
         int AngleRotation
         {
@@ -49,7 +49,7 @@ namespace AtelierXNA
 
         const int MUNITION_MIN = 0,
                   UNE_MUNITION = 1;
-        int NbBallesParTir { get; set; }
+        protected int NbBallesParTir { get; set; }
         public bool AMunitionInfini { get; private set; }
         int MunitionTotalRestant
         {
@@ -82,7 +82,7 @@ namespace AtelierXNA
         public float Cadence { get; private set; }
         public int Dommage { get; private set; }
         public float Portée { get; private set; }
-        int AngleDeTir { get; set; }
+        protected int AngleDeTir { get; set; }
         bool Area { get; set; }
         public int NombreRechargeRestante
         {
@@ -139,7 +139,7 @@ namespace AtelierXNA
             TempsDepuisDebutJeu = 0;
             RechargeInitiale();
             ListeTrajectoires = new List<DroiteColorée>();
-            ListeProjectile = new List<Projectiles>();
+            ListeProjectile = new List<Projectile>();
             TrajectoireExiste = false;
             base.Initialize();
         }
@@ -157,18 +157,12 @@ namespace AtelierXNA
             TempsDepuisDernierTir += (float)gameTime.ElapsedGameTime.TotalSeconds;
             TempsDepuisDebutJeu += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (TrajectoireExiste)
-            {
-                for (int i = 0; i < NbBallesParTir; ++i)
-                {
-                    ListeTrajectoires[i].Update(gameTime);
-                }
-            }
-
-            foreach(Projectiles projectile in ListeProjectile)
+            foreach(Projectile projectile in ListeProjectile)
             {
                 projectile.Update(gameTime);
             }
+
+            ListeProjectile.RemoveAll(x => x.Existe == false);
 
             base.Update(gameTime);
         }
@@ -192,13 +186,7 @@ namespace AtelierXNA
                 {
                     for (int i = 0; i < NbBallesParTir; ++i)
                     {
-                        Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
-                        direction = DirectionAléatoire(direction);
-
-                        DroiteColorée trajectoire = new DroiteColorée(Game, Position, direction, Dommage, Portée, NomArme);
-                        trajectoire.DroiteCollision.CoupDeFeu();
-                        trajectoire.Initialize();
-                        ListeTrajectoires.Add(trajectoire);
+                        Tirer();
                     }
                     GérerMunitions();
                     TrajectoireExiste = true;
@@ -213,7 +201,6 @@ namespace AtelierXNA
 
         protected virtual void Tirer()
         {
-
         }
 
         protected Vector3 DirectionAléatoire(Vector3 axe)
@@ -342,36 +329,27 @@ namespace AtelierXNA
 
         public override void EnCollision(IPhysique autre)
         {
-            //if (autre is Joueur)
-            //{
-            //    ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
-            //}
+            if (autre is MJoueur)
+            {
+                ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
+            }
         }
 
         public new void SetCaméra(Caméra cam)
         {
-            foreach (DroiteColorée ligneDeTir in ListeTrajectoires)
+            foreach (Projectile projectile in ListeProjectile)
             {
-                ligneDeTir.ChangerCaméra(cam);
+                projectile.ChangerCaméra(cam);
             }
         }
 
         public override void Draw(GameTime gameTime)
         {
-            foreach (DroiteColorée ligneDeTir in ListeTrajectoires)
+            foreach (Projectile projectile in ListeProjectile)
             {
-                ligneDeTir.Draw(gameTime);
+                projectile.Draw(gameTime);
             }
             base.Draw(gameTime);
-        }
-
-        public void EffacerDroite()
-        {
-            for (int i = NbBallesParTir - 1; i >= 0; --i)
-            {
-                ListeTrajectoires.RemoveAt(i);
-            }
-            TrajectoireExiste = false;
         }
 
         //public override string ToString()
