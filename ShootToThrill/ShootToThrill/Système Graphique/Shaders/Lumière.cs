@@ -117,5 +117,14 @@ namespace AtelierXNA
          IntensitéSpéculaire = Vector3.Normalize(intensitéSpéculaire * intensité);
          IntensitéDiffuse = Vector4.Normalize(intensitéDiffuse * intensité);
       }
+      public Lumière(Game jeu)
+      {
+         Position = Vector3.Zero;
+         Couleur = Vector3.Zero;
+         Rayon = 0;
+         Intensité = 0;
+         IntensitéSpéculaire = Vector3.Zero;
+         IntensitéDiffuse = Vector4.Zero;
+      }
    }
 }

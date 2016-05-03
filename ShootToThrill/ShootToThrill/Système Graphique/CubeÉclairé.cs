@@ -6,15 +6,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace AtelierXNA
 {
-   public class CubeÉclairée : CubeTexturé
+   public class CubeÉclairée : CubeTexturé, IModele3d
    {
+      protected ParamètresShaders GestionnaireParamètresShaders { get; set; }
+      protected RessourcesManager<Effect> GestionnaireDeShaders { get; private set; }
+
       public const float PUISSANCE_SPÉCULAIRE = 8f;
       protected string NomTextureBumpMap { get; set; }
       Texture2D TextureBumpMap { get; set; } 
       protected string NomEffetAffichage { get; set; }
       protected Effect EffetAffichage { get; set; }
       Lumière LumièreJeu { get; set; }
-      protected RessourcesManager<Effect> GestionnaireDeShaders { get; private set; }
       MatériauÉclairé MatériauAffichage { get; set; }
       Vector3 CouleurLumièreAmbiante { get; set; }
       Vector4 CouleurLumièreDiffuse { get; set; }
@@ -58,19 +60,22 @@ namespace AtelierXNA
       protected override void LoadContent()
       {
          base.LoadContent();
+         GestionnaireParamètresShaders = Game.Services.GetService(typeof(ParamètresShaders)) as ParamètresShaders;
          GestionnaireDeShaders = Game.Services.GetService(typeof(RessourcesManager<Effect>)) as RessourcesManager<Effect>;
+
          EffetAffichage = GestionnaireDeShaders.Find(NomEffetAffichage);
          TextureBumpMap = NomTextureBumpMap != null ? gestionnaireDeTextures.Find(NomTextureBumpMap) : null;
-         MatériauAffichage = new MatériauÉclairé(CaméraJeu, LumièreJeu, TextureBumpMap, CouleurLumièreAmbiante, CouleurLumièreDiffuse,
+         MatériauAffichage = new MatériauÉclairé(CaméraActuelle, LumièreJeu, TextureBumpMap, CouleurLumièreAmbiante, CouleurLumièreDiffuse,
                                                  CouleurLumièreEmissive, CouleurLumièreSpéculaire, LumièreJeu.Intensité);
       }
 
       public override void Draw(GameTime gameTime)
       {
-         if (CaméraJeu.Frustum.Intersects(SphèreDeCollision))
+         if (CaméraActuelle.Frustum.Intersects(SphèreDeCollision))
          {
+            MatériauAffichage.SetCaméra(CaméraActuelle);
             MatériauAffichage.UpdateMatériau(Position, GetMonde());
-            ParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, EffetAffichage, InfoSphère, MatériauAffichage);
+            GestionnaireParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, EffetAffichage, InfoSphère, MatériauAffichage);
             foreach (EffectPass passeEffet in EffetAffichage.CurrentTechnique.Passes)
             {
                passeEffet.Apply();

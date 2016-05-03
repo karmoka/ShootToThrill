@@ -36,5 +36,10 @@ namespace AtelierXNA
          CarréDistanceLumière = (float)Math.Pow(Vector3.Distance(LumièreJeu.Position, Position), 2);
       }
 
+      public void SetCaméra(Caméra cam)
+      {
+         CaméraJeu = cam;
+      }
+
    }
 }

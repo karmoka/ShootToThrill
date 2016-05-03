@@ -6,7 +6,7 @@
       <NomModèle>Ennemi3</NomModèle>
       <NomTextureModèle>tile_12</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
-      <Rotation>-1.57079637 0 0</Rotation>
+      <Rotation>0 -1.57079637 0</Rotation>
       <Échelle>0.75</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>

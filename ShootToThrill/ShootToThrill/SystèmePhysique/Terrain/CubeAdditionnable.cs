@@ -17,7 +17,7 @@ namespace AtelierXNA
        
        CubeCollision CubeCollision { get; set; }
        public CubeColoré CubeColoré { get; private set; }
-       public CubeTexturé CubeTexturé { get; private set; }
+       public CubeÉclairée CubeTexturé { get; private set; }
 
       public CubeAdditionnable(Game game, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, Color couleur, Vector3 dimension, float intervalleMAJ)
           : base(game, positionInitiale, Vector3.Zero, 0)
@@ -25,7 +25,7 @@ namespace AtelierXNA
           //Position = positionInitiale;
           CubeCollision = new CubeCollision(positionInitiale, dimension, Vector3.Zero);
           CubeColoré = new CubeColoré(game, homothétieInitiale, Vector3.Zero, positionInitiale, couleur, dimension, intervalleMAJ);
-          CubeTexturé = new CubeTexturé(game, homothétieInitiale, Vector3.Zero, positionInitiale, dimension, intervalleMAJ, "strip3");
+          CubeTexturé = new CubeÉclairée(game, homothétieInitiale, Vector3.Zero, positionInitiale, dimension, intervalleMAJ, "strip3", "Spotlight",new Lumière(Game));
       }
 
       public override void Initialize()

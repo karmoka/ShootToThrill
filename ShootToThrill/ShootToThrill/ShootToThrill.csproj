@@ -151,10 +151,12 @@
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
     <Compile Include="Système Graphique\CubeÉclairé.cs" />
+    <Compile Include="Système Graphique\GestionnairesLumières.cs" />
     <Compile Include="Système Graphique\ModelManager.cs" />
     <Compile Include="Système Graphique\ObjetDeBase.cs" />
     <Compile Include="Système Graphique\PrimitiveDeBase2.cs" />
     <Compile Include="Système Graphique\Shaders\InfoModèle.cs" />
+    <Compile Include="Système Graphique\Shaders\LumièreTracing.cs" />
     <Compile Include="Système Graphique\Shaders\Lumière.cs" />
     <Compile Include="Système Graphique\Shaders\Matériau.cs" />
     <Compile Include="Système Graphique\Shaders\MatériauÉclairé.cs" />
