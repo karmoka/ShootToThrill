@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Data="ProjetPrincipal.Data">
+  <Asset Type="Data:DescriptionFusil">
+    <AMunitionInfini>true</AMunitionInfini>
+    <MunitionTotalRestant>5</MunitionTotalRestant>
+    <MunitionTotalMax>5</MunitionTotalMax>
+    <MunitionMaxDansChargeur>5</MunitionMaxDansChargeur>
+    <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
+    <MunitionDansCaisseMunitions>5</MunitionDansCaisseMunitions>
+    <MunitionInitial>5</MunitionInitial>
+    <IntervalRechargement>0</IntervalRechargement>
+    <NomArme>Teslagun</NomArme>
+    <NomModèle>Pistol</NomModèle>
+    <Cadence>0.05</Cadence>
+    <Dommage>20</Dommage>
+    <Portée>25</Portée>
+    <AngleDeTir>0</AngleDeTir>
+    <Area>false</Area>
+    <NbBallesParTir>3</NbBallesParTir>
+  </Asset>
+</XnaContent>

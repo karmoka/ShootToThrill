@@ -9,6 +9,7 @@ Content\Modèle\Boss0.xnb
 Content\Modèle\Boss1.xnb
 Content\Modèle\Boss2.xnb
 Content\Modèle\Cube.xnb
+Content\Modèle\Ennemi1.xnb
 Content\Modèle\Ennemi2.xnb
 Content\Modèle\Ennemi3.xnb
 Content\Modèle\ObjetDrop.xnb
@@ -72,11 +73,7 @@ Content\Textures\test5_1.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
-Content\Textures\Fleche.xnb
-Content\Modèle\Ennemi1.xnb
-Content\Description\Avatar1.xnb
-Content\Description\Avatar2.xnb
-Content\Description\Avatar3.xnb
+Content\Description\Teslagun.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb
