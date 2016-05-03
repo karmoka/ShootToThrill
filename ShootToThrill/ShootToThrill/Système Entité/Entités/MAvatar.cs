@@ -22,7 +22,7 @@ namespace AtelierXNA
                   NOMBRE_FUSIL_MAX = 5,
                   AUCUNE_MUNITION = 0,
                   VARIATION_INDEX = 1,
-                  DISTANCE_MAX = 1000;
+                  DISTANCE_MAX = 200;
         protected float VitesseJoueur { get; set; }
         float IntervalMAJ { get; set; }
         float TempsDepuisMAJ { get; set; }

@@ -173,7 +173,7 @@ namespace AtelierXNA
          switch (id)
          {
             case ((int)Message.GameState_GamePlay):
-               InformationJeu.IDMap = 2;//2;
+               InformationJeu.IDMap = 5;//2;
                InformationJeu.AjouterJoueur(PlayerIndex.One);
                InformationJeu.SetPlayerAvatar(0, 0);
                ManagerGameState.Push(GamePlay);

@@ -127,8 +127,8 @@ namespace AtelierXNA
             }
             else
             {
-                int itemDrop = GénérateurObjetDrop.Next(0, 20);
-                switch (GénérateurObjetDrop.Next(0, 3))
+                int itemDrop = 4; //GénérateurObjetDrop.Next(0, 20);
+                switch (GénérateurObjetDrop.Next(0, 1))//3))
                 {
                     case 0:
                         CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Ennemi1"), itemDrop);
@@ -146,12 +146,12 @@ namespace AtelierXNA
         void CréerEnnemi(DescriptionEnnemi description, int itemDrop)
         {
             Lumière lumièreJeu = new Lumière(Game, Vector3.Zero, Color.Red.ToVector3(), 1, 1, Vector3.One, Vector4.One);
-            MObjetDeBaseAniméEtÉclairé m = new MObjetDeBaseAniméEtÉclairé(Game, description.NomEnnemi, "RectangleBleu", 1f, Vector3.Zero, Vector3.One, "Spotlight", lumièreJeu, 1 / 60f);
-            ObjetPhysique o = new ObjetPhysique(Game, PositionPortailEnnemi + Vector3.UnitY * 3, Vector3.Zero, description.MasseInverse);
+            MObjetDeBaseAniméEtÉclairé m = new MObjetDeBaseAniméEtÉclairé(Game, description.NomEnnemi, "RectangleBleu", 0.5f, Vector3.Zero, Vector3.One, "Spotlight", lumièreJeu, 1 / 60f);
+            ObjetPhysique o = new ObjetPhysique(Game, PositionPortailEnnemi, Vector3.Zero, description.MasseInverse);
             MEnnemi unEnnemi = new MEnnemi(Game, m, o, itemDrop, description.VieMax, description.Domage);
             unEnnemi.Initialize();
-            MMoteurPhysique.AjouterObjet(unEnnemi);
             ModèleManager.AjouterModele(unEnnemi);
+            MMoteurPhysique.AjouterObjet(unEnnemi);
         }
     }
 }

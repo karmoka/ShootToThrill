@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Data="ProjetPrincipal.Data">
   <Asset Type="Data:DescriptionEnnemi">
-    <MasseInverse>0.333</MasseInverse>
+    <MasseInverse>0.00333</MasseInverse>
     <Rayon>1.25</Rayon>
     <NomEnnemi>Ennemi1</NomEnnemi>
     <VieMax>120</VieMax>

@@ -123,13 +123,16 @@ namespace AtelierXNA
 
         void UpdaterInterrupteur(GameTime gameTime)
         {
-            if (Round.NombreRound % 10 == 0)
+            if (Interrupteur != null)
             {
-                Interrupteur.ActiverItem();
-            }
-            else if (Interrupteur.EstInterrupteurActif)
-            {
-                Interrupteur.DésactiverItem();
+                if (Round.NombreRound % 10 == 0)
+                {
+                    Interrupteur.ActiverItem();
+                }
+                else if (Interrupteur.EstInterrupteurActif)
+                {
+                    Interrupteur.DésactiverItem();
+                }
             }
         }
 
