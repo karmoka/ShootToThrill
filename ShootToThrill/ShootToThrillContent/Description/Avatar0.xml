@@ -6,7 +6,7 @@
       <NomModèle>Avatar3</NomModèle>
       <NomTextureModèle>Image1</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
-      <Rotation>-1.57079637 0 0</Rotation>
+      <Rotation>0 -1.57079637 0</Rotation>
       <Échelle>0.5</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>

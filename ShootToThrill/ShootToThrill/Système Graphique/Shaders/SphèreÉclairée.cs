@@ -8,13 +8,15 @@ namespace AtelierXNA
 {
    public class SphèreÉclairée : SphèreDeBase
    {
+      protected ParamètresShaders GestionnaireParamètresShaders { get; set; }
+      protected RessourcesManager<Effect> GestionnaireDeShaders { get; private set; }
+
       public const float PUISSANCE_SPÉCULAIRE = 8f;
       protected string NomTextureBumpMap { get; set; }
       Texture2D TextureBumpMap { get; set; } 
       protected string NomEffetAffichage { get; set; }
       protected Effect EffetAffichage { get; set; }
       Lumière LumièreJeu { get; set; }
-      protected RessourcesManager<Effect> GestionnaireDeShaders { get; private set; }
       MatériauÉclairé MatériauAffichage { get; set; }
       Vector3 CouleurLumièreAmbiante { get; set; }
       Vector4 CouleurLumièreDiffuse { get; set; }
@@ -58,6 +60,7 @@ namespace AtelierXNA
       protected override void LoadContent()
       {
          base.LoadContent();
+         GestionnaireParamètresShaders = Game.Services.GetService(typeof(ParamètresShaders)) as ParamètresShaders;
          GestionnaireDeShaders = Game.Services.GetService(typeof(RessourcesManager<Effect>)) as RessourcesManager<Effect>;
          EffetAffichage = GestionnaireDeShaders.Find(NomEffetAffichage);
          TextureBumpMap = NomTextureBumpMap != null ? GestionnaireDeTextures.Find(NomTextureBumpMap) : null;
@@ -70,7 +73,7 @@ namespace AtelierXNA
          if (CaméraJeu.Frustum.Intersects(SphèreDeCollision))
          {
             MatériauAffichage.UpdateMatériau(Position, GetMonde());
-            ParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, EffetAffichage, InfoSphère, MatériauAffichage);
+            GestionnaireParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, EffetAffichage, InfoSphère, MatériauAffichage);
             foreach (EffectPass passeEffet in EffetAffichage.CurrentTechnique.Passes)
             {
                passeEffet.Apply();

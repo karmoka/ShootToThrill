@@ -9,6 +9,10 @@ namespace AtelierXNA
 {
    public class MObjetDeBaseAniméEtÉclairé : MObjetDeBaseAnimé
    {
+      RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
+      protected ParamètresShaders GestionnaireParamètresShaders { get; set; }
+      RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
+
       public const float PUISSANCE_SPÉCULAIRE = 8f;
       string NomTextureModèle { get; set; }
       string NomTextureBumpMap { get; set; }
@@ -22,8 +26,7 @@ namespace AtelierXNA
       Vector4 CouleurLumièreDiffuse { get; set; }
       Vector3 CouleurLumièreSpéculaire { get; set; }
       Vector3 CouleurLumièreEmissive { get; set; }
-      RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
-      RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
+
       public BoundingSphere SphèreDeCollision { get; private set; }
 
       public MObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle,
@@ -68,8 +71,10 @@ namespace AtelierXNA
       protected override void LoadContent()
       {
          base.LoadContent();
+         GestionnaireParamètresShaders = Game.Services.GetService(typeof(ParamètresShaders)) as ParamètresShaders;
          GestionnaireDeTextures = Game.Services.GetService(typeof(RessourcesManager<Texture2D>)) as RessourcesManager<Texture2D>;
          GestionnaireDeShaders = Game.Services.GetService(typeof(RessourcesManager<Effect>)) as RessourcesManager<Effect>;
+
          TextureModèle = GestionnaireDeTextures.Find(NomTextureModèle);
          TextureBumpMap = NomTextureBumpMap!=null?GestionnaireDeTextures.Find(NomTextureBumpMap):null;
          EffetAffichage = (GestionnaireDeShaders.Find(NomEffetAffichage)).Clone();
@@ -136,7 +141,7 @@ namespace AtelierXNA
                {
                   InfoModèle infoModèle = (InfoModèle)facetteMaillage.Tag;
                   Effect effetLocal = infoModèle.EffetAffichage;
-                  ParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, effetLocal, infoModèle, MatériauAffichage);
+                  GestionnaireParamètresShaders.InitialiserParamètresShader(NomEffetAffichage, effetLocal, infoModèle, MatériauAffichage);
                   facetteMaillage.Effect = effetLocal;
                }
                maillage.Draw();

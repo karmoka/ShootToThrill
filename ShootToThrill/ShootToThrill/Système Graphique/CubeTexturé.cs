@@ -15,7 +15,7 @@ namespace AtelierXNA
 {
     public class CubeTexturé : PrimitiveDeBaseAnimée2, IModele3d
     {
-        Caméra CaméraActuelle { get; set; }
+        //Caméra CaméraActuelle { get; set; }
 
         public void SetCaméra(Caméra cam)
         {

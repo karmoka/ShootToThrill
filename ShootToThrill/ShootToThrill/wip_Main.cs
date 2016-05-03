@@ -32,6 +32,8 @@ namespace AtelierXNA
       RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
       RessourcesManager<SpriteFont> GestionnaireDeFonts { get; set; }
       RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
+      ParamètresShaders GestionnaireParamètresShaders { get; set; }
+      GestionnairesLumières GestionnaireDeLumières { get; set; }
       SpriteBatch GestionnaireDeSprites { get; set; }
       MessageManager ManagerDeMessage { get; set; }
       GameStateManager ManagerGameState { get; set; }
@@ -68,7 +70,7 @@ namespace AtelierXNA
          InitializerServices();
          InitializerNotifications();
 
-         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransitionMenu);
+         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransistionGamePlay);
 
          base.Initialize();
       }
@@ -89,8 +91,10 @@ namespace AtelierXNA
 
       public void InitializerServices()
       {
-         CaméraFixe caméra = new CaméraFixe(this, new Vector3(10, 10, 10), Vector3.Zero, Vector3.Up);
+         CaméraFixe CaméraJeu = new CaméraFixe(this, new Vector3(10, 10, 10), Vector3.Zero, Vector3.Up);
 
+         GestionnaireDeLumières = new GestionnairesLumières(this);
+         GestionnaireParamètresShaders = new ParamètresShaders(this);
          GestionnaireDeShaders = new RessourcesManager<Effect>(this, "Effets");
          GestionnaireDeModèle = new RessourcesManager<Model>(this, "Modèle");
          GestionnaireDeFonts = new RessourcesManager<SpriteFont>(this, "Fonts");
@@ -102,6 +106,10 @@ namespace AtelierXNA
          ManagerDeSons = new ManagerAudio(this);
          GestionInput = new IOManager(this, options.IntervalMAJStandard);
 
+         GestionnaireParamètresShaders.AssignerGestionnaireDeLumière(GestionnaireDeLumières);
+
+         Services.AddService(typeof(GestionnairesLumières), GestionnaireDeLumières);
+         Services.AddService(typeof(ParamètresShaders), GestionnaireParamètresShaders);
          Services.AddService(typeof(ManagerAudio), ManagerDeSons);
          Services.AddService(typeof(Options), options);
          Services.AddService(typeof(EntitySystem), new EntitySystem(this));
@@ -113,14 +121,15 @@ namespace AtelierXNA
          Services.AddService(typeof(RessourcesManager<Texture2D>), GestionnaireDeTextures);
          Services.AddService(typeof(RessourcesManager<SpriteFont>), GestionnaireDeFonts);
          Services.AddService(typeof(MessageManager), ManagerDeMessage);
-         Services.AddService(typeof(Caméra), caméra);
+         Services.AddService(typeof(Caméra), CaméraJeu);
          Services.AddService(typeof(IOManager), GestionInput);
 
+         Components.Add(new Afficheur3D(this));
+         Components.Add(GestionnaireDeLumières);
          Components.Add(GestionnaireInput);
          Components.Add(ManagerGameState);
-         Components.Add(new Afficheur3D(this));
          Components.Add(ManagerDeMessage);
-         Components.Add(caméra);
+         Components.Add(CaméraJeu);
          Components.Add(GestionInput);
          Components.Add(ManagerDeSons);
       }
@@ -173,7 +182,7 @@ namespace AtelierXNA
          switch (id)
          {
             case ((int)Message.GameState_GamePlay):
-               InformationJeu.IDMap = 5;//2;
+               InformationJeu.IDMap = 2;//2;
                InformationJeu.AjouterJoueur(PlayerIndex.One);
                InformationJeu.SetPlayerAvatar(0, 0);
                ManagerGameState.Push(GamePlay);
@@ -214,6 +223,5 @@ namespace AtelierXNA
          base.Draw(gameTime);
          GestionnaireDeSprites.End();
       }
-
    }
 }

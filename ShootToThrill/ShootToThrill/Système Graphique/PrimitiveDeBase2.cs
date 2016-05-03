@@ -12,7 +12,7 @@ namespace AtelierXNA
       protected int NbSommets { get; set; }
       protected int NbTriangles { get; set; }
       protected Matrix Monde { get; set; }
-      protected Caméra CaméraJeu { get; set; }
+      protected Caméra CaméraActuelle { get; set; }
 
       protected PrimitiveDeBase2(Game jeu, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale)
          : base(jeu)
@@ -31,7 +31,7 @@ namespace AtelierXNA
 
       protected override void LoadContent()
       {
-         CaméraJeu = Game.Services.GetService(typeof(Caméra)) as Caméra;
+         CaméraActuelle = Game.Services.GetService(typeof(Caméra)) as Caméra;
          base.LoadContent();
       }
 

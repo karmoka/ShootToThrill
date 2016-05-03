@@ -30,6 +30,7 @@ namespace AtelierXNA
         List<MJoueur> ListeJoueur { get; set; }
         Viewport[] TableauViewports { get; set; }
 
+        GestionnairesLumières GestionnaireDeLumières { get; set; }
         MMoteurPhysique ManagerPhysique { get; set; }
         ManagerAudio ManagerDeSons { get; set; }
         ModelManager ManagerModèle { get; set; }
@@ -41,7 +42,6 @@ namespace AtelierXNA
 
         Jeu Jeu { get; set; }
         Lumière LumièreJeu { get; set; }
-        BillboardColoréTracing t { get; set; }
 
         VolumeDeForce test { get; set; }
 
@@ -58,25 +58,12 @@ namespace AtelierXNA
             EstActivé = true;
             EstDétruit = false;
 
-            //test = new CubeDeForce(Game, new Vector3(3, 2, 3), Vector3.One, new Vector3(0, 10, 0));
-            //test = new SphereDeForce(Game, new Vector3(3,2,3), 1f, new Vector3(0, 20, 0));
-            //test.Initialize();
-
             InitialiserManagers();
             LoaderSons();
             LoaderMap(); // Doit être exécuter avant les joueurs pour donner la position du portail
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
-
-            //ManagerPhysique.AjouterObjet(test);
-            //ManagerModèle.AjouterModele(test);
-
-            t = new BillboardColoréTracing(Game, 1f, Vector3.Zero, Vector3.One * 3, new Vector2(5, 5), Color.Red, 1 / 60f, ListeJoueur[0]);
-            t.Initialize();
-            ManagerModèle.AjouterModele(t);
-
-            
 
             //ManagerDeSons.JouerSons("Menu");
         }
@@ -160,13 +147,14 @@ namespace AtelierXNA
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
                 ListeJoueur[i].Initialize();
-                //ListeJoueur[i].ChangerCouleur(InformationJeu.CouleursJoueurs[i]);
-                CaméraTracing cam = new CaméraTracing(Game, ListeJoueur[i].Position, Vector3.Up, ListeJoueur[i], TableauViewports[i]);
+                GestionnaireDeLumières.AjouterLumières(new LumièreTracing(Game, ListeJoueur[i].Position, new Vector3(255, 0, 0), 20, ListeJoueur[i]));
+               ManagerModèle.AjouterCaméra(new CaméraTracing(Game, ListeJoueur[i].Position, Vector3.Up, ListeJoueur[i], TableauViewports[i]));
 
-                ManagerModèle.AjouterCaméra(cam);
                 ManagerModèle.AjouterModele(ListeJoueur[i]);
                 ManagerPhysique.AjouterObjet(ListeJoueur[i]);
             }
+
+            GestionnaireDeLumières.AjouterLumières(new Lumière(Game, new Vector3(5, 5, 5), Color.Blue.ToVector3(), 20, 0, Vector3.Zero, Vector4.Zero));
         }
         void InitialiserManagers()
         {
@@ -174,6 +162,7 @@ namespace AtelierXNA
             GestionnaireInput = Game.Services.GetService(typeof(IOManager)) as IOManager;
             ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
             GestionnaireSprites = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
+            GestionnaireDeLumières = Game.Services.GetService(typeof(GestionnairesLumières)) as GestionnairesLumières;
 
             ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
@@ -232,7 +221,6 @@ namespace AtelierXNA
             EstActivé = true;
         }
 
-        bool bidon = true;
         public void Update(GameTime gametime)
         {
            float time = (float)gametime.ElapsedGameTime.TotalSeconds;
@@ -249,15 +237,6 @@ namespace AtelierXNA
                     OptionActivé = true;
                 }
             }
-
-           if(bidon && GestionnaireInput.EstNouvelleTouche(Keys.G, PlayerIndex.One))
-           {
-              Grenade g = new Grenade(Game, new Vector3(0,4,0), Vector3.Up * 3, "Scene2");
-              g.Initialize();
-              ManagerModèle.AjouterModele(g);
-              ManagerPhysique.AjouterObjet(g);
-              bidon = false;
-           }
         }
 
         public void Draw(GameTime gametime, float ordre)
