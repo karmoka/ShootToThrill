@@ -147,14 +147,14 @@ namespace AtelierXNA
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
                 ListeJoueur[i].Initialize();
-                GestionnaireDeLumières.AjouterLumières(new LumièreTracing(Game, ListeJoueur[i].Position, new Vector3(255, 0, 0), 20, ListeJoueur[i]));
-               ManagerModèle.AjouterCaméra(new CaméraTracing(Game, ListeJoueur[i].Position, Vector3.Up, ListeJoueur[i], TableauViewports[i]));
+                GestionnaireDeLumières.AjouterLumières(new LumièreTracing(Game, ListeJoueur[i].Position, new Vector3(255, 0, 0), 10, ListeJoueur[i]));
+                ManagerModèle.AjouterCaméra(new CaméraTracing(Game, ListeJoueur[i].Position, Vector3.Up, ListeJoueur[i], TableauViewports[i]));
 
                 ManagerModèle.AjouterModele(ListeJoueur[i]);
                 ManagerPhysique.AjouterObjet(ListeJoueur[i]);
             }
 
-            GestionnaireDeLumières.AjouterLumières(new Lumière(Game, new Vector3(5, 5, 5), Color.Blue.ToVector3(), 20, 0, Vector3.Zero, Vector4.Zero));
+            //GestionnaireDeLumières.AjouterLumières(new Lumière(Game, new Vector3(5, 5, 5), Color.Blue.ToVector3(), 20, 0, Vector3.Zero, Vector4.Zero));
         }
         void InitialiserManagers()
         {

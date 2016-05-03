@@ -71,7 +71,7 @@ namespace AtelierXNA
 
       public override void Draw(GameTime gameTime)
       {
-         if (CaméraActuelle.Frustum.Intersects(SphèreDeCollision))
+         //if (CaméraActuelle.Frustum.Intersects(SphèreDeCollision))
          {
             MatériauAffichage.SetCaméra(CaméraActuelle);
             MatériauAffichage.UpdateMatériau(Position, GetMonde());

@@ -279,7 +279,6 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Effets
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Portail\material_2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Portail\material_3.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\ship_tex.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\button.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\buttonBack.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\CielÉtoilé.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\fleche.xnb
@@ -289,7 +288,6 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textur
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\RectangleNoir.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\RectangleRouge.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\RectangleVert.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\Shutter.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\splash_screen.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\test1_1.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\test2_1.xnb
@@ -301,7 +299,6 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textur
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\ThumbnailP3.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\tile_12.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\UIRaph.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\Untitled.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\strip1.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\strip2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\strip3.xnb
@@ -309,3 +306,4 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textur
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Menu.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Boss.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\ship_tex_0.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\test5_1.xnb

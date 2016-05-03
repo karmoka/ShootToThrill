@@ -441,7 +441,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi3.xnb</Output>
-      <Time>2016-05-02T21:51:59.2421874-04:00</Time>
+      <Time>2016-05-03T15:59:09.2509392-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Ennemi2.xml</Source>
@@ -450,7 +450,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi2.xnb</Output>
-      <Time>2016-05-02T21:52:08.0652586-04:00</Time>
+      <Time>2016-05-03T15:59:09.2489391-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Ennemi1.xml</Source>
@@ -459,7 +459,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi1.xnb</Output>
-      <Time>2016-05-03T15:53:33.8607559-04:00</Time>
+      <Time>2016-05-03T16:06:05.6897581-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Pistol.xml</Source>
@@ -477,7 +477,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar0.xnb</Output>
-      <Time>2016-05-03T15:52:35.9684447-04:00</Time>
+      <Time>2016-05-03T15:59:09.2349383-04:00</Time>
     </Item>
     <Item>
       <Source>Effets\Lumière.fx</Source>
@@ -979,7 +979,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Fleche.xnb</Output>
-      <Time>2016-05-03T14:52:29.6951237-04:00</Time>
+      <Time>2016-05-03T15:59:09.2609397-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Ennemi1.fbx</Source>
@@ -988,10 +988,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Ennemi1.xnb</Output>
-      <Time>2016-05-03T15:46:02.8929621-04:00</Time>
+      <Time>2016-05-03T16:04:57.1918402-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Key>
-        <Value>2016-05-03T15:46:06.6641778-04:00</Value>
+        <Value>2016-05-03T16:05:02.2741309-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -999,7 +999,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Output>
-      <Time>2016-05-03T15:46:02.8929621-04:00</Time>
+      <Time>2016-05-03T16:04:57.1918402-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Avatar1.xml</Source>
@@ -1008,7 +1008,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar1.xnb</Output>
-      <Time>2016-05-03T15:52:57.0356497-04:00</Time>
+      <Time>2016-05-03T15:59:09.2419387-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Avatar2.xml</Source>
@@ -1017,7 +1017,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar2.xnb</Output>
-      <Time>2016-05-03T15:53:09.4453595-04:00</Time>
+      <Time>2016-05-03T15:59:09.2439388-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Avatar3.xml</Source>
@@ -1026,7 +1026,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar3.xnb</Output>
-      <Time>2016-05-03T15:53:18.8548977-04:00</Time>
+      <Time>2016-05-03T15:59:09.2469389-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
