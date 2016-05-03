@@ -49,7 +49,7 @@ namespace AtelierXNA
 
       public void AjouterObjet(IPhysique objet)
       {
-             ListePhysique.Add(objet);
+          ListePhysique.Add(objet);
       }
 
       public void EnleverObjet(IPhysique objet)

@@ -37,7 +37,7 @@ namespace AtelierXNA
 
         public override void Update(GameTime gameTime)
         {
-            RectangleVieColoré.InitialiserSommets(Ennemi.Position + 0.5f * Vector3.Up, (LONGUEUR - MARGE) * Ennemi.Vie / Ennemi.VieMax);
+            RectangleVieColoré.InitialiserSommets(Ennemi.Position + 3 * Vector3.Up, (LONGUEUR - MARGE) * Ennemi.Vie / Ennemi.VieMax);
             base.Update(gameTime);
         }
 

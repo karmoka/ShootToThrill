@@ -129,8 +129,8 @@ namespace AtelierXNA
 
          RectFenetre = new Rectangle((int)Position.X, (int)Position.Y, InfoWidth, (int)((ListeObjet.Count + 1) * HeigthByItem));
 
-         spriteBatch.Draw(ImageBack, RectFenetre, Color.White);
-         spriteBatch.DrawString(Fonts, FPS, new Vector2(Position.X, Position.Y + 0 * HeigthByItem), Color.Black);
+         //spriteBatch.Draw(ImageBack, RectFenetre, Color.White);
+         //spriteBatch.DrawString(Fonts, FPS, new Vector2(Position.X, Position.Y + 0 * HeigthByItem), Color.Black);
          for (int i = 0; i < ListeObjet.Count;++i )
          {
             spriteBatch.DrawString(Fonts, ListeObjet[i].ToString(), new Vector2(Position.X, Position.Y + (i+1) * HeigthByItem), Color.Black);

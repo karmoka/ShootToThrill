@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
-    class UserScreenManager : DrawableGameComponent
+    class JoueurScreenManager : DrawableGameComponent
     {
         int[] EspaceX1 { get; set; }
         int[] EspaceX2 { get; set; }
@@ -52,11 +52,11 @@ namespace AtelierXNA
         RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
         SpriteFont ArialFont { get; set; }
 
-        public UserScreenManager(Game game, MJoueur joueur, int indexJoueur)
+        public JoueurScreenManager(Game game, MJoueur joueur)
             : base(game)
         {
             Joueur = joueur;
-            IndexJoueur = indexJoueur;
+            IndexJoueur = (int)Joueur.IndexJoueur;
         }
 
         #region Initialize
@@ -113,7 +113,7 @@ namespace AtelierXNA
             EspaceX2[6] = EspaceX2[5] + 1 * variationLargeur;
             EspaceX2[7] = EspaceX2[6] + 1 * variationLargeur;
 
-            if (IndexJoueur % 2 == 0)
+            if (IndexJoueur % 2 != 0)
             {
                 int[] espaceX1 = new int[EspaceX1.Length];
                 int[] espaceX2 = new int[EspaceX2.Length];
@@ -136,7 +136,7 @@ namespace AtelierXNA
             EspaceY1[0] = 0;
             EspaceY1[1] = EspaceY1[0] + 1;
             EspaceY1[2] = EspaceY1[1] + 10;
-            EspaceY1[3] = EspaceY1[2] + 2;
+            EspaceY1[3] = EspaceY1[2] + 3; //2
             EspaceY1[4] = EspaceY1[3] + 1;
             EspaceY1[5] = EspaceY1[4] + 2;
             EspaceY1[6] = EspaceY1[5] + 1;
@@ -167,7 +167,7 @@ namespace AtelierXNA
 
         void InitialiserRectangles()
         {
-            if (IndexJoueur % 2 != 0)
+            if (IndexJoueur % 2 == 0)
             {
                 //RectangleFusil = new Rectangle(EspaceX1[1], EspaceY1[1], EspaceX1[2] - EspaceX1[1], EspaceY1[2] - EspaceY1[1]);
 
@@ -188,8 +188,8 @@ namespace AtelierXNA
                 RectangleScore = new Rectangle(EspaceX1[1], EspaceY2[5], EspaceX1[2] - EspaceX1[1], EspaceY2[6] - EspaceY2[5]);
             }
 
-            RectangleBleu1 = new Rectangle(EspaceX1[0], EspaceY2[0], EspaceX1[5] - EspaceX1[0], EspaceY2[8] - EspaceY2[0]);
-            RectangleBleu2 = new Rectangle(EspaceX2[0], EspaceY1[5], EspaceX2[7] - EspaceX2[0], EspaceY1[8] - EspaceY1[5]);
+            RectangleBleu1 = new Rectangle(EspaceX1[0], EspaceY2[0], EspaceX1[5] - EspaceX1[0], EspaceY1[8] - EspaceY1[0]);//y2
+            //RectangleBleu2 = new Rectangle(EspaceX2[0], EspaceY1[5], EspaceX2[7] - EspaceX2[0], EspaceY1[8] - EspaceY1[5]);
             
             //InitialiserRecharge();
             
@@ -343,6 +343,7 @@ namespace AtelierXNA
             GestionSprites.Draw(ImageMunition, RectangleMunitionMaxChargeur, Color.Green);
             GestionSprites.Draw(ImageNoir, RectangleMunitionNoir, Color.Black);
             GestionSprites.Draw(ImageMunition, RectangleMunitionRestante, Color.Green);
+            //DrawString("\u221E" , RectangleMunitionRestante);
             DrawString(Joueur.ArmeSélectionnée.MunitionRestantDansChargeur + " / " + Joueur.ArmeSélectionnée.MunitionMaxDansChargeur, RectangleMunitionRestante);
         }
 
@@ -357,7 +358,7 @@ namespace AtelierXNA
         void DrawScore()
         {
             GestionSprites.Draw(ImageScore, RectangleScore, Color.White);
-            DrawString("Score: " + 10, RectangleScore); //TODO CHANGER CA
+            DrawString("Score: " + Joueur.Score, RectangleScore);
         }
 
         void DrawString(string message, Rectangle rectangle)

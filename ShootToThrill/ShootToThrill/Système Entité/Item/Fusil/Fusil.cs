@@ -342,10 +342,10 @@ namespace AtelierXNA
 
         public override void EnCollision(IPhysique autre)
         {
-            //if (autre is Joueur)
-            //{
-            //    ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
-            //}
+            if (autre is Joueur)
+            {
+                ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
+            }
         }
 
         public new void SetCaméra(Caméra cam)

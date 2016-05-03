@@ -98,6 +98,7 @@ namespace AtelierXNA
          spritebatch = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
          ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
          ManagerGamestate = Game.Services.GetService(typeof(GameStateManager)) as GameStateManager;
+         GestionnaireTextutes = Game.Services.GetService(typeof(RessourcesManager<Texture2D>)) as RessourcesManager<Texture2D>;
 
          EstActivé = true;
          EstDétruit = false;

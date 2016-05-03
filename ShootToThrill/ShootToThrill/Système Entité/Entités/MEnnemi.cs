@@ -140,9 +140,11 @@ namespace AtelierXNA
             {
                 item.Initialize();
                 ManagerModèle.AjouterModele(item);
-                MMoteurPhysique.AjouterObjet(item as IPhysique);
+                //MMoteurPhysique.AjouterObjet(item as IPhysique);
             }
             base.Mourir();
+            ManagerModèle.EnleverModèle(this);
+            MMoteurPhysique.EnleverObjet(this);
         }
 
         protected override void GérerCollisions()
