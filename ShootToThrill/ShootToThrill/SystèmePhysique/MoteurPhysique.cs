@@ -57,14 +57,7 @@ namespace AtelierXNA
 
       public void AjouterObjet(ObjetPhysique objet)
       {
-         if (objet is Ennemi && ListePhysique.Exists(x => x is Joueur))
-         {
-             ListePhysique.Insert(ListePhysique.FindLastIndex(x => x is Joueur) + 1, objet);
-         }
-         else
-         {
-             ListePhysique.Add(objet);
-         }
+          ListePhysique.Add(objet);
       }
 
        public void EnleverObjet(ObjetPhysique objet)

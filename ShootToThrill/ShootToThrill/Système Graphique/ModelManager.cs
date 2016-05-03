@@ -44,20 +44,12 @@ namespace AtelierXNA
 
       protected override void LoadContent()
       {
-
          base.LoadContent();
       }
 
       public void AjouterModele(IModele3d modèle)
       {
-         if (modèle is Ennemi && ListeModele.Exists(x => x is Joueur))
-         {
-            ListeModele.Insert(ListeModele.FindLastIndex(x => x is Joueur) + 1, modèle);
-         }
-         else
-         {
-            ListeModele.Add(modèle);
-         }
+          ListeModele.Add(modèle);
       }
 
       public void EnleverModèle(IModele3d modèle)
