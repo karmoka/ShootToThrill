@@ -135,11 +135,8 @@
     <Compile Include="Système Audio\ManagerAudio.cs" />
     <Compile Include="Système Entité\EntitySystem.cs" />
     <Compile Include="Système Entité\Entité.cs" />
-    <Compile Include="Système Entité\Entités\Avatar.cs" />
-    <Compile Include="Système Entité\Entités\MEnnemi.cs" />
-    <Compile Include="Système Entité\Entités\Ennemi.cs" />
-    <Compile Include="Système Entité\Entités\Joueur.cs" />
     <Compile Include="Système Entité\Entités\MAvatar.cs" />
+    <Compile Include="Système Entité\Entités\MEnnemi.cs" />
     <Compile Include="Système Entité\Entités\MJoueur.cs" />
     <Compile Include="Système Entité\Item\DroiteColorée.cs" />
     <Compile Include="Système Entité\Item\Fusil\Fusil.cs" />

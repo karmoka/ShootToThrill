@@ -17,31 +17,34 @@ namespace AtelierXNA
       {
           DescriptionObjetDeBaseAniméÉclairé ComposanteGraphique = new DescriptionObjetDeBaseAniméÉclairé()
           {
-              NomModèle = "Avatar0",
+             NomModèle = "Boss1",
               Échelle = 0.75f,
               NomEffetAffichage = "Spotlight",
-              NomTextureModèle = "Image1",
-              Rotation = new Vector3(MathHelper.PiOver2, 0, 0)
+              NomTextureModèle = "tile_12",
+              Rotation = new Vector3(-MathHelper.PiOver2, 0, 0)
           };
           DescriptionObjetPhysique ComposantePhysique = new DescriptionObjetPhysique()
           {
               EstImmuable = false,
-              MasseInverse = 1 / 2f,
+              MasseInverse = 0.1f,
               Position = Vector3.Zero,
               Vitesse = Vector3.Zero
           };
 
-          DescriptionAvatar description = new DescriptionAvatar()
+          DescriptionEnnemi description = new DescriptionEnnemi()
           {
               DescriptionComposanteGraphique = ComposanteGraphique,
-              DescriptionComposantePhysique  = ComposantePhysique
+              DescriptionComposantePhysique  = ComposantePhysique,
+              VieMax = 1000,
+              Domage = 15,
+              NomEnnemi = "Boss1"
           };
 
 
          XmlWriterSettings settings = new XmlWriterSettings();
          settings.Indent = true;
 
-         using (XmlWriter writer = XmlWriter.Create("Avatar0.xml", settings))
+         using (XmlWriter writer = XmlWriter.Create("boss11.xml", settings))
          {
              IntermediateSerializer.Serialize<DescriptionAvatar>(writer, description, null);
          }

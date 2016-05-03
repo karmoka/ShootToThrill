@@ -46,11 +46,15 @@ namespace AtelierXNA
             ObjetDrop = objetDrop;
             Domage = domage;
         }
+        public MEnnemi(Game game, DescriptionEnnemi description, Vector3 position, int objetDrop)
+           : base(game, description,position)
+        {
+           ObjetDrop = objetDrop;
+           Domage = description.Domage;
+        }
 
         public override void Initialize()
         {
-           TypeEnt = TypeEntité.Ennemi;
-
             IntervalRechercheAvatar = 0.05f;
             VitesseJoueur = 0.1f;
             TempsDepuisRechercheAvatar = 0;

@@ -19,7 +19,7 @@ namespace AtelierXNA
         int[] EspaceY1 { get; set; }
         int[] EspaceY2 { get; set; }
 
-        Joueur Joueur { get; set; }
+        MJoueur Joueur { get; set; }
         int IndexJoueur { get; set; }
         Vector2 Échelle { get; set; }
 
@@ -52,7 +52,7 @@ namespace AtelierXNA
         RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
         SpriteFont ArialFont { get; set; }
 
-        public UserScreenManager(Game game, Joueur joueur, int indexJoueur)
+        public UserScreenManager(Game game, MJoueur joueur, int indexJoueur)
             : base(game)
         {
             Joueur = joueur;
@@ -357,7 +357,7 @@ namespace AtelierXNA
         void DrawScore()
         {
             GestionSprites.Draw(ImageScore, RectangleScore, Color.White);
-            DrawString("Score: " + Joueur.Score, RectangleScore);
+            DrawString("Score: " + 10, RectangleScore); //TODO CHANGER CA
         }
 
         void DrawString(string message, Rectangle rectangle)

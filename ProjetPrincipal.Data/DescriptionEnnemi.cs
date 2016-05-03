@@ -5,12 +5,9 @@ using System.Text;
 
 namespace ProjetPrincipal.Data
 {
-   public class DescriptionEnnemi
+   public class DescriptionEnnemi : DescriptionAvatar
    {
-       public float MasseInverse { get; set; }
-       public float Rayon { get; set; }
        public string NomEnnemi { get; set; }
-       public int VieMax { get; set; }
        public int Domage { get; set; }
    }
 }
