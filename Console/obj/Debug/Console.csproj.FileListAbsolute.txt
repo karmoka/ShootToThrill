@@ -232,7 +232,6 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Fonts\
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Fonts\ArialDebug.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar0.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar1.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar3.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Bazooka.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Boss0.xnb
@@ -258,6 +257,7 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèl
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\untitled.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Interrupteur.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\ship2.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Avatar2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Bazooka.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Machinegun.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Railgun.xnb
@@ -270,6 +270,9 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Descri
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Ennemi1.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Pistol.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Avatar0.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Avatar1.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Avatar3.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Avatar2.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Effets\Lumière.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Effets\Phong.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Effets\SpotLight.xnb
@@ -306,5 +309,3 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textur
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Menu.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Boss.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\ship_tex_0.xnb
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Console.exe.CodeAnalysisLog.xml
-C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Console.exe.lastcodeanalysissucceeded

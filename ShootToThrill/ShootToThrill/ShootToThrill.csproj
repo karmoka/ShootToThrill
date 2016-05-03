@@ -101,6 +101,7 @@
     <Compile Include="GameStates\Menu\MenuState.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuChoixMap.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuChoixPersonnage.cs" />
+    <Compile Include="GameStates\Menu\subMenu\MenuControles.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuMultijoueur.cs" />
     <Compile Include="GameStates\OptionState.cs" />
     <Compile Include="GameStates\SplashState.cs" />
@@ -119,7 +120,6 @@
     <Compile Include="Managers\EnnemiScreenManager.cs" />
     <Compile Include="Managers\IOManager.cs" />
     <Compile Include="Managers\MessageManager.cs" />
-    <Compile Include="Managers\Messages.cs" />
     <Compile Include="Managers\Notification.cs" />
     <Compile Include="Managers\ScreenManager.cs" />
     <Compile Include="Managers\UserScreenManager.cs" />
@@ -135,11 +135,8 @@
     <Compile Include="Système Audio\ManagerAudio.cs" />
     <Compile Include="Système Entité\EntitySystem.cs" />
     <Compile Include="Système Entité\Entité.cs" />
-    <Compile Include="Système Entité\Entités\Avatar.cs" />
-    <Compile Include="Système Entité\Entités\MEnnemi.cs" />
-    <Compile Include="Système Entité\Entités\Ennemi.cs" />
-    <Compile Include="Système Entité\Entités\Joueur.cs" />
     <Compile Include="Système Entité\Entités\MAvatar.cs" />
+    <Compile Include="Système Entité\Entités\MEnnemi.cs" />
     <Compile Include="Système Entité\Entités\MJoueur.cs" />
     <Compile Include="Système Entité\Item\DroiteColorée.cs" />
     <Compile Include="Système Entité\Item\Fusil\Fusil.cs" />

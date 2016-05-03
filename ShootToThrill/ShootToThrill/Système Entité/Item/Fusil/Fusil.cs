@@ -273,7 +273,6 @@ namespace AtelierXNA
         {
             MunitionRestantDansChargeur = !AMunitionInfini ? MunitionRestantDansChargeur - 1 : MunitionRestantDansChargeur;
             AnimationCoupDeFeu();
-            Cadence = 0.05f;
         }
 
         void AnimationCoupDeFeu()

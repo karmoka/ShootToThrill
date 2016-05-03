@@ -142,22 +142,22 @@ namespace AtelierXNA
          get { return ListePhysique.Count; }
       }
 
-      public Vector3 GetPositionJoueurPlusProche(Vector3 positionEnnemi)
-      {
-          Vector3 positionAvatarPlusProche = Vector3.Zero;
-          List<float> distance = new List<float>();
-          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
-          {
-              distance.Add(Vector3.Distance(j.Position, positionEnnemi));
-          }
-          foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
-          {
-              if (Vector3.Distance(j.Position, positionEnnemi) == distance.OrderBy(d => d).ElementAt(0))// && e is Avatar_)
-              {
-                  positionAvatarPlusProche = j.Position;
-              }
-          }
-          return positionAvatarPlusProche;
-      }
+      //public Vector3 GetPositionJoueurPlusProche(Vector3 positionEnnemi)
+      //{
+      //    Vector3 positionAvatarPlusProche = Vector3.Zero;
+      //    List<float> distance = new List<float>();
+      //    foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
+      //    {
+      //        distance.Add(Vector3.Distance(j.Position, positionEnnemi));
+      //    }
+      //    foreach (Joueur j in ListePhysique.Where(x => x is Joueur))
+      //    {
+      //        if (Vector3.Distance(j.Position, positionEnnemi) == distance.OrderBy(d => d).ElementAt(0))// && e is Avatar_)
+      //        {
+      //            positionAvatarPlusProche = j.Position;
+      //        }
+      //    }
+      //    return positionAvatarPlusProche;
+      //}
    }
 }

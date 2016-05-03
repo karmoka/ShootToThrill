@@ -1,10 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Data="ProjetPrincipal.Data">
   <Asset Type="Data:DescriptionEnnemi">
-    <MasseInverse>0.5</MasseInverse>
-    <Rayon>1.25</Rayon>
-    <NomEnnemi>Ennemi3</NomEnnemi>
     <VieMax>80</VieMax>
+    <DescriptionComposanteGraphique>
+      <NomModèle>Ennemi3</NomModèle>
+      <NomTextureModèle>tile_12</NomTextureModèle>
+      <NomEffetAffichage>Spotlight</NomEffetAffichage>
+      <Rotation>-1.57079637 0 0</Rotation>
+      <Échelle>0.75</Échelle>
+    </DescriptionComposanteGraphique>
+    <DescriptionComposantePhysique>
+      <MasseInverse>0.5</MasseInverse>
+      <Position>0 0 0</Position>
+      <Vitesse>0 0 0</Vitesse>
+      <EstImmuable>false</EstImmuable>
+    </DescriptionComposantePhysique>
+    <NomEnnemi>Ennemi3</NomEnnemi>
     <Domage>5</Domage>
   </Asset>
 </XnaContent>

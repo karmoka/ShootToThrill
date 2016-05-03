@@ -17,7 +17,7 @@ namespace AtelierXNA
    /// </summary>
    public class MenuBase : DrawableGameComponent, GameState
    {
-       protected Options OptionJeu { get; set; }
+      protected Options OptionJeu { get; set; }
 
       protected RessourcesManager<SpriteFont> GestionnaireFonts { get; set; }
       protected RessourcesManager<Texture2D> GestionnaireTextutes { get; set; }
@@ -89,20 +89,20 @@ namespace AtelierXNA
       }
       public virtual void Initialiser()
       {
-          OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
+         OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
-          IntervalMaj = OptionJeu.IntervalMAJStandard;
-          TempsDepuisMAJ = 0;
+         IntervalMaj = OptionJeu.IntervalMAJStandard;
+         TempsDepuisMAJ = 0;
 
          GestionnaireInput = Game.Services.GetService(typeof(IOManager)) as IOManager;
          spritebatch = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
          ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
          ManagerGamestate = Game.Services.GetService(typeof(GameStateManager)) as GameStateManager;
 
-         //Game.Components.Add(InputMaÓtre);
-
          EstActivÈ = true;
          EstDÈtruit = false;
+
+         base.Initialize();
       }
       public virtual void Pause()
       {
@@ -133,46 +133,46 @@ namespace AtelierXNA
 
       public override void Update(GameTime gameTime)
       {
-          TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
+         TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-          if(TempsDepuisMAJ >= IntervalMaj)
-          {
-              GÈrerBoutons();
+         if (TempsDepuisMAJ >= IntervalMaj)
+         {
+            GÈrerBoutons();
 
-              TempsDepuisMAJ = 0;
-          }
+            TempsDepuisMAJ = 0;
+         }
       }
 
-       void GÈrerBoutons()
+      void GÈrerBoutons()
       {
-          if (EstActivÈ && ListeBouton.Count != 0)
-          {
-              if (GestionnaireInput.EstMenuHaut(PlayerIndex.One))
-              {
-                  if (IndexComposante > 0)
-                  {
-                      ListeBouton[IndexComposante].Changer…tat();
-                      IndexComposante--;
-                      ListeBouton[IndexComposante].Changer…tat();
-                  }
-              }
-              if (GestionnaireInput.EstMenuBas(PlayerIndex.One))
-              {
-                  if (IndexComposante < ListeBouton.Count - 1)
-                  {
-                      ListeBouton[IndexComposante].Changer…tat();
-                      IndexComposante++;
-                      ListeBouton[IndexComposante].Changer…tat();
-                  }
-              }
-              if (GestionnaireInput.EstMenuSÈlectionner(PlayerIndex.One))
-              {
-                  ListeBouton[IndexComposante].OnPressed();
-              }
-          }
+         if (EstActivÈ && ListeBouton.Count != 0)
+         {
+            if (GestionnaireInput.EstMenuHaut(PlayerIndex.One))
+            {
+               if (IndexComposante > 0)
+               {
+                  ListeBouton[IndexComposante].Changer…tat();
+                  IndexComposante--;
+                  ListeBouton[IndexComposante].Changer…tat();
+               }
+            }
+            if (GestionnaireInput.EstMenuBas(PlayerIndex.One))
+            {
+               if (IndexComposante < ListeBouton.Count - 1)
+               {
+                  ListeBouton[IndexComposante].Changer…tat();
+                  IndexComposante++;
+                  ListeBouton[IndexComposante].Changer…tat();
+               }
+            }
+            if (GestionnaireInput.EstMenuSÈlectionner(PlayerIndex.One))
+            {
+               ListeBouton[IndexComposante].OnPressed();
+            }
+         }
       }
 
-      public void Draw(GameTime gameTime, float ordre)
+      public virtual void Draw(GameTime gameTime, float ordre)
       {
          foreach (Bouton b in ListeBouton)
          {

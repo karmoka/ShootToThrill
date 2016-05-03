@@ -19,12 +19,11 @@ namespace AtelierXNA
     {
         Vector2 DimensionBoiteTexte = new Vector2(300, 200);
         TextboxWImage DescriptionMap { get; set; }
-        bool AInitialiser { get; set; }
 
         public MenuChoixMap(Game game, Vector2 position, InformationGame informationJeu)
             : base(game, position, informationJeu)
         {
-            AInitialiser = false;
+
         }
 
 

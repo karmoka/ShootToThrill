@@ -11,7 +11,7 @@ namespace AtelierXNA
     /// Décrit tout les messages qui peuvent être envoyé à travers le programme
     /// </summary>
     public enum Message { AvatarFusil, ActivationSupportFusil, DésactivationSupportFusil, QuitterJeu, GameState_GamePlay, GameState_Menu, GameState_Splash, GameState_TransistionGamePlay, GameState_Pop,
-    GameState_MenuMultiplayer, GameState_MenuChoixMap, GameState_Option, GameState_TransitionMenu, GameState_ChoixPersoMenu, GameState_SubMenuPop
+    GameState_MenuMultiplayer, GameState_MenuChoixMap, GameState_Option, GameState_TransitionMenu, GameState_ChoixPersoMenu, GameState_SubMenuPop, GameState_MenuControles
     }
 
 

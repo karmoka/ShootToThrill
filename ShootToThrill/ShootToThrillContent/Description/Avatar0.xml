@@ -3,14 +3,14 @@
   <Asset Type="Data:DescriptionAvatar">
     <VieMax>100</VieMax>
     <DescriptionComposanteGraphique>
-      <NomModèle>ship2</NomModèle>
+      <NomModèle>Avatar3</NomModèle>
       <NomTextureModèle>Image1</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
-      <Rotation>1.57079637 0 0</Rotation>
-      <Échelle>0.001</Échelle>
+      <Rotation>-1.57079637 0 0</Rotation>
+      <Échelle>0.5</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>
-      <MasseInverse>1</MasseInverse>
+      <MasseInverse>0.5</MasseInverse>
       <Position>0 0 0</Position>
       <Vitesse>0 0 0</Vitesse>
       <EstImmuable>false</EstImmuable>

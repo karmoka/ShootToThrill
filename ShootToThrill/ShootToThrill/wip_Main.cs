@@ -68,7 +68,7 @@ namespace AtelierXNA
          InitializerServices();
          InitializerNotifications();
 
-         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransistionGamePlay);
+         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransitionMenu);
 
          base.Initialize();
       }
@@ -180,7 +180,7 @@ namespace AtelierXNA
                ManagerGameState.Push(new TimerState(this, new Vector2(options.WindowWidth / 2, options.WindowHeight / 2), 5, "Arial20"));
                break;
             case ((int)Message.GameState_Menu):
-               ManagerGameState.Push(new StateImageBackground(this, "splash_screen"));
+               ManagerGameState.Push(new StateImageBackground(this, "SceneScreen"));
                ManagerGameState.Push(Menu);
                break;
             case ((int)Message.GameState_TransistionGamePlay):
