@@ -49,6 +49,8 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
+           TypeEnt = TypeEntité.Ennemi;
+
             IntervalRechercheAvatar = 0.05f;
             VitesseJoueur = 0.1f;
             TempsDepuisRechercheAvatar = 0;

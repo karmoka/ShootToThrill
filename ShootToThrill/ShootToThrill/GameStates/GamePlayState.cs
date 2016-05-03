@@ -144,25 +144,13 @@ namespace AtelierXNA
         /// </summary>
         void CréerJoueurs()
         {
-           LumièreJeu = new Lumière(Game, Vector3.Zero,Color.Red.ToVector3(),1,1,Vector3.One, Vector4.One);
-           DescriptionAvatar description = Game.Content.Load<DescriptionAvatar>("Description/Avatar0");
+           DescriptionAvatar description;
 
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-                MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "ship2", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
-                //MObjetDeBase o = new MObjetDeBase(Game, "ship2", 0.001f, Vector3.Zero, Vector3.Zero);
+                description = Game.Content.Load<DescriptionAvatar>("Description/Avatar" + i);
                 ListeJoueur.Add(new MJoueur(Game, description, Jeu.PortailJoueur.Position, (PlayerIndex)i));
-                
-                //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, new Vector3(i, 2+i, i)*3), (PlayerIndex)i));
-                //DescriptionJoueur description = Game.Content.Load<DescriptionJoueur>("Description/Joueur" + InformationJeu.idPlayers[i]);
-                //ListeJoueur.Add(new Joueur(Game, description, (PlayerIndex)i));
             }
-           //LumièreJeu = new Lumière(Game, new Vector3(5,1,5), Vector3.One, 4, 4, Vector3.One, Vector4.One / 10);
-
-           //ObjetDeBaseAniméEtÉclairé o = new ObjetDeBaseAniméEtÉclairé(Game, "untitled", "UIRaph", 1f, Vector3.Zero, Vector3.Up, "Phong", LumièreJeu, 1 / 60f);
-           //MObjetDeBase o = new MObjetDeBase(Game, "Scene2", 1, Vector3.Zero, Vector3.Up * 3);
-           //ListeJoueur.Add(new MJoueur(Game, "butterfly", "butterfly", new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
-           //ListeJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Vector3.Up * 3), PlayerIndex.One));
         }
         /// <summary>
         /// Initilise les joueurs et les services qui leurs sont liés.

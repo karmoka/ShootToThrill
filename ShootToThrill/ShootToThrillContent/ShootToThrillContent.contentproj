@@ -53,11 +53,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Modèle\Avatar2.FBX">
-      <Name>Avatar2</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Modèle\Avatar3.fbx">
       <Name>Avatar3</Name>
       <Importer>FbxImporter</Importer>
@@ -245,6 +240,11 @@
       <Name>ship_tex</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\Avatar2.fbx">
+      <Name>Avatar2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
     <None Include="Personnage\0Description.txt">
       <Name>0Description</Name>
@@ -484,6 +484,27 @@
   <ItemGroup>
     <Compile Include="Description\Avatar0.xml">
       <Name>Avatar0</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Avatar1.xml">
+      <Name>Avatar1</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Avatar3.xml">
+      <Name>Avatar3</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Avatar2.xml">
+      <Name>Avatar2</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
