@@ -24,8 +24,8 @@ namespace AtelierXNA
          Rayon = rayon;
          NomModèle = nomModèle;
       }
-      public ModelPhysique(Game game, DescriptionModelPhysique description)
-          : base(game, description)
+      public ModelPhysique(Game game, DescriptionModelPhysique description, Vector3 position)
+          : base(game, description, position)
       {
           Rayon = description.Rayon;
           NomModèle = description.NomModèle;

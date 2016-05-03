@@ -40,6 +40,7 @@ namespace AtelierXNA
             Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
             fusil.Initialize();
             AjouterArme(fusil);
+            base.Initialize();
         }
 
         protected override void LoadContent()
@@ -51,7 +52,6 @@ namespace AtelierXNA
 
         protected override void BougerAvatar()
         {
-            EstEnMouvement = false;
             if(ManagerDeControle.EstJoystickGaucheActif(IndexJoueur) || ManagerDeControle.EstDéplscementActif(IndexJoueur))
             {
                 if (ManagerDeControle.VersGauche(IndexJoueur))
@@ -70,7 +70,6 @@ namespace AtelierXNA
                 {
                     Vitesse += new Vector3(0, 0, VitesseJoueur);
                 }
-                EstEnMouvement = true;
             }
 
             if (ManagerDeControle.ATiré(IndexJoueur))

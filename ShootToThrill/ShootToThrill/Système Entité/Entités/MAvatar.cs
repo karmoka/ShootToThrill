@@ -24,11 +24,8 @@ namespace AtelierXNA
                   VARIATION_INDEX = 1,
                   DISTANCE_MAX = 1000;
         protected float VitesseJoueur { get; set; }
-        string NomModèleBase { get; set; }
-        string NomModèleAnimé { get; set; }
         float IntervalMAJ { get; set; }
         float TempsDepuisMAJ { get; set; }
-        protected float Rotation { get; set; }
         protected bool AUnFusil
         {
             get { return ListeArme.Count >= 1; }
@@ -38,8 +35,6 @@ namespace AtelierXNA
             get { return Vie <= MORT; }
         }
         public int VieMax { get; protected set; }
-        protected bool EstEnMouvement { get; set; }
-        protected bool EstAnimé { get; set; }
 
         public IModele3d ComposanteGraphique { get; private set; }
         public ObjetPhysique ComposantePhysique { get; private set; }
@@ -71,7 +66,9 @@ namespace AtelierXNA
         public MAvatar(Game game, DescriptionAvatar description, Vector3 position )
             : base(game)
         {
-            ComposantePhysique = new ObjetPhysique(game, description.DescriptionComposantePhysique);
+            VieMax = description.VieMax;
+
+            ComposantePhysique = new ObjetPhysique(game, description.DescriptionComposantePhysique, position);
             ComposanteGraphique = new MObjetDeBaseAniméEtÉclairé(game, description.DescriptionComposanteGraphique, position, 1 / 60f);
         }
 
@@ -84,9 +81,7 @@ namespace AtelierXNA
             IntervalMAJ = 1 / 60f;
             TempsDepuisMAJ = 0;
             IndexArme = 0;
-            Rotation = 0;
             Vie = VieMax;
-            EstEnMouvement = false;
             base.Initialize();
         }
 
@@ -108,10 +103,6 @@ namespace AtelierXNA
                     BougerArme();
                     ComposanteGraphique.SetPosition(ComposantePhysique.Position);
                     TempsDepuisMAJ = 0;
-                }
-                if (EstEnMouvement)
-                {
-                    ComposanteGraphique.Update(gameTime);
                 }
                 if (AUnFusil)
                 {

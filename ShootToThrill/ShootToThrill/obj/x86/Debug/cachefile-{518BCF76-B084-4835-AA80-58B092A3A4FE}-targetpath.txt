@@ -39,6 +39,7 @@ Content\Description\Ennemi3.xnb
 Content\Description\Ennemi2.xnb
 Content\Description\Ennemi1.xnb
 Content\Description\Pistol.xnb
+Content\Description\Avatar0.xnb
 Content\Effets\Lumière.xnb
 Content\Effets\Phong.xnb
 Content\Effets\SpotLight.xnb

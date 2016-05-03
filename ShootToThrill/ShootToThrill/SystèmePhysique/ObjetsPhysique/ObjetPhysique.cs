@@ -61,10 +61,10 @@ namespace AtelierXNA
          EstImmuable = false;
       }
 
-      public ObjetPhysique(Game game, DescriptionObjetPhysique description)
+      public ObjetPhysique(Game game, DescriptionObjetPhysique description, Vector3 position)
           : base(game)
       {
-          Position = description.Position;
+          Position = position;
           Vitesse = description.Vitesse;
           MasseInverse = description.MasseInverse;
           VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);

@@ -24,7 +24,7 @@ namespace AtelierXNA
       Vector3 CouleurLumièreEmissive { get; set; }
       RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
       RessourcesManager<Texture2D> GestionnaireDeTextures { get; set; }
-      protected BoundingSphere SphèreDeCollision { get; set; }
+      public BoundingSphere SphèreDeCollision { get; private set; }
 
       public MObjetDeBaseAniméEtÉclairé(Game jeu, String nomModèle, String nomTextureModèle,
                                        float échelleInitiale, Vector3 rotationInitiale, Vector3 positionInitiale,
@@ -73,7 +73,7 @@ namespace AtelierXNA
          TextureModèle = GestionnaireDeTextures.Find(NomTextureModèle);
          TextureBumpMap = NomTextureBumpMap!=null?GestionnaireDeTextures.Find(NomTextureBumpMap):null;
          EffetAffichage = (GestionnaireDeShaders.Find(NomEffetAffichage)).Clone();
-         MatériauAffichage = new MatériauÉclairé(CaméraJeu, LumièreJeu, TextureBumpMap, CouleurLumièreAmbiante, CouleurLumièreDiffuse,
+         MatériauAffichage = new MatériauÉclairé(CaméraActuelle, LumièreJeu, TextureBumpMap, CouleurLumièreAmbiante, CouleurLumièreDiffuse,
                                                  CouleurLumièreEmissive, CouleurLumièreSpéculaire, LumièreJeu.Intensité);
          AnalyserModèle();
          CréerSphèreDeCollision();
@@ -86,7 +86,6 @@ namespace AtelierXNA
          {
             BoundingSphere sphèreCollisionDuMaillage = Modèle.Meshes[i].BoundingSphere;
             sphèreTotaleTemporaire = BoundingSphere.CreateMerged(sphèreTotaleTemporaire, sphèreCollisionDuMaillage); // Ou
-            //BoundingSphere.CreateMerged(ref sphèreTotaleTemporaire, ref sphèreCollisionDuMaillage, out sphèreTotaleTemporaire);
          }
          SphèreDeCollision = sphèreTotaleTemporaire.Transform(Monde);
       }
@@ -108,12 +107,9 @@ namespace AtelierXNA
                   {
                      textureLocale = effetDeBase.Texture;
                   }
-                  //infoModèle = new InfoModèle(effetDeBase.Texture, effetDeBase.TextureEnabled, effetDeBase.AmbientLightColor, new Vector4(effetDeBase.DiffuseColor, 1f),
-                  //                                       effetDeBase.EmissiveColor, effetDeBase.SpecularColor, effetDeBase.SpecularPower);
+
                   infoModèle = new InfoModèle(effetLocal, effetDeBase.Texture, effetDeBase.TextureEnabled, CouleurLumièreAmbiante, new Vector4(effetDeBase.DiffuseColor, 1f),
                                               CouleurLumièreEmissive, effetDeBase.SpecularColor, effetDeBase.SpecularPower);
-                  //infoModèle = new InfoModèle(effetLocal, effetDeBase.Texture, effetDeBase.TextureEnabled, CouleurLumièreAmbiante, CouleurLumièreDiffuse,
-                  //                            CouleurLumièreEmissive, CouleurLumièreSpéculaire, PUISSANCE_SPÉCULAIRE);
                }
                else
                {
@@ -124,17 +120,12 @@ namespace AtelierXNA
          }
       }
 
-      public override void Update(GameTime gameTime)
-      {
-         base.Update(gameTime);
-         LumièreJeu.Position = CaméraJeu.Position;
-         MatériauAffichage.CaméraJeu = this.CaméraJeu;
-      }
-
       public override void Draw(GameTime gameTime)
       {
-         if (CaméraJeu.Frustum.Intersects(SphèreDeCollision))
+         if (CaméraActuelle.Frustum.Intersects(SphèreDeCollision))
          {
+            MatériauAffichage.CaméraJeu = this.CaméraActuelle;
+
             Matrix[] Transformations = new Matrix[Modèle.Bones.Count];
             Modèle.CopyAbsoluteBoneTransformsTo(Transformations);
 

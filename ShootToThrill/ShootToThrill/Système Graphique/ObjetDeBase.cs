@@ -12,7 +12,7 @@ namespace AtelierXNA
 
       string NomModèle { get; set; }
       RessourcesManager<Model> GestionnaireDeModèles { get; set; }
-      protected Caméra CaméraJeu { get; set; }
+      protected Caméra CaméraActuelle { get; set; }
       protected float Échelle { get; set; }
       protected Vector3 Rotation { get; set; }
       protected Vector3 Position { get; set; }
@@ -46,7 +46,7 @@ namespace AtelierXNA
 
       protected override void LoadContent()
       {
-         CaméraJeu = Game.Services.GetService(typeof(Caméra)) as Caméra;
+         CaméraActuelle = Game.Services.GetService(typeof(Caméra)) as Caméra;
          GestionnaireDeModèles = Game.Services.GetService(typeof(RessourcesManager<Model>)) as RessourcesManager<Model>;
          Modèle = GestionnaireDeModèles.Find(NomModèle);
          TransformationsModèle = new Matrix[Modèle.Bones.Count];
@@ -69,8 +69,8 @@ namespace AtelierXNA
                //MyEffect.Parameters["WorldInverseTransposeMatrix"].SetValue(worldInverseTransposeMatrix);
                BasicEffect effet = (BasicEffect)portionDeMaillage.Effect;
                effet.EnableDefaultLighting();
-               effet.Projection = CaméraJeu.Projection;
-               effet.View = CaméraJeu.Vue;
+               effet.Projection = CaméraActuelle.Projection;
+               effet.View = CaméraActuelle.Vue;
                effet.World = mondeLocal;
             }
             maille.Draw();
@@ -84,7 +84,7 @@ namespace AtelierXNA
 
       public void SetCaméra(Caméra cam)
       {
-         CaméraJeu = cam;
+         CaméraActuelle = cam;
       }
       public void ChangerCouleur(Color couleur)
       {
