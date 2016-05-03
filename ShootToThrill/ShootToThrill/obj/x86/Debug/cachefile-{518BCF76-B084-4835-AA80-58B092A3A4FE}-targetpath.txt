@@ -46,17 +46,14 @@ Content\Effets\SpotLight.xnb
 Content\Modèle\Portail\material_2.xnb
 Content\Modèle\Portail\material_3.xnb
 Content\Modèle\ship_tex.xnb
-Content\Textures\button.xnb
 Content\Textures\buttonBack.xnb
 Content\Textures\CielÉtoilé.xnb
-Content\Textures\fleche.xnb
 Content\Textures\Image1.xnb
 Content\Textures\RectangleBlanc.xnb
 Content\Textures\RectangleBleu.xnb
 Content\Textures\RectangleNoir.xnb
 Content\Textures\RectangleRouge.xnb
 Content\Textures\RectangleVert.xnb
-Content\Textures\Shutter.xnb
 Content\Textures\splash_screen.xnb
 Content\Textures\test1_1.xnb
 Content\Textures\test2_1.xnb
@@ -68,15 +65,15 @@ Content\Textures\ThumbnailP2.xnb
 Content\Textures\ThumbnailP3.xnb
 Content\Textures\tile_12.xnb
 Content\Textures\UIRaph.xnb
-Content\Textures\Untitled.xnb
 Content\Textures\strip1.xnb
 Content\Textures\strip2.xnb
 Content\Textures\strip3.xnb
 Content\Textures\strip4.xnb
+Content\Textures\test5_1.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
-Content\Textures\test5_1.xnb
+Content\Description\Teslagun.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

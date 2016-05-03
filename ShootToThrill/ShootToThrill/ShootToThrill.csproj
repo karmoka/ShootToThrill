@@ -144,10 +144,13 @@
     <Compile Include="Système Entité\Item\Fusil\Railgun.cs" />
     <Compile Include="Système Entité\Item\Fusil\Machinegun.cs" />
     <Compile Include="Système Entité\Item\Fusil\Pistol.cs" />
+    <Compile Include="Système Entité\Item\Fusil\Teslagun.cs" />
     <Compile Include="Système Entité\Item\Interrupteur.cs" />
     <Compile Include="Système Entité\Item\Item.cs" />
     <Compile Include="Système Entité\Item\Fusil\Munition.cs" />
     <Compile Include="Système Entité\Item\Portail.cs" />
+    <Compile Include="Système Entité\Item\Projectiles\Balle.cs" />
+    <Compile Include="Système Entité\Item\Projectiles\Éclair.cs" />
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
     <Compile Include="Système Graphique\CubeÉclairé.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />
+    <Compile Include="SystèmePhysique\Colliders\Projectile.cs" />
     <Compile Include="SystèmePhysique\Colliders\SphereCollision.cs" />
     <Compile Include="SystèmePhysique\CubeDeForces\SphereDeForce.cs" />
     <Compile Include="SystèmePhysique\CubeDeForces\VolumeDeForce.cs" />
@@ -188,7 +192,6 @@
     <Compile Include="Système Graphique\CubeTexturé.cs" />
     <Compile Include="SystèmePhysique\Terrain\Pente.cs" />
     <Compile Include="SystèmePhysique\Terrain\PrimitivePente.cs" />
-    <Compile Include="SystèmePhysique\Terrain\Projectiles.cs" />
     <Compile Include="wip_Main.cs" />
   </ItemGroup>
   <ItemGroup>
