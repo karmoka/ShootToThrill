@@ -574,15 +574,6 @@
       <Time>2016-05-02T16:00:28.7219463-04:00</Time>
     </Item>
     <Item>
-      <Source>Textures\button.png</Source>
-      <Name>Textures\button</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\button.xnb</Output>
-      <Time>2016-05-02T16:00:29.2829784-04:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\buttonBack.png</Source>
       <Name>Textures\buttonBack</Name>
       <Importer>TextureImporter</Importer>
@@ -599,15 +590,6 @@
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\CielÉtoilé.xnb</Output>
       <Time>2016-05-02T16:00:29.1919732-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\fleche.bmp</Source>
-      <Name>Textures\fleche</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\fleche.xnb</Output>
-      <Time>2016-05-02T16:00:29.2909788-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\Image1.bmp</Source>
@@ -662,15 +644,6 @@
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\RectangleVert.xnb</Output>
       <Time>2016-05-02T16:00:29.2429761-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Shutter.png</Source>
-      <Name>Textures\Shutter</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Shutter.xnb</Output>
-      <Time>2016-05-02T16:00:29.2529767-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\splash_screen.png</Source>
@@ -769,15 +742,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\UIRaph.xnb</Output>
-      <Time>2016-05-02T16:00:29.2809783-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Untitled.png</Source>
-      <Name>Textures\Untitled</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Untitled.xnb</Output>
       <Time>2016-05-02T16:00:29.2809783-04:00</Time>
     </Item>
     <Item>
@@ -1045,6 +1009,24 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Avatar2_0.xml</Output>
       <Time>2016-05-02T21:19:30.2944524-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\ÉcranControles.png</Source>
+      <Name>Textures\ÉcranControles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\ÉcranControles.xnb</Output>
+      <Time>2016-05-02T23:09:39.6870973-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SceneScreen.png</Source>
+      <Name>Textures\SceneScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\SceneScreen.xnb</Output>
+      <Time>2016-05-02T23:00:20.3193666-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

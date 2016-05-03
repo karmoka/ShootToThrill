@@ -101,6 +101,7 @@
     <Compile Include="GameStates\Menu\MenuState.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuChoixMap.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuChoixPersonnage.cs" />
+    <Compile Include="GameStates\Menu\subMenu\MenuControles.cs" />
     <Compile Include="GameStates\Menu\subMenu\MenuMultijoueur.cs" />
     <Compile Include="GameStates\OptionState.cs" />
     <Compile Include="GameStates\SplashState.cs" />
@@ -119,7 +120,6 @@
     <Compile Include="Managers\EnnemiScreenManager.cs" />
     <Compile Include="Managers\IOManager.cs" />
     <Compile Include="Managers\MessageManager.cs" />
-    <Compile Include="Managers\Messages.cs" />
     <Compile Include="Managers\Notification.cs" />
     <Compile Include="Managers\ScreenManager.cs" />
     <Compile Include="Managers\UserScreenManager.cs" />
