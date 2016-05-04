@@ -18,6 +18,7 @@ namespace AtelierXNA
         public Shotgun(Game game, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(game, description, positionInitiale, rayon, intervalMAJ)
         {
+           NomBruitFusil = "Shotgun";
         }
 
         protected override void Tirer()

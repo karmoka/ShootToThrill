@@ -97,14 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ShootToThrill.exe" size="259584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ShootToThrill.exe" size="260096">
       <assemblyIdentity name="ShootToThrill" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>wq0rBM77wvdYVKjE5pellmVHBhA=</dsig:DigestValue>
+        <dsig:DigestValue>pFvuQqyVvIULzhvfPm3Q2eaEIjg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -300,13 +300,13 @@
       <dsig:DigestValue>CNB71ESi29fDeaVgxggCvJgZEAY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Maps\0Description.txt" size="59">
+  <file name="Content\Maps\0Description.txt" size="87">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uuEbSch/uN7ov16oXFR6OroW31A=</dsig:DigestValue>
+      <dsig:DigestValue>FCinOraCULiauqXWQDhnKQSDyb4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Maps\1Description.txt" size="16">
@@ -657,16 +657,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0Sl2Q29VAW1PESyWsRGZzIrGBD8=</dsig:DigestValue>
+      <dsig:DigestValue>CJdoeoGRyzbONVBXyjgRUi67nhI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sounds\Boss.xnb" size="22652805">
+  <file name="Content\Sounds\Boss.xnb" size="22579305">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>h6v9i4V6t0duFum0NIr4R5kH8LA=</dsig:DigestValue>
+      <dsig:DigestValue>/JI2wS9Uel/wZXOLNUNuwlgyzfY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sounds\Menu.xnb" size="3939421">
@@ -678,22 +678,22 @@
       <dsig:DigestValue>q+TXe4hfGRkNXyGs+TDkmARvrL0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sounds\Sound Bank.xsb" size="448">
+  <file name="Content\Sounds\Sound Bank.xsb" size="651">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>tgPVrvpLMsKkeWg+Fn5MrEaPhLs=</dsig:DigestValue>
+      <dsig:DigestValue>7A/oKAwl7gmQq1xU9JyuZESVG6k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sounds\Wave Bank.xwb" size="7432404">
+  <file name="Content\Sounds\Wave Bank.xwb" size="7666488">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Ki1V80GcjtQ0/tIMXzFfV4VzeRE=</dsig:DigestValue>
+      <dsig:DigestValue>ozKOKTJB3H6fwYnplRXeTpH2Zb0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\buttonBack.xnb" size="40187">
@@ -831,13 +831,13 @@
       <dsig:DigestValue>iFkfNyYeeKNWIqK67cX32ghzzdo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Textures\test1_1.xnb" size="6587">
+  <file name="Content\Textures\test1_1.xnb" size="10555">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>MHM/YtQiNFjWNKcv8tx6HgXWKwo=</dsig:DigestValue>
+      <dsig:DigestValue>boSnyLVKbr6L+/vxb8hagkdVF+A=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\test2_1.xnb" size="587">

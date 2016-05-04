@@ -155,8 +155,17 @@ namespace AtelierXNA
 
       void LoaderSons()
       {
+         ManagerDeSons.AjouterSons("Happy");
+         ManagerDeSons.AjouterSons("Sad");
+         ManagerDeSons.AjouterSons("Electricity");
+         ManagerDeSons.AjouterSons("Laser");
+
+
+         ManagerDeSons.AjouterSons("Click");
+         ManagerDeSons.AjouterSons("Menu");
          ManagerDeSons.AjouterSons("Boss");
          ManagerDeSons.AjouterSons("Pistol");
+         ManagerDeSons.AjouterSons("Button");
          ManagerDeSons.AjouterSons("Shotgun");
          ManagerDeSons.AjouterSons("MachineGun");
          ManagerDeSons.AjouterSons("GrenadeLauncher");
@@ -182,9 +191,6 @@ namespace AtelierXNA
          switch (id)
          {
             case ((int)Message.GameState_GamePlay):
-               InformationJeu.IDMap = 2;//2;
-               InformationJeu.AjouterJoueur(PlayerIndex.One);
-               InformationJeu.SetPlayerAvatar(0, 0);
                ManagerGameState.Push(GamePlay);
                ManagerGameState.Push(new TimerState(this, new Vector2(options.WindowWidth / 2, options.WindowHeight / 2), 5, "Arial20"));
                break;

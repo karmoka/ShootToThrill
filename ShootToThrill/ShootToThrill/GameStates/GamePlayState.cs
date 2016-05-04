@@ -59,13 +59,12 @@ namespace AtelierXNA
             EstDétruit = false;
 
             InitialiserManagers();
-            LoaderSons();
             LoaderMap(); // Doit être exécuter avant les joueurs pour donner la position du portail
             CréerJoueurs();
             GénérerViewports();
             InitialiserJoueur();
 
-            //ManagerDeSons.JouerSons("Menu");
+            ManagerDeSons.JouerSons("Boss");
         }
 
         public void GénérerViewports()
@@ -92,10 +91,6 @@ namespace AtelierXNA
                     TableauViewports[3] = new Viewport(OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2, OptionsJeu.WindowWidth / 2, OptionsJeu.WindowHeight / 2);
                     break;
             }
-        }
-       void LoaderSons()
-        {
-           ManagerDeSons.AjouterSons("Menu");
         }
 
         /// <summary>
@@ -161,6 +156,7 @@ namespace AtelierXNA
         {
             OptionsJeu = Game.Services.GetService(typeof(Options)) as Options;
             GestionnaireInput = Game.Services.GetService(typeof(IOManager)) as IOManager;
+            ManagerDeSons = Game.Services.GetService(typeof(ManagerAudio)) as ManagerAudio;
             ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
             GestionnaireSprites = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
             GestionnaireDeLumières = Game.Services.GetService(typeof(GestionnairesLumières)) as GestionnairesLumières;
@@ -168,7 +164,6 @@ namespace AtelierXNA
             ManagerPhysique = new MMoteurPhysique(Game, OptionsJeu.IntervalMAJStandard);
             ManagerModèle = new ModelManager(Game);
             ManagerScreen = new ScreenManager(Game, Vector2.Zero, InformationJeu);
-            ManagerDeSons = new ManagerAudio(Game);
 
             ManagerScreen.Initialize();
 
@@ -178,8 +173,6 @@ namespace AtelierXNA
             Game.Components.Add(ManagerPhysique);
             Game.Components.Add(ManagerModèle);
             Game.Components.Add(ManagerScreen);
-            Game.Components.Add(ManagerDeSons);
-
         }
 
         /// <summary>
@@ -206,6 +199,8 @@ namespace AtelierXNA
             ManagerPhysique.Dispose();
             ManagerModèle.Dispose();
             ManagerScreen.Dispose();
+
+            ManagerDeSons.ArrêterTout();
         }
 
         public void Pause()

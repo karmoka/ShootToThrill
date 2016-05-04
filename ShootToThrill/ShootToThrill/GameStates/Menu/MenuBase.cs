@@ -19,14 +19,15 @@ namespace AtelierXNA
    {
       protected Options OptionJeu { get; set; }
 
+
       protected RessourcesManager<SpriteFont> GestionnaireFonts { get; set; }
       protected RessourcesManager<Texture2D> GestionnaireTextutes { get; set; }
       protected GameStateManager ManagerGamestate { get; set; }
       protected InformationGame InformationJeu { get; set; }
       protected MessageManager ManagerMessage { get; set; }
       protected IOManager GestionnaireInput { get; set; }
+      protected ManagerAudio ManagerDeSons { get; set; }
       protected SpriteBatch spritebatch { get; set; }
-
 
 
       string NomFonts { get; set; }
@@ -96,6 +97,7 @@ namespace AtelierXNA
 
          GestionnaireInput = Game.Services.GetService(typeof(IOManager)) as IOManager;
          spritebatch = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
+         ManagerDeSons = Game.Services.GetService(typeof(ManagerAudio)) as ManagerAudio;
          ManagerMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
          ManagerGamestate = Game.Services.GetService(typeof(GameStateManager)) as GameStateManager;
          GestionnaireTextutes = Game.Services.GetService(typeof(RessourcesManager<Texture2D>)) as RessourcesManager<Texture2D>;
@@ -155,6 +157,7 @@ namespace AtelierXNA
                   ListeBouton[IndexComposante].Changer…tat();
                   IndexComposante--;
                   ListeBouton[IndexComposante].Changer…tat();
+                  ManagerDeSons.JouerSons("Click");
                }
             }
             if (GestionnaireInput.EstMenuBas(PlayerIndex.One))
@@ -164,11 +167,13 @@ namespace AtelierXNA
                   ListeBouton[IndexComposante].Changer…tat();
                   IndexComposante++;
                   ListeBouton[IndexComposante].Changer…tat();
+                  ManagerDeSons.JouerSons("Click");
                }
             }
             if (GestionnaireInput.EstMenuSÈlectionner(PlayerIndex.One))
             {
                ListeBouton[IndexComposante].OnPressed();
+               ManagerDeSons.JouerSons("Button");
             }
          }
       }

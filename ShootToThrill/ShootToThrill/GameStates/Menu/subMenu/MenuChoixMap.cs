@@ -33,7 +33,7 @@ namespace AtelierXNA
             base.Initialiser();
 
 
-            AjouterBouton("Test", OnButtonPressed);
+            AjouterBouton("PacMan", OnButtonPressed);
             AjouterBouton("Plat", OnButtonPressed);
             AjouterBouton("Mini Golf", OnButtonPressed);
             AjouterBouton("Pebbles", OnButtonPressed);

@@ -40,7 +40,7 @@ namespace AtelierXNA
       {
          Monde = Matrix.Identity;
          Monde *= Matrix.CreateScale(Échelle);
-         Monde *= Matrix.CreateFromYawPitchRoll(Rotation.X, Rotation.Y, Rotation.Z);
+         Monde *= Matrix.CreateFromYawPitchRoll(Rotation.Y, Rotation.X, Rotation.Z);
          Monde *= Matrix.CreateTranslation(Position);
       }
 

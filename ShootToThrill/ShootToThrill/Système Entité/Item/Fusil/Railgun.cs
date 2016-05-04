@@ -18,6 +18,7 @@ namespace AtelierXNA
         public Railgun(Game game, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(game, description, positionInitiale, rayon, intervalMAJ)
         {
+           NomBruitFusil = "Laser";
         }
 
         protected override void Tirer()

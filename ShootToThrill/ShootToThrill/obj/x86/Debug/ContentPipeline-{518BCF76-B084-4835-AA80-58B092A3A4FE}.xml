@@ -234,10 +234,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Railgun.xnb</Output>
-      <Time>2016-05-02T16:00:28.6839441-04:00</Time>
+      <Time>2016-05-03T21:37:16.7729794-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Railgun_0.xml</Key>
-        <Value>2016-05-03T13:47:25.0175977-04:00</Value>
+        <Value>2016-05-03T22:49:16.2994456-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -273,10 +273,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Shotgun.xnb</Output>
-      <Time>2016-05-02T16:00:28.6869443-04:00</Time>
+      <Time>2016-05-03T21:37:16.7779797-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Shotgun_0.xml</Key>
-        <Value>2016-05-03T13:47:25.2486109-04:00</Value>
+        <Value>2016-05-03T22:49:16.6284644-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -477,7 +477,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar0.xnb</Output>
-      <Time>2016-05-03T15:59:09.2349383-04:00</Time>
+      <Time>2016-05-03T22:31:51.3226763-04:00</Time>
     </Item>
     <Item>
       <Source>Effets\Lumière.fx</Source>
@@ -613,15 +613,6 @@
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\splash_screen.xnb</Output>
       <Time>2016-05-02T16:00:29.293979-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\test1_1.bmp</Source>
-      <Name>Textures\test1_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test1_1.xnb</Output>
-      <Time>2016-05-02T16:00:29.2999794-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\test2_1.bmp</Source>
@@ -765,7 +756,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\Boss.xnb</Output>
-      <Time>2016-05-02T16:00:29.0279638-04:00</Time>
+      <Time>2016-05-03T22:41:17.766075-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Avatar0.fbx</Source>
@@ -884,7 +875,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Railgun_0.xml</Output>
-      <Time>2016-05-02T16:00:28.6839441-04:00</Time>
+      <Time>2016-05-03T21:37:16.7729794-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Scene1.fbx</Source>
@@ -905,7 +896,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Shotgun_0.xml</Output>
-      <Time>2016-05-02T16:00:28.6869443-04:00</Time>
+      <Time>2016-05-03T21:37:16.7779797-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Sphere.fbx</Source>
@@ -1018,6 +1009,42 @@
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\ÉcranControles.xnb</Output>
       <Time>2016-05-03T19:45:43.4840019-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Description\Avatar1.xml</Source>
+      <Name>Description\Avatar1</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar1.xnb</Output>
+      <Time>2016-05-03T15:59:09.2419387-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Description\Avatar2.xml</Source>
+      <Name>Description\Avatar2</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar2.xnb</Output>
+      <Time>2016-05-03T22:31:51.3146759-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Description\Avatar3.xml</Source>
+      <Name>Description\Avatar3</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar3.xnb</Output>
+      <Time>2016-05-03T22:31:51.3056754-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\test1_1.png</Source>
+      <Name>Textures\test1_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test1_1.xnb</Output>
+      <Time>2016-05-03T23:10:59.8690063-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
