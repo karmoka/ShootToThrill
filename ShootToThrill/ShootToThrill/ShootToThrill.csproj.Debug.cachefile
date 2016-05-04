@@ -56,7 +56,6 @@ Content\Textures\RectangleRouge.xnb
 Content\Textures\RectangleVert.xnb
 Content\Textures\splash_screen.xnb
 Content\Textures\test1_1.xnb
-Content\Textures\test2_1.xnb
 Content\Textures\Test3_1.xnb
 Content\Textures\Test4_1.xnb
 Content\Textures\ThumbnailP0.xnb
@@ -76,9 +75,9 @@ Content\Modèle\ship_tex_0.xnb
 Content\Description\Teslagun.xnb
 Content\Modèle\LanceFlame.xnb
 Content\Modèle\TeslaGun.xnb
-Content\Textures\test6_1.xnb
 Content\Description\Lasergun.xnb
 Content\Modèle\Lasergun.xnb
+Content\Textures\test2_1.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

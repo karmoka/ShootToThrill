@@ -3,10 +3,10 @@
   <Asset Type="Data:DescriptionAvatar">
     <VieMax>100</VieMax>
     <DescriptionComposanteGraphique>
-      <NomModèle>Avatar3</NomModèle>
+      <NomModèle>Avatar0</NomModèle>
       <NomTextureModèle>Image1</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
-      <Rotation>0 -1.57079637 0</Rotation>
+      <Rotation>-1.57079637 0 0</Rotation>
       <Échelle>0.5</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>

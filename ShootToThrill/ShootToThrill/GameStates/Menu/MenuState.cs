@@ -96,6 +96,7 @@ namespace AtelierXNA
             if (GamePad.GetState((PlayerIndex)i).IsConnected && GestionnaireInput.EstNouveauBouton(Buttons.Start, (PlayerIndex)i))
             {
                JoueursActif[i] = true;
+               ManagerDeSons.JouerSons("Happy");
             }
             else if (!GamePad.GetState((PlayerIndex)i).IsConnected)
             {
@@ -167,15 +168,15 @@ namespace AtelierXNA
          {
             case ((int)Message.GameState_MenuChoixMap):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuChoixMap(Game, this.Position + new Vector2(LARGEUR_MENUS * NombreSubmenuOuvert, 0), InformationJeu));
+               ManagerGamestate.Push(new MenuChoixMap(Game, this.Position + new Vector2(LARGEUR_MENUS * 1, 0), InformationJeu));
                break;
             case ((int)Message.GameState_ChoixPersoMenu):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuChoixPersonnage(Game, this.Position + new Vector2(LARGEUR_MENUS * NombreSubmenuOuvert, 0), InformationJeu));
+               ManagerGamestate.Push(new MenuChoixPersonnage(Game, this.Position + new Vector2(LARGEUR_MENUS * 2, 0), InformationJeu));
                break;
             case((int)Message.GameState_MenuControles):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuControles(Game,Vector2.Zero,InformationJeu));
+               ManagerGamestate.Push(new MenuControles(Game, Vector2.One * 20, InformationJeu));
                break;
             case ((int)Message.GameState_SubMenuPop):
                NombreSubmenuOuvert--;

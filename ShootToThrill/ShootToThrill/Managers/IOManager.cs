@@ -17,7 +17,7 @@ namespace AtelierXNA
     /// </summary>
    public class IOManager : DrawableGameComponent
    {
-       Options OptionsJeu { get; set; }
+      Options OptionsJeu { get; set; }
 
       const int NB_JOUEUR = 4;
 

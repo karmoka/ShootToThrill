@@ -18,6 +18,10 @@ namespace AtelierXNA
     /// </summary>
     public class Fusil : Item, IModele3d, IArme
     {
+       const string NOM_BRUIT_DÉFAUT = "Pistol";
+       ManagerAudio ManagerDeSons { get; set; }
+       protected string NomBruitFusil { get; set; }
+
         const int ZERO = 0,
                   MAX_DEGRÉS = 360;
         const float DISTANCE_JOUEUR_FUSIL = 0.5f;
@@ -110,6 +114,8 @@ namespace AtelierXNA
         public Fusil(Game jeu, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(jeu, positionInitiale, rayon, description.NomModèle, intervalMAJ, true)
         {
+           NomBruitFusil = NOM_BRUIT_DÉFAUT;
+
             AMunitionInfini = description.AMunitionInfini;
             NomArme = description.NomArme;
             Cadence = description.Cadence;
@@ -146,6 +152,7 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
+            ManagerDeSons = Game.Services.GetService(typeof(ManagerAudio)) as ManagerAudio;
             ManagerDeModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
             ManagerDeMessage = Game.Services.GetService(typeof(MessageManager)) as MessageManager;
             base.LoadContent();
@@ -201,6 +208,7 @@ namespace AtelierXNA
 
         protected virtual void Tirer()
         {
+           ManagerDeSons.JouerSons(NomBruitFusil);
         }
 
         protected Vector3 DirectionAléatoire(Vector3 axe, Random générateurAléatoire)
@@ -340,6 +348,8 @@ namespace AtelierXNA
             {
                 projectile.ChangerCaméra(cam);
             }
+
+            base.SetCaméra(cam);
         }
 
         public override void Draw(GameTime gameTime)

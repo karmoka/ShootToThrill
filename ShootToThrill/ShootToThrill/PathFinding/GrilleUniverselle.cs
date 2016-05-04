@@ -415,13 +415,17 @@ namespace AtelierXNA
 
         public void SetCaméra(Caméra cam)
         {
-            foreach (Node n in TableauNode)
-            {
-                if (n != null)
-                {
+           if (MontrerGizmosSurGrille)
+           {
+              foreach (Node n in TableauNode)
+              {
+                 if (n != null)
+                 {
                     n.SetCaméra(cam);
-                }
-            }
+                 }
+              }
+           }
+
             foreach (CubeAdditionnable c in ListeCube)
             {
                 c.SetCaméra(cam);

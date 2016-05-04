@@ -143,10 +143,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Ennemi1.xnb</Output>
-      <Time>2016-05-03T18:36:03.741001-04:00</Time>
+      <Time>2016-05-04T10:26:21.4680506-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Key>
-        <Value>2016-05-03T18:40:37.0216943-04:00</Value>
+        <Value>2016-05-04T10:34:12.1403277-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -247,10 +247,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Railgun.xnb</Output>
-      <Time>2016-05-03T12:02:07.4432392-04:00</Time>
+      <Time>2016-05-04T10:26:21.4820603-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Railgun_0.xml</Key>
-        <Value>2016-05-03T12:11:51.2070568-04:00</Value>
+        <Value>2016-05-04T10:34:12.3940137-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -286,10 +286,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Shotgun.xnb</Output>
-      <Time>2016-05-03T12:02:07.4602493-04:00</Time>
+      <Time>2016-05-04T10:26:21.4870636-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Shotgun_0.xml</Key>
-        <Value>2016-05-03T12:11:51.4011979-04:00</Value>
+        <Value>2016-05-04T10:34:12.5468413-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -400,7 +400,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Machinegun.xnb</Output>
-      <Time>2016-05-03T20:41:11.3542251-04:00</Time>
+      <Time>2016-05-04T10:26:14.2367388-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Railgun.xml</Source>
@@ -418,7 +418,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Shotgun.xnb</Output>
-      <Time>2016-05-03T22:19:06.3619758-04:00</Time>
+      <Time>2016-05-04T10:26:14.2382009-04:00</Time>
     </Item>
     <Item>
       <Source>Options.xml</Source>
@@ -472,7 +472,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi1.xnb</Output>
-      <Time>2016-05-03T18:39:33.6178944-04:00</Time>
+      <Time>2016-05-04T10:26:21.459045-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Pistol.xml</Source>
@@ -490,7 +490,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar0.xnb</Output>
-      <Time>2016-05-03T18:36:03.7300663-04:00</Time>
+      <Time>2016-05-04T10:26:21.449038-04:00</Time>
     </Item>
     <Item>
       <Source>Effets\Lumière.fx</Source>
@@ -634,16 +634,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test1_1.xnb</Output>
-      <Time>2016-05-03T12:02:08.639969-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\test2_1.bmp</Source>
-      <Name>Textures\test2_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test2_1.xnb</Output>
-      <Time>2016-05-03T12:02:08.6439709-04:00</Time>
+      <Time>2016-05-04T10:34:06.6259215-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\Test3_1.bmp</Source>
@@ -661,7 +652,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Test4_1.xnb</Output>
-      <Time>2016-05-03T12:02:08.5740673-04:00</Time>
+      <Time>2016-05-04T10:37:31.0569275-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\ThumbnailP0.bmp</Source>
@@ -778,7 +769,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Sounds\Boss.xnb</Output>
-      <Time>2016-05-03T12:02:07.7641308-04:00</Time>
+      <Time>2016-05-04T10:26:21.7650659-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Avatar0.fbx</Source>
@@ -848,7 +839,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Output>
-      <Time>2016-05-03T18:36:03.741001-04:00</Time>
+      <Time>2016-05-04T10:26:21.4680506-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Ennemi2.fbx</Source>
@@ -904,7 +895,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Railgun_0.xml</Output>
-      <Time>2016-05-03T12:02:07.4432392-04:00</Time>
+      <Time>2016-05-04T10:26:21.4820603-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Scene1.fbx</Source>
@@ -925,7 +916,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Shotgun_0.xml</Output>
-      <Time>2016-05-03T12:02:07.4602493-04:00</Time>
+      <Time>2016-05-04T10:26:21.4870636-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Sphere.fbx</Source>
@@ -999,7 +990,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Teslagun.xnb</Output>
-      <Time>2016-05-03T20:41:11.3797485-04:00</Time>
+      <Time>2016-05-04T10:47:54.7419891-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\LanceFlame.fbx</Source>
@@ -1008,10 +999,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\LanceFlame.xnb</Output>
-      <Time>2016-05-03T20:38:12.1146783-04:00</Time>
+      <Time>2016-05-04T10:26:05.7827404-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\LanceFlame_0.xml</Key>
-        <Value>2016-05-03T20:41:12.7227684-04:00</Value>
+        <Value>2016-05-04T10:34:12.7663926-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1021,10 +1012,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\TeslaGun.xnb</Output>
-      <Time>2016-05-03T20:38:23.0265006-04:00</Time>
+      <Time>2016-05-04T10:26:05.8077574-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\TeslaGun_0.xml</Key>
-        <Value>2016-05-03T20:41:13.2271008-04:00</Value>
+        <Value>2016-05-04T10:34:13.0745969-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1032,23 +1023,14 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\LanceFlame_0.xml</Output>
-      <Time>2016-05-03T20:38:12.1146783-04:00</Time>
+      <Time>2016-05-04T10:26:05.7827404-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\TeslaGun.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\TeslaGun_0.xml</Output>
-      <Time>2016-05-03T20:38:23.0265006-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\test6_1.bmp</Source>
-      <Name>Textures\test6_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test6_1.xnb</Output>
-      <Time>2016-05-03T21:24:46.329546-04:00</Time>
+      <Time>2016-05-04T10:26:05.8077574-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Lasergun.xml</Source>
@@ -1057,7 +1039,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Lasergun.xnb</Output>
-      <Time>2016-05-03T21:50:22.476571-04:00</Time>
+      <Time>2016-05-04T10:26:14.2348093-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Lasergun.fbx</Source>
@@ -1066,10 +1048,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Lasergun.xnb</Output>
-      <Time>2016-05-03T20:38:17.8283205-04:00</Time>
+      <Time>2016-05-04T10:26:14.2554317-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Lasergun_0.xml</Key>
-        <Value>2016-05-03T21:51:44.3470088-04:00</Value>
+        <Value>2016-05-04T10:34:12.9234965-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1077,7 +1059,16 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Lasergun_0.xml</Output>
-      <Time>2016-05-03T20:38:17.8283205-04:00</Time>
+      <Time>2016-05-04T10:26:14.2554317-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\test2_1.png</Source>
+      <Name>Textures\test2_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test2_1.xnb</Output>
+      <Time>2016-05-04T11:02:11.4884626-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

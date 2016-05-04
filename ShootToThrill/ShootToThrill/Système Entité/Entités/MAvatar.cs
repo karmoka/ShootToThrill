@@ -270,7 +270,7 @@ namespace AtelierXNA
 
         protected virtual void ModifierDirection(Vector2 direction)
         {
-            SetRotation(Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction));
+            SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction) + MathHelper.PiOver2,-MathHelper.PiOver2,0));
         }
 
         public Vector3 Vitesse
@@ -328,15 +328,16 @@ namespace AtelierXNA
         public void SetCaméra(Caméra cam)
         {
             ComposanteGraphique.SetCaméra(cam);
+            if (AUnFusil)
+            {
+               ArmeSélectionnée.SetCaméra(cam);
+            }
             SetCaméraAutreComposante(cam);
         }
 
         protected virtual void SetCaméraAutreComposante(Caméra cam)
         {
-            if (AUnFusil)
-            {
-                ArmeSélectionnée.SetCaméra(cam);
-            }
+            
         }
 
         public Collider GetCollider()

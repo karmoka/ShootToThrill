@@ -12,7 +12,7 @@
     <NomArme>Teslagun</NomArme>
     <NomModèle>TeslaGun</NomModèle>
     <Cadence>0.05</Cadence>
-    <Dommage>5</Dommage>
+    <Dommage>10</Dommage>
     <Portée>25</Portée>
     <AngleDeTir>0</AngleDeTir>
     <Area>false</Area>

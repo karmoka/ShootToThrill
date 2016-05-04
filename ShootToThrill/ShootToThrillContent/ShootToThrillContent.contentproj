@@ -314,16 +314,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Textures\test1_1.bmp">
-      <Name>test1_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Textures\test2_1.bmp">
-      <Name>test2_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Textures\Test3_1.bmp">
       <Name>Test3_1</Name>
       <Importer>TextureImporter</Importer>
@@ -499,17 +489,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\test6_1.bmp">
-      <Name>test6_1</Name>
+    <Compile Include="Description\Lasergun.xml">
+      <Name>Lasergun</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\test1_1.bmp">
+      <Name>test1_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Description\Lasergun.xml">
-      <Name>Lasergun</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
+    <Compile Include="Textures\test2_1.png">
+      <Name>test2_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
