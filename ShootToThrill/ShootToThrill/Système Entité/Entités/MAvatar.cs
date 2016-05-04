@@ -270,7 +270,7 @@ namespace AtelierXNA
 
         protected virtual void ModifierDirection(Vector2 direction)
         {
-            SetRotation(Vector3.UnitX * CustomMathHelper.AngleDeVecteur2D(direction));
+            SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction),-MathHelper.PiOver2,0));
         }
 
         public Vector3 Vitesse
