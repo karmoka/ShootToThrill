@@ -74,6 +74,11 @@ Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
 Content\Description\Teslagun.xnb
+Content\Modèle\LanceFlame.xnb
+Content\Modèle\TeslaGun.xnb
+Content\Textures\test6_1.xnb
+Content\Description\Lasergun.xnb
+Content\Modèle\Lasergun.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

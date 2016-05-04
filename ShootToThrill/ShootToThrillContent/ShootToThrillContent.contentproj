@@ -246,6 +246,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Modèle\LanceFlame.fbx">
+      <Name>LanceFlame</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\Lasergun.fbx">
+      <Name>Lasergun</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\TeslaGun.fbx">
+      <Name>TeslaGun</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Personnage\0Description.txt">
       <Name>0Description</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -479,6 +494,20 @@
   <ItemGroup>
     <Compile Include="Description\Teslagun.xml">
       <Name>Teslagun</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\test6_1.bmp">
+      <Name>test6_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Lasergun.xml">
+      <Name>Lasergun</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>

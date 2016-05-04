@@ -23,8 +23,6 @@ namespace AtelierXNA
         protected override void Tirer()
         {
             Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
-
-            direction = DirectionAléatoire(direction);
             Éclair éclair = new Éclair(Game, Position, direction, Portée, Dommage);
             éclair.Initialize();
             ListeProjectile.Add(éclair);

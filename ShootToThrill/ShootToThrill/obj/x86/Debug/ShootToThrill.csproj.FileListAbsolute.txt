@@ -444,3 +444,8 @@ C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bi
 C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\ProjetPrincipal.Data.dll
 C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\ProjetPrincipal.Data.pdb
 C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Teslagun.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\LanceFlame.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\TeslaGun.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test6_1.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Lasergun.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Lasergun.xnb

@@ -15,16 +15,18 @@ namespace AtelierXNA
 {
     public class Machinegun : Fusil
     {
+        Random GénérateurAléatoire { get; set; }
         public Machinegun(Game game, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(game, description, positionInitiale, rayon, intervalMAJ)
         {
+            GénérateurAléatoire = new Random();
         }
 
         protected override void Tirer()
         {
             Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
 
-            direction = DirectionAléatoire(direction);
+            direction = DirectionAléatoire(direction, GénérateurAléatoire);
             Balle balle = new Balle(Game, Position, direction, Portée, Dommage);
             balle.Initialize();
             ListeProjectile.Add(balle);

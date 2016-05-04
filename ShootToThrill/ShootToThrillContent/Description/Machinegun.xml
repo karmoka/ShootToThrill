@@ -10,7 +10,7 @@
     <MunitionInitial>80</MunitionInitial>
     <IntervalRechargement>0.02</IntervalRechargement>
     <NomArme>Machinegun</NomArme>
-    <NomModèle>Pistol</NomModèle>
+    <NomModèle>Machinegun</NomModèle>
     <Cadence>0.05</Cadence>
     <Dommage>10</Dommage>
     <Portée>10</Portée>

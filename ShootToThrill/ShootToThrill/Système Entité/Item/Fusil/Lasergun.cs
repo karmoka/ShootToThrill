@@ -13,23 +13,20 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-    public class Shotgun : Fusil
+    public class Lasergun : Fusil
     {
-        Random GénérateurAléatoire { get; set; }
-        public Shotgun(Game game, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
+        public Lasergun(Game game, DescriptionFusil description, Vector3 positionInitiale, float rayon, float intervalMAJ)
             : base(game, description, positionInitiale, rayon, intervalMAJ)
         {
-            GénérateurAléatoire = new Random();
         }
 
         protected override void Tirer()
         {
             Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
 
-            direction = DirectionAléatoire(direction, GénérateurAléatoire);
-            Balle balle = new Balle(Game, Position, direction, Portée, Dommage);
-            balle.Initialize();
-            ListeProjectile.Add(balle);
+            Laser laser = new Laser(Game, Position, direction, Portée, Dommage);
+            laser.Initialize();
+            ListeProjectile.Add(laser);
 
             base.Tirer();
         }
