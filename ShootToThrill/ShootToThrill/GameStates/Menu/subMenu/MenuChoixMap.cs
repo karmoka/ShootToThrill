@@ -17,6 +17,7 @@ namespace AtelierXNA
     /// </summary>
     public class MenuChoixMap : MenuBase
     {
+        bool EstInitialisé = false;
         Vector2 DimensionBoiteTexte = new Vector2(300, 200);
         TextboxWImage DescriptionMap { get; set; }
 
@@ -30,6 +31,7 @@ namespace AtelierXNA
         public override void Initialiser()
         {
             base.Initialiser();
+
 
             AjouterBouton("Test", OnButtonPressed);
             AjouterBouton("Plat", OnButtonPressed);

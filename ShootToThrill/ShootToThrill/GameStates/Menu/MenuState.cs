@@ -28,6 +28,10 @@ namespace AtelierXNA
       bool[] JoueursPrêt { get; set; }
       int NombreSubmenuOuvert { get; set; }
 
+      MenuChoixMap MenuMap { get; set; }
+      MenuChoixPersonnage MenuPerso { get; set; }
+      MenuControles MenuAfficherControles { get; set; }
+
       DescriptionAvatar j { get; set; }
       Notification nGameStateChanged { get; set; }
 
@@ -59,6 +63,10 @@ namespace AtelierXNA
          ListeBouton[IndexComposante].ChangerÉtat();
 
          CréerTableauJoueursActifs();
+
+         MenuMap = new MenuChoixMap(Game, this.Position + new Vector2(LARGEUR_MENUS * 1, 0), InformationJeu);
+         MenuPerso = new MenuChoixPersonnage(Game, this.Position + new Vector2(LARGEUR_MENUS * 2, 0), InformationJeu);
+         MenuAfficherControles = new MenuControles(Game, Vector2.One * 20, InformationJeu);
       }
 
       public override void Cleanup()
@@ -67,6 +75,10 @@ namespace AtelierXNA
          {
             Game.Components.Remove(TableauJoueurActif[i]);
          }
+
+         MenuMap.Cleanup();
+         MenuPerso.Cleanup();
+         MenuAfficherControles.Cleanup();
 
          base.Cleanup();
       }
@@ -167,15 +179,15 @@ namespace AtelierXNA
          {
             case ((int)Message.GameState_MenuChoixMap):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuChoixMap(Game, this.Position + new Vector2(LARGEUR_MENUS * NombreSubmenuOuvert, 0), InformationJeu));
+               ManagerGamestate.Push(MenuMap);
                break;
             case ((int)Message.GameState_ChoixPersoMenu):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuChoixPersonnage(Game, this.Position + new Vector2(LARGEUR_MENUS * NombreSubmenuOuvert, 0), InformationJeu));
+               ManagerGamestate.Push(MenuPerso);
                break;
             case((int)Message.GameState_MenuControles):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuControles(Game,Vector2.One*20,InformationJeu));
+               ManagerGamestate.Push(MenuAfficherControles);
                break;
             case ((int)Message.GameState_SubMenuPop):
                NombreSubmenuOuvert--;

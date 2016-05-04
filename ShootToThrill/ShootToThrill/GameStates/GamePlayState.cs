@@ -103,7 +103,6 @@ namespace AtelierXNA
         /// </summary>
         void LoaderMap()
         {
-
             TrouveurDeChemin = new Pathfinding(Game);
             RequeteDeChemin = new RequêtePathManager(Game); 
             Jeu = new Jeu(Game, InformationJeu.NBJoueur);
@@ -132,15 +131,17 @@ namespace AtelierXNA
         void CréerJoueurs()
         {
            DescriptionAvatar description;
+           //InformationJeu.AjouterJoueur(PlayerIndex.Two);
+           //InformationJeu.SetPlayerAvatar(1, 1);
 
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
-                description = Game.Content.Load<DescriptionAvatar>("Description/Avatar" + i);
+                description = Game.Content.Load<DescriptionAvatar>("Description/Avatar" + InformationJeu.idPlayers[i]);
                 ListeJoueur.Add(new MJoueur(Game, description, Jeu.PortailJoueur.Position, (PlayerIndex)i));
             }
         }
         /// <summary>
-        /// Initilise les joueurs et les services qui leurs sont liés.
+        /// Initialise les joueurs et les services qui leurs sont liés.
         /// </summary>
         void InitialiserJoueur()
         {

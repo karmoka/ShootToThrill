@@ -70,7 +70,7 @@ namespace AtelierXNA
          InitializerServices();
          InitializerNotifications();
 
-         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransistionGamePlay);
+         ManagerDeMessage.AjouterÉvénement((int)Message.GameState_TransitionMenu);
 
          base.Initialize();
       }
