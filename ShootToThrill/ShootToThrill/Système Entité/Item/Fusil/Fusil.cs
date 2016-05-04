@@ -349,6 +349,8 @@ namespace AtelierXNA
             {
                 projectile.ChangerCaméra(cam);
             }
+
+            base.SetCaméra(cam);
         }
 
         public override void Draw(GameTime gameTime)

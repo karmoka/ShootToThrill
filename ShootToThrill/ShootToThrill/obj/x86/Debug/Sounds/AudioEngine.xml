@@ -13,6 +13,8 @@
     Xbox Bank Last Modified High = 0;
     PC Bank Last Modified Low = 2110778043;
     PC Bank Last Modified High = 30516661;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
     Bank Last Revised Low = 2073387561;
     Bank Last Revised High = 30516661;
 
