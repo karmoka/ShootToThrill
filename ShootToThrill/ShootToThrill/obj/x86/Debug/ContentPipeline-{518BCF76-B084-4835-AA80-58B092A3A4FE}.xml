@@ -387,7 +387,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Machinegun.xnb</Output>
-      <Time>2016-05-02T16:00:28.6169403-04:00</Time>
+      <Time>2016-05-03T18:59:11.1144997-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Railgun.xml</Source>
@@ -459,7 +459,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi1.xnb</Output>
-      <Time>2016-05-03T16:06:05.6897581-04:00</Time>
+      <Time>2016-05-03T19:01:48.1931402-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Pistol.xml</Source>
@@ -973,25 +973,16 @@
       <Time>2016-05-02T16:00:28.7219463-04:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Fleche.bmp</Source>
-      <Name>Textures\Fleche</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Fleche.xnb</Output>
-      <Time>2016-05-03T15:59:09.2609397-04:00</Time>
-    </Item>
-    <Item>
       <Source>Modèle\Ennemi1.fbx</Source>
       <Name>Modèle\Ennemi1</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Ennemi1.xnb</Output>
-      <Time>2016-05-03T16:04:57.1918402-04:00</Time>
+      <Time>2016-05-03T18:59:06.993264-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Key>
-        <Value>2016-05-03T16:05:02.2741309-04:00</Value>
+        <Value>2016-05-03T19:03:57.9125537-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -999,34 +990,34 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Ennemi1_0.xml</Output>
-      <Time>2016-05-03T16:04:57.1918402-04:00</Time>
+      <Time>2016-05-03T18:59:06.993264-04:00</Time>
     </Item>
     <Item>
-      <Source>Description\Avatar1.xml</Source>
-      <Name>Description\Avatar1</Name>
+      <Source>Description\Teslagun.xml</Source>
+      <Name>Description\Teslagun</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar1.xnb</Output>
-      <Time>2016-05-03T15:59:09.2419387-04:00</Time>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Teslagun.xnb</Output>
+      <Time>2016-05-03T18:59:11.1154998-04:00</Time>
     </Item>
     <Item>
-      <Source>Description\Avatar2.xml</Source>
-      <Name>Description\Avatar2</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
+      <Source>Textures\Fleche.bmp</Source>
+      <Name>Textures\Fleche</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar2.xnb</Output>
-      <Time>2016-05-03T15:59:09.2439388-04:00</Time>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Fleche.xnb</Output>
+      <Time>2016-05-03T19:44:04.3123296-04:00</Time>
     </Item>
     <Item>
-      <Source>Description\Avatar3.xml</Source>
-      <Name>Description\Avatar3</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
+      <Source>Textures\ÉcranControles.png</Source>
+      <Name>Textures\ÉcranControles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar3.xnb</Output>
-      <Time>2016-05-03T15:59:09.2469389-04:00</Time>
+      <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\ÉcranControles.xnb</Output>
+      <Time>2016-05-03T19:45:43.4840019-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

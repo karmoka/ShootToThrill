@@ -51,7 +51,7 @@ namespace AtelierXNA
 
         public override void Draw(GameTime gameTime, float ordre)
         {
-           //spritebatch.Draw(ImagesControles, RectangleAffichage, Color.White);
+           spritebatch.Draw(ImagesControles, RectangleAffichage, Color.White);
            base.Draw(gameTime, ordre);
         }
     }

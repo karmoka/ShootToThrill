@@ -175,7 +175,7 @@ namespace AtelierXNA
                break;
             case((int)Message.GameState_MenuControles):
                NombreSubmenuOuvert++;
-               ManagerGamestate.Push(new MenuControles(Game,Vector2.Zero,InformationJeu));
+               ManagerGamestate.Push(new MenuControles(Game,Vector2.One*20,InformationJeu));
                break;
             case ((int)Message.GameState_SubMenuPop):
                NombreSubmenuOuvert--;

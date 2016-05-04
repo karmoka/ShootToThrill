@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AtelierXNA.CaméraTracing" Collapsed="true">
+    <Position X="36" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAAAAAIAEgAAAAAIAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Camera\CaméraTracing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.RectangleVieColoré" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAQCAAEAAoC4EgmAAAIAAIAAAACghMAAAAACQAAEQ=</HashCode>
+      <FileName>Composantes2D\RectangleVieColoré.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.Sprite" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAQEAAAAAIAwAhAAAAAACACAAAQBAgAAAAAEQAAAQ=</HashCode>
+      <FileName>Composantes2D\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SpriteColorable" Collapsed="true">
+    <Position X="0.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAEAAAAQ=</HashCode>
+      <FileName>Composantes2D\SpriteColorable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Textbox" Collapsed="true">
+    <Position X="3" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQBCAAIAQAAAwAAgBAAQADABAMAIAABAAAAAAAAAAQ=</HashCode>
+      <FileName>Composantes2D\Texbox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.TextboxWImage" Collapsed="true">
+    <Position X="7.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQBAAAIAAAAAwAAgAAAQACABAYAABAAAAAAAEAAAAQ=</HashCode>
+      <FileName>Composantes2D\TexboxWImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Options" Collapsed="true">
+    <Position X="46.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAAAACACABARAgAAAAgAFAABAAAAAIACABAAA=</HashCode>
+      <FileName>Constantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.GameConstants" Collapsed="true">
+    <Position X="36" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAAAACACABARAAAAAAAAEAABAAAEAIACAAAAA=</HashCode>
+      <FileName>Constantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.DefinitionGamePad" Collapsed="true">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAgBAAAAAEIQAAAIAAAAAAAAAAAAAAAAABBCA=</HashCode>
+      <FileName>Constantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.DéfinitionControleJ1" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAgBAAAAAAIQAAAIAAAAAAAAAAAAAAAAABBCA=</HashCode>
+      <FileName>Constantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.DéfinitionControleJ2" Collapsed="true">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAgBAAAAAAIQAAAIAAAAAAAAAAAAAAAAABBCA=</HashCode>
+      <FileName>Constantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.CustomMathHelper" Collapsed="true">
+    <Position X="41.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAoAAAAAgAAAAAAAAQAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>CustomMathHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Game1" Collapsed="true">
+    <Position X="46.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.GamePlayState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CDwgABAEwAAAAgIABAEBgAAASSUAAAAIAAAAREAIDAI=</HashCode>
+      <FileName>GameStates\GamePlayState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.GameStateManager" Collapsed="true">
+    <Position X="39.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAEAoAAAAAAAAAAAACAAAAAAAAAAAAACCA=</HashCode>
+      <FileName>GameStates\GamestateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Bouton" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQBAABAgAAAQwAAAAAASACAAEFAAACAAAAAAAQMAAQ=</HashCode>
+      <FileName>GameStates\Menu\Bouton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MenuBase" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBQhQAEAgBAAAgAggAAEAIAAQAOAAIAAEAAAEEQIBAI=</HashCode>
+      <FileName>GameStates\Menu\MenuBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.MenuState" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQRAAAAAAAJABAAAAAABCEAAAAAEAAABAAEEQFAAJAA=</HashCode>
+      <FileName>GameStates\Menu\MenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MenuChoixMap" Collapsed="true">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAkAABAA=</HashCode>
+      <FileName>GameStates\Menu\subMenu\MenuChoixMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MenuChoixPersonnage" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQgAggAgAAAOAAAEYAAgQAQAQABAAAARAEQgkAIBBA=</HashCode>
+      <FileName>GameStates\Menu\subMenu\MenuChoixPersonnage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MenuControles" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAEAEgAAAAAAAAAAAAAAAAAAAAAAAkAABAA=</HashCode>
+      <FileName>GameStates\Menu\subMenu\MenuControles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.OptionState" Collapsed="true">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABgAAAAAAQAAAAAAAAAAAAAAAAkAABAA=</HashCode>
+      <FileName>GameStates\OptionState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SplashState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABwgQQAIgYBBAgAAAAAkAAAAaAQQAAAAQAAAAEAIBAA=</HashCode>
+      <FileName>GameStates\SplashState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.StateImageBackground" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABwgQAgAgQAAAgAgAAAAAAAACQABAAAAAAAgAEAIBAA=</HashCode>
+      <FileName>GameStates\StateImageBackground.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.TimerState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBQhQAgAgQAAAgAgAAAGwAAACQIQAAAABAAhAEgIBAA=</HashCode>
+      <FileName>GameStates\TimerState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.InformationGame" Collapsed="true">
+    <Position X="36" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAIAABAAAAQAAABAEgACAAAAAAAEBAAA=</HashCode>
+      <FileName>InformationGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Jeu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAgAAxBAgAAAAAAAgggCAgpAAAAAACIAAEw=</HashCode>
+      <FileName>LogiqueJeu\Jeu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.Round" Collapsed="true">
+    <Position X="36" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAwACAEBQACAAAAAAAAIgAgAgMAAABgAAAQAgQ=</HashCode>
+      <FileName>LogiqueJeu\Round.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.EnnemiScreenManager" Collapsed="true">
+    <Position X="43" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAAAEwEAAAAAEAACAIAAAAAAAAAACCAAAAA=</HashCode>
+      <FileName>Managers\EnnemiScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.IOManager" Collapsed="true">
+    <Position X="39.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQwCIBAEACVBCTCQCGkFCgAgAAgQAAAAAwAIAFhAAAU=</HashCode>
+      <FileName>Managers\IOManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MessageManager" Collapsed="true">
+    <Position X="36" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAAAAEAAAAAAAIAAAAAAAAAAAAAIQAAAAA=</HashCode>
+      <FileName>Managers\MessageManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Notification" Collapsed="true">
+    <Position X="44.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Managers\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ScreenManager" Collapsed="true">
+    <Position X="37.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhQAAEAABbAQAwIpAAAEAAAQCAARAAAQEAAgAAgQAAQ=</HashCode>
+      <FileName>Managers\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.JoueurScreenManager" Collapsed="true">
+    <Position X="43" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEQAVYAFQhIYA4iAIABGEYAIgCAAsMAgIEGAGAQAAgY=</HashCode>
+      <FileName>Managers\UserScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.GrilleUniverselle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAIAAQAAAFwILECAAAEQAGAESImgAAAgmEGQIESI=</HashCode>
+      <FileName>PathFinding\GrilleUniverselle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.Heap&lt;T&gt;" Collapsed="true">
+    <Position X="44.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAIAAAAAAAQAAAADSQAAAAAAAAAQAAA=</HashCode>
+      <FileName>PathFinding\Heap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Node" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgwAAAAIAiAAAkQAAIAAQAAIAAABAggoAEAAASAAAAA=</HashCode>
+      <FileName>PathFinding\Node.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.Pathfinding" Collapsed="true">
+    <Position X="37.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEABAAQAAAQAABAAAAAAAAAAEAAAAACAAAAIAAAQ=</HashCode>
+      <FileName>PathFinding\Pathfinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.RequêtePathManager" Collapsed="true">
+    <Position X="46.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAEAAAQAACAAAAQAAAAAABCAAQAAAAAAIAAQ=</HashCode>
+      <FileName>PathFinding\RequêtePathManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Program" Collapsed="true">
+    <Position X="41.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ManagerAudio" Collapsed="true">
+    <Position X="44.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhQAAAAACAAAIQAAAAAQAFgAIAEAAAAAAAAgAgQAAAQ=</HashCode>
+      <FileName>Système Audio\ManagerAudio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Entité" Collapsed="true">
+    <Position X="3" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAACQAAAAAAAAAAAAAIAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Système Entité\Entité.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MAvatar" Collapsed="true">
+    <Position X="4" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EMQAIAAgAQAAA4igRMlMAAAZFiQdUgoC0IIAgSAAAAQ=</HashCode>
+      <FileName>Système Entité\Entités\MAvatar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.MEnnemi" Collapsed="true">
+    <Position X="3" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASACADAMEAAA4IAAECIAAgAIIJIAAACUIEAIAAAAAQ=</HashCode>
+      <FileName>Système Entité\Entités\MEnnemi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MJoueur" Collapsed="true">
+    <Position X="5.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAA4gAAAAIAAAABAgAAIACAIAAAAAAAAQ=</HashCode>
+      <FileName>Système Entité\Entités\MJoueur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.EntitySystem" Collapsed="true">
+    <Position X="44.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABggAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Système Entité\EntitySystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Grenade" Collapsed="true">
+    <Position X="0.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAwAAAAgAAAAQAQAFAgwAAAAAACAAAAA=</HashCode>
+      <FileName>Système Entité\Grenade.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.DroiteColorée" Collapsed="true">
+    <Position X="12.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQEAAEAAAIgwAACCAAAAAAAAAAAAAIAQAAEAAAAAQ=</HashCode>
+      <FileName>Système Entité\Item\DroiteColorée.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Fusil" Collapsed="true">
+    <Position X="24.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgwwFCABARABJzAAEmAKAggAhQCAEkoZSJCACWAEC4Q=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Fusil.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.Machinegun" Collapsed="true">
+    <Position X="22.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Machinegun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Munition" Collapsed="true">
+    <Position X="31.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Munition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Pistol" Collapsed="true">
+    <Position X="24.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Pistol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Railgun" Collapsed="true">
+    <Position X="26.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Railgun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Shotgun" Collapsed="true">
+    <Position X="29" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Shotgun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Teslagun" Collapsed="true">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Système Entité\Item\Fusil\Teslagun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Interrupteur" Collapsed="true">
+    <Position X="15.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAAAAAAQAAQAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Système Entité\Item\Interrupteur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Item" Collapsed="true">
+    <Position X="24.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQCAAQCACAAAQAAAAAEAAAAAAAQAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Système Entité\Item\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Portail" Collapsed="true">
+    <Position X="17.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAQgQAAAEQIAAAAEAAAAACAQAAAIAAAAAACAAAQ=</HashCode>
+      <FileName>Système Entité\Item\Portail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Balle" Collapsed="true">
+    <Position X="8.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAIAAAAEAAAAAA=</HashCode>
+      <FileName>Système Entité\Item\Projectiles\Balle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Éclair" Collapsed="true">
+    <Position X="10.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAEAQAAAAAAAAAAAAAAIAAIAAAAEAAAAAA=</HashCode>
+      <FileName>Système Entité\Item\Projectiles\Éclair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.RandomItemDrop" Collapsed="true">
+    <Position X="43" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Système Entité\Item\RandomItemDrop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Soin" Collapsed="true">
+    <Position X="33.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Système Entité\Item\Soin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Billboard" Collapsed="true">
+    <Position X="13.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQYAAAAAAAwAgCAAAgQAAAAAAAggEAQBAACAAAAQ=</HashCode>
+      <FileName>Système Graphique\Billboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.CarréColoré" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIQAAAAAAIA4AgGAAAIwAAAAQASggIAQAAQCQQAAQ=</HashCode>
+      <FileName>Système Graphique\CarréColoré.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.CubeColoré" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAACAAIA4AgiAAAIgAAAAAASggoAQAAAGQAAEQ=</HashCode>
+      <FileName>Système Graphique\CubeColoré .cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.CubeÉclairée" Collapsed="true">
+    <Position X="10.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABQAAAAwCAiAAAAAAAAAAARAAgGAAAwgAEAAQ=</HashCode>
+      <FileName>Système Graphique\CubeÉclairé.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.CubeTexturé" Collapsed="true">
+    <Position X="10.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAACAAAA4AgiAEAIgCAAAAAShgoAQAAAWQAAEQ=</HashCode>
+      <FileName>Système Graphique\CubeTexturé.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.GestionnairesLumières" Collapsed="true">
+    <Position X="41.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAAAAIAgAgAAAAAAAAAAAEAAAAAAEAAAAAA=</HashCode>
+      <FileName>Système Graphique\GestionnairesLumières.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ModelManager" Collapsed="true">
+    <Position X="39.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAFAAAACAAwAAABAAgABAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Système Graphique\ModelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MObjetDeBase" Collapsed="true">
+    <Position X="13.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAI4AgAAgAIAAAAAgAKggAQQAAACQAAAQ=</HashCode>
+      <FileName>Système Graphique\ObjetDeBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.PrimitiveDeBase2" Collapsed="true">
+    <Position X="11.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAYAAACAAIAACEAAAAIAIAQAAAAAAAAQ=</HashCode>
+      <FileName>Système Graphique\PrimitiveDeBase2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.PrimitiveDeBaseAnimée2" Collapsed="true">
+    <Position X="11.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAACAEQAAAAQCwABQAABEEgAAACIIAAAgCAAQQAAA=</HashCode>
+      <FileName>Système Graphique\PrimitiveDeBaseAnimée2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.InfoModèle" Collapsed="true">
+    <Position X="46.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAAAEAABAAAAAAAAAAAIAAAEAAAAAIAAAAhAgA=</HashCode>
+      <FileName>Système Graphique\Shaders\InfoModèle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Lumière" Collapsed="true">
+    <Position X="16.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQgAAAAoAAAgAAAAIAAJQAAACEAAAAAAACAAAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\Lumière.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.LumièreTracing" Collapsed="true">
+    <Position X="16.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\LumièreTracing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Matériau" Collapsed="true">
+    <Position X="8.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAgAAAAAAAIAgEAAQAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\Matériau.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MatériauÉclairé" Collapsed="true">
+    <Position X="8.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQAAAAAAACAAAAAAAAAAABAAgCAAAAyABAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\MatériauÉclairé.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MObjetDeBaseAnimé" Collapsed="true">
+    <Position X="13.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAAQAQABAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\MObjetDeBaseAnimé.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MObjetDeBaseAniméEtÉclairé" Collapsed="true">
+    <Position X="13.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABQAAAA0CAqIAAAQAAAAAAQAAgGAAAggAkAAQ=</HashCode>
+      <FileName>Système Graphique\Shaders\ObjetDeBaseAniméEtÉclairé.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ParamètresShaders" Collapsed="true">
+    <Position X="36" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAQAISAQAAAAAAQAAACAAAAAAIACDAAAAAA=</HashCode>
+      <FileName>Système Graphique\Shaders\ParamètresShaders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SphèreDeBase" Collapsed="true">
+    <Position X="0.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAACAEAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Système Graphique\Shaders\SphèreDeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SphèreÉclairée" Collapsed="true">
+    <Position X="0.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABQAAAAwCAiAAAAAAAAAAARAAgGAAAwgAEAAQ=</HashCode>
+      <FileName>Système Graphique\Shaders\SphèreÉclairée.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.BillboardColoréTracing" Collapsed="true">
+    <Position X="13.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAYAAAAAIAAAAAAgAAQAAAAAAAAAMAAAAIAAAAAA=</HashCode>
+      <FileName>Système Graphique\TuileColorée.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Collider" Collapsed="true">
+    <Position X="3" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABCAQAIQAAAAAAAAAAAABAAAQAAQAAIAIA=</HashCode>
+      <FileName>SystèmePhysique\Colliders\Collider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.DroiteCollision" Collapsed="true">
+    <Position X="3" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAAAAABBgIIIAAAAAAAAAAAgAAAACAAAAAAAAII=</HashCode>
+      <FileName>SystèmePhysique\Colliders\DroiteCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.CubeCollision" Collapsed="true">
+    <Position X="5.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIgIAABAAIAIAOCgAAAAAAAABAAAAAEAAAAAAIA=</HashCode>
+      <FileName>SystèmePhysique\Colliders\MCubeCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.Projectile" Collapsed="true">
+    <Position X="9.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAEAAABAwAAACAAAAAAhQAAAAAAARAAAAEAAAA=</HashCode>
+      <FileName>SystèmePhysique\Colliders\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SphereCollision" Collapsed="true">
+    <Position X="0.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>SystèmePhysique\Colliders\SphereCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.CubeDeForce" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAgQAAAAAAAAgAAAAA=</HashCode>
+      <FileName>SystèmePhysique\CubeDeForces\CubeDeForce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.SphereDeForce" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAgAEAAAAAAAgAAAAA=</HashCode>
+      <FileName>SystèmePhysique\CubeDeForces\SphereDeForce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.VolumeDeForce" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAwAAAAAAAAAQAAAFAAAAAAAAAiAAAAA=</HashCode>
+      <FileName>SystèmePhysique\CubeDeForces\VolumeDeForce.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.MMoteurPhysique" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIQgAAAAAAAAAQAAAgAEAAAAAAAQAAAABAAABAAIAUA=</HashCode>
+      <FileName>SystèmePhysique\IMoteurPhysique.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.InformationIntersection" Collapsed="true">
+    <Position X="37.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAIgAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystèmePhysique\InformationIntersection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.MoteurPhysique" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQgAAAAAAAAAQAAAgAEACAAAAAQgAACBAAAFAAIAUA=</HashCode>
+      <FileName>SystèmePhysique\MoteurPhysique.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.MCubePhysique" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABABAwAAAAAAAAAQAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>SystèmePhysique\ObjetsPhysique\MCubePhysique.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.MCubePhysiqueMobile" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystèmePhysique\ObjetsPhysique\MCubePhysiqueMobile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ModelPhysique" Collapsed="true">
+    <Position X="24.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAEAAB4AAAAAAAAAQAAgAIkgAAAAAACAAAAQ=</HashCode>
+      <FileName>SystèmePhysique\ObjetsPhysique\ModelPhysique.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.ObjetPhysique" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgQBAAAcBgAAAgBKQSBAAAAggIABQAgAAIIAQ=</HashCode>
+      <FileName>SystèmePhysique\ObjetsPhysique\ObjetPhysique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.ObjetPhysiqueGraphique" Collapsed="true">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAwAAAAgAIIAQAAgAAEAAAAAAICAAAAQ=</HashCode>
+      <FileName>SystèmePhysique\ObjetsPhysique\ObjetPhysiqueGraphique.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.CubeAdditionnable" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAQQAAAAAQAAAEQAAAAAAABCAAAAA=</HashCode>
+      <FileName>SystèmePhysique\Terrain\CubeAdditionnable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.Pente" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAABAwAAAAAAAAAQAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>SystèmePhysique\Terrain\Pente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtelierXNA.PrimitivePente" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAABIAwAgCAAAAkAgAAAAQggIAQAAACAAAAQ=</HashCode>
+      <FileName>SystèmePhysique\Terrain\PrimitivePente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AtelierXNA.wip_Main" Collapsed="true">
+    <Position X="44.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CmQAgAAAIAIAAxGAgAgCCQAAQEEMABoAAAQADAAAAAQ=</HashCode>
+      <FileName>wip_Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtelierXNA.GameStates.Menu.SubMenu.MenuMultijoueur" Collapsed="true">
+    <Position X="46.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Menu\subMenu\MenuMultijoueur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="AtelierXNA.NotificationPair" Collapsed="true">
+    <Position X="37.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\MessageManager.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AtelierXNA.RequêtePath" Collapsed="true">
+    <Position X="39.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEACAAAA=</HashCode>
+      <FileName>PathFinding\RequêtePath.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AtelierXNA.ItemAudio" Collapsed="true">
+    <Position X="36" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAACBAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Système Audio\ManagerAudio.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="AtelierXNA.GameState" Collapsed="true">
+    <Position X="36" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQgAAAAgAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAIBAA=</HashCode>
+      <FileName>Interfaces\GameState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IArme" Collapsed="true">
+    <Position X="37.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEggAQAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IArme.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IHeapObjet&lt;T&gt;" Collapsed="true">
+    <Position X="39.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IHeapObjet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IModele3d" Collapsed="true">
+    <Position X="41.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAAggAAAAAACAAAAA=</HashCode>
+      <FileName>Interfaces\IModele3d.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IPausable" Collapsed="true">
+    <Position X="43" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Interfaces\IPausable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IPhysique" Collapsed="true">
+    <Position X="44.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPhysique.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AtelierXNA.IPositionable" Collapsed="true">
+    <Position X="46.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPositionable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AtelierXNA.Message" Collapsed="true">
+    <Position X="36" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAEAAgAAAQAAQBAAAAAAAAAAAIQABAABAEAAAQQAE=</HashCode>
+      <FileName>Managers\MessageManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AtelierXNA.TypeEntité" Collapsed="true">
+    <Position X="39.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAgAAAAAAEAAQAQAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Système Entité\Entité.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AtelierXNA.Type_Collider" Collapsed="true">
+    <Position X="37.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystèmePhysique\Colliders\Collider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
