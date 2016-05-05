@@ -9,6 +9,7 @@ Content\Modèle\Boss0.xnb
 Content\Modèle\Boss1.xnb
 Content\Modèle\Boss2.xnb
 Content\Modèle\Cube.xnb
+Content\Modèle\Ennemi1.xnb
 Content\Modèle\Ennemi2.xnb
 Content\Modèle\Ennemi3.xnb
 Content\Modèle\ObjetDrop.xnb
@@ -54,7 +55,7 @@ Content\Textures\RectangleNoir.xnb
 Content\Textures\RectangleRouge.xnb
 Content\Textures\RectangleVert.xnb
 Content\Textures\splash_screen.xnb
-Content\Textures\test2_1.xnb
+Content\Textures\test1_1.xnb
 Content\Textures\Test3_1.xnb
 Content\Textures\Test4_1.xnb
 Content\Textures\ThumbnailP0.xnb
@@ -71,14 +72,12 @@ Content\Textures\test5_1.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
-Content\Modèle\Ennemi1.xnb
 Content\Description\Teslagun.xnb
-Content\Textures\Fleche.xnb
-Content\Textures\ÉcranControles.xnb
-Content\Description\Avatar1.xnb
-Content\Description\Avatar2.xnb
-Content\Description\Avatar3.xnb
-Content\Textures\test1_1.xnb
+Content\Modèle\LanceFlame.xnb
+Content\Modèle\TeslaGun.xnb
+Content\Description\Lasergun.xnb
+Content\Modèle\Lasergun.xnb
+Content\Textures\test2_1.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

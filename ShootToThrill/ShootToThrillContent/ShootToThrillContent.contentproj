@@ -246,6 +246,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Modèle\LanceFlame.fbx">
+      <Name>LanceFlame</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\Lasergun.fbx">
+      <Name>Lasergun</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\TeslaGun.fbx">
+      <Name>TeslaGun</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Personnage\0Description.txt">
       <Name>0Description</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -296,11 +311,6 @@
     </Compile>
     <Compile Include="Textures\splash_screen.png">
       <Name>splash_screen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Textures\test2_1.bmp">
-      <Name>test2_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -479,39 +489,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\Fleche.bmp">
-      <Name>Fleche</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Textures\ÉcranControles.png">
-      <Name>ÉcranControles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Description\Avatar1.xml">
-      <Name>Avatar1</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Description\Avatar2.xml">
-      <Name>Avatar2</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Description\Avatar3.xml">
-      <Name>Avatar3</Name>
+    <Compile Include="Description\Lasergun.xml">
+      <Name>Lasergun</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\test1_1.png">
+    <Compile Include="Textures\test1_1.bmp">
       <Name>test1_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\test2_1.png">
+      <Name>test2_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

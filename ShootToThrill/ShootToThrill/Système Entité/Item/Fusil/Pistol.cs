@@ -25,7 +25,6 @@ namespace AtelierXNA
         {
             Vector3 direction = new Vector3(Direction.X, 0, -Direction.Y);
 
-            direction = DirectionAléatoire(direction);
             Balle balle = new Balle(Game, Position, direction, Portée, Dommage);
             balle.Initialize();
             ListeProjectile.Add(balle);

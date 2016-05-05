@@ -10,9 +10,9 @@
     <MunitionInitial>5</MunitionInitial>
     <IntervalRechargement>0</IntervalRechargement>
     <NomArme>Teslagun</NomArme>
-    <NomModèle>Pistol</NomModèle>
+    <NomModèle>TeslaGun</NomModèle>
     <Cadence>0.05</Cadence>
-    <Dommage>20</Dommage>
+    <Dommage>10</Dommage>
     <Portée>25</Portée>
     <AngleDeTir>0</AngleDeTir>
     <Area>false</Area>

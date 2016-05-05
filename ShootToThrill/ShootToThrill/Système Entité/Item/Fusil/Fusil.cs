@@ -211,9 +211,8 @@ namespace AtelierXNA
            ManagerDeSons.JouerSons(NomBruitFusil);
         }
 
-        protected Vector3 DirectionAléatoire(Vector3 axe)
+        protected Vector3 DirectionAléatoire(Vector3 axe, Random générateurAléatoire)
         {
-            Random générateurAléatoire = new Random();
             double nouvelAngleX = générateurAléatoire.Next(-AngleDeTir, AngleDeTir);
             double nouvelAngleY = générateurAléatoire.Next(-AngleDeTir, AngleDeTir);
 

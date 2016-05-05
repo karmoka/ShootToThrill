@@ -13,7 +13,7 @@
     <NomModèle>Shotgun</NomModèle>
     <Cadence>1</Cadence>
     <Dommage>20</Dommage>
-    <Portée>5</Portée>
+    <Portée>20</Portée>
     <AngleDeTir>20</AngleDeTir>
     <Area>false</Area>
     <NbBallesParTir>3</NbBallesParTir>
