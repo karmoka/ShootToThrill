@@ -174,9 +174,9 @@ namespace AtelierXNA
 
         void AdditionnerColonnes()
         {
-            for (int z = 0; z < TableauCube.GetLength(2); ++z)
+            for (int y = 0; y < TableauCube.GetLength(1); ++y)
             {
-                for (int y = 0; y < TableauCube.GetLength(1); ++y)
+                for (int z = 0; z < TableauCube.GetLength(2); ++z)
                 {
                     for (int x = 0; x < TableauCube.GetLength(0) - 1; ++x)
                     {
@@ -189,8 +189,12 @@ namespace AtelierXNA
                                 ListeCube.Remove(TableauCube[x, y, z]);
                                 ListeCube.Remove(TableauCube[x + 1, y, z]);
                                 ListeCube.Add(nouveauCube);
-                                TableauCube[x, y, z] = nouveauCube;
-                                TableauCube[x + 1, y, z] = nouveauCube;
+
+                                for (int k = 0; k < nouveauCube.CubeColoré.Dimension.X; ++k)
+                                {
+                                    TableauCube[x + 1 - k, y, z] = nouveauCube;
+                                }
+
                             }
                         }
                     }
@@ -200,15 +204,17 @@ namespace AtelierXNA
 
         void AdditionnerLignes()
         {
-            for (int z = 0; z < TableauCube.GetLength(2) - 1; ++z)
+            for (int y = 0; y < TableauCube.GetLength(1); ++y)
             {
-                for (int y = 0; y < TableauCube.GetLength(1); ++y)
+                for (int x = 0; x < TableauCube.GetLength(0); ++x)
                 {
-                    for (int x = 0; x < TableauCube.GetLength(0); ++x)
+                    for (int z = 0; z < TableauCube.GetLength(2) - 1; ++z)
                     {
+                        if (x == 23)
+                        { }
                         if (TableauCube[x, y, z] != null && TableauCube[x, y, z + 1] != null)
                         {
-                            if (EstAdditionnable(TableauCube[x, y, z], TableauCube[x, y, z + 1]))
+                            if (EstAdditionnable(TableauCube[x, y, z], TableauCube[x, y, z + 1]) && BonneDimensionX(TableauCube[x, y, z], TableauCube[x, y, z + 1]))
                             {
                                 CubeAdditionnable nouveauCube = TableauCube[x, y, z] + TableauCube[x, y, z + 1];
                                 nouveauCube.Initialize();
@@ -218,8 +224,10 @@ namespace AtelierXNA
 
                                 for (int k = 0; k < nouveauCube.CubeColoré.Dimension.X; ++k)
                                 {
-                                    TableauCube[x + k, y, z] = nouveauCube;
-                                    TableauCube[x + k, y, z + 1] = nouveauCube;
+                                    for (int h = 0; h < nouveauCube.CubeColoré.Dimension.Z; ++h)
+                                    {
+                                        TableauCube[x + k, y, z + 1 - h] = nouveauCube;
+                                    }
                                 }
                             }
                         }
@@ -238,19 +246,22 @@ namespace AtelierXNA
                     {
                         if (TableauCube[x, y, z] != null && TableauCube[x, y + 1, z] != null)
                         {
-                            if (BonneDirection(TableauCube[x, y, z], TableauCube[x, y + 1, z]) && BonneDimension(TableauCube[x, y, z], TableauCube[x, y + 1, z]))
+                            if (BonneDirection(TableauCube[x, y, z], TableauCube[x, y + 1, z]) && BonneDimensionY(TableauCube[x, y, z], TableauCube[x, y + 1, z]))
                             {
                                 CubeAdditionnable nouveauCube = TableauCube[x, y, z] + TableauCube[x, y + 1, z];
                                 nouveauCube.Initialize();
                                 ListeCube.Remove(TableauCube[x, y, z]);
                                 ListeCube.Remove(TableauCube[x, y + 1, z]);
                                 ListeCube.Add(nouveauCube);
-                                for (int h = 0; h < nouveauCube.CubeColoré.Dimension.X; ++h)
+
+                                for (int g = 0; g < nouveauCube.CubeColoré.Dimension.Y; ++g)
                                 {
-                                    for (int k = 0; k < nouveauCube.CubeColoré.Dimension.Z; ++k)
+                                    for (int h = 0; h < nouveauCube.CubeColoré.Dimension.X; ++h)
                                     {
-                                        TableauCube[x + h, y, z + k] = nouveauCube;
-                                        TableauCube[x + h, y + 1, z + k] = nouveauCube;
+                                        for (int k = 0; k < nouveauCube.CubeColoré.Dimension.Z; ++k)
+                                        {
+                                            TableauCube[x - h, y - g + 1, z - k] = nouveauCube;
+                                        }
                                     }
                                 }
                             }
@@ -263,7 +274,7 @@ namespace AtelierXNA
         bool EstAdditionnable(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             Vector3 direction = cube1.Position - cube2.Position;
-            return direction.X != 0 && direction.Z == 0 || direction.Z != 0 && direction.X == 0;
+            return (direction.X != 0 && direction.Z == 0 || direction.Z != 0 && direction.X == 0);
         }
 
         bool BonneDirection(CubeAdditionnable cube1, CubeAdditionnable cube2)
@@ -272,7 +283,17 @@ namespace AtelierXNA
             return direction.X == 0 && direction.Z == 0;
         }
 
-        bool BonneDimension(CubeAdditionnable cube1, CubeAdditionnable cube2)
+        bool BonneDimensionX(CubeAdditionnable cube1, CubeAdditionnable cube2)
+        {
+            return cube1.CubeColoré.Dimension.X == cube2.CubeColoré.Dimension.X;
+        }
+
+        bool BonneDimensionZ(CubeAdditionnable cube1, CubeAdditionnable cube2)
+        {
+            return cube1.CubeColoré.Dimension.Y == cube2.CubeColoré.Dimension.Y;
+        }
+
+        bool BonneDimensionY(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             return cube1.CubeColoré.Dimension.X == cube2.CubeColoré.Dimension.X && cube1.CubeColoré.Dimension.Z == cube2.CubeColoré.Dimension.Z;
         }
