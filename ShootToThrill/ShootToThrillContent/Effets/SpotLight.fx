@@ -75,30 +75,32 @@ float CalculerNorme(float3 vecteur)
 float4 PixelShaderSpotLight(VertexShaderOutput EntreePS) : COLOR0
 {
 	float3 positionRelative = float3(0, 0, 0);
-	float4 couleurTexture = float4(0, 0, 0, 1);
+	float4 couleurTexture;
 	float4 accumulationCouleur = CouleurLumiereDiffuse;
 	float attenuation = pow(1 - EntreePS.Normale, 2);
 
-	/*if (TextureActive)
+	if (TextureActive)
 	{
 		couleurTexture = tex2D(FormatTexture, EntreePS.CoordonneesTexture);
 	}
 	else
 	{
 		couleurTexture = CouleurLumiereDiffuse;
-	}*/
+	}
+
+	couleurTexture /= 10;
+	float distance = 0;
 
 	for (int i = 0; i < NombreLumieres; i++)
 	{
 		positionRelative = PositionObjet - PositionLumieres[i];
+		distance = length(positionRelative) / 2;
 
 		if (RayonsLumieres[i] > length(positionRelative))
 		{
-			couleurTexture += attenuation * max(dot(EntreePS.Normale, -positionRelative), 0) * CouleursLumieres[i];
+			couleurTexture += attenuation * max(dot(EntreePS.Normale, -positionRelative), 0) * CouleursLumieres[i] / distance;
 		}
 	}
-
-
 
 	//couleurTexture.rgb *= accumulationCouleur.rgb;
 

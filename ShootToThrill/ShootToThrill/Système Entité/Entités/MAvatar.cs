@@ -85,7 +85,7 @@ namespace AtelierXNA
            {
               BougerAvatar();
               BougerArme();
-              ComposanteGraphique.SetPosition(ComposantePhysique.Position);
+              GérerCollisions();
 
               TempsDepuisMAJ = 0;
            }
@@ -223,7 +223,7 @@ namespace AtelierXNA
 
         protected virtual void TournerSurY(Vector2 direction)
         {
-            SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction) + MathHelper.PiOver2,-MathHelper.PiOver2,0));
+            SetRotation(CustomMathHelper.DéterminerRotationModeleBlender(direction));
         }
 
         public Vector3 Vitesse

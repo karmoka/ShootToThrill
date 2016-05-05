@@ -89,11 +89,15 @@ namespace AtelierXNA
             ManagerModele.EnleverModèle(this);
          }
       }
-
-      public override void Draw(GameTime gameTime)
+      public override void Update(GameTime gameTime)
       {
          ComposanteGraphique.SetPosition(Position);
 
+         base.Update(gameTime);
+      }
+
+      public override void Draw(GameTime gameTime)
+      {
          ComposanteGraphique.Draw(gameTime);
          ComposantePhysique.Draw(gameTime);
 

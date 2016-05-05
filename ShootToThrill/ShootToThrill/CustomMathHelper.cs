@@ -58,5 +58,10 @@ namespace AtelierXNA
       {
          return new Vector3(ValeurAbsolue(vecteur.X), ValeurAbsolue(vecteur.Y), ValeurAbsolue(vecteur.Z));
       }
+
+      public static Vector3 DéterminerRotationModeleBlender(Vector2 vecteurRotation)
+      {
+         return new Vector3(CustomMathHelper.AngleDeVecteur2D(vecteurRotation) + MathHelper.PiOver2, -MathHelper.PiOver2, 0);
+      }
    }
 }

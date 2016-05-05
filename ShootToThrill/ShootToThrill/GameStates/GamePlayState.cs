@@ -65,6 +65,8 @@ namespace AtelierXNA
             InitialiserJoueur();
 
             ManagerDeSons.JouerSons("Boss");
+
+            base.Initialize();
         }
 
         public void GénérerViewports()
