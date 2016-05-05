@@ -147,8 +147,8 @@ namespace AtelierXNA
         {
             MEnnemi unEnnemi = new MEnnemi(Game, description, PositionPortailEnnemi, itemDrop);
             unEnnemi.Initialize();
-            ModèleManager.AjouterModele(unEnnemi);
-            MMoteurPhysique.AjouterObjet(unEnnemi);
+            //ModèleManager.AjouterModele(unEnnemi);
+            //MMoteurPhysique.AjouterObjet(unEnnemi);
         }
     }
 }

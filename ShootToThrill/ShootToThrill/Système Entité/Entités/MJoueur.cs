@@ -36,9 +36,10 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
+           base.Initialize();
+
             Score = 0;
             VitesseJoueur = 0.1f; //Arbitraire
-            base.Initialize();
             TypeEnt = TypeEntité.Joueur;
             Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
@@ -152,13 +153,13 @@ namespace AtelierXNA
 
         protected override void Mourir()
         {
-            Fusil fusil = ListeArme.Find(x => x.NomArme == "Pistol");
-            foreach (Fusil f in ListeArme)
-            {
-                RetirerArme(f);
-            }
-            ListeArme.Clear();
-            AjouterArme(fusil);
+           //Fusil fusil = ListeArme.Find(x => x.NomArme == "Pistol");
+           //foreach (Fusil f in ListeArme)
+           //{
+           //   RetirerArme(f);
+           //}
+           //ListeArme.Clear();
+           //AjouterArme(fusil);
             base.Mourir();
         }
 

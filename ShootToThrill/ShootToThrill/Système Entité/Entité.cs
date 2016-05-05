@@ -16,6 +16,7 @@ namespace AtelierXNA
 
    public class Entité : Microsoft.Xna.Framework.DrawableGameComponent
    {
+      protected Options OptionsJeu { get; set; }
       EntitySystem système { get; set; }
       public int UniqueId { get; private set; }
       public TypeEntité TypeEnt { get; protected set; }
@@ -24,6 +25,7 @@ namespace AtelierXNA
          : base(game)
       {
          TypeEnt = TypeEntité.Entité;
+         OptionsJeu = Game.Services.GetService(typeof(Options)) as Options;
       }
 
       public override void Initialize()
@@ -32,12 +34,6 @@ namespace AtelierXNA
          UniqueId = système.ObtenirId(this);
 
          base.Initialize();
-      }
-
-      public override void Update(GameTime gameTime)
-      {
-
-         base.Update(gameTime);
       }
    }
 }

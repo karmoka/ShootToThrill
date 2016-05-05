@@ -221,10 +221,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\PortailMonstre.xnb</Output>
-      <Time>2016-05-02T16:00:28.6829441-04:00</Time>
+      <Time>2016-05-04T02:47:02.2601172-04:00</Time>
       <Dependency>
         <Key>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\PortailMonstre_0.xml</Key>
-        <Value>2016-05-03T13:47:24.935593-04:00</Value>
+        <Value>2016-05-05T08:52:18.3953207-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -459,7 +459,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Ennemi1.xnb</Output>
-      <Time>2016-05-03T19:01:48.1931402-04:00</Time>
+      <Time>2016-05-04T02:26:35.2169306-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Pistol.xml</Source>
@@ -477,7 +477,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar0.xnb</Output>
-      <Time>2016-05-03T22:31:51.3226763-04:00</Time>
+      <Time>2016-05-04T00:05:44.6855342-04:00</Time>
     </Item>
     <Item>
       <Source>Effets\Lumière.fx</Source>
@@ -504,7 +504,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Effets\SpotLight.xnb</Output>
-      <Time>2016-05-02T16:00:28.6219406-04:00</Time>
+      <Time>2016-05-05T09:26:50.0810544-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Portail\material_2.bmp</Source>
@@ -868,7 +868,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\PortailMonstre_0.xml</Output>
-      <Time>2016-05-02T16:00:28.6829441-04:00</Time>
+      <Time>2016-05-04T02:47:02.2601172-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Railgun.fbx</Source>
@@ -1017,7 +1017,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar1.xnb</Output>
-      <Time>2016-05-03T15:59:09.2419387-04:00</Time>
+      <Time>2016-05-04T02:16:33.5893864-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Avatar2.xml</Source>
