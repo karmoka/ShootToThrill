@@ -11,7 +11,6 @@ namespace AtelierXNA
       const int NB_TRIANGLES = 2;
       VertexPositionColor[] Sommets { get; set; }
       Color Couleur { get; set; }
-      Matrix matriceSuplémentaire;
 
       public BillboardColoréTracing(Game jeu, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, 
                           Vector2 étendue, Color couleur, float intervalleMAJ, IPositionable tracing)

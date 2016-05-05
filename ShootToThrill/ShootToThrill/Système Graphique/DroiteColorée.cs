@@ -15,7 +15,6 @@ namespace AtelierXNA
     public class DroiteColorée : PrimitiveDeBaseAnimée2
     {
         const int NB_CROISEMENT = 5;
-        public Caméra CaméraActuelle { get; set; }
 
         public void ChangerCaméra(Caméra cam)
         {
@@ -59,8 +58,7 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            EffetDeBase = new BasicEffect(GraphicsDevice);
-            EffetDeBase.VertexColorEnabled = true;
+            EffetDeBase = Game.Services.GetService(typeof(BasicEffect)) as BasicEffect;//new BasicEffect(GraphicsDevice);
 
             vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), Points.Count(), BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionColor>(Points);
@@ -86,6 +84,7 @@ namespace AtelierXNA
             EffetDeBase.Projection = CaméraActuelle.Projection;
             EffetDeBase.View = CaméraActuelle.Vue;
             EffetDeBase.World = Monde;
+            EffetDeBase.TextureEnabled = false;
             EffetDeBase.VertexColorEnabled = true;
             EffetDeBase.LightingEnabled = false;
 

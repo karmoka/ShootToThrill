@@ -42,16 +42,19 @@ namespace AtelierXNA
             TempsDepuisMAJ = 0;
             TempsDepuisApparition = 0;
             base.Initialize();
+
+            EstTangible = false;
         }
         
         public override void Update(GameTime gameTime)
         {
             float tempsDepuisMAJ = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            TempsDepuisMAJ += tempsDepuisMAJ;
-            TempsDepuisApparition += tempsDepuisMAJ;
+
             if (TempsDepuisMAJ >= IntervalMAJ)
             {
+                TempsDepuisApparition += tempsDepuisMAJ;
                 GérerAnimation();
+
                 if (EstTemporaire && TempsDepuisApparition >= INTERVAL_DISPATITION)
                 {
                     DésactiverItem();

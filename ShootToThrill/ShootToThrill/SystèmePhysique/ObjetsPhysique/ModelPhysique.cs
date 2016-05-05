@@ -10,10 +10,8 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-   public class ModelPhysique : ObjetPhysique, IModele3d, IPositionable
+   public class ModelPhysique : ObjetPhysique, IPhysique, IModele3d, IPositionable
    {
-       float RotationY { get; set; }
-
       string NomModèle { get; set; }
       public MObjetDeBase Modèle { get; set; }
       public float Rayon { get; private set; }
@@ -40,7 +38,6 @@ namespace AtelierXNA
 
       public override void Initialize()
       {
-         RotationY = 0;
          Modèle = new MObjetDeBase(Game, NomModèle, 0.1f, Vector3.Zero, this.Position);
          Modèle.Initialize();
          base.Initialize();
@@ -49,13 +46,6 @@ namespace AtelierXNA
       protected override void LoadContent()
       {
           base.LoadContent();
-      }
-
-       public void RotationSurY(float rotation)
-      {
-          RotationY = rotation;
-          //Modèle.SetRotationY(rotation);
-
       }
 
       public override Collider GetCollider()
@@ -69,7 +59,7 @@ namespace AtelierXNA
 
       public override void Draw(GameTime gameTime)
       {
-          Modèle.SetPosition(Position);
+         Modèle.SetPosition(Position);
          Modèle.Draw(gameTime);
          base.Draw(gameTime);
       }
@@ -78,10 +68,10 @@ namespace AtelierXNA
       {
          Modèle.SetCaméra(cam);
       }
-      public void ChangerCouleur(Color couleur)
-      {
-          Modèle.ChangerCouleur(couleur);
-      }
+      //public void ChangerCouleur(Color couleur)
+      //{
+      //    Modèle.ChangerCouleur(couleur);
+      //}
       public override void SetRotation(Vector3 rotation)
       {
           Modèle.SetRotation(rotation);
@@ -92,6 +82,11 @@ namespace AtelierXNA
           Modèle.SetPosition(position);
 
           base.SetPosition(position);
+      }
+
+      public ObjetPhysique GetObjetPhysique()
+      {
+         return this;
       }
    }
 }

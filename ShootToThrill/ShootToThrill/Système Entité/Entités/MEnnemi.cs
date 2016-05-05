@@ -68,7 +68,7 @@ namespace AtelierXNA
         {
             Pathfinding = Game.Services.GetService(typeof(Pathfinding)) as Pathfinding;
             base.LoadContent();
-            PositionAvatarPlusProche = MMoteurPhysique.GetPositionJoueurPlusProche(Position);
+            PositionAvatarPlusProche = MoteurPhysique.GetPositionJoueurPlusProche(this.Position);//MMoteurPhysique.GetPositionJoueurPlusProche(Position);
             RequêtePathManager.PathRequête(Position, PositionAvatarPlusProche, OnPathFound);
         }
 
@@ -78,7 +78,7 @@ namespace AtelierXNA
             TempsDepuisRechercheAvatar += tempsDepuisMAJ;
             if (TempsDepuisRechercheAvatar >= IntervalRechercheAvatar)
             {
-                PositionAvatarPlusProche = MMoteurPhysique.GetPositionJoueurPlusProche(Position);
+               PositionAvatarPlusProche = MoteurPhysique.GetPositionJoueurPlusProche(this.Position); //MMoteurPhysique.GetPositionJoueurPlusProche(Position);
                 UpdaterComportement(tempsDepuisMAJ);
                 EnnemiScreenManager.Update(gameTime);
                 TempsDepuisRechercheAvatar = 0;
@@ -102,7 +102,7 @@ namespace AtelierXNA
         void DéplacerEnnemi()
         {
             RequêtePathManager.PathRequête(Position, PositionAvatarPlusProche, OnPathFound);
-            ModifierDirection(new Vector2(PositionAvatarPlusProche.X - Position.X, PositionAvatarPlusProche.Z - Position.Z));
+            TournerSurY(new Vector2(PositionAvatarPlusProche.X - Position.X, PositionAvatarPlusProche.Z - Position.Z));
         }
 
         void Attaquer(float tempsDepuisMAJ)
@@ -127,24 +127,24 @@ namespace AtelierXNA
             base.BougerAvatar();
         }
 
-        protected override void ModifierDirection(Vector2 direction)
+        protected override void TournerSurY(Vector2 direction)
         {
-            base.ModifierDirection(direction);
+            base.TournerSurY(direction);
         }
 
         protected override void Mourir()
         {
-            RandomItemDrop itemDrop = new RandomItemDrop(Game);
-            Item item = itemDrop.GetRandomItem(ObjetDrop, Position);
-            if (item != null)
-            {
-                item.Initialize();
-                ManagerModèle.AjouterModele(item);
-                //MMoteurPhysique.AjouterObjet(item as IPhysique);
-            }
-            base.Mourir();
-            ManagerModèle.EnleverModèle(this);
-            MMoteurPhysique.EnleverObjet(this);
+           RandomItemDrop itemDrop = new RandomItemDrop(Game);
+           Item item = itemDrop.GetRandomItem(ObjetDrop, Position);
+           if (item != null)
+           {
+              item.Initialize();
+              ManagerModele.AjouterModele(item);
+              MoteurPhysique.AjouterObjet(item as IPhysique);
+           }
+
+           base.Mourir();
+           this.Dispose();
         }
 
         protected override void GérerCollisions()
@@ -235,9 +235,11 @@ namespace AtelierXNA
         }
         #endregion
 
-        protected override void SetCaméraAutreComposante(Caméra cam)
+        public override void SetCaméra(Caméra cam)
         {
-            EnnemiScreenManager.SetCaméra(cam);
+           EnnemiScreenManager.SetCaméra(cam);
+
+           base.SetCaméra(cam);
         }
 
         public override void Draw(GameTime gameTime)
