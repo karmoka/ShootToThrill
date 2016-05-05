@@ -17,7 +17,7 @@ namespace AtelierXNA
        public List<IPhysique> ListeCollision { get; private set; }
        protected Options OptionJeu { get; private set; }
 
-       public bool EstTangible { get; protected set; }
+       public bool EstTangible { get; set; }
        private Vector3 _position;
        public Vector3 Position
        {
@@ -30,7 +30,7 @@ namespace AtelierXNA
            }
        }
        private Vector3 Rotation { get; set; }
-      protected bool EstImmuable { get; set; }
+      public bool EstImmuable { get; set; }
       public Vector3 Vitesse { get; protected set; }
       private Vector3 Accélération { get; set; }
       private Vector3 ForceRésultante { get; set; }
@@ -103,7 +103,7 @@ namespace AtelierXNA
 
       public void Intégrer(float deltaT)
       {
-         if(MasseInverse != 0)
+         if(!EstImmuable && MasseInverse != 0)
          {
             CalculerForceRésultantes();
             Accélération = ForceRésultante * MasseInverse;

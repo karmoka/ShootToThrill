@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
-    public class Portail : Item
+   public class Portail : Item
     {
         const int NB_JOUEUR_MIN = 2;
         public bool EstPortailActif { get; private set; }

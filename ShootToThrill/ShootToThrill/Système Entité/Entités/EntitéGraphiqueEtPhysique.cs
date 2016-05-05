@@ -16,8 +16,10 @@ namespace AtelierXNA
    /// <summary>
    /// This is a game component that implements IUpdateable.
    /// </summary>
-   class EntitéGraphiqueEtPhysique : Entité, IPhysique, IModele3d
+   public class EntitéGraphiqueEtPhysique : Entité, IPhysique, IModele3d
    {
+      string NOM_TEXTURE_DÉFAUT = "tile_12";
+
       bool PhysiqueActivé;
       bool GraphiqueActivé;
 
@@ -33,6 +35,13 @@ namespace AtelierXNA
          ComposantePhysique = new ObjetPhysique(game, description.DescriptionComposantePhysique, position);
          ComposanteGraphique = new MObjetDeBaseAniméEtÉclairé(game, description.DescriptionComposanteGraphique, position, OptionsJeu.IntervalMAJStandard);
       }
+      public EntitéGraphiqueEtPhysique(Game game, string NomModèle, Vector3 position)
+         : base(game)
+      {
+         ComposantePhysique = new ObjetPhysique(game, position);
+         ComposanteGraphique = new MObjetDeBaseAniméEtÉclairé(game, NomModèle, NOM_TEXTURE_DÉFAUT, 0.1f, new Vector3(0,-MathHelper.PiOver2,0), position, "Spotlight", new Lumière(game), OptionsJeu.IntervalMAJStandard); 
+      }
+
       public EntitéGraphiqueEtPhysique(Game game,IModele3d composanteGraphique, ObjetPhysique composantePhysique)
          : base(game)
       {

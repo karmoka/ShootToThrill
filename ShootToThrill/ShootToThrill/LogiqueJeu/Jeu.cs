@@ -13,7 +13,7 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-    public class Jeu : DrawableGameComponent, IModele3d
+   public class Jeu : DrawableGameComponent, IModele3d
     {
         Round Round { get; set; }
         public Portail PortailJoueur { get; private set; }

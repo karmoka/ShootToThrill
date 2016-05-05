@@ -40,8 +40,8 @@ namespace AtelierXNA
             VitesseJoueur = 0.1f; //Arbitraire
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
-            Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
-            //Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            //Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Lasergun(Game, Game.Content.Load<DescriptionFusil>("Description/Lasergun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(0,0,0) + Vector3.Up, 0.005f, 0.02f);
@@ -101,46 +101,46 @@ namespace AtelierXNA
                 Vitesse += new Vector3(0, 4, 0);
             }
             if (ManagerDeControle.EstJoystickDroitActif(IndexJoueur) || ManagerDeControle.EstOrientationActif(IndexJoueur))
-                {
-                    Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
-                    Vector3 direction3 = Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction);
-                    TournerSurY(direction);
-                //ComposanteGraphique.SetRotation(CustomMathHelper.AngleDeVecteur2D(direction));
+            {
+               Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
+               Vector3 direction3 = Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction);
+               TournerSurY(direction);
             }
+
             base.BougerAvatar();
         }
 
         protected override void TournerSurY(Vector2 direction)
         {
-            ArmeSélectionnée.SetRotation(Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction));
+           ArmeSélectionnée.SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction), MathHelper.Pi, MathHelper.Pi));
             ArmeSélectionnée.ChangerDirection(direction);
             base.TournerSurY(direction);
         }
 
         protected override void GérerCollisions()
         {
-            foreach (InformationIntersection i in ComposantePhysique.ListeCollision)
+            foreach (IPhysique i in ComposantePhysique.ListeCollision)
             {
                 //Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
-                if (i.ObjetB is Fusil)
+                if (i is Fusil)
                 {
-                    AjouterArme(i.ObjetB as Fusil);
+                    AjouterArme(i as Fusil);
                 }
-                else if (i.ObjetB is Munition)
+                else if (i is Munition)
                 {
-                    AjouterMunition(i.ObjetB as Munition);
+                    AjouterMunition(i as Munition);
                 }
-                else if (i.ObjetB is Soin)
+                else if (i is Soin)
                 {
-                    AjouterVie(i.ObjetB as Soin);
+                    AjouterVie(i as Soin);
                 }
-                else if (i.ObjetB is MEnnemi)
+                else if (i is MEnnemi)
                 {
-                    RetirerVie((i.ObjetB as MEnnemi).Domage);
+                    RetirerVie((i as MEnnemi).Domage);
                 }
-                else if (i.ObjetB is Interrupteur)
+                else if (i is Interrupteur)
                 {
-                    (i.ObjetB as Interrupteur).ChangerGravité();
+                    (i as Interrupteur).ChangerGravité();
                 }
             }
 

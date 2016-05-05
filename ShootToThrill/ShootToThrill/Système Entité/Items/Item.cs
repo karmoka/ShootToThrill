@@ -16,7 +16,7 @@ namespace AtelierXNA
     /// <summary>
     /// This is a game component that implements IUpdateable.
     /// </summary>
-    public class Item : ModelPhysique
+     public class Item : EntitéGraphiqueEtPhysique 
     {
         const float INTERVAL_DISPATITION = 10f;
         float TempsDepuisMAJ { get; set; }
@@ -31,7 +31,7 @@ namespace AtelierXNA
         //}
 
         public Item(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ, bool estTemporaire)
-            : base(game, positionInitiale, rayon, nomModèle)
+            : base(game, nomModèle, positionInitiale)
         {
             IntervalMAJ = intervalMAJ;
             EstTemporaire = estTemporaire;
@@ -43,7 +43,8 @@ namespace AtelierXNA
             TempsDepuisApparition = 0;
             base.Initialize();
 
-            EstTangible = false;
+            ComposantePhysique.EstTangible = false;
+            ComposantePhysique.EstImmuable = true;
         }
         
         public override void Update(GameTime gameTime)

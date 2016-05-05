@@ -134,12 +134,12 @@ namespace AtelierXNA
             NbBallesParTir = description.NbBallesParTir;
             IntervalRechargement = description.IntervalRechargement;
 
-            EstImmuable = true;
+            ComposantePhysique.EstImmuable = true;
         }
 
         public override void Initialize()
         {
-            EstImmuable = true;
+           ComposantePhysique.EstImmuable = true;
             Direction = new Vector2(0, 1);
             TempsDepuisDernierTir = 0;
             TempsDepuisDebutJeu = 0;
@@ -326,7 +326,7 @@ namespace AtelierXNA
 
         public void ChangerVitesse(Vector3 vitesse)
         {
-            Vitesse += vitesse;
+           ComposantePhysique.SetVitesse(ComposantePhysique.Vitesse + vitesse);
         }
 
         int SetAngleRotation(int angle)
@@ -334,13 +334,13 @@ namespace AtelierXNA
             return angle < ZERO ? ZERO : angle % MAX_DEGRÉS;// (float)MathHelper.ToDegrees(MathHelper.TwoPi);// ? angle - (float)MathHelper.TwoPi : angle;
         }
 
-        public override void EnCollision(IPhysique autre)
-        {
-            if (autre is MJoueur)
-            {
-                ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
-            }
-        }
+        //public override void EnCollision(IPhysique autre)
+        //{
+        //    if (autre is MJoueur)
+        //    {
+        //        ManagerDeMessage.AjouterÉvénement((int)Message.DésactivationSupportFusil);
+        //    }
+        //}
 
         public new void SetCaméra(Caméra cam)
         {

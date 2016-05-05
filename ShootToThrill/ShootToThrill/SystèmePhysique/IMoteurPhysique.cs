@@ -13,7 +13,7 @@ namespace AtelierXNA
     /// <summary>
     /// Gère la physique de toute les entités incluants les collisions et la gestion de collision
     /// </summary>
-   class MMoteurPhysique : GameComponent, IPausable
+   public class MMoteurPhysique : GameComponent, IPausable
    {
       public List<IPhysique> ListePhysique { get; private set; }
 
