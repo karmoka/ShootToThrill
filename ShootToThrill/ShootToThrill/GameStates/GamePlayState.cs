@@ -126,13 +126,13 @@ namespace AtelierXNA
         void CréerJoueurs()
         {
            DescriptionAvatar description;
-           //InformationJeu.AjouterJoueur(PlayerIndex.Two);
-           //InformationJeu.SetPlayerAvatar(1, 1);
+           InformationJeu.AjouterJoueur(PlayerIndex.Two);
+           InformationJeu.SetPlayerAvatar(1, 1);
 
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
                 description = Game.Content.Load<DescriptionAvatar>("Description/Avatar" + InformationJeu.idPlayers[i]);
-                ListeJoueur.Add(new MJoueur(Game, description, Jeu.PortailJoueur.Position, (PlayerIndex)i));
+                ListeJoueur.Add(new MJoueur(Game, description, Jeu.PortailJoueur.Position + Vector3.Up*i, (PlayerIndex)i));
             }
         }
         /// <summary>
@@ -143,15 +143,12 @@ namespace AtelierXNA
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {
                 ListeJoueur[i].Initialize();
-                GestionnaireDeLumières.AjouterLumières(new LumièreTracing(Game, ListeJoueur[i].Position, new Vector3(255, 0, 0), 10, ListeJoueur[i]));
+                GestionnaireDeLumières.AjouterLumières(new LumièreTracing(Game, ListeJoueur[i].Position, InformationJeu.CouleursJoueurs[i].ToVector3(), 10, ListeJoueur[i]));
                 ManagerModèle.AjouterCaméra(new CaméraTracing(Game, ListeJoueur[i].Position, Vector3.Up, ListeJoueur[i], TableauViewports[i]));
-
-                ManagerModèle.AjouterModele(ListeJoueur[i]);
-                ManagerPhysique.AjouterObjet(ListeJoueur[i]);
             }
-
-            //GestionnaireDeLumières.AjouterLumières(new Lumière(Game, new Vector3(5, 5, 5), Color.Blue.ToVector3(), 20, 0, Vector3.Zero, Vector4.Zero));
         }
+
+
         void InitialiserManagers()
         {
             OptionsJeu = Game.Services.GetService(typeof(Options)) as Options;
@@ -219,7 +216,9 @@ namespace AtelierXNA
 
         public void Update(GameTime gametime)
         {
-           float time = (float)gametime.ElapsedGameTime.TotalSeconds;
+           //float time = (float)gametime.ElapsedGameTime.TotalSeconds;
+           GérerJoueurs();
+
             if (GestionnaireInput.EstOptionSélectionner((PlayerIndex)0))
             {
                 if (OptionActivé)
@@ -233,6 +232,14 @@ namespace AtelierXNA
                     OptionActivé = true;
                 }
             }
+        }
+
+       void GérerJoueurs()
+        {
+          if(ListeJoueur.Count(x => x.EstMort) == ListeJoueur.Count)
+          {
+             ManagerMessage.AjouterÉvénement((int)Message.GameState_TransitionMenu);
+          }
         }
 
         public void Draw(GameTime gametime, float ordre)

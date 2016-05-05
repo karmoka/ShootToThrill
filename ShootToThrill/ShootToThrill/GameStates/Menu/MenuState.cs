@@ -22,6 +22,7 @@ namespace AtelierXNA
       const float LARGEUR_MENUS = 200;
       const int NB_JOUEURS_MAX = 4;
       const string MESSAGE_APPUYER_START = "Appuyer sur Start";
+      const string NOM_SONS_PLAYERJOIN = "Happy";
 
       Textbox[] TableauJoueurActif { get; set; }
       bool[] JoueursActif { get; set; }
@@ -96,7 +97,7 @@ namespace AtelierXNA
             if (GamePad.GetState((PlayerIndex)i).IsConnected && GestionnaireInput.EstNouveauBouton(Buttons.Start, (PlayerIndex)i))
             {
                JoueursActif[i] = true;
-               ManagerDeSons.JouerSons("Happy");
+               ManagerDeSons.JouerSons(NOM_SONS_PLAYERJOIN);
             }
             else if (!GamePad.GetState((PlayerIndex)i).IsConnected)
             {

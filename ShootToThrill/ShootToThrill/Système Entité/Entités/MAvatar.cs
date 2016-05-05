@@ -78,10 +78,13 @@ namespace AtelierXNA
             ComposanteGraphique.Initialize();
             ComposantePhysique.Initialize();
             ListeArme = new List<Fusil>(NOMBRE_FUSIL_MAX);
-            IntervalMAJ = 1 / 60f;
+
+            IntervalMAJ = OptionsJeu.IntervalMAJStandard;
             TempsDepuisMAJ = 0;
+
             IndexArme = 0;
             Vie = VieMax;
+
             base.Initialize();
         }
 
@@ -89,27 +92,30 @@ namespace AtelierXNA
         {
             ManagerModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
             MMoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
+
+            ManagerModèle.AjouterModele(this);
+            MMoteurPhysique.AjouterObjet(this);
             base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
-            TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (!EstMort)
-            {
-                if (TempsDepuisMAJ >= IntervalMAJ)
-                {
-                    BougerAvatar();
-                    BougerArme();
-                    ComposanteGraphique.SetPosition(ComposantePhysique.Position);
-                    TempsDepuisMAJ = 0;
-                }
-                if (AUnFusil)
-                {
-                    ArmeSélectionnée.Update(gameTime); //
-                }
-            }
-            base.Update(gameTime);
+           TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+           if (!EstMort && TempsDepuisMAJ >= IntervalMAJ)
+           {
+              BougerAvatar();
+              BougerArme();
+              ComposanteGraphique.SetPosition(ComposantePhysique.Position);
+
+              TempsDepuisMAJ = 0;
+           }
+           if (!EstMort && AUnFusil)
+           {
+              ArmeSélectionnée.Update(gameTime); //
+           }
+
+           base.Update(gameTime);
         }
 
         public ObjetPhysique GetObjetPhysique()
@@ -119,9 +125,7 @@ namespace AtelierXNA
 
         protected virtual void BougerAvatar()
         {
-            if (Position.X > DISTANCE_MAX || Position.X < -DISTANCE_MAX ||
-                Position.Y > DISTANCE_MAX || Position.Y < -DISTANCE_MAX ||
-                Position.Z > DISTANCE_MAX || Position.Z < -DISTANCE_MAX)
+            if (Position.Length() >= DISTANCE_MAX)
             {
                 Mourir();
             }
@@ -138,10 +142,10 @@ namespace AtelierXNA
 
         protected virtual void GérerCollisions()
         {
-            for (int i = 0; i < ComposantePhysique.ListeCollision.Count; ++i)
-            {
+            //for (int i = 0; i < ComposantePhysique.ListeCollision.Count; ++i)
+            //{
 
-            }
+            //}
         }
 
         public void AjouterArme(Fusil fusil)
@@ -225,30 +229,23 @@ namespace AtelierXNA
 
         protected virtual void Mourir()
         {
-            //ComposanteGraphique = null;
-            //ComposantePhysique = null;
             Vie = MORT;
+
+            MMoteurPhysique.EnleverObjet(this);
+            ManagerModèle.EnleverModèle(this);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            if (!EstMort)
-            {
-                ComposanteGraphique.Draw(gameTime);
-                ComposantePhysique.Draw(gameTime);
+           ComposanteGraphique.Draw(gameTime);
+           ComposantePhysique.Draw(gameTime);
 
-                DrawArme(gameTime);
+           if (AUnFusil)
+           {
+              ArmeSélectionnée.Draw(gameTime);
+           }
 
-                base.Draw(gameTime);
-            }
-        }
-
-        void DrawArme(GameTime gameTime)
-        {
-            if (AUnFusil)
-            {
-                ArmeSélectionnée.Draw(gameTime);
-            }
+           base.Draw(gameTime);
         }
 
         public Vector3 Position
@@ -276,7 +273,7 @@ namespace AtelierXNA
         public Vector3 Vitesse
         {
             get { return ComposantePhysique.Vitesse; }
-            set
+            protected set
             {
                 ComposantePhysique.SetVitesse(value);
             }
@@ -290,11 +287,11 @@ namespace AtelierXNA
             }
             protected set
             {
-                _vie = SetVie(value);
+                _vie = VérifierValeurVie(value);
             }
         }
 
-        int SetVie(int vie)
+        int VérifierValeurVie(int vie)
         {
             return vie >= MORT ? vie <= VieMax ? vie : VieMax : MORT;
         }
@@ -305,7 +302,7 @@ namespace AtelierXNA
             {
                 return ListeArme[IndexArme];
             }
-            protected set
+            private set
             {
                 ListeArme[IndexArme] = value;
             }
@@ -322,6 +319,7 @@ namespace AtelierXNA
 
         int SetIndexArme(int index)
         {
+           //Si l'index dépasse la liste, il est retourné à zéro.
             return index < INDEX_PREMIER_FUSIL ? ListeArme.Count - 1 : index > ListeArme.Count - 1 ? INDEX_PREMIER_FUSIL : index;
         }
 
