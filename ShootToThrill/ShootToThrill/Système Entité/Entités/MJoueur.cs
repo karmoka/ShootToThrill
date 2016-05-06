@@ -112,7 +112,7 @@ namespace AtelierXNA
 
         protected override void TournerSurY(Vector2 direction)
         {
-           ArmeSélectionnée.SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction), MathHelper.Pi, MathHelper.Pi));
+            ArmeSélectionnée.SetRotation(CustomMathHelper.DéterminerRotationModeleBlender(direction) + new Vector3(MathHelper.PiOver2,0,0)); //new Vector3(CustomMathHelper.AngleDeVecteur2D(direction), MathHelper.Pi, MathHelper.Pi)
             ArmeSélectionnée.ChangerDirection(direction);
             base.TournerSurY(direction);
         }

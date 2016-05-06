@@ -96,7 +96,7 @@ float4 PixelShaderSpotLight(VertexShaderOutput EntreePS) : COLOR0
 		positionRelative = PositionObjet - PositionLumieres[i];
 		distance = length(positionRelative) / 2;
 
-		if (RayonsLumieres[i] > length(positionRelative))
+		//if (RayonsLumieres[i] > length(positionRelative))
 		{
 			couleurTexture += attenuation * max(dot(EntreePS.Normale, -positionRelative), 0) * CouleursLumieres[i] / distance;
 		}

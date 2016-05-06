@@ -75,15 +75,19 @@ namespace AtelierXNA
 
         void CréerJoueur()
         {
-            foreach (MJoueur j in MMoteurPhysique.ListePhysique)
-            {
-                if (j.EstMort && Cpt == (int)j.IndexJoueur && InformationGame.NBJoueur >= NB_JOUEUR_MIN)
-                {
-                    j.Respawn();
-                    //    MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "ship2", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
-                    //    ListeMJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Position), (PlayerIndex)Cpt));
-                }
-            }
+            //foreach (MJoueur j in MMoteurPhysique.ListePhysique)
+            //{
+            //    if (j.EstMort && Cpt == (int)j.IndexJoueur && InformationGame.NBJoueur >= NB_JOUEUR_MIN)
+            //    {
+            //        j.Respawn();
+            //        //    MObjetDeBaseAniméEtÉclairé o = new MObjetDeBaseAniméEtÉclairé(Game, "ship2", "RectangleBleu", 0.001f, Vector3.Zero, Vector3.One, "Spotlight", LumièreJeu, 1 / 60f);
+            //        //    ListeMJoueur.Add(new MJoueur(Game, o, new ObjetPhysique(Game, Position), (PlayerIndex)Cpt));
+            //    }
+            //}
+        }
+        public override void SetCaméra(Caméra caméra)
+        {
+           base.SetCaméra(caméra);
         }
     }
 }

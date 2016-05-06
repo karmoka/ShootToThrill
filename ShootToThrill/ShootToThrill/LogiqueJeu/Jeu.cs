@@ -138,18 +138,18 @@ namespace AtelierXNA
 
         public void SetCaméra(Caméra cam)
         {
-            foreach (Item i in ListeItem)
-            {
-                i.SetCaméra(cam);
-            }
+           //foreach (Item i in ListeItem)
+           //{
+           //   i.SetCaméra(cam);
+           //}
         }
 
         public override void Draw(GameTime gameTime)
         {
-            foreach (Item i in ListeItem)
-            {
-                i.Draw(gameTime);
-            }
+            //foreach (Item i in ListeItem)
+            //{
+            //    i.Draw(gameTime);
+            //}
             base.Draw(gameTime);
         }
     }
