@@ -7,7 +7,7 @@
       <NomTextureModèle>Image1</NomTextureModèle>
       <NomEffetAffichage>Spotlight</NomEffetAffichage>
       <Rotation>0 -1.57079637 0</Rotation>
-      <Échelle>0.5</Échelle>
+      <Échelle>0.001</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>
       <MasseInverse>0.3333</MasseInverse>

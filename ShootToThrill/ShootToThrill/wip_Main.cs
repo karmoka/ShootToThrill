@@ -163,15 +163,8 @@ namespace AtelierXNA
          ManagerDeSons.AjouterSons("Boss");
          ManagerDeSons.AjouterSons("Pistol");
          ManagerDeSons.AjouterSons("Shotgun");
-         ManagerDeSons.AjouterSons("Laser");
          ManagerDeSons.AjouterSons("MachineGun");
          ManagerDeSons.AjouterSons("GrenadeLauncher");
-         ManagerDeSons.AjouterSons("Click");
-         ManagerDeSons.AjouterSons("Sad");
-         ManagerDeSons.AjouterSons("Happy");
-         ManagerDeSons.AjouterSons("Button");
-         ManagerDeSons.AjouterSons("Electricity");
-
       }
 
       protected override void Update(GameTime gameTime)
