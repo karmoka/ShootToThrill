@@ -139,5 +139,13 @@ namespace AtelierXNA
       {
          return new SphereCollision(Position, 1f);
       }
+
+      protected override void Dispose(bool disposing)
+      {
+         MoteurPhysique.EnleverObjet(this);
+         ManagerModele.EnleverModèle(this);
+
+         base.Dispose(disposing);
+      }
    }
 }

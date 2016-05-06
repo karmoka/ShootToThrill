@@ -88,7 +88,7 @@ namespace AtelierXNA
 
         void UpdaterComportement(float tempsDepuisMAJ)
         {
-            EstEnTrainAttaquer = PositionAvatarPlusProche.Length() <= 1;
+            EstEnTrainAttaquer = (PositionAvatarPlusProche - this.Position).Length() <= 1.5f;
             if (!EstEnTrainAttaquer)
             {
                 DéplacerEnnemi();
