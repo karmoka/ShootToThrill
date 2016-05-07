@@ -63,5 +63,10 @@ namespace AtelierXNA
       {
          return new Vector3(CustomMathHelper.AngleDeVecteur2D(vecteurRotation) + MathHelper.PiOver2, -MathHelper.PiOver2, 0);
       }
+
+      public static float E(float exponent)
+      {
+         return (float)Math.Pow(10, exponent);
+      }
    }
 }

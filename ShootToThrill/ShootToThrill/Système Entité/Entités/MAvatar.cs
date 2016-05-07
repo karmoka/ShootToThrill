@@ -75,6 +75,8 @@ namespace AtelierXNA
             Vie = VieMax;
 
             base.Initialize();
+
+            ComposantePhysique.ÉtatsPhysiques.Add(new ÉtatPhysique(Game, CustomMathHelper.E(-4), null));
         }
 
         public override void Update(GameTime gameTime)
@@ -129,8 +131,9 @@ namespace AtelierXNA
 
         public void AjouterArme(Fusil fusil)
         {
-            if (!ListeArme.Exists(x => x.NomArme == fusil.NomArme))
+            if (!ListeArme.Exists(x => x.NomArme == fusil.NomArme) && fusil != null)
             {
+                fusil.IdPropriétaire = this.UniqueId;
                 ListeArme.Add(fusil);
                 IndexArme = ListeArme.FindIndex(x => x.NomArme == fusil.NomArme);
             }
@@ -140,6 +143,7 @@ namespace AtelierXNA
 
         protected void RetirerArme(Fusil fusil)
         {
+            fusil.IdPropriétaire = Entité.ID_AUCUN_PROPRIÉTAIRE;
             ListeArme.Remove(fusil);
         }
 

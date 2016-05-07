@@ -121,30 +121,39 @@ namespace AtelierXNA
         {
             foreach (IPhysique i in ComposantePhysique.ListeCollision)
             {
-                //Vitesse = new Vector3(Vitesse.X, Vitesse.Y * MasseInverse, Vitesse.Z); //TODO CHANGER CA
-                if (i is Fusil)
-                {
-                    AjouterArme(i as Fusil);
-                }
-                else if (i is Munition)
-                {
-                    AjouterMunition(i as Munition);
-                }
-                else if (i is Soin)
-                {
-                    AjouterVie(i as Soin);
-                }
-                else if (i is MEnnemi)
-                {
-                    RetirerVie((i as MEnnemi).Domage);
-                }
-                else if (i is Interrupteur)
-                {
-                    (i as Interrupteur).ChangerGravité();
-                }
+               if (i is Item && (i as Item).IdPropriétaire == ID_AUCUN_PROPRIÉTAIRE) //On ne veut pas acceder aux items qu'un autre joueur promene autour de lui
+               {
+                  GérerItems(i as Item);
+               }
+
+               else if (i is MEnnemi)
+               {
+                  RetirerVie((i as MEnnemi).Domage);
+               }
+                
             }
 
             base.GérerCollisions();
+        }
+
+       void GérerItems(Item i)
+        {
+           if (i is Fusil)
+           {
+              AjouterArme(i as Fusil);
+           }
+           else if (i is Munition)
+           {
+              AjouterMunition(i as Munition);
+           }
+           else if (i is Soin)
+           {
+              AjouterVie(i as Soin);
+           }
+           else if (i is Interrupteur)
+           {
+              (i as Interrupteur).ChangerGravité();
+           }
         }
 
         public void Respawn()
