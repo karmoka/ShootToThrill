@@ -68,7 +68,6 @@ Content\Textures\strip1.xnb
 Content\Textures\strip2.xnb
 Content\Textures\strip3.xnb
 Content\Textures\strip4.xnb
-Content\Textures\test5_1.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
@@ -78,6 +77,7 @@ Content\Modèle\TeslaGun.xnb
 Content\Description\Lasergun.xnb
 Content\Modèle\Lasergun.xnb
 Content\Textures\test2_1.xnb
+Content\Textures\test5_1.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb
