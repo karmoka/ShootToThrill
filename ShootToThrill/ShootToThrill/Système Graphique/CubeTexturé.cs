@@ -69,7 +69,7 @@ namespace AtelierXNA
 
         protected override void LoadContent()
         {
-            EffetDeBase = new BasicEffect(GraphicsDevice);
+            EffetDeBase = Game.Services.GetService(typeof(BasicEffect)) as BasicEffect;//new BasicEffect(GraphicsDevice);
             gestionnaireDeTextures = Game.Services.GetService(typeof(RessourcesManager<Texture2D>)) as RessourcesManager<Texture2D>;
             Image = gestionnaireDeTextures.Find(NomImage);
 

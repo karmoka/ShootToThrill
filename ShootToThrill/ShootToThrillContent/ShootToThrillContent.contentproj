@@ -261,6 +261,21 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Modèle\Mitraillette.fbx">
+      <Name>Mitraillette</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\butterfly.fbx">
+      <Name>butterfly</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Modèle\laser.fbx">
+      <Name>laser</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Personnage\0Description.txt">
       <Name>0Description</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -504,7 +519,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\test2_1.png">
+    <Compile Include="Textures\Fleche.bmp">
+      <Name>Fleche</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\test2_1.bmp">
       <Name>test2_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

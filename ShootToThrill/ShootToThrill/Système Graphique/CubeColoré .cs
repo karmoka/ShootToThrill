@@ -68,7 +68,7 @@ namespace AtelierXNA
 
       protected override void LoadContent()
       {
-          EffetDeBase = new BasicEffect(GraphicsDevice);
+         EffetDeBase = Game.Services.GetService(typeof(BasicEffect)) as BasicEffect;//new BasicEffect(GraphicsDevice);
           EffetDeBase.VertexColorEnabled = true;
          base.LoadContent();
       }
@@ -172,9 +172,10 @@ namespace AtelierXNA
          {
             passeEffet.Apply();
 
-            RasterizerState JeuRasterizerState = new RasterizerState();
-            JeuRasterizerState.CullMode = CullMode.None;
-            GraphicsDevice.RasterizerState = JeuRasterizerState;
+            //RasterizerState JeuRasterizerState = new RasterizerState();
+            //JeuRasterizerState.CullMode = CullMode.None;
+            EffetDeBase.TextureEnabled = false;
+            //GraphicsDevice.RasterizerState = JeuRasterizerState;
 
             GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.TriangleStrip, Sommets1, 0, NB_SOMMETS - 2);
             GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.TriangleStrip, Sommets2, 0, NB_SOMMETS - 2);

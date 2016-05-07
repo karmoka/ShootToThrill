@@ -10,7 +10,7 @@ namespace AtelierXNA
 
       public void Update()
       {
-         Position = ObjetàTracer.Position;
+         Position = ObjetàTracer.Position + Vector3.Up;
       }
 
       public LumièreTracing(Game jeu, Vector3 position, Vector3 couleur, float rayon, IPositionable objetÀTracer)

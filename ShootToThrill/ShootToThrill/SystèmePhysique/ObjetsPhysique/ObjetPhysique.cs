@@ -12,32 +12,31 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
+      public List<ÉtatPhysique> ÉtatsPhysiques { get; set; }
+
       const float RAYON_DÉFAUT = 1.25f;
+      private Collider VolumeDeCollision { get; set; }
 
-       public List<IPhysique> ListeCollision { get; private set; }
-       protected Options OptionJeu { get; private set; }
+      public List<IPhysique> ListeCollision { get; private set; }
+      protected Options OptionJeu { get; private set; }
 
-       public bool EstTangible { get; protected set; }
-       private Vector3 _position;
-       public Vector3 Position
-       {
-           get { return _position; }
-           private set
-           {
-               _position = value;
-               if (float.IsNaN(value.X))
-                   throw new NotFiniteNumberException();
-           }
-       }
-       private Vector3 Rotation { get; set; }
-      protected bool EstImmuable { get; set; }
+      public float Charge
+      {
+         get { return ÉtatsPhysiques.Sum(x => x.Charge); }
+      }
+      protected float MasseInverse { get; private set; }
+
+      public bool EstTangible { get; set; }
+      public bool EstImmuable { get; set; }
+
+      public Vector3 Position { get; private set; }
+      private Vector3 Rotation { get; set; }
       public Vector3 Vitesse { get; protected set; }
       private Vector3 Accélération { get; set; }
+
       private Vector3 ForceRésultante { get; set; }
       private List<Vector3> Forces { get; set; }
       private Vector3 ForceGravitationnelle { get; set; }
-      protected float MasseInverse { get; private set; }
-      private Collider VolumeDeCollision { get; set; }
 
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse, Collider volumeCollision)
          : base(game)
@@ -51,7 +50,7 @@ namespace AtelierXNA
       }
 
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse)
-         :base(game)
+         : base(game)
       {
          Position = position;
          Vitesse = vitesse;
@@ -62,48 +61,52 @@ namespace AtelierXNA
       }
 
       public ObjetPhysique(Game game, DescriptionObjetPhysique description, Vector3 position)
-          : base(game)
+         : base(game)
       {
-          Position = position;
-          Vitesse = description.Vitesse;
-          MasseInverse = description.MasseInverse;
-          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
+         Position = position;
+         Vitesse = description.Vitesse;
+         MasseInverse = description.MasseInverse;
+         VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
 
-          EstImmuable = description.EstImmuable;
+         EstImmuable = description.EstImmuable;
       }
 
       public ObjetPhysique(Game game, Vector3 position)
-          : base(game)
+         : base(game)
       {
-          Position = position;
-          Vitesse = Vector3.Zero;
-          MasseInverse = 1f;
-          EstImmuable = false;
-          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
+         Position = position;
+         Vitesse = Vector3.Zero;
+         MasseInverse = 1f;
+         EstImmuable = false;
+         VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
       }
 
       public override void Initialize()
       {
-         ListeCollision = new List<IPhysique>();
-          EstTangible = true;
-          OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
+         ÉtatsPhysiques = new List<ÉtatPhysique>();
+         ÉtatsPhysiques.Add(new ÉtatPhysique(Game, 0, null));
 
-          VolumeDeCollision.Initialize();
-          ForceGravitationnelle = OptionJeu.Gravité;
-          Forces = new List<Vector3>();
-          ForceRésultante = Vector3.Zero;
+
+         ListeCollision = new List<IPhysique>();
+         EstTangible = true;
+         OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
+
+         VolumeDeCollision.Initialize();
+         ForceGravitationnelle = OptionJeu.Gravité;
+         Forces = new List<Vector3>();
+         ForceRésultante = Vector3.Zero;
 
          base.Initialize();
       }
 
       protected override void LoadContent()
       {
-          base.LoadContent();
+         base.LoadContent();
       }
 
       public void Intégrer(float deltaT)
       {
-         if(MasseInverse != 0)
+         if (!EstImmuable && MasseInverse != 0)
          {
             CalculerForceRésultantes();
             Accélération = ForceRésultante * MasseInverse;
@@ -112,38 +115,39 @@ namespace AtelierXNA
             Position += Vitesse * deltaT;
          }
 
+         Forces.Clear();
          ListeCollision.Clear();
       }
 
-       void CalculerForceRésultantes()
-       {
-          ForceRésultante = Vector3.Zero;
-           foreach(Vector3 v in Forces)
-           {
-               ForceRésultante += v;
-           }
+      void CalculerForceRésultantes()
+      {
+         ForceRésultante = Vector3.Zero;
+         foreach (Vector3 v in Forces)
+         {
+            ForceRésultante += v;
+         }
 
-           ForceRésultante += ForceGravitationnelle;
+         ForceRésultante += ForceGravitationnelle;
 
-           Forces.Clear();
-       }
+         Forces.Clear();
+      }
 
-       public void AjouterForce(Vector3 force)
-       {
-          if(MasseInverse != 0)
+      public void AjouterForce(Vector3 force)
+      {
+         if (MasseInverse != 0 && force != Vector3.Zero)
             Forces.Add(force);
-       }
+      }
 
-       public virtual Collider GetCollider()
-       {
-          return new SphereCollision(this.Position, 2);
-       }
+      public virtual Collider GetCollider()
+      {
+         return new SphereCollision(this.Position, 2);
+      }
 
       public virtual void EnCollision(IPhysique autre)
       {
          ListeCollision.Add(autre);
 
-         if(this.EstTangible && autre.GetObjetPhysique().EstTangible)
+         if (this.EstTangible && autre.GetObjetPhysique().EstTangible)
          {
             Vector3 norm = autre.GetCollider().Normale(this.Position);
             //La norme est corrigé pour gérer la collision des deux bords de l'objet
@@ -154,7 +158,7 @@ namespace AtelierXNA
 
             CorrigerPosition(this, autre.GetObjetPhysique(), norm);
          }
-         if(autre is VolumeDeForce)
+         if (autre is VolumeDeForce)
          {
             AjouterForce((autre as VolumeDeForce).GetForce(this.Position));
          }
@@ -162,7 +166,7 @@ namespace AtelierXNA
 
       public void SetVitesse(Vector3 vitesse)
       {
-          Vitesse = vitesse;
+         Vitesse = vitesse;
       }
 
       public virtual void SetPosition(Vector3 nouvellePosition)
@@ -172,7 +176,7 @@ namespace AtelierXNA
 
       public virtual void SetRotation(Vector3 rotation)
       {
-          Rotation = rotation;
+         Rotation = rotation;
       }
 
       void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, Vector3 normale)

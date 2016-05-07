@@ -13,9 +13,11 @@ namespace AtelierXNA
     /// <summary>
     /// Gère la physique de toute les entités incluants les collisions et la gestion de collision
     /// </summary>
-   class MMoteurPhysique : GameComponent, IPausable
+   public class MMoteurPhysique : GameComponent, IPausable
    {
       public List<IPhysique> ListePhysique { get; private set; }
+
+      const float CONSTANTE_DE_COULOMB = 9000000000; // 9x10^9
 
       float IntervalMAJ { get; set; }
       float TempsDepuisMAJ { get; set; }
@@ -88,15 +90,23 @@ namespace AtelierXNA
             for (int j = i + 1; j < GrosseurListe; ++j)
             {
                bool intersection = ListePhysique[i].GetCollider().Intersects(ListePhysique[j].GetCollider());
+               AppliquerLoiDeCoulomb(ListePhysique[i].GetObjetPhysique(), ListePhysique[j].GetObjetPhysique());
 
                if (intersection)
                {
-                  //InformationIntersection infoColli = new InformationIntersection(ListePhysique[i], ListePhysique[j]);
+                  
                   ListePhysique[i].GetObjetPhysique().EnCollision(ListePhysique[j]);
                   ListePhysique[j].GetObjetPhysique().EnCollision(ListePhysique[i]);
                }
             }
          }
+      }
+      void AppliquerLoiDeCoulomb(ObjetPhysique A, ObjetPhysique B)
+      {
+         Vector3 distance = B.Position - A.Position;
+
+         A.AjouterForce(CONSTANTE_DE_COULOMB * A.Charge * B.Charge * -Vector3.Normalize(distance) / (distance.Length() * distance.Length()));
+         B.AjouterForce(CONSTANTE_DE_COULOMB * A.Charge * B.Charge * Vector3.Normalize(distance) / (distance.Length() * distance.Length()));
       }
 
       public int GrosseurListe

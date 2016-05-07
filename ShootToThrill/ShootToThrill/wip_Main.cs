@@ -27,6 +27,9 @@ namespace AtelierXNA
       MenuState Menu { get; set; }
       OptionState Option { get; set; }
 
+      //Effets
+      BasicEffect EffetDeBase { get; set; }
+
       //Services
       RessourcesManager<Model> GestionnaireDeModèle { get; set; }
       RessourcesManager<Effect> GestionnaireDeShaders { get; set; }
@@ -92,6 +95,7 @@ namespace AtelierXNA
       public void InitializerServices()
       {
          CaméraFixe CaméraJeu = new CaméraFixe(this, new Vector3(10, 10, 10), Vector3.Zero, Vector3.Up);
+         EffetDeBase = new BasicEffect(GraphicsDevice);
 
          GestionnaireDeLumières = new GestionnairesLumières(this);
          GestionnaireParamètresShaders = new ParamètresShaders(this);
@@ -108,6 +112,7 @@ namespace AtelierXNA
 
          GestionnaireParamètresShaders.AssignerGestionnaireDeLumière(GestionnaireDeLumières);
 
+         Services.AddService(typeof(BasicEffect), EffetDeBase);
          Services.AddService(typeof(GestionnairesLumières), GestionnaireDeLumières);
          Services.AddService(typeof(ParamètresShaders), GestionnaireParamètresShaders);
          Services.AddService(typeof(ManagerAudio), ManagerDeSons);
@@ -159,7 +164,13 @@ namespace AtelierXNA
          ManagerDeSons.AjouterSons("Pistol");
          ManagerDeSons.AjouterSons("Shotgun");
          ManagerDeSons.AjouterSons("MachineGun");
+         ManagerDeSons.AjouterSons("Laser");
+         ManagerDeSons.AjouterSons("Electricity");
          ManagerDeSons.AjouterSons("GrenadeLauncher");
+         ManagerDeSons.AjouterSons("Happy");
+         ManagerDeSons.AjouterSons("Sad");
+         ManagerDeSons.AjouterSons("Click");
+         ManagerDeSons.AjouterSons("Button");
       }
 
       protected override void Update(GameTime gameTime)

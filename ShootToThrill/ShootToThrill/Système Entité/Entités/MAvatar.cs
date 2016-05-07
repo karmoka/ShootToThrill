@@ -13,7 +13,7 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-    class MAvatar : Entité, IPositionable, IModele3d, IPhysique
+    class MAvatar : EntitéGraphiqueEtPhysique, IPositionable, IModele3d, IPhysique
     {
         int _vie,
             _indexArme;
@@ -36,11 +36,7 @@ namespace AtelierXNA
         }
         public int VieMax { get; protected set; }
 
-        public IModele3d ComposanteGraphique { get; private set; }
-        public ObjetPhysique ComposantePhysique { get; private set; }
         protected List<Fusil> ListeArme { get; set; }
-        protected MMoteurPhysique MMoteurPhysique { get; set; }
-        protected ModelManager ManagerModèle { get; set; }
 
         /// <summary>
         /// Avatar dont le graphique ne bouge pas
@@ -49,27 +45,20 @@ namespace AtelierXNA
         /// <param name="composanteGraphique"></param>
         /// <param name="composantePhysique"></param>
         public MAvatar(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique)
-            : base(game)
+            : base(game, composanteGraphique, composantePhysique)
         {
-            ComposantePhysique = composantePhysique;
-            ComposanteGraphique = composanteGraphique;
             VieMax = 100;
         }
 
         public MAvatar(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique, int vie)
-            : base(game)
+           : base(game, composanteGraphique, composantePhysique)
         {
-            ComposantePhysique = composantePhysique;
-            ComposanteGraphique = composanteGraphique;
             VieMax = vie;
         }
         public MAvatar(Game game, DescriptionAvatar description, Vector3 position )
-            : base(game)
+            : base(game, description, position)
         {
             VieMax = description.VieMax;
-
-            ComposantePhysique = new ObjetPhysique(game, description.DescriptionComposantePhysique, position);
-            ComposanteGraphique = new MObjetDeBaseAniméEtÉclairé(game, description.DescriptionComposanteGraphique, position, 1 / 60f);
         }
 
         public override void Initialize()
@@ -86,16 +75,8 @@ namespace AtelierXNA
             Vie = VieMax;
 
             base.Initialize();
-        }
 
-        protected override void LoadContent()
-        {
-            ManagerModèle = Game.Services.GetService(typeof(ModelManager)) as ModelManager;
-            MMoteurPhysique = Game.Services.GetService(typeof(MMoteurPhysique)) as MMoteurPhysique;
-
-            ManagerModèle.AjouterModele(this);
-            MMoteurPhysique.AjouterObjet(this);
-            base.LoadContent();
+            ComposantePhysique.ÉtatsPhysiques.Add(new ÉtatPhysique(Game, CustomMathHelper.E(-4), null));
         }
 
         public override void Update(GameTime gameTime)
@@ -106,13 +87,13 @@ namespace AtelierXNA
            {
               BougerAvatar();
               BougerArme();
-              ComposanteGraphique.SetPosition(ComposantePhysique.Position);
+              GérerCollisions();
 
               TempsDepuisMAJ = 0;
            }
            if (!EstMort && AUnFusil)
            {
-              ArmeSélectionnée.Update(gameTime); //
+              ArmeSélectionnée.Update(gameTime); 
            }
 
            base.Update(gameTime);
@@ -150,8 +131,9 @@ namespace AtelierXNA
 
         public void AjouterArme(Fusil fusil)
         {
-            if (!ListeArme.Exists(x => x.NomArme == fusil.NomArme))
+            if (!ListeArme.Exists(x => x.NomArme == fusil.NomArme) && fusil != null)
             {
+                fusil.IdPropriétaire = this.UniqueId;
                 ListeArme.Add(fusil);
                 IndexArme = ListeArme.FindIndex(x => x.NomArme == fusil.NomArme);
             }
@@ -161,6 +143,7 @@ namespace AtelierXNA
 
         protected void RetirerArme(Fusil fusil)
         {
+            fusil.IdPropriétaire = Entité.ID_AUCUN_PROPRIÉTAIRE;
             ListeArme.Remove(fusil);
         }
 
@@ -214,8 +197,6 @@ namespace AtelierXNA
             {
                 Vie += soin.NombreSoin;
             }
-            //MoteurPhysique.EnleverObjet(soin);
-            //ManagerModèle.EnleverModèle(soin);
         }
 
         public void RetirerVie(int domageReçu)
@@ -230,16 +211,12 @@ namespace AtelierXNA
         protected virtual void Mourir()
         {
             Vie = MORT;
-
-            MMoteurPhysique.EnleverObjet(this);
-            ManagerModèle.EnleverModèle(this);
+            ChangerÉtatGraphique();
+            ChangerÉtatPhysique();
         }
 
         public override void Draw(GameTime gameTime)
         {
-           ComposanteGraphique.Draw(gameTime);
-           ComposantePhysique.Draw(gameTime);
-
            if (AUnFusil)
            {
               ArmeSélectionnée.Draw(gameTime);
@@ -248,26 +225,9 @@ namespace AtelierXNA
            base.Draw(gameTime);
         }
 
-        public Vector3 Position
+        protected virtual void TournerSurY(Vector2 direction)
         {
-            get { return ComposantePhysique.Position; }
-        }
-
-        public void SetPosition(Vector3 nouvellePosition)
-        {
-            ComposantePhysique.SetPosition(nouvellePosition);
-            ComposanteGraphique.SetPosition(nouvellePosition);
-        }
-
-        public void SetRotation(Vector3 rotation)
-        {
-            ComposanteGraphique.SetRotation(rotation);
-            ComposantePhysique.SetRotation(rotation);
-        }
-
-        protected virtual void ModifierDirection(Vector2 direction)
-        {
-            SetRotation(new Vector3(CustomMathHelper.AngleDeVecteur2D(direction) + MathHelper.PiOver2,-MathHelper.PiOver2,0));
+            SetRotation(CustomMathHelper.DéterminerRotationModeleBlender(direction));
         }
 
         public Vector3 Vitesse
@@ -323,24 +283,19 @@ namespace AtelierXNA
             return index < INDEX_PREMIER_FUSIL ? ListeArme.Count - 1 : index > ListeArme.Count - 1 ? INDEX_PREMIER_FUSIL : index;
         }
 
-        public void SetCaméra(Caméra cam)
+        public override void SetCaméra(Caméra cam)
         {
-            ComposanteGraphique.SetCaméra(cam);
             if (AUnFusil)
             {
                ArmeSélectionnée.SetCaméra(cam);
             }
-            SetCaméraAutreComposante(cam);
+
+            base.SetCaméra(cam);
         }
 
-        protected virtual void SetCaméraAutreComposante(Caméra cam)
+        public override Collider GetCollider()
         {
-            
-        }
-
-        public Collider GetCollider()
-        {
-            return new SphereCollision(this.Position, 1f);
+           return new SphereCollision(this.Position, 1f);
         }
     }
 }

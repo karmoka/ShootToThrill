@@ -9,8 +9,8 @@
     <MunitionDansCaisseMunitions>60</MunitionDansCaisseMunitions>
     <MunitionInitial>80</MunitionInitial>
     <IntervalRechargement>0.02</IntervalRechargement>
-    <NomArme>Machinegun</NomArme>
-    <NomModèle>Machinegun</NomModèle>
+    <NomArme>Mitraillette</NomArme>
+    <NomModèle>Mitraillette</NomModèle>
     <Cadence>0.05</Cadence>
     <Dommage>10</Dommage>
     <Portée>10</Portée>

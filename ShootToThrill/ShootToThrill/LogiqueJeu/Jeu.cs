@@ -13,7 +13,7 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-    public class Jeu : DrawableGameComponent, IModele3d
+   public class Jeu : DrawableGameComponent, IModele3d
     {
         Round Round { get; set; }
         public Portail PortailJoueur { get; private set; }
@@ -138,18 +138,18 @@ namespace AtelierXNA
 
         public void SetCaméra(Caméra cam)
         {
-            foreach (Item i in ListeItem)
-            {
-                i.SetCaméra(cam);
-            }
+           //foreach (Item i in ListeItem)
+           //{
+           //   i.SetCaméra(cam);
+           //}
         }
 
         public override void Draw(GameTime gameTime)
         {
-            foreach (Item i in ListeItem)
-            {
-                i.Draw(gameTime);
-            }
+            //foreach (Item i in ListeItem)
+            //{
+            //    i.Draw(gameTime);
+            //}
             base.Draw(gameTime);
         }
     }

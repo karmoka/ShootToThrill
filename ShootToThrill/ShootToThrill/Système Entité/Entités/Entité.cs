@@ -16,6 +16,9 @@ namespace AtelierXNA
 
    public class Entité : Microsoft.Xna.Framework.DrawableGameComponent
    {
+      public const int ID_AUCUN_PROPRIÉTAIRE = -1;
+      public int IdPropriétaire { get; set; }
+
       protected Options OptionsJeu { get; set; }
       EntitySystem système { get; set; }
       public int UniqueId { get; private set; }
@@ -26,6 +29,7 @@ namespace AtelierXNA
       {
          TypeEnt = TypeEntité.Entité;
          OptionsJeu = Game.Services.GetService(typeof(Options)) as Options;
+         IdPropriétaire = ID_AUCUN_PROPRIÉTAIRE;
       }
 
       public override void Initialize()

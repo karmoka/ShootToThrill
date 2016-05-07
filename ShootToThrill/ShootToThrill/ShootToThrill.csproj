@@ -147,11 +147,11 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Système Audio\ManagerAudio.cs" />
     <Compile Include="Système Entité\EntitySystem.cs" />
-    <Compile Include="Système Entité\Entité.cs" />
+    <Compile Include="Système Entité\Entités\Entité.cs" />
+    <Compile Include="Système Entité\Entités\EntitéGraphiqueEtPhysique.cs" />
     <Compile Include="Système Entité\Entités\MAvatar.cs" />
     <Compile Include="Système Entité\Entités\MEnnemi.cs" />
     <Compile Include="Système Entité\Entités\MJoueur.cs" />
-    <Compile Include="Système Entité\Item\DroiteColorée.cs" />
     <Compile Include="Système Entité\Item\Fusil\Fusil.cs" />
     <Compile Include="Système Entité\Item\Fusil\Lasergun.cs" />
     <Compile Include="Système Entité\Item\Fusil\Shotgun.cs" />
@@ -168,7 +168,9 @@
     <Compile Include="Système Entité\Item\Projectiles\Éclair.cs" />
     <Compile Include="Système Entité\Item\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Item\Soin.cs" />
+    <Compile Include="Système Graphique\BillboardColoréTracing.cs" />
     <Compile Include="Système Graphique\CubeÉclairé.cs" />
+    <Compile Include="Système Graphique\DroiteColorée.cs" />
     <Compile Include="Système Graphique\GestionnairesLumières.cs" />
     <Compile Include="Système Graphique\ModelManager.cs" />
     <Compile Include="Système Graphique\ObjetDeBase.cs" />
@@ -184,7 +186,6 @@
     <Compile Include="Système Graphique\Billboard.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreDeBase.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreÉclairée.cs" />
-    <Compile Include="Système Graphique\TuileColorée.cs" />
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />

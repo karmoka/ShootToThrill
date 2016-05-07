@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AtelierXNA
 {
-    public class Interrupteur : Item
+    class Interrupteur : Item
     {
         public bool EstInterrupteurActif { get; private set; }
         public Interrupteur(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ)
@@ -40,7 +40,7 @@ namespace AtelierXNA
 
         public void ChangerGravité()
         {
-            OptionJeu.ChangerGravité();
+            //OptionJeu.ChangerGravité();
             DésactiverItem();
         }
     }
