@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill-master\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\butterfly.fbx</SourceFilename>
+      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\butterfly.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -4952,7 +4952,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>unnamed</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill-master\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\butterfly.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\butterfly.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

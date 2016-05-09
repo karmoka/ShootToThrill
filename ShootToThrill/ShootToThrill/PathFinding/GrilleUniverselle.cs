@@ -35,6 +35,7 @@ namespace AtelierXNA
         Node[, ,] TableauNode { get; set; }
         public Vector3 PositionCible { get; private set; }
         public Vector3 PositionActuelle { get; private set; }
+        Vector3 CentreMap { get; set; }
         float …chelle { get; set; }
         public GrilleUniverselle(Game game, List<string> liste…tage)
             : base(game)
@@ -170,6 +171,7 @@ namespace AtelierXNA
             AdditionnerColonnes();
             AdditionnerLignes();
             Additionner…tages();
+            AjouterBordures();
         }
 
         void AdditionnerColonnes()
@@ -210,8 +212,6 @@ namespace AtelierXNA
                 {
                     for (int z = 0; z < TableauCube.GetLength(2) - 1; ++z)
                     {
-                        if (x == 23)
-                        { }
                         if (TableauCube[x, y, z] != null && TableauCube[x, y, z + 1] != null)
                         {
                             if (EstAdditionnable(TableauCube[x, y, z], TableauCube[x, y, z + 1]) && BonneDimensionX(TableauCube[x, y, z], TableauCube[x, y, z + 1]))
@@ -269,6 +269,27 @@ namespace AtelierXNA
                     }
                 }
             }
+        }
+
+        void AjouterBordures()
+        {
+            CubeAdditionnable gauche = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3(-1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
+            CubeAdditionnable droite = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width) + 1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
+            CubeAdditionnable haut = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, -1), Color.Transparent, new Vector3(Image…tage.Width, 20, 1), 0);
+            CubeAdditionnable bas = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, (Image…tage.Height) + 1), Color.Transparent, new Vector3(Image…tage.Width, 20, 1), 0);
+
+            gauche.Initialize();
+            droite.Initialize();
+            haut.Initialize();
+            bas.Initialize();
+
+            droite.EstTransparent = true;
+            bas.EstTransparent = true;
+
+            ListeCube.Add(gauche);
+            ListeCube.Add(droite);
+            ListeCube.Add(haut);
+            ListeCube.Add(bas);
         }
 
         bool EstAdditionnable(CubeAdditionnable cube1, CubeAdditionnable cube2)

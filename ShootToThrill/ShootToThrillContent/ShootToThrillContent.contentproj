@@ -494,6 +494,7 @@
       <Name>test5_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>0, 255, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

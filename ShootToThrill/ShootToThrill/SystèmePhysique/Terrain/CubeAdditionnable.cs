@@ -18,6 +18,7 @@ namespace AtelierXNA
        CubeCollision CubeCollision { get; set; }
        public CubeColoré CubeColoré { get; private set; }
        public CubeÉclairée CubeTexturé { get; private set; }
+       public bool EstTransparent { get; set; }
 
       public CubeAdditionnable(Game game, float homothétieInitiale, Vector3 rotationInitiale, Vector3 positionInitiale, Color couleur, Vector3 dimension, float intervalleMAJ)
           : base(game, positionInitiale, Vector3.Zero, 0)
@@ -33,6 +34,7 @@ namespace AtelierXNA
           EstImmuable = true;
           CubeColoré.Initialize();
           CubeTexturé.Initialize();
+          EstTransparent = false;
           base.Initialize();
       }
 
@@ -90,8 +92,11 @@ namespace AtelierXNA
           //CubeColoré.SetPosition(this.Position);
           //CubeColoré.Draw(gameTime);
 
-          CubeTexturé.SetPosition(this.Position);
-          CubeTexturé.Draw(gameTime);
+          if (!EstTransparent)
+          {
+              CubeTexturé.SetPosition(this.Position);
+              CubeTexturé.Draw(gameTime);
+          }
       }
       
       public ObjetPhysique GetObjetPhysique()
