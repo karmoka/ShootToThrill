@@ -196,7 +196,7 @@ namespace AtelierXNA
             }
         }
 
-        public void RetirerVie(int domageReçu)
+        public virtual void RetirerVie(int domageReçu)
         {
             Vie -= domageReçu;
             if (EstMort)

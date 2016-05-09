@@ -148,34 +148,37 @@ namespace AtelierXNA
 
       void GÈrerBoutons()
       {
-         if (EstActivÈ && ListeBouton.Count != 0)
-         {
-            if (GestionnaireInput.EstMenuHaut(PlayerIndex.One))
-            {
-               if (IndexComposante > 0)
-               {
-                  ListeBouton[IndexComposante].Changer…tat();
-                  IndexComposante--;
-                  ListeBouton[IndexComposante].Changer…tat();
-                  ManagerDeSons.JouerSons("Click");
-               }
-            }
-            if (GestionnaireInput.EstMenuBas(PlayerIndex.One))
-            {
-               if (IndexComposante < ListeBouton.Count - 1)
-               {
-                  ListeBouton[IndexComposante].Changer…tat();
-                  IndexComposante++;
-                  ListeBouton[IndexComposante].Changer…tat();
-                  ManagerDeSons.JouerSons("Click");
-               }
-            }
-            if (GestionnaireInput.EstMenuSÈlectionner(PlayerIndex.One))
-            {
-               ListeBouton[IndexComposante].OnPressed();
-               ManagerDeSons.JouerSons("Button");
-            }
-         }
+          if (EstActivÈ && ListeBouton.Count != 0)
+          {
+              if (InformationJeu.NBJoueur > 0)
+              {
+                  if (GestionnaireInput.EstMenuHaut(PlayerIndex.One))
+                  {
+                      if (IndexComposante > 0)
+                      {
+                          ListeBouton[IndexComposante].Changer…tat();
+                          IndexComposante--;
+                          ListeBouton[IndexComposante].Changer…tat();
+                          ManagerDeSons.JouerSons("Click");
+                      }
+                  }
+                  if (GestionnaireInput.EstMenuBas(PlayerIndex.One))
+                  {
+                      if (IndexComposante < ListeBouton.Count - 1)
+                      {
+                          ListeBouton[IndexComposante].Changer…tat();
+                          IndexComposante++;
+                          ListeBouton[IndexComposante].Changer…tat();
+                          ManagerDeSons.JouerSons("Click");
+                      }
+                  }
+                  if (GestionnaireInput.EstMenuSÈlectionner(PlayerIndex.One))
+                  {
+                      ListeBouton[IndexComposante].OnPressed();
+                      ManagerDeSons.JouerSons("Button");
+                  }
+              }
+          }
       }
 
       public virtual void Draw(GameTime gameTime, float ordre)

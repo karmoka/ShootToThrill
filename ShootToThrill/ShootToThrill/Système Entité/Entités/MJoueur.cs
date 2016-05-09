@@ -14,12 +14,15 @@ namespace AtelierXNA
 {
 
     class MJoueur : MAvatar
-    {       
+    {
+       const float INTERVAL_DOMMAGE = 0.5f;
        public PlayerIndex IndexJoueur { get; private set; }
        IOManager ManagerDeControle { get; set; }
        Vector3 PositionInitiale { get; set; }
        JoueurScreenManager JoueurScreenManager { get; set; }
        public int Score { get; private set; }
+       bool EstAttaquer { get; set; }
+       float TempsDepuisDommage { get; set; }
 
         public MJoueur(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique, PlayerIndex indexJoueur)
             : base(game, composanteGraphique, composantePhysique)
@@ -38,6 +41,8 @@ namespace AtelierXNA
         {
             Score = 0;
             VitesseAvatarMaximum = 0.1f; //Arbitraire
+            EstAttaquer = false;
+            TempsDepuisDommage = 0;
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
             //Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
@@ -162,6 +167,15 @@ namespace AtelierXNA
             SetPosition(PositionInitiale);
         }
 
+        public override void RetirerVie(int domageReçu)
+        {
+            if (!EstAttaquer)
+            {
+                EstAttaquer = true;
+                base.RetirerVie(domageReçu);
+            }
+        }
+
         protected override void Mourir()
         {
             Fusil fusil = ListeArme.Find(x => x.NomArme == "Pistol");
@@ -173,7 +187,21 @@ namespace AtelierXNA
         public override void Update(GameTime gameTime)
         {
             JoueurScreenManager.Update(gameTime);
+            UpdaterDommageReçu(gameTime);
             base.Update(gameTime);
+        }
+
+        void UpdaterDommageReçu(GameTime gameTime)
+        {
+            if (EstAttaquer)
+            {
+                TempsDepuisDommage += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                if (TempsDepuisDommage >= INTERVAL_DOMMAGE)
+                {
+                    EstAttaquer = false;
+                    TempsDepuisDommage = 0;
+                }
+            }
         }
 
         public override void Draw(GameTime gameTime)

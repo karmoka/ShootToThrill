@@ -17,6 +17,7 @@ namespace AtelierXNA
     /// </summary>
     public class MenuChoixPersonnage : MenuBase
     {
+        const float INTERVAL_MAJ = 0.2f;
         Vector2[] PositionsThumbnails { get; set; }
         Vector2[] OffsetFleches { get; set; }
         Vector2 DimensionFleche = new Vector2(20, 20);
@@ -32,6 +33,7 @@ namespace AtelierXNA
         int[] TableauPersonnage { get; set; }
         Sprite[] Thumbnails { get; set; }
         Vector2 DimensionImage { get; set; }
+        float TempsDepuisMAJ { get; set; }
 
         bool AInitialiser { get; set; }
 
@@ -46,6 +48,7 @@ namespace AtelierXNA
         {
             base.Initialiser();
 
+            TempsDepuisMAJ = 0;
             PlayerActivé = new bool[4] { true, false, false, false };
             IndexPlayers = new int[4] { 0, 0, 0, 0 };
 
@@ -148,10 +151,14 @@ namespace AtelierXNA
 
         public override void Update(GameTime gameTime)
         {
-            IdentifierPlayerActif();
-            VérifierInput();
-            ChangerPositionFleches();
-
+            TempsDepuisMAJ += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (TempsDepuisMAJ >= INTERVAL_MAJ)
+            {
+                IdentifierPlayerActif();
+                VérifierInput();
+                ChangerPositionFleches();
+                TempsDepuisMAJ = 0;
+            }
             base.Update(gameTime);
         }
 
