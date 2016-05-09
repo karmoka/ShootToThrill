@@ -73,7 +73,7 @@ namespace AtelierXNA
 
             base.Initialize();
 
-            ComposantePhysique.ÉtatsPhysiques.Add(new ÉtatPhysique(Game, CustomMathHelper.E(-4), null));
+            ComposantePhysique.ÉtatsPhysiques.Add(new ÉtatPhysique(Game, CustomMathHelper.E(-6), null));
         }
 
         public override void Update(GameTime gameTime)

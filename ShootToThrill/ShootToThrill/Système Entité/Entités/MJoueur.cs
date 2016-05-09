@@ -41,8 +41,8 @@ namespace AtelierXNA
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
             //Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
-            Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
-            //Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
+            //Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Lasergun(Game, Game.Content.Load<DescriptionFusil>("Description/Lasergun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
             //Fusil fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(0,0,0) + Vector3.Up, 0.005f, 0.02f);
             fusil.Initialize();
@@ -126,9 +126,9 @@ namespace AtelierXNA
                   GérerItems(i as Item);
                }
 
-               else if (i is MEnnemi)
+               else if (i is IFaitMal)
                {
-                  RetirerVie((i as MEnnemi).Domage);
+                  RetirerVie((i as IFaitMal).Domage);
                }
                 
             }

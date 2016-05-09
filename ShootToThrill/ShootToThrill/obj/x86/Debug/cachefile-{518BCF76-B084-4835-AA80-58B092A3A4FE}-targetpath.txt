@@ -85,6 +85,7 @@ Content\Textures\test2_1.xnb
 Content\Description\Avatar1.xnb
 Content\Description\Avatar2.xnb
 Content\Description\Avatar3.xnb
+Content\Textures\Acid.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

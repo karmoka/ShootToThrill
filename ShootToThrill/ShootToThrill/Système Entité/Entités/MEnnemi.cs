@@ -14,7 +14,7 @@ using ProjetPrincipal.Data;
 
 namespace AtelierXNA
 {
-    class MEnnemi : MAvatar
+    class MEnnemi : MAvatar, IFaitMal
     {
         const float INTERVAL_ATTAQUE = 1f;
         int _domage;
