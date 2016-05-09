@@ -15,6 +15,17 @@ namespace AtelierXNA
 {
     class MAvatar : EntitéGraphiqueEtPhysique, IPositionable, IModele3d, IPhysique
     {
+        protected float Charge
+        {
+            get
+            {
+                return ComposantePhysique.Charge;
+            }
+            set
+            {
+                ComposantePhysique.Charge = value;
+            }
+        }
         int _vie,
             _indexArme;
         const int MORT = 0,
@@ -72,8 +83,6 @@ namespace AtelierXNA
             Vie = VieMax;
 
             base.Initialize();
-
-            ComposantePhysique.Charge = CustomMathHelper.E(-6);
         }
 
         public override void Update(GameTime gameTime)

@@ -13,6 +13,7 @@
       <MasseInverse>0.3333</MasseInverse>
       <Position>0 0 0</Position>
       <Vitesse>0 0 0</Vitesse>
+      <Charge>0.001</Charge>
       <EstImmuable>false</EstImmuable>
     </DescriptionComposantePhysique>
   </Asset>

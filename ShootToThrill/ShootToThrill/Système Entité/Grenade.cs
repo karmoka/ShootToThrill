@@ -13,10 +13,9 @@ using Microsoft.Xna.Framework.Media;
 namespace AtelierXNA
 {
 
-   public class Grenade : Entité, IPhysique, IModele3d
+   public class Grenade : EntitéGraphiqueEtPhysique
    {
-      IModele3d ComposanteGraphique { get; set; }
-      ObjetPhysique ComposantePhysique { get; set; }
+       const string TEXTURE_GRENADE = "tile_12";
 
       const float MASSE_INVERSE_GRENADE = 1/2f;
       const float RAYON_GRENADE = 1.25f;
@@ -24,16 +23,14 @@ namespace AtelierXNA
 
       //, position, vitesse, MASSE_INVERSE_GRENADE, new SphereCollision(position,RAYON_GRENADE)
       public Grenade(Game game, Vector3 position, Vector3 vitesse, string NomModèle)
-         : base(game)
+         : base(game, new MObjetDeBaseAniméEtÉclairé(game,NomModèle,TEXTURE_GRENADE,1f,Vector3.Zero,position,"Spotlight",new Lumière(game),1/60),new ObjetPhysique(game,position))
       {
-         ComposanteGraphique = new MObjetDeBase(game, NomModèle, 1f, Vector3.Zero, position);
-         ComposantePhysique = new ObjetPhysique(game, position);//new ObjetPhysique(game, position, vitesse, MASSE_INVERSE_GRENADE);
+
       }
 
       public override void Initialize()
       {
-         ComposanteGraphique.Initialize();
-         ComposantePhysique.Initialize();
+
 
          base.Initialize();
       }
@@ -42,6 +39,8 @@ namespace AtelierXNA
       {
          ComposanteGraphique.SetPosition(ComposantePhysique.Position);
          ComposantePhysique.Update(gameTime);
+
+         GérerCollisions();
 
          base.Update(gameTime);
       }
@@ -54,20 +53,19 @@ namespace AtelierXNA
       {
          return ComposantePhysique.GetCollider();// new SphereCollision(ComposantePhysique.Position, RAYON_GRENADE);
       }
-      public void SetCaméra(Caméra cam)
+      protected void GérerCollisions()
       {
-         ComposanteGraphique.SetCaméra(cam);
+          foreach (IPhysique i in ComposantePhysique.ListeCollision)
+          {
+              if(i is CubeAdditionnable)
+              {
+                  TacheAcide a = new TacheAcide(Game, "Acid", this.Position, new Vector2(3, 3), 1);
+                  a.Initialize();
+                  this.Dispose();
+              }
+          }
       }
-      public void SetPosition(Vector3 position)
-      {
-         ComposanteGraphique.SetPosition(position);
-         ComposantePhysique.SetPosition(position);
-      }
-      public void SetRotation(Vector3 rotation)
-      {
-          ComposanteGraphique.SetRotation(rotation);
-          ComposantePhysique.SetRotation(rotation);
-      }
+     
       public override void Draw(GameTime gameTime)
       {
          ComposanteGraphique.Draw(gameTime);

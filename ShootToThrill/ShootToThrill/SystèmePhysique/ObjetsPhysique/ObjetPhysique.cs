@@ -64,6 +64,7 @@ namespace AtelierXNA
          Vitesse = description.Vitesse;
          MasseInverse = description.MasseInverse;
          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
+         Charge = description.Charge;
 
          EstImmuable = description.EstImmuable;
       }
@@ -149,11 +150,11 @@ namespace AtelierXNA
             Vector3 norm = autre.GetCollider().Normale(this.Position);
             //La norme est corrigé pour gérer la collision des deux bords de l'objet
             if (Vector3.Dot((autre.GetCollider().Center - this.Position), norm) >= 0)
-               norm = -norm;
+                norm = -norm;
 
             this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
 
-            CorrigerPosition(this, autre.GetObjetPhysique(), norm);
+            CorrigerPosition(norm);
          }
          if (autre is VolumeDeForce)
          {
@@ -176,7 +177,7 @@ namespace AtelierXNA
          Rotation = rotation;
       }
 
-      void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, Vector3 normale)
+      void CorrigerPosition(Vector3 normale)
       {
          this.SetPosition(this.Position + normale * 0.01f * this.MasseInverse);
       }

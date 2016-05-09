@@ -15,7 +15,8 @@ namespace AtelierXNA
    public class TacheAcide : EntitéGraphiqueEtPhysique, IFaitMal
    {
       const float GROSSEUR_VERTICALE = 1f;
-
+      const float DURÉ_TACHE = 5f; 
+      float TempsDepuisApparition { get; set; }
       CubeCollision Collision { get; set; }
       public int Domage { get; private set; }
       Vector2 Dimension { get; set; }
@@ -25,6 +26,8 @@ namespace AtelierXNA
       {
          Domage = domage;
          Dimension = dimension;
+
+         TempsDepuisApparition = 0;
       }
 
       public override void Initialize()
@@ -38,7 +41,12 @@ namespace AtelierXNA
       }
       public override void Update(GameTime gameTime)
       {
+          TempsDepuisApparition += (float)gameTime.ElapsedGameTime.TotalSeconds ;
+          if (TempsDepuisApparition >= DURÉ_TACHE)
+          {
+              this.Dispose();
 
+          }
          base.Update(gameTime);
       }
 

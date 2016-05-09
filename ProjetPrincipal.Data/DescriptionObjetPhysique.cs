@@ -11,6 +11,7 @@ namespace ProjetPrincipal.Data
         public float MasseInverse { get; set; }
         public Vector3 Position { get; set; }
         public Vector3 Vitesse { get; set; }
+        public float Charge { get; set; }
         public bool EstImmuable { get; set; }
     }
 }

@@ -10,9 +10,10 @@
       <Échelle>0.5</Échelle>
     </DescriptionComposanteGraphique>
     <DescriptionComposantePhysique>
-      <MasseInverse>0.5</MasseInverse>
+      <MasseInverse>0.1</MasseInverse>
       <Position>0 0 0</Position>
       <Vitesse>0 0 0</Vitesse>
+      <Charge>0.000001</Charge>
       <EstImmuable>false</EstImmuable>
     </DescriptionComposantePhysique>
   </Asset>

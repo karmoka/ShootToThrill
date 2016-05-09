@@ -66,6 +66,9 @@ namespace AtelierXNA
 
             ManagerDeSons.JouerSons("Boss");
 
+            //Grenade g = new Grenade(Game, Vector3.One * 3, Vector3.Up * 3, "Scene2");
+            //g.Initialize();
+
             base.Initialize();
         }
 

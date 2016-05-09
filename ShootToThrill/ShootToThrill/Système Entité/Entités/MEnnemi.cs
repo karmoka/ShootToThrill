@@ -144,7 +144,7 @@ namespace AtelierXNA
            }
 
            base.Mourir();
-           this.Dispose();
+           //this.Dispose();
         }
 
         protected override void GérerCollisions()
