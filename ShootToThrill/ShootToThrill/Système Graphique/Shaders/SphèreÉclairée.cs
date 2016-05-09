@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace AtelierXNA
 {
-   public class SphèreÉclairée : SphèreDeBase
+   class SphèreÉclairée : SphèreDeBase
    {
       protected ParamètresShaders GestionnaireParamètresShaders { get; set; }
       protected RessourcesManager<Effect> GestionnaireDeShaders { get; private set; }

@@ -20,10 +20,7 @@ namespace AtelierXNA
       public List<IPhysique> ListeCollision { get; private set; }
       protected Options OptionJeu { get; private set; }
 
-      public float Charge
-      {
-         get { return ÉtatsPhysiques.Sum(x => x.Charge); }
-      }
+      public float Charge { get; set; }
       protected float MasseInverse { get; private set; }
 
       public bool EstTangible { get; set; }

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace AtelierXNA
 {
-   public abstract class PrimitiveDeBaseAnimée2 : PrimitiveDeBase2
+   public abstract class PrimitiveDeBaseAnimée2 : PrimitiveDeBase2, IModele3d
    {
       public float Homothétie { get; set; }
       public Vector3 Position { get; set; }
@@ -140,6 +140,18 @@ namespace AtelierXNA
             }
          }
          MondeÀRecalculer = MondeÀRecalculer || Lacet || Tangage || Roulis;
+      }
+
+      public void SetCaméra(Caméra cam)
+      {
+         CaméraActuelle = cam;
+      }
+      public void SetPosition(Vector3 position)
+      {
+         this.Position = position;
+      }
+      public void SetRotation(Vector3 rotation)
+      {
       }
    }
 }

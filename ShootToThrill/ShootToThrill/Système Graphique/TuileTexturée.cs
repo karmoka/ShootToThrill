@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 
 namespace AtelierXNA
 {
-   class TuileTexturée : Tuile
+   public class TuileTexturée : Tuile
    {
       const int NB_TRIANGLES = 2;
       RessourcesManager<Texture2D> gestionnaireDeTextures;
@@ -66,10 +66,17 @@ namespace AtelierXNA
 
       public override void Draw(GameTime gameTime)
       {
+         RasterizerState oldRasterizer = GraphicsDevice.RasterizerState;
+         RasterizerState newRasterizer = new RasterizerState();
+         newRasterizer.CullMode = CullMode.None;
+
          BlendState oldBlendState = GraphicsDevice.BlendState;
          GraphicsDevice.BlendState = GestionAlpha;
+         GraphicsDevice.RasterizerState = newRasterizer;
+
          base.Draw(gameTime);
          GraphicsDevice.BlendState = oldBlendState;
+         GraphicsDevice.RasterizerState = oldRasterizer;
       }
 
       protected override void DessinerTriangleStrip()

@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 
 namespace AtelierXNA
 {
-   abstract class Tuile : PrimitiveDeBaseAnimée2, IModele3d
+   public abstract class Tuile : PrimitiveDeBaseAnimée2
    {
       const int NB_TRIANGLES = 2;
       protected Vector3[,] PtsSommets { get; private set; }
