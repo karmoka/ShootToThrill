@@ -234,10 +234,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\PortailMonstre.xnb</Output>
-      <Time>2016-05-03T12:02:07.4392374-04:00</Time>
+      <Time>2016-05-07T13:00:09.1889364-04:00</Time>
       <Dependency>
         <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\PortailMonstre_0.xml</Key>
-        <Value>2016-05-03T12:11:51.131-04:00</Value>
+        <Value>2016-05-07T13:33:13.0663891-04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -400,7 +400,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Machinegun.xnb</Output>
-      <Time>2016-05-05T11:25:18.1491299-04:00</Time>
+      <Time>2016-05-07T13:00:09.1750661-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Railgun.xml</Source>
@@ -517,7 +517,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Effets\SpotLight.xnb</Output>
-      <Time>2016-05-05T11:25:31.4698683-04:00</Time>
+      <Time>2016-05-09T09:09:42.4069507-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Portail\material_2.bmp</Source>
@@ -879,7 +879,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\PortailMonstre_0.xml</Output>
-      <Time>2016-05-03T12:02:07.4392374-04:00</Time>
+      <Time>2016-05-07T13:00:09.1889364-04:00</Time>
     </Item>
     <Item>
       <Source>Modèle\Railgun.fbx</Source>
@@ -1053,15 +1053,6 @@
       <Time>2016-05-05T11:25:18.1791522-04:00</Time>
     </Item>
     <Item>
-      <Source>Textures\test2_1.png</Source>
-      <Name>Textures\test2_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test2_1.xnb</Output>
-      <Time>2016-05-05T12:36:49.6477017-04:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\test5_1.bmp</Source>
       <Name>Textures\test5_1</Name>
       <Importer>TextureImporter</Importer>
@@ -1072,6 +1063,84 @@
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test5_1.xnb</Output>
       <Time>2016-05-03T12:02:08.654979-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Modèle\Mitraillette.fbx</Source>
+      <Name>Modèle\Mitraillette</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Mitraillette.xnb</Output>
+      <Time>2016-05-07T13:00:09.1829324-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Mitraillette_0.xml</Key>
+        <Value>2016-05-07T13:33:13.3310656-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Modèle\butterfly.fbx</Source>
+      <Name>Modèle\butterfly</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\butterfly.xnb</Output>
+      <Time>2016-05-03T12:02:07.4792683-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\butterfly_0.xml</Key>
+        <Value>2016-05-07T13:33:13.6387695-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Modèle\laser.fbx</Source>
+      <Name>Modèle\laser</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\laser.xnb</Output>
+      <Time>2016-05-04T10:26:21.4930672-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\laser_0.xml</Key>
+        <Value>2016-05-07T13:33:13.8123863-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Textures\Fleche.bmp</Source>
+      <Name>Textures\Fleche</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Fleche.xnb</Output>
+      <Time>2016-05-03T18:36:03.7520075-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\test2_1.bmp</Source>
+      <Name>Textures\test2_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\test2_1.xnb</Output>
+      <Time>2016-05-07T13:00:09.1909378-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Modèle\Mitraillette.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\Mitraillette_0.xml</Output>
+      <Time>2016-05-07T13:00:09.1829324-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Modèle\butterfly.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\butterfly_0.xml</Output>
+      <Time>2016-05-03T12:02:07.4792683-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Modèle\laser.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\Modèle\laser_0.xml</Output>
+      <Time>2016-05-04T10:26:21.4930672-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

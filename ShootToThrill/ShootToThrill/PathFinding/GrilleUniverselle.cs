@@ -274,17 +274,20 @@ namespace AtelierXNA
         void AjouterBordures()
         {
             CubeAdditionnable gauche = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3(-1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
-            //CubeAdditionnable droite = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width) + 1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
-            CubeAdditionnable haut = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, -1), Color.Transparent, new Vector3(1, 20, Image…tage.Width), 0);
-            CubeAdditionnable bas = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, (Image…tage.Height) + 1), Color.Transparent, new Vector3(1, 20, Image…tage.Width), 0);
+            CubeAdditionnable droite = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width) + 1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
+            CubeAdditionnable haut = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, -1), Color.Transparent, new Vector3(Image…tage.Width, 20, 1), 0);
+            CubeAdditionnable bas = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3((Image…tage.Width / 2), 10, (Image…tage.Height) + 1), Color.Transparent, new Vector3(Image…tage.Width, 20, 1), 0);
 
             gauche.Initialize();
-            //droite.Initialize();
+            droite.Initialize();
             haut.Initialize();
             bas.Initialize();
 
+            droite.EstTransparent = true;
+            bas.EstTransparent = true;
+
             ListeCube.Add(gauche);
-            //ListeCube.Add(droite);
+            ListeCube.Add(droite);
             ListeCube.Add(haut);
             ListeCube.Add(bas);
         }

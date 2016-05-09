@@ -76,8 +76,12 @@ Content\Modèle\LanceFlame.xnb
 Content\Modèle\TeslaGun.xnb
 Content\Description\Lasergun.xnb
 Content\Modèle\Lasergun.xnb
-Content\Textures\test2_1.xnb
 Content\Textures\test5_1.xnb
+Content\Modèle\Mitraillette.xnb
+Content\Modèle\butterfly.xnb
+Content\Modèle\laser.xnb
+Content\Textures\Fleche.xnb
+Content\Textures\test2_1.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

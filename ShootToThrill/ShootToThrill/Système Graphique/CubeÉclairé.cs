@@ -80,8 +80,8 @@ namespace AtelierXNA
             {
                passeEffet.Apply();
 
-               GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleStrip, Sommets1, 0, NB_SOMMETS - 2);
-               GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleStrip, Sommets2, 0, NB_SOMMETS - 2);
+               GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleList, Sommets1, 0, NB_SOMMETS - 2);
+               GraphicsDevice.DrawUserPrimitives<VertexPositionNormalTexture>(PrimitiveType.TriangleList, Sommets2, 0, NB_SOMMETS - 2);
             }
          }
       }
