@@ -23,7 +23,6 @@ namespace AtelierXNA
                   AUCUNE_MUNITION = 0,
                   VARIATION_INDEX = 1,
                   DISTANCE_MAX = 200;
-        protected float VitesseJoueur { get; set; }
         float IntervalMAJ { get; set; }
         float TempsDepuisMAJ { get; set; }
         protected bool AUnFusil
@@ -35,15 +34,13 @@ namespace AtelierXNA
             get { return Vie <= MORT; }
         }
         public int VieMax { get; protected set; }
+        public float VitesseAvatarMaximum { get; set; }
 
         protected List<Fusil> ListeArme { get; set; }
 
-        /// <summary>
-        /// Avatar dont le graphique ne bouge pas
-        /// </summary>
-        /// <param name="game"></param>
-        /// <param name="composanteGraphique"></param>
-        /// <param name="composantePhysique"></param>
+
+
+
         public MAvatar(Game game, IModele3d composanteGraphique, ObjetPhysique composantePhysique)
             : base(game, composanteGraphique, composantePhysique)
         {
@@ -76,7 +73,7 @@ namespace AtelierXNA
 
             base.Initialize();
 
-            ComposantePhysique.ÉtatsPhysiques.Add(new ÉtatPhysique(Game, CustomMathHelper.E(-4), null));
+            ComposantePhysique.Charge = CustomMathHelper.E(-6);
         }
 
         public override void Update(GameTime gameTime)
@@ -199,7 +196,7 @@ namespace AtelierXNA
             }
         }
 
-        public void RetirerVie(int domageReçu)
+        public virtual void RetirerVie(int domageReçu)
         {
             Vie -= domageReçu;
             if (EstMort)
