@@ -56,7 +56,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             IntervalRechercheAvatar = 0.05f;
-            VitesseJoueur = 0.1f;
+            VitesseAvatarMaximum = 0.1f;
             TempsDepuisRechercheAvatar = 0;
             TempsDepuisAttaque = 0;
             EstEnTrainAttaquer = false;
@@ -230,8 +230,8 @@ namespace AtelierXNA
         {
             float x = wayPointsActuels.X - positionMonde.X;
             float z = wayPointsActuels.Z - positionMonde.Z;
-            Vitesse += x < 0 ? new Vector3(-VitesseJoueur, 0, 0) : x > 0 ? new Vector3(VitesseJoueur, 0, 0) : Vector3.Zero;
-            Vitesse += z < 0 ? new Vector3(0, 0, -VitesseJoueur) : z > 0 ? new Vector3(0, 0, VitesseJoueur) : Vector3.Zero;
+            Vitesse += x < 0 ? new Vector3(-VitesseAvatarMaximum, 0, 0) : x > 0 ? new Vector3(VitesseAvatarMaximum, 0, 0) : Vector3.Zero;
+            Vitesse += z < 0 ? new Vector3(0, 0, -VitesseAvatarMaximum) : z > 0 ? new Vector3(0, 0, VitesseAvatarMaximum) : Vector3.Zero;
         }
         #endregion
 

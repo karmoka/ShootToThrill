@@ -37,7 +37,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             Score = 0;
-            VitesseJoueur = 0.1f; //Arbitraire
+            VitesseAvatarMaximum = 0.1f; //Arbitraire
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
             //Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
@@ -64,19 +64,19 @@ namespace AtelierXNA
             {
                 if (ManagerDeControle.VersGauche(IndexJoueur))
                 {
-                    Vitesse += new Vector3(-VitesseJoueur, 0, 0);
+                    Vitesse += new Vector3(-VitesseAvatarMaximum, 0, 0);
                 }
                 if (ManagerDeControle.VersDroite(IndexJoueur))
                 {
-                    Vitesse += new Vector3(VitesseJoueur, 0, 0);
+                    Vitesse += new Vector3(VitesseAvatarMaximum, 0, 0);
                 }
                 if (ManagerDeControle.VersHaut(IndexJoueur))
                 {
-                    Vitesse += new Vector3(0, 0, -VitesseJoueur);
+                    Vitesse += new Vector3(0, 0, -VitesseAvatarMaximum);
                 }
                 if (ManagerDeControle.VersBas(IndexJoueur))
                 {
-                    Vitesse += new Vector3(0, 0, VitesseJoueur);
+                    Vitesse += new Vector3(0, 0, VitesseAvatarMaximum);
                 }
             }
 
