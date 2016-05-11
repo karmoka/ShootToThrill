@@ -88,6 +88,10 @@ namespace AtelierXNA
                 if (objetPhysique is MEnnemi)
                 {
                     (objetPhysique as MEnnemi).RetirerVie(Dommage);
+                    if ((objetPhysique as MEnnemi).EstMort)
+                    {
+                        
+                    }
                 }
             }
         }

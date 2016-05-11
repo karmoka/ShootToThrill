@@ -94,6 +94,12 @@ namespace AtelierXNA
                TableauJoueurActif[i].ChangerTexte("Joueur " + i + " Prêt");
             }
 
+             if (JoueursActif[i] && GestionnaireInput.EstNouvelleTouche(Keys.S, (PlayerIndex)i))
+             {
+                 JoueursPrêt[i] = true;
+                 TableauJoueurActif[i].ChangerTexte("Joueur " + i + " Prêt");
+             }
+
             if (GamePad.GetState((PlayerIndex)i).IsConnected && GestionnaireInput.EstNouveauBouton(Buttons.Start, (PlayerIndex)i))
             {
                JoueursActif[i] = true;

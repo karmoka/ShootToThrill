@@ -4,8 +4,8 @@
     <IntervalMAJStandard>0.0166666675</IntervalMAJStandard>
     <WindowWidth>1000</WindowWidth>
     <WindowHeight>700</WindowHeight>
-    <CameraHeightOffset>5</CameraHeightOffset>
-    <CameraDistanceOffset>5</CameraDistanceOffset>
+    <CameraHeightOffset>15</CameraHeightOffset>
+    <CameraDistanceOffset>10</CameraDistanceOffset>
     <ViePersonnageMax>100</ViePersonnageMax>
     <SensibilitéFriction>0.01</SensibilitéFriction>
     <RatioDistance3dMetre>3</RatioDistance3dMetre>

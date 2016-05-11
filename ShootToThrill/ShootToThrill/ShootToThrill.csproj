@@ -123,6 +123,7 @@
     <Compile Include="InformationGame.cs" />
     <Compile Include="Interfaces\GameState.cs" />
     <Compile Include="Interfaces\IArme.cs" />
+    <Compile Include="Interfaces\IFaitMal.cs" />
     <Compile Include="Interfaces\IHeapObjet.cs" />
     <Compile Include="Interfaces\IModele3d.cs" />
     <Compile Include="Interfaces\IPausable.cs" />

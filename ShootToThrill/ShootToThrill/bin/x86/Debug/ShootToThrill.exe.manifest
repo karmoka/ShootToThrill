@@ -97,14 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ShootToThrill.exe" size="265216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ShootToThrill.exe" size="266240">
       <assemblyIdentity name="ShootToThrill" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>FKSWgGdUDFoWUeB97/hen2zwYbM=</dsig:DigestValue>
+        <dsig:DigestValue>0pGvc7aMDTgPHozd2pnysC+eIo4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -198,7 +198,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0/Q1PLKkS3gAuiEvDzQ8cTIJRog=</dsig:DigestValue>
+      <dsig:DigestValue>DsQtrkAUQaz8JF3ywczg4mdonNY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Description\Pistol.xnb" size="449">
@@ -666,7 +666,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>TLmwws2EQLZvFQ5M6oA2ycuGEAM=</dsig:DigestValue>
+      <dsig:DigestValue>ouXe4Zh4CLkfQnoryA+QfQhdfBA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Personnage\0Description.txt" size="71">

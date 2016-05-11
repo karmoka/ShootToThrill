@@ -400,7 +400,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Machinegun.xnb</Output>
-      <Time>2016-05-07T13:00:09.1750661-04:00</Time>
+      <Time>2016-05-11T10:57:51.1125073-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Railgun.xml</Source>
@@ -427,7 +427,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Options.xnb</Output>
-      <Time>2016-05-03T12:02:07.5263015-04:00</Time>
+      <Time>2016-05-11T09:12:30.2157693-04:00</Time>
     </Item>
     <Item>
       <Source>Description\Boss0.xml</Source>
