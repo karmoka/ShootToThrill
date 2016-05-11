@@ -45,13 +45,35 @@ namespace AtelierXNA
             TempsDepuisDommage = 0;
             base.Initialize();
             TypeEnt = TypeEntité.Joueur;
-            //Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+           // Fusil fusil = new Pistol(Game, Game.Content.Load<DescriptionFusil>("Description/Pistol"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
+            //fusil.Initialize();
+            //AjouterArme(fusil);
             Fusil fusil = new Machinegun(Game, Game.Content.Load<DescriptionFusil>("Description/Machinegun"), new Vector3(1, 3, 1) + Vector3.Up, 0.005f, 0.02f);
-            //Fusil fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
-            //Fusil fusil = new Lasergun(Game, Game.Content.Load<DescriptionFusil>("Description/Lasergun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
-            //Fusil fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(0,0,0) + Vector3.Up, 0.005f, 0.02f);
             fusil.Initialize();
             AjouterArme(fusil);
+            TournerSurY(Vector2.Zero);
+            
+            fusil = new Teslagun(Game, Game.Content.Load<DescriptionFusil>("Description/Teslagun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
+            fusil.Initialize();
+            AjouterArme(fusil);
+            TournerSurY(Vector2.Zero);
+
+            fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(0,0,0) + Vector3.Up, 0.005f, 0.02f);
+            fusil.Initialize();
+            AjouterArme(fusil);
+            TournerSurY(Vector2.Zero);
+            
+            fusil = new Lasergun(Game, Game.Content.Load<DescriptionFusil>("Description/Lasergun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
+            fusil.Initialize();
+            AjouterArme(fusil);
+            TournerSurY(Vector2.Zero);
+
+            fusil = new Railgun(Game, Game.Content.Load<DescriptionFusil>("Description/Railgun"), new Vector3(1, 4, 1) + Vector3.Up, 0.005f, 0.02f);
+            fusil.Initialize();
+            TournerSurY(Vector2.Zero);
+            //fusil.ChangerÉtatGraphique();
+            AjouterArme(fusil);
+
             JoueurScreenManager = new JoueurScreenManager(Game, this);
             JoueurScreenManager.Initialize();
         }
@@ -95,11 +117,11 @@ namespace AtelierXNA
             }
             if (ManagerDeControle.AChangéArmeHaut(IndexJoueur))
             {
-                IndexArme = IndexArme + 1;
+                ChangerArme(true);
             }
             if (ManagerDeControle.AChangéArmeBas(IndexJoueur))
             {
-                IndexArme = IndexArme - 1;
+                ChangerArme(false);
             }
             if (ManagerDeControle.ASauté(IndexJoueur) && Math.Round(Position.Y * 100) / 100 == 1)
             {
@@ -110,6 +132,10 @@ namespace AtelierXNA
                Vector2 direction = ManagerDeControle.EstJoystickDroitActif(IndexJoueur) ? ManagerDeControle.GetRightThumbStick(IndexJoueur) : ManagerDeControle.GetOrientation(IndexJoueur);
                Vector3 direction3 = Vector3.UnitY * CustomMathHelper.AngleDeVecteur2D(direction);
                TournerSurY(direction);
+            }
+            if (!ManagerDeControle.ATiré(IndexJoueur) && (ArmeSélectionnée.NomArme == "Railgun" || ArmeSélectionnée.NomArme == "Teslagun"))
+            {
+                ArmeSélectionnée.RechargerContinu();
             }
 
             base.BougerAvatar();

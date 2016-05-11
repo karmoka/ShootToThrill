@@ -155,29 +155,41 @@ namespace AtelierXNA
 
         protected void ChangerArme(bool monter)
         {
+            ArmeSélectionnée.ChangerÉtatGraphique();
+            //ArmeSélectionnée.ChangerÉtatPhysique();
+            ArmeSélectionnée.Visible = false;
             IndexArme += monter ? VARIATION_INDEX : -VARIATION_INDEX;
+            ArmeSélectionnée.ChangerÉtatGraphique();
+            ArmeSélectionnée.Visible = true;
+            Fusil armeSélectionnée = ArmeSélectionnée;
             if (ListeArme.Exists(x => x != ArmeSélectionnée && x.AucuneMunition))
             {
-                RetirerArme(ListeArme.Find(x => x != ArmeSélectionnée && x.AucuneMunition));
+                Fusil fusil = ListeArme.Find(x => x != ArmeSélectionnée && x.AucuneMunition);
+                RetirerArme(fusil);
+                fusil.Dispose();
+                IndexArme = ListeArme.FindIndex(x => x == armeSélectionnée);
             }
         }
 
         protected void AjouterMunition(Munition munition)
         {
-            if (ListeArme != null && ListeArme.Exists(x => x.NomArme == munition.NomFusil))
+            if (ListeArme != null )//&& ListeArme.Exists(x => x.NomArme == munition.NomFusil))
             {
-                if (ArmeSélectionnée.NomArme == munition.NomFusil)
-                {
-                    ArmeSélectionnée.RécupérerMunitions();
-                    //if (ArmeSélectionnée.MunitionRestantDansChargeur == AUCUNE_MUNITION)
-                    //{
-                    //    ArmeSélectionnée.Recharger();
-                    //}
-                }
-                else
-                {
-                    ListeArme.Find(x => x.NomArme == munition.NomFusil).RécupérerMunitions();
-                }
+                ArmeSélectionnée.RécupérerMunitions();
+                munition.DésactiverItem();
+
+                //if (ArmeSélectionnée.NomArme == munition.NomFusil)
+                //{
+                //    ArmeSélectionnée.RécupérerMunitions();
+                //    //if (ArmeSélectionnée.MunitionRestantDansChargeur == AUCUNE_MUNITION)
+                //    //{
+                //    //    ArmeSélectionnée.Recharger();
+                //    //}
+                //}
+                //else
+                //{
+                //    ListeArme.Find(x => x.NomArme == munition.NomFusil).RécupérerMunitions();
+                //}
             }
         }
 

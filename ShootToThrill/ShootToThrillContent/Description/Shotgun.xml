@@ -12,7 +12,7 @@
     <NomArme>Shotgun</NomArme>
     <NomModèle>Shotgun</NomModèle>
     <Cadence>1</Cadence>
-    <Dommage>20</Dommage>
+    <Dommage>50</Dommage>
     <Portée>20</Portée>
     <AngleDeTir>20</AngleDeTir>
     <Area>false</Area>

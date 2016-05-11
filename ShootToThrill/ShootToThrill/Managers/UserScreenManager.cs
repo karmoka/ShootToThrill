@@ -20,14 +20,13 @@ namespace AtelierXNA
         int[] EspaceY2 { get; set; }
 
         MJoueur Joueur { get; set; }
-        int IndexJoueur { get; set; }
+        int IndexJoueur { get { return (int)Joueur.IndexJoueur; } }
         Vector2 Échelle { get; set; }
 
         Rectangle RectangleVieRestante { get; set; }
         Rectangle RectangleVieMax { get; set; }
         Rectangle RectangleVieNoir { get; set; }
-        Rectangle RectangleBleu1 { get; set; }
-        Rectangle RectangleBleu2 { get; set; }
+        Rectangle RectangleBleu { get; set; }
         Rectangle RectangleMunitionRestante { get; set; }
         Rectangle RectangleMunitionMaxChargeur { get; set; }
         Rectangle RectangleMunitionNoir { get; set; }
@@ -56,7 +55,6 @@ namespace AtelierXNA
             : base(game)
         {
             Joueur = joueur;
-            IndexJoueur = (int)Joueur.IndexJoueur;
         }
 
         #region Initialize
@@ -188,7 +186,7 @@ namespace AtelierXNA
                 RectangleScore = new Rectangle(EspaceX1[1], EspaceY2[5], EspaceX1[2] - EspaceX1[1], EspaceY2[6] - EspaceY2[5]);
             }
 
-            RectangleBleu1 = new Rectangle(EspaceX1[0], EspaceY2[0], EspaceX1[5] - EspaceX1[0], EspaceY1[8] - EspaceY1[0]);//y2
+            RectangleBleu = new Rectangle(EspaceX1[0], EspaceY2[0], EspaceX1[5] - EspaceX1[0], EspaceY1[8] - EspaceY1[0]);//y2
             //RectangleBleu2 = new Rectangle(EspaceX2[0], EspaceY1[5], EspaceX2[7] - EspaceX2[0], EspaceY1[8] - EspaceY1[5]);
             
             //InitialiserRecharge();
@@ -321,8 +319,15 @@ namespace AtelierXNA
 
         void DrawArrièrePlan()
         {
-            GestionSprites.Draw(ImageBleu, RectangleBleu1, Color.Blue);
-            //GestionSprites.Draw(ImageBleu, RectangleBleu2, Color.Blue);
+            if(IndexJoueur %2 == 0)
+            {
+                GestionSprites.Draw(ImageBleu, RectangleBleu, Color.Blue);
+            }
+            else
+            {
+                //Si le joeur se trouve dans un viewport pair(coller a droite), on flip son afficheur de vie/munition/etc
+                GestionSprites.Draw(ImageBleu, RectangleBleu, new Rectangle(0,0,ImageBleu.Width,ImageBleu.Height), Color.Blue,0,Vector2.Zero, SpriteEffects.FlipHorizontally, 0);
+            }
         }
 
         void DrawFusil()
@@ -344,7 +349,7 @@ namespace AtelierXNA
             GestionSprites.Draw(ImageNoir, RectangleMunitionNoir, Color.Black);
             GestionSprites.Draw(ImageMunition, RectangleMunitionRestante, Color.Green);
             //DrawString("\u221E" , RectangleMunitionRestante);
-            DrawString(Joueur.ArmeSélectionnée.MunitionRestantDansChargeur + " / " + Joueur.ArmeSélectionnée.MunitionMaxDansChargeur, RectangleMunitionRestante);
+            DrawString(Joueur.ArmeSélectionnée.MunitionRestantDansChargeur + " / " + Joueur.ArmeSélectionnée.MunitionMaxDansChargeur, RectangleMunitionNoir);
         }
 
         void DrawVie()
@@ -352,12 +357,12 @@ namespace AtelierXNA
             GestionSprites.Draw(ImageVie, RectangleVieMax, Color.Red);
             GestionSprites.Draw(ImageNoir, RectangleVieNoir, Color.Black);
             GestionSprites.Draw(ImageVie, RectangleVieRestante, Color.Red);
-            DrawString(Joueur.Vie + " / " + Joueur.VieMax, RectangleVieRestante);
+            DrawString(Joueur.Vie + " / " + Joueur.VieMax, RectangleVieNoir);
         }
         
         void DrawScore()
         {
-            GestionSprites.Draw(ImageScore, RectangleScore, Color.White);
+            GestionSprites.Draw(ImageScore, RectangleScore, Color.Purple);
             DrawString("Score: " + Joueur.Score, RectangleScore);
         }
 
@@ -365,7 +370,7 @@ namespace AtelierXNA
         {
             Vector2 dimensionString = ArialFont.MeasureString(message);
             Vector2 positionString = new Vector2(rectangle.X + rectangle.Width / 2, rectangle.Y + rectangle.Height / 2) - dimensionString / 2 * Échelle;
-            GestionSprites.DrawString(ArialFont, message, positionString, Color.Black, 0f, Vector2.Zero, Échelle, SpriteEffects.None, 0);
+            GestionSprites.DrawString(ArialFont, message, positionString, Color.White, 0f, Vector2.Zero, Échelle, SpriteEffects.None, 0);
         }
         #endregion
     }

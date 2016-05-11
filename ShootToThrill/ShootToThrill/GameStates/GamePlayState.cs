@@ -131,8 +131,8 @@ namespace AtelierXNA
         void CréerJoueurs()
         {
            DescriptionAvatar description;
-           InformationJeu.AjouterJoueur(PlayerIndex.Two);
-           InformationJeu.SetPlayerAvatar(1, 1);
+           //InformationJeu.AjouterJoueur(PlayerIndex.Two);
+           //InformationJeu.SetPlayerAvatar(1, 1);
 
             for (int i = 0; i < InformationJeu.NBJoueur; ++i)
             {

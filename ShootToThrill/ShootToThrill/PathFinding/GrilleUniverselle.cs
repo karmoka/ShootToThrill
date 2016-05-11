@@ -371,8 +371,8 @@ namespace AtelierXNA
             float pourcentageZ = positionMonde.Z / TailleMondeGrille.Z; //(positionMonde.Z + TailleMondeGrille.Z / 2) / TailleMondeGrille.Z;
             pourcentageX = pourcentageX < 0 ? 0 : pourcentageX > 1 ? 1 : pourcentageX;
             pourcentageZ = pourcentageZ < 0 ? 0 : pourcentageZ > 1 ? 1 : pourcentageZ;
-            int x = (int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);//(int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);
-            int z = (int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ); //(int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ);
+            int x = (int)Math.Round((TailleMondeGrille.X -1) * pourcentageX);//(int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);
+            int z = (int)Math.Round((TailleMondeGrille.Z -1) * pourcentageZ); //(int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ);
             return GetNode(x, z);
         }
 

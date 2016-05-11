@@ -147,6 +147,7 @@
       <Name>Shotgun</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Modèle\Sphere.fbx">
       <Name>Sphere</Name>
@@ -189,6 +190,7 @@
       <Name>Railgun</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Description\Shotgun.xml">
       <Name>Shotgun</Name>
@@ -523,6 +525,7 @@
       <Name>Fleche</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>

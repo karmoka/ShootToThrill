@@ -89,6 +89,8 @@ Content\Modèle\ship_tex_0.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb
+Content\Modèle\Shotgun.fbx
+Content\Textures\Fleche.bmp
 Content\Maps\0Description.txt
 Content\Maps\1Description.txt
 Content\Maps\2Description.txt

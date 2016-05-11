@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Data="ProjetPrincipal.Data">
   <Asset Type="Data:DescriptionFusil">
-    <AMunitionInfini>true</AMunitionInfini>
-    <MunitionTotalRestant>5</MunitionTotalRestant>
-    <MunitionTotalMax>5</MunitionTotalMax>
-    <MunitionMaxDansChargeur>5</MunitionMaxDansChargeur>
+    <AMunitionInfini>false</AMunitionInfini>
+    <MunitionTotalRestant>250</MunitionTotalRestant>
+    <MunitionTotalMax>250</MunitionTotalMax>
+    <MunitionMaxDansChargeur>250</MunitionMaxDansChargeur>
     <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
-    <MunitionDansCaisseMunitions>5</MunitionDansCaisseMunitions>
-    <MunitionInitial>5</MunitionInitial>
+    <MunitionDansCaisseMunitions>250</MunitionDansCaisseMunitions>
+    <MunitionInitial>250</MunitionInitial>
     <IntervalRechargement>0</IntervalRechargement>
     <NomArme>Teslagun</NomArme>
     <NomModèle>TeslaGun</NomModèle>
