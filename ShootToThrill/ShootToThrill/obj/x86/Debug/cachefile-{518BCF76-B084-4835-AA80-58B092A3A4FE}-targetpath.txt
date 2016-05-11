@@ -28,6 +28,12 @@ Content\Modèle\unicorn.xnb
 Content\Modèle\untitled.xnb
 Content\Modèle\Interrupteur.xnb
 Content\Modèle\ship2.xnb
+Content\Modèle\LanceFlame.xnb
+Content\Modèle\Lasergun.xnb
+Content\Modèle\TeslaGun.xnb
+Content\Modèle\Mitraillette.xnb
+Content\Modèle\butterfly.xnb
+Content\Modèle\laser.xnb
 Content\Description\Bazooka.xnb
 Content\Description\Machinegun.xnb
 Content\Description\Railgun.xnb
@@ -40,6 +46,11 @@ Content\Description\Ennemi2.xnb
 Content\Description\Ennemi1.xnb
 Content\Description\Pistol.xnb
 Content\Description\Avatar0.xnb
+Content\Description\Teslagun.xnb
+Content\Description\Lasergun.xnb
+Content\Description\Avatar1.xnb
+Content\Description\Avatar2.xnb
+Content\Description\Avatar3.xnb
 Content\Effets\Lumière.xnb
 Content\Effets\Phong.xnb
 Content\Effets\SpotLight.xnb
@@ -55,7 +66,6 @@ Content\Textures\RectangleNoir.xnb
 Content\Textures\RectangleRouge.xnb
 Content\Textures\RectangleVert.xnb
 Content\Textures\splash_screen.xnb
-Content\Textures\test1_1.xnb
 Content\Textures\Test3_1.xnb
 Content\Textures\Test4_1.xnb
 Content\Textures\ThumbnailP0.xnb
@@ -68,20 +78,14 @@ Content\Textures\strip1.xnb
 Content\Textures\strip2.xnb
 Content\Textures\strip3.xnb
 Content\Textures\strip4.xnb
+Content\Textures\test5_1.xnb
+Content\Textures\test1_1.xnb
+Content\Textures\Fleche.xnb
+Content\Textures\test2_1.xnb
+Content\Textures\Acid.xnb
 Content\Sounds\Menu.xnb
 Content\Sounds\Boss.xnb
 Content\Modèle\ship_tex_0.xnb
-Content\Description\Teslagun.xnb
-Content\Modèle\LanceFlame.xnb
-Content\Modèle\TeslaGun.xnb
-Content\Description\Lasergun.xnb
-Content\Modèle\Lasergun.xnb
-Content\Textures\test5_1.xnb
-Content\Modèle\Mitraillette.xnb
-Content\Modèle\butterfly.xnb
-Content\Modèle\laser.xnb
-Content\Textures\Fleche.xnb
-Content\Textures\test2_1.xnb
 Content\Sounds\AudioEngine.xgs
 Content\Sounds\Wave Bank.xwb
 Content\Sounds\Sound Bank.xsb

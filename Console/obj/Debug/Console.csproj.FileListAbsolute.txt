@@ -307,3 +307,12 @@ C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Sounds\Boss.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\ship_tex_0.xnb
 C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\test5_1.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\LanceFlame.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Lasergun.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\TeslaGun.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\Mitraillette.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\butterfly.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Modèle\laser.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Teslagun.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Description\Lasergun.xnb
+C:\Users\Karmoka\Documents\GitHub\ShootToThrill\Console\bin\Debug\Content\Textures\Acid.xnb

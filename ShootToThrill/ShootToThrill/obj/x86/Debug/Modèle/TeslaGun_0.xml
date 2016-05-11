@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>SketchUp_003</Name>
     <Identity>
-      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\TeslaGun.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\TeslaGun.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 0 -1 0 0 1 0 0 0 0 0 1</Transform>
@@ -27,7 +27,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>material_002</Name>
       <Identity>
-        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\TeslaGun.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\TeslaGun.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
