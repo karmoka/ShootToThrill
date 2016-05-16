@@ -27,7 +27,7 @@ namespace AtelierXNA
        public int[] idPlayers { get; private set; }
        //Quels joueurs sont actifs pour le jeu
        List<PlayerIndex> JoueursActivés { get; set; }
-       public Color[] CouleursJoueurs = new Color[4] { Color.Blue, Color.Blue, Color.Green, Color.Yellow };
+       public Color[] CouleursJoueurs = new Color[4] { Color.Red, Color.Blue, Color.Green, Color.Yellow };
 
       public InformationGame(int nbJoueur, int idMap)
       {

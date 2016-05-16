@@ -14,7 +14,7 @@ namespace AtelierXNA
 {
     public class Éclair : Projectile
     {
-        const int NB_CROISEMENT = 5;
+        const int NB_CROISEMENT = 7;
 
         Vector3[] PositionsPoints { get; set; }
         VertexPositionColor[] PointsColorés { get; set; }

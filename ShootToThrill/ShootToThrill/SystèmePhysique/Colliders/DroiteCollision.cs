@@ -22,6 +22,7 @@ namespace AtelierXNA
         Vector3 PointIntersection { get; set; }
         Game Jeu { get; set; }
         int Dommage { get; set; }
+
         public DroiteCollision(Game game, Vector3 vecteur, Vector3 point, float longueur, int dommage)
         {
             VecteurUnitaire = vecteur;
@@ -77,20 +78,21 @@ namespace AtelierXNA
                 IPhysique objetPhysique = null;
                 foreach (IPhysique objet in DansTrajectoire)
                 {
+                    if(objet is MEnnemi)
+                    {
+
+                    }
                     if ((objet is MEnnemi || objet is CubeAdditionnable) && this.Intersects(objet.GetCollider()) && (PointIntersection - Point).Length() != 0 && (PointIntersection - Point).Length() < Longueur)
                     {
                         objetPhysique = objet;
                     }
                 }
 
-                //PointIntersection = Point + VecteurUnitaire * Longueur;
-
                 if (objetPhysique is MEnnemi)
                 {
                     (objetPhysique as MEnnemi).RetirerVie(Dommage);
                     if ((objetPhysique as MEnnemi).EstMort)
                     {
-                        
                     }
                 }
             }

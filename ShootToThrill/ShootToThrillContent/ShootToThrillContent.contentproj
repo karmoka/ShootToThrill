@@ -147,6 +147,7 @@
       <Name>Shotgun</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Modèle\Sphere.fbx">
       <Name>Sphere</Name>
@@ -189,6 +190,7 @@
       <Name>Railgun</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Description\Shotgun.xml">
       <Name>Shotgun</Name>
@@ -523,10 +525,35 @@
       <Name>Fleche</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\test2_1.bmp">
+    <Compile Include="Textures\Acid.png">
+      <Name>Acid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Description\Avatar1.xml">
+      <Name>Avatar1</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Description\Avatar2.xml">
+      <Name>Avatar2</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Description\Avatar3.xml">
+      <Name>Avatar3</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\test2_1.png">
       <Name>test2_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

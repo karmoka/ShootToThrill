@@ -149,6 +149,7 @@ namespace AtelierXNA
 
          return enCollision;
       }
+      
 
       static float LongueurCubeProjeté(CubeCollision A, CubeCollision B, Vector3 AxeComparé)
       {
@@ -158,16 +159,16 @@ namespace AtelierXNA
 
       public override Vector3 Normale(Vector3 positionAutreObjet)
       {
-         Vector3 diff = this.Center - positionAutreObjet;
-         diff = ValeurAbsolueVecteur(diff);
-         diff -= DemiDimention;
-         diff = CustomMathHelper.PlancherZero(diff);
+          Vector3 diff = this.Center - positionAutreObjet;
+          diff = ValeurAbsolueVecteur(diff);
+          diff -= DemiDimention;
+          //diff = CustomMathHelper.PlancherZero(diff);
 
-         float x = Vector3.Dot(diff, AxeX);
-         float y = Vector3.Dot(diff, AxeY);
-         float z = Vector3.Dot(diff, AxeZ);
+          float x = Vector3.Dot(diff, AxeX);
+          float y = Vector3.Dot(diff, AxeY);
+          float z = Vector3.Dot(diff, AxeZ);
 
-         Vector3 axe = x > y ? (x > z ? AxeX : AxeZ) : (y > z ? AxeY : AxeZ);
+          Vector3 axe = x > y ? (x > z ? AxeX : AxeZ) : (y > z ? AxeY : AxeZ);
 
          return axe;
       }

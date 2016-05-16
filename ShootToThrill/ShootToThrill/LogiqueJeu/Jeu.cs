@@ -129,7 +129,7 @@ namespace AtelierXNA
                 {
                     Interrupteur.ActiverItem();
                 }
-                else if (Interrupteur.EstInterrupteurActif)
+                else if (Interrupteur.EstInterrupteurActif && Round.AucunEnnemi && Round.EnnemisTousCréés)
                 {
                     Interrupteur.DésactiverItem();
                 }

@@ -33,6 +33,7 @@ namespace AtelierXNA
         protected List<DroiteColorée> ListeTrajectoires { get; set; }
         protected List<Projectile> ListeProjectile { get; set; }
         bool TrajectoireExiste { get; set; }
+
         int AngleRotation
         {
             get
@@ -46,6 +47,9 @@ namespace AtelierXNA
         }
         float TempsDepuisDernierTir { get; set; }
         float TempsDepuisDebutJeu { get; set; }
+        float TempsDepuisRecharge { get; set; }
+
+        int Score { get; set; }
 
         #region Munition
         int _munitionTotalRestant,
@@ -139,15 +143,19 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
-           ComposantePhysique.EstImmuable = true;
+            ComposantePhysique.EstImmuable = true;
             Direction = new Vector2(0, 1);
             TempsDepuisDernierTir = 0;
             TempsDepuisDebutJeu = 0;
+            TempsDepuisRecharge = 0;
             RechargeInitiale();
+            Score = 0;
             ListeTrajectoires = new List<DroiteColorée>();
             ListeProjectile = new List<Projectile>();
             TrajectoireExiste = false;
+            Visible = false;
             base.Initialize();
+            ChangerÉtatGraphique();
         }
 
         protected override void LoadContent()
@@ -161,8 +169,10 @@ namespace AtelierXNA
         public override void Update(GameTime gameTime)
         {
             GameTime = gameTime;
-            TempsDepuisDernierTir += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            TempsDepuisDebutJeu += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float tempsDepuisMAJ = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            TempsDepuisDernierTir += tempsDepuisMAJ;
+            TempsDepuisDebutJeu += tempsDepuisMAJ;
+            TempsDepuisRecharge += tempsDepuisMAJ;
 
             foreach(Projectile projectile in ListeProjectile)
             {
@@ -285,6 +295,15 @@ namespace AtelierXNA
             MunitionTotalRestant = MunitionInitial - MunitionMaxDansChargeur < MUNITION_MIN ? MUNITION_MIN : MunitionTotalRestant - MunitionMaxDansChargeur;
         }
 
+        public void RechargerContinu()
+        {
+            if(TempsDepuisRecharge >= IntervalRechargement)
+            {
+                MunitionRestantDansChargeur += MunitionRestantDansChargeur > ZERO ? UNE_MUNITION : ZERO;
+                TempsDepuisRecharge = 0;
+            }
+        }
+
 
         public void Recharger()
         {
@@ -318,6 +337,11 @@ namespace AtelierXNA
         {
 
         }
+
+        //public void AjouterPropriétaire(MJoueur joueur)
+        //{
+        //    Propriétaire = joueur;
+        //}
 
         public void Animer()
         {

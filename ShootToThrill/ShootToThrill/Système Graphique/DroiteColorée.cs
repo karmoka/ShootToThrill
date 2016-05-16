@@ -14,8 +14,6 @@ namespace AtelierXNA
 {
     public class DroiteColorée : PrimitiveDeBaseAnimée2
     {
-        const int NB_CROISEMENT = 5;
-
         public void ChangerCaméra(Caméra cam)
         {
             CaméraActuelle = cam;

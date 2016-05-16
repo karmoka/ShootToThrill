@@ -3,17 +3,17 @@
   <Asset Type="Data:DescriptionFusil">
     <AMunitionInfini>false</AMunitionInfini>
     <MunitionTotalRestant>0</MunitionTotalRestant>
-    <MunitionTotalMax>1</MunitionTotalMax>
-    <MunitionMaxDansChargeur>1</MunitionMaxDansChargeur>
+    <MunitionTotalMax>100</MunitionTotalMax>
+    <MunitionMaxDansChargeur>100</MunitionMaxDansChargeur>
     <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
-    <MunitionDansCaisseMunitions>1</MunitionDansCaisseMunitions>
-    <MunitionInitial>1</MunitionInitial>
-    <IntervalRechargement>5</IntervalRechargement>
+    <MunitionDansCaisseMunitions>100</MunitionDansCaisseMunitions>
+    <MunitionInitial>100</MunitionInitial>
+    <IntervalRechargement>0.2</IntervalRechargement>
     <NomArme>Railgun</NomArme>
     <NomModèle>Railgun</NomModèle>
-    <Cadence>3</Cadence>
+    <Cadence>0.5</Cadence>
     <Dommage>100</Dommage>
-    <Portée>5</Portée>
+    <Portée>20</Portée>
     <AngleDeTir>35</AngleDeTir>
     <Area>false</Area>
     <NbBallesParTir>1</NbBallesParTir>

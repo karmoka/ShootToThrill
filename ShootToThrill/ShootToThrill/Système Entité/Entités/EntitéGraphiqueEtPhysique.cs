@@ -71,7 +71,7 @@ namespace AtelierXNA
          ChangerÉtatPhysique();
       }
 
-      protected void ChangerÉtatPhysique()
+      public void ChangerÉtatPhysique()
       {
          PhysiqueActivé = !PhysiqueActivé;
 
@@ -85,7 +85,7 @@ namespace AtelierXNA
          }
       }
 
-      protected void ChangerÉtatGraphique()
+      public void ChangerÉtatGraphique()
       {
          GraphiqueActivé = !GraphiqueActivé;
 

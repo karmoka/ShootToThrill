@@ -15,6 +15,8 @@ namespace AtelierXNA
     class Interrupteur : Item
     {
         public bool EstInterrupteurActif { get; private set; }
+        public bool EstActivable { get; private set; }
+
         public Interrupteur(Game game, Vector3 positionInitiale, float rayon, string nomModèle, float intervalMAJ)
             : base(game, positionInitiale, rayon, nomModèle, intervalMAJ, false)
         {
@@ -22,12 +24,14 @@ namespace AtelierXNA
 
         public override void Initialize()
         {
+            EstActivable = false;
             EstInterrupteurActif = false;
             base.Initialize();
         }
 
         public override void ActiverItem()
         {
+            EstActivable = true;
             EstInterrupteurActif = true;
             base.ActiverItem();
         }
@@ -40,8 +44,12 @@ namespace AtelierXNA
 
         public void ChangerGravité()
         {
-            //OptionJeu.ChangerGravité();
-            DésactiverItem();
+            if(!EstInterrupteurActif)
+            {
+                EstInterrupteurActif = true;
+                EstActivable = false;
+                OptionsJeu.ChangerGravité();
+            }
         }
     }
 }

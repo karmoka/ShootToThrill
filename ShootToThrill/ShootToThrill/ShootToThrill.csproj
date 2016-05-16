@@ -169,6 +169,7 @@
     <Compile Include="Système Entité\Items\Projectiles\Éclair.cs" />
     <Compile Include="Système Entité\Items\RandomItemDrop.cs" />
     <Compile Include="Système Entité\Items\Soin.cs" />
+    <Compile Include="Système Entité\TacheAcide.cs" />
     <Compile Include="Système Graphique\BillboardColoréTracing.cs" />
     <Compile Include="Système Graphique\CubeÉclairé.cs" />
     <Compile Include="Système Graphique\DroiteColorée.cs" />
@@ -187,6 +188,8 @@
     <Compile Include="Système Graphique\Billboard.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreDeBase.cs" />
     <Compile Include="Système Graphique\Shaders\SphèreÉclairée.cs" />
+    <Compile Include="Système Graphique\Tuile.cs" />
+    <Compile Include="Système Graphique\TuileTexturée.cs" />
     <Compile Include="SystèmePhysique\Colliders\Collider.cs" />
     <Compile Include="SystèmePhysique\Colliders\DroiteCollision.cs" />
     <Compile Include="SystèmePhysique\Colliders\MCubeCollision.cs" />

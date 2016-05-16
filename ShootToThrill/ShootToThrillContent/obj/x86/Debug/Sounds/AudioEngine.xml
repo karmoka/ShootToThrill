@@ -8,16 +8,22 @@
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
-    Compression Preset Name = &lt;none&gt;;
-    Bank Last Revised Low = 3287225810;
-    Bank Last Revised High = 30515217;
+    Compression Preset Name = Compression Preset;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 2110778043;
+    PC Bank Last Modified High = 30516661;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
+    Bank Last Revised Low = 2073387561;
+    Bank Last Revised High = 30516661;
 
     Wave
     {
         Name = Menu;
         File = Menu.wav;
-        Build Settings Last Modified Low = 3247083514;
-        Build Settings Last Modified High = 30515217;
+        Build Settings Last Modified Low = 4178787081;
+        Build Settings Last Modified High = 30515609;
 
         Cache
         {
@@ -30,8 +36,268 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 915981263;
-            Last Modified High = 30515213;
+            Last Modified Low = 1184077157;
+            Last Modified High = 30516397;
+        }
+    }
+
+    Wave
+    {
+        Name = MachineGun;
+        File = MachineGun.wav;
+        Build Settings Last Modified Low = 1551901918;
+        Build Settings Last Modified High = 30515612;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 77524;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1185067214;
+            Last Modified High = 30516397;
+        }
+    }
+
+    Wave
+    {
+        Name = Pistol;
+        File = Pistol.wav;
+        Build Settings Last Modified Low = 1571873060;
+        Build Settings Last Modified High = 30515612;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 103184;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1185087215;
+            Last Modified High = 30516397;
+        }
+    }
+
+    Wave
+    {
+        Name = Shotgun;
+        File = Shotgun.wav;
+        Build Settings Last Modified Low = 1571883061;
+        Build Settings Last Modified High = 30515612;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 368640;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1185147219;
+            Last Modified High = 30516397;
+        }
+    }
+
+    Wave
+    {
+        Name = GrenadeLauncher;
+        File = GrenadeLauncher.wav;
+        Build Settings Last Modified Low = 1571883061;
+        Build Settings Last Modified High = 30515612;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 11025;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 38772;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1185037212;
+            Last Modified High = 30516397;
+        }
+    }
+
+    Wave
+    {
+        Name = Boss;
+        File = Boss.wav;
+        Build Settings Last Modified Low = 2368702016;
+        Build Settings Last Modified High = 30516654;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 22579200;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1864313166;
+            Last Modified High = 30516654;
+        }
+    }
+
+    Wave
+    {
+        Name = Click;
+        File = Click.wav;
+        Build Settings Last Modified Low = 1065339563;
+        Build Settings Last Modified High = 30516659;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 79268;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 488489385;
+            Last Modified High = 30516659;
+        }
+    }
+
+    Wave
+    {
+        Name = Button;
+        File = Button.wav;
+        Build Settings Last Modified Low = 3965495547;
+        Build Settings Last Modified High = 30516659;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 44816;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3564580701;
+            Last Modified High = 30516659;
+        }
+    }
+
+    Wave
+    {
+        Name = Happy;
+        File = Happy.wav;
+        Build Settings Last Modified Low = 2697197089;
+        Build Settings Last Modified High = 30516660;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 352256;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2321403300;
+            Last Modified High = 30516660;
+        }
+    }
+
+    Wave
+    {
+        Name = Sad;
+        File = Sad.wav;
+        Build Settings Last Modified Low = 2697197089;
+        Build Settings Last Modified High = 30516660;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 262904;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2176126218;
+            Last Modified High = 30516660;
+        }
+    }
+
+    Wave
+    {
+        Name = Electricity;
+        File = Electricity.wav;
+        Build Settings Last Modified Low = 1378591764;
+        Build Settings Last Modified High = 30516661;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 79326;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1116927544;
+            Last Modified High = 30516661;
+        }
+    }
+
+    Wave
+    {
+        Name = Laser;
+        File = Laser.wav;
+        Build Settings Last Modified Low = 2046257510;
+        Build Settings Last Modified High = 30516661;
+        Compression Preset Name = Compression Preset;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 110580;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1912786471;
+            Last Modified High = 30516661;
         }
     }
 }

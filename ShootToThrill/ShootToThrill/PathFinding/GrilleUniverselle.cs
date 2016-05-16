@@ -73,11 +73,14 @@ namespace AtelierXNA
             base.Initialize();
         }
 
+
         #region Image
         void CrÈerSol()
         {
             TailleMondeGrille = new Vector3(Image…tage.Width, Liste…tage.Count + 1, Image…tage.Height);
             TableauNode = new Node[Image…tage.Width, Liste…tage.Count + 1, Image…tage.Height];
+
+            //Tableau de cubes additionnables, lors de son initialisation, il y a un cube par pixel noir dans une image Bitmap.
             TableauCube = new CubeAdditionnable[Image…tage.Width, Liste…tage.Count + 1, Image…tage.Height];
             for (int x = 0; x < Image…tage.Width; ++x)
             {
@@ -92,6 +95,7 @@ namespace AtelierXNA
             }
         }
 
+        //Fonction ‡ Mikael
         void Ajouter…tage(string nomImage…tage)
         {
             Image…tage = GestionnaireDeTexture.Find(nomImage…tage);
@@ -104,6 +108,7 @@ namespace AtelierXNA
             CrÈer…tage(nomImage…tage);
         }
 
+        //Fonction ‡ Mikael 
         Color[,] TextureVers2DColor()
         {
             Color[] tableau1D = new Color[Image…tage.Width * Image…tage.Height];
@@ -120,6 +125,7 @@ namespace AtelierXNA
             return tableau2D;
         }
 
+        //Fonction ‡ Mikael 
         void CrÈer…tage(string nomImage…tage)
         {
             for (int x = 0; x < Couleurs.GetLength(0); ++x)
@@ -168,12 +174,17 @@ namespace AtelierXNA
                     ListeCube.Add(c);
                 }
             }
+
+            //L'image Bitmap vue de haut peut Ítre sÈparÈe en colonnes et en lignes
             AdditionnerColonnes();
             AdditionnerLignes();
             Additionner…tages();
             AjouterBordures();
         }
 
+
+
+        //Additionne tout les cubes qui se situe dans la mÍme colonne
         void AdditionnerColonnes()
         {
             for (int y = 0; y < TableauCube.GetLength(1); ++y)
@@ -182,16 +193,23 @@ namespace AtelierXNA
                 {
                     for (int x = 0; x < TableauCube.GetLength(0) - 1; ++x)
                     {
+                        //Pour chaque cube dans la liste, ces deux "if" dÈterminent si les cubes existent et peuvent Ítre additionnÈs. 
                         if (TableauCube[x, y, z] != null && TableauCube[x + 1, y, z] != null)
                         {
                             if (EstAdditionnable(TableauCube[x, y, z], TableauCube[x + 1, y, z]))
                             {
+                                //Ici il y a une surcharge de l'opÈrateur "+", cette fonctione se trouve dans la classe CubeAdditionnable,
+                                //elle additionne les dimensions de deux cubes et elle retourne un nouveau cube avec ces dimensions.
                                 CubeAdditionnable nouveauCube = TableauCube[x, y, z] + TableauCube[x + 1, y, z];
                                 nouveauCube.Initialize();
+                                //Les anciens prismes sont supprimÈs pour laisser place au nouveau.
                                 ListeCube.Remove(TableauCube[x, y, z]);
                                 ListeCube.Remove(TableauCube[x + 1, y, z]);
                                 ListeCube.Add(nouveauCube);
 
+                                //Dans le tableau des cubes, toutes les cases occupÈes par les 
+                                //anciens prismes contiennent maintenant la mÍme information, soit le nouveau cube.
+                                //Cette boucle regarde toutes les cases de la mÍme colonne et qui sont occupÈes par les anciens prismes. 
                                 for (int k = 0; k < nouveauCube.CubeColorÈ.Dimension.X; ++k)
                                 {
                                     TableauCube[x + 1 - k, y, z] = nouveauCube;
@@ -204,6 +222,8 @@ namespace AtelierXNA
             }
         }
 
+
+        //MÍme principe que pour les colonnes, sauf que c'est pour les lignes
         void AdditionnerLignes()
         {
             for (int y = 0; y < TableauCube.GetLength(1); ++y)
@@ -214,6 +234,8 @@ namespace AtelierXNA
                     {
                         if (TableauCube[x, y, z] != null && TableauCube[x, y, z + 1] != null)
                         {
+                            //Ici le if est diffÈrent car il se peut que deux prismes voulant s'additionner 
+                            //n'aient pas les bonnes dimensions en coordonnÈe X.
                             if (EstAdditionnable(TableauCube[x, y, z], TableauCube[x, y, z + 1]) && BonneDimensionX(TableauCube[x, y, z], TableauCube[x, y, z + 1]))
                             {
                                 CubeAdditionnable nouveauCube = TableauCube[x, y, z] + TableauCube[x, y, z + 1];
@@ -222,6 +244,8 @@ namespace AtelierXNA
                                 ListeCube.Remove(TableauCube[x, y, z + 1]);
                                 ListeCube.Add(nouveauCube);
 
+
+                                //Cette boucle regarde toutes les cases dans la mÍme surface Largeur * Longueur du nouveau cube.
                                 for (int k = 0; k < nouveauCube.CubeColorÈ.Dimension.X; ++k)
                                 {
                                     for (int h = 0; h < nouveauCube.CubeColorÈ.Dimension.Z; ++h)
@@ -246,6 +270,8 @@ namespace AtelierXNA
                     {
                         if (TableauCube[x, y, z] != null && TableauCube[x, y + 1, z] != null)
                         {
+                            //Ici le "if" est encore diffÈrent car il regarde non seulement si les prismes ont les bonnes dimensions, mais aussi
+                            // s'ils sont superposÈs parfaitement. 
                             if (BonneDirection(TableauCube[x, y, z], TableauCube[x, y + 1, z]) && BonneDimensionY(TableauCube[x, y, z], TableauCube[x, y + 1, z]))
                             {
                                 CubeAdditionnable nouveauCube = TableauCube[x, y, z] + TableauCube[x, y + 1, z];
@@ -254,6 +280,7 @@ namespace AtelierXNA
                                 ListeCube.Remove(TableauCube[x, y + 1, z]);
                                 ListeCube.Add(nouveauCube);
 
+                                //Cette boucle remplace toutes les cases occupÈes par le volume du prisme. 
                                 for (int g = 0; g < nouveauCube.CubeColorÈ.Dimension.Y; ++g)
                                 {
                                     for (int h = 0; h < nouveauCube.CubeColorÈ.Dimension.X; ++h)
@@ -271,6 +298,7 @@ namespace AtelierXNA
             }
         }
 
+        //Cette fonction ajoute quatres murs aux bords du terrain pour Èviter que les avatars tombent en dehors du terrain. 
         void AjouterBordures()
         {
             CubeAdditionnable gauche = new CubeAdditionnable(Game, 1, Vector3.Zero, new Vector3(-1, 10, (Image…tage.Height / 2)), Color.Transparent, new Vector3(1, 20, Image…tage.Height), 0);
@@ -283,6 +311,8 @@ namespace AtelierXNA
             haut.Initialize();
             bas.Initialize();
 
+
+            //Selon la position de la camÈra et son orientation, ces deux murs devaient Ítre transparent pour ne pas gÍner le joueur.
             droite.EstTransparent = true;
             bas.EstTransparent = true;
 
@@ -292,34 +322,34 @@ namespace AtelierXNA
             ListeCube.Add(bas);
         }
 
+        //Cette fonction vÈrifie si les dimensions sont bonnes. 
         bool EstAdditionnable(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             Vector3 direction = cube1.Position - cube2.Position;
             return (direction.X != 0 && direction.Z == 0 || direction.Z != 0 && direction.X == 0);
         }
 
+        //Celle-ci vÈrifie que les prismes sont bien superposÈs.
         bool BonneDirection(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             Vector3 direction = cube1.Position - cube2.Position;
             return direction.X == 0 && direction.Z == 0;
         }
 
+        //Celle-ci vÈrifie que les prismes ont la mÍme dimension en coordonnÈe X.
         bool BonneDimensionX(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             return cube1.CubeColorÈ.Dimension.X == cube2.CubeColorÈ.Dimension.X;
         }
 
-        bool BonneDimensionZ(CubeAdditionnable cube1, CubeAdditionnable cube2)
-        {
-            return cube1.CubeColorÈ.Dimension.Y == cube2.CubeColorÈ.Dimension.Y;
-        }
-
+        //Celle-ci vÈrifie que deux prismes ont la mÍme surface en Longueur * Largeur. 
         bool BonneDimensionY(CubeAdditionnable cube1, CubeAdditionnable cube2)
         {
             return cube1.CubeColorÈ.Dimension.X == cube2.CubeColorÈ.Dimension.X && cube1.CubeColorÈ.Dimension.Z == cube2.CubeColorÈ.Dimension.Z;
         }
         #endregion
 
+        //RÈgion ‡ Mikael
         #region Pathfinding
         public void SetPath(List<Node> path)
         {
@@ -371,8 +401,8 @@ namespace AtelierXNA
             float pourcentageZ = positionMonde.Z / TailleMondeGrille.Z; //(positionMonde.Z + TailleMondeGrille.Z / 2) / TailleMondeGrille.Z;
             pourcentageX = pourcentageX < 0 ? 0 : pourcentageX > 1 ? 1 : pourcentageX;
             pourcentageZ = pourcentageZ < 0 ? 0 : pourcentageZ > 1 ? 1 : pourcentageZ;
-            int x = (int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);//(int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);
-            int z = (int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ); //(int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ);
+            int x = (int)Math.Round((TailleMondeGrille.X -1) * pourcentageX);//(int)Math.Round((TailleMondeGrille.X - 1) * pourcentageX);
+            int z = (int)Math.Round((TailleMondeGrille.Z -1) * pourcentageZ); //(int)Math.Round((TailleMondeGrille.Z - 1) * pourcentageZ);
             return GetNode(x, z);
         }
 

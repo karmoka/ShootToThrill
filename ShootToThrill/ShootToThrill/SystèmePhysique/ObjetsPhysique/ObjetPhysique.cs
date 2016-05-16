@@ -12,6 +12,7 @@ namespace AtelierXNA
 {
    public class ObjetPhysique : DrawableGameComponent
    {
+      Vector3 ATTÉNUATION_VERTICAL = new Vector3(1, 0.5f, 1);
       public List<ÉtatPhysique> ÉtatsPhysiques { get; set; }
 
       const float RAYON_DÉFAUT = 1.25f;
@@ -33,7 +34,7 @@ namespace AtelierXNA
 
       private Vector3 ForceRésultante { get; set; }
       private List<Vector3> Forces { get; set; }
-      private Vector3 ForceGravitationnelle { get; set; }
+      private Vector3 ForceGravitationnelle { get { return OptionJeu.Gravité; } }
 
       public ObjetPhysique(Game game, Vector3 position, Vector3 vitesse, float masseInverse, Collider volumeCollision)
          : base(game)
@@ -64,6 +65,7 @@ namespace AtelierXNA
          Vitesse = description.Vitesse;
          MasseInverse = description.MasseInverse;
          VolumeDeCollision = new SphereCollision(this.Position, RAYON_DÉFAUT);
+         Charge = description.Charge;
 
          EstImmuable = description.EstImmuable;
       }
@@ -89,7 +91,6 @@ namespace AtelierXNA
          OptionJeu = Game.Services.GetService(typeof(Options)) as Options;
 
          VolumeDeCollision.Initialize();
-         ForceGravitationnelle = OptionJeu.Gravité;
          Forces = new List<Vector3>();
          ForceRésultante = Vector3.Zero;
 
@@ -149,11 +150,11 @@ namespace AtelierXNA
             Vector3 norm = autre.GetCollider().Normale(this.Position);
             //La norme est corrigé pour gérer la collision des deux bords de l'objet
             if (Vector3.Dot((autre.GetCollider().Center - this.Position), norm) >= 0)
-               norm = -norm;
+                norm = -norm;
 
-            this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * 0.95f);
+            this.SetVitesse(CustomMathHelper.Réfléchir(this.Vitesse, norm) * ATTÉNUATION_VERTICAL * 0.95f);
 
-            CorrigerPosition(this, autre.GetObjetPhysique(), norm);
+            CorrigerPosition(norm);
          }
          if (autre is VolumeDeForce)
          {
@@ -176,7 +177,7 @@ namespace AtelierXNA
          Rotation = rotation;
       }
 
-      void CorrigerPosition(ObjetPhysique A, ObjetPhysique B, Vector3 normale)
+      void CorrigerPosition(Vector3 normale)
       {
          this.SetPosition(this.Position + normale * 0.01f * this.MasseInverse);
       }
