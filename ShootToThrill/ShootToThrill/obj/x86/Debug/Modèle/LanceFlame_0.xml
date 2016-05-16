@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\LanceFlame.fbx</SourceFilename>
+      <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\LanceFlame.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -43,7 +43,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Color_M02</Name>
       <Identity>
-        <SourceFilename>C:\Users\Karmoka\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\LanceFlame.fbx</SourceFilename>
+        <SourceFilename>C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrillContent\Modèle\LanceFlame.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

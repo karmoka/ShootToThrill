@@ -128,7 +128,7 @@ namespace AtelierXNA
             else
             {
                 int itemDrop = GénérateurObjetDrop.Next(0, 10);
-                switch (GénérateurObjetDrop.Next(0, 3))//3))
+                switch (GénérateurObjetDrop.Next(0, 3))
                 {
                     case 0:
                         CréerEnnemi(Game.Content.Load<DescriptionEnnemi>("Description/Ennemi1"), itemDrop);

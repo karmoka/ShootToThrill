@@ -499,3 +499,9 @@ C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bi
 C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\ShootToThrill.exe.manifest
 C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\obj\x86\Debug\ShootToThrill.application
 C:\Users\201457989\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Shotgun.fbx
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar1.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar2.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Description\Avatar3.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Acid.xnb
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Textures\Fleche.bmp
+C:\Users\alexL_000\Documents\GitHub\ShootToThrill\ShootToThrill\ShootToThrill\bin\x86\Debug\Content\Modèle\Shotgun.fbx

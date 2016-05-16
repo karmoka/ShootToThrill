@@ -20,7 +20,7 @@ namespace AtelierXNA
        IOManager ManagerDeControle { get; set; }
        Vector3 PositionInitiale { get; set; }
        JoueurScreenManager JoueurScreenManager { get; set; }
-       public int Score { get; private set; }
+       public int Score { get; set; }
        bool EstAttaquer { get; set; }
        float TempsDepuisDommage { get; set; }
 
@@ -58,7 +58,7 @@ namespace AtelierXNA
             AjouterArme(fusil);
             TournerSurY(Vector2.Zero);
 
-            fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(0,0,0) + Vector3.Up, 0.005f, 0.02f);
+            fusil = new Shotgun(Game, Game.Content.Load<DescriptionFusil>("Description/Shotgun"), new Vector3(-6,0,20), 0.005f, 0.02f);
             fusil.Initialize();
             AjouterArme(fusil);
             TournerSurY(Vector2.Zero);
@@ -139,6 +139,11 @@ namespace AtelierXNA
             }
 
             base.BougerAvatar();
+        }
+
+        public void AjouterPoints(int points)
+        {
+            Score += points;
         }
 
         protected override void TournerSurY(Vector2 direction)

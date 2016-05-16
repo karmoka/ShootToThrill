@@ -15,7 +15,7 @@ namespace AtelierXNA
 {
     public class Projectile : Microsoft.Xna.Framework.GameComponent
     {
-        const float TEMPS_APPARITION = 0.05f;
+        const float TEMPS_APPARITION = 0.1f;
 
         protected float Portée { get; set; }
         protected Vector3 Direction { get; set; }
@@ -28,13 +28,16 @@ namespace AtelierXNA
         public bool Existe { get; private set; }
         float TempsÉcoulé { get; set; }
 
+        public int Score { get; private set; }
+
+
         public Projectile(Game game, float portée, int dommage, Vector3 direction, Vector3 positionDépart)
             : base(game)
         {
             Portée = portée;
             Dommage = dommage;
             Direction = direction;
-            PositionDépart = positionDépart;       
+            PositionDépart = positionDépart;
         }
 
         public new void Update(GameTime gameTime)
@@ -50,6 +53,7 @@ namespace AtelierXNA
         public override void Initialize()
         {
             TempsÉcoulé = 0;
+            Score = 0;
 
             DroiteCollision = new DroiteCollision(Game, Direction, PositionDépart, Portée, Dommage);
             DroiteCollision.CoupDeFeu();

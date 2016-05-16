@@ -2,12 +2,12 @@
 <XnaContent xmlns:Data="ProjetPrincipal.Data">
   <Asset Type="Data:DescriptionFusil">
     <AMunitionInfini>false</AMunitionInfini>
-    <MunitionTotalRestant>0</MunitionTotalRestant>
-    <MunitionTotalMax>200</MunitionTotalMax>
-    <MunitionMaxDansChargeur>32</MunitionMaxDansChargeur>
-    <MunitionRestantDansChargeur>0</MunitionRestantDansChargeur>
+    <MunitionTotalRestant>250</MunitionTotalRestant>
+    <MunitionTotalMax>250</MunitionTotalMax>
+    <MunitionMaxDansChargeur>250</MunitionMaxDansChargeur>
+    <MunitionRestantDansChargeur>250</MunitionRestantDansChargeur>
     <MunitionDansCaisseMunitions>60</MunitionDansCaisseMunitions>
-    <MunitionInitial>80</MunitionInitial>
+    <MunitionInitial>250</MunitionInitial>
     <IntervalRechargement>0.02</IntervalRechargement>
     <NomArme>Mitraillette</NomArme>
     <NomModèle>Mitraillette</NomModèle>

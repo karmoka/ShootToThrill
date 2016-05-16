@@ -33,6 +33,7 @@ namespace AtelierXNA
         protected List<DroiteColorée> ListeTrajectoires { get; set; }
         protected List<Projectile> ListeProjectile { get; set; }
         bool TrajectoireExiste { get; set; }
+
         int AngleRotation
         {
             get
@@ -47,6 +48,8 @@ namespace AtelierXNA
         float TempsDepuisDernierTir { get; set; }
         float TempsDepuisDebutJeu { get; set; }
         float TempsDepuisRecharge { get; set; }
+
+        int Score { get; set; }
 
         #region Munition
         int _munitionTotalRestant,
@@ -146,6 +149,7 @@ namespace AtelierXNA
             TempsDepuisDebutJeu = 0;
             TempsDepuisRecharge = 0;
             RechargeInitiale();
+            Score = 0;
             ListeTrajectoires = new List<DroiteColorée>();
             ListeProjectile = new List<Projectile>();
             TrajectoireExiste = false;
@@ -333,6 +337,11 @@ namespace AtelierXNA
         {
 
         }
+
+        //public void AjouterPropriétaire(MJoueur joueur)
+        //{
+        //    Propriétaire = joueur;
+        //}
 
         public void Animer()
         {
